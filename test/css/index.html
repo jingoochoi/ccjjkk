@@ -8,9 +8,24 @@
     <!-- css internal coding area -->
     <style>
       /* css additional commentstyle */
+        /* box model common design factor
+        size=width, height
+        border
+        padding(inside)
+        margin(outside)=top bottom left right */
+        /* box common design */
+        .bx{
+            text-align: center;
+            width: 800px;
+            border: 1px double red;
+            padding: 20px;
+        }
         /* 1.header */
         #top{
             background-color: gold;
+        }
+        .cmd{
+            width: 100%;
         }
     </style>
   </head>
@@ -22,7 +37,7 @@
         <!-- global navigation bar menu -->
         <nav id="gnb">
             <a href="index.html">
-                <img src="logo.png" alt="naver logo">
+                <img class="cmd" src="logo.png" alt="naver logo" style="width: 50px;">
             </a>
             <a href="sub1.html">politic</a>
             <a href="sub2.html">economy</a>
