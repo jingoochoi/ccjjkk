@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <company>
     <person>
-        <name></name>
-        <department></department>
+        <name birthday="1998.10.20">kim</name>
+        <department>marketing</department>
     </person>
     <person>
-        <name></name>
-        <department></department>
+        <name birthday="1977.12.20">park</name>
+        <department>develop</department>
     </person>
 </company>
