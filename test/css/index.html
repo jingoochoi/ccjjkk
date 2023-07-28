@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- transform to device screen auto -->
     <title>naver news</title>
-    <!-- css inline coding area -->
+    <!-- css internal coding area -->
     <style>
       /* css additional commentstyle */
-
+        /* 1.header */
+        #top{
+            background-color: gold;
+        }
     </style>
   </head>
   <body>
@@ -18,20 +21,28 @@
         <h1>naver summary news</h1>
         <!-- global navigation bar menu -->
         <nav id="gnb">
-            <a href="">
+            <a href="index.html">
                 <img src="logo.png" alt="naver logo">
             </a>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
+            <a href="sub1.html">politic</a>
+            <a href="sub2.html">economy</a>
+            <a href="sub3.html">society</a>
+            <a href="sub4.html">it/tech</a>
+            <a href="sub5.html">tv/enter</a>
         </nav>
     </header>
     <!-- 2.main=contents -->
-    <main id="con" class="bx"></main>
+    <main id="con" class="bx">
+        <img src="news.jpg" alt="news">
+    </main>
     <!-- 3.downside=information -->
-    <footer id="info" class="bx"></footer>
+    <footer id="info" class="bx">
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F
+            <br>대표: Tony
+            <br>전화: 010-2222-3333
+        </address>
+    </footer>
     <!-- layout factor
     div=영역을 나타낸 요소
     div friend
@@ -45,6 +56,7 @@
     7.article=independent contents
     [section and article must use h tag(recommendation)]
     (요소[element]=공통적 성질, 태그[tag]=구체적 요소) 
-    절대상대경로=웹 사이트 루트부터의 경로(/부터 시작)-->
+    절대상대경로=웹 사이트 루트부터의 경로(/부터 시작)
+    caution=절대상대경로는 서버루트폴더가 같아야한다 or 로컬로 접속 시-->
   </body>
 </html>
