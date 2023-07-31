@@ -24,7 +24,6 @@
         }
         /* box common design */
         .bx{
-            text-align: center;
             width: 800px;
             border: 1px dashed red;
             padding: 20px;
@@ -33,6 +32,9 @@
             2개=상하,좌우
             4개=위,오른,아래,왼 */
             border-radius: 20px;
+        }
+        #top,#info{
+            text-align: center;
         }
         /* 1.header */
         #top{
