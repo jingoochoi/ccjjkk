@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* ↑mandatory */
+
+        /* webfont CDN(content delivery network) */
+        @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
+        /* webfont name */
+        /* @import url(address)
+        summon extrnal css
+        merging external css files */
+      /* css additional commentstyle */
+        /* box model common design factor
+        size=width, height
+        border
+        padding(inside)
+        margin(outside)=top bottom left right */
+        /* factor reset(=default reset) */
+        html,body,h1,h2{
+            margin: 0;
+            padding: 0;
+        }
+        /* 그룹 선택자=',' */
+        body{
+            background-color: skyblue;
+        }
+        /* box common design */
+        .bx{
+            text-align: center;
+            width: 800px;
+            border: 1px dashed red;
+            padding: 20px;
+            margin: 0 auto;
+            /* margin:1개=4방향
+            2개=상하,좌우
+            4개=위,오른,아래,왼 */
+            border-radius: 20px;
+        }
+        /* 1.header */
+        #top{
+            background-color: gold;
+        }
+        /* title */
+        /* #top h1(h1 is son of #top) */
+        #top h1{
+            color: yellowgreen;
+            /* text shadow */
+            text-shadow: 2px 2px 2px #000;
+            font-family: 'Black And White Picture', sans-serif;
+            font-weight: normal;
+            /* font-family=comma is 우선순위, 안 되면 기본체 */
+        }
+        #gnb a{
+            color: black;
+            text-decoration: none; 
+        }
+        /* 가상 class(hover=mouse over) */
+        /* a+a=a factor is in front of another a.former a is not appliable('+' is 형제 선택자) */
+        #gnb a:hover{
+            text-decoration-style: wavy;
+            /* wavy style line(under of over) */
+            text-shadow: 1px 1px 1px green;
+        }
+        #gnb img{
+            vertical-align: middle;
+        }
+        .cmd{
+            width: 100%;
+        }
+        #cont{
+            margin: 20px auto;
+            background-color: yellowgreen;
+        }
+        #info{
+            background-color: #414141;
+        }
+        address{
+            font-style: normal;
+            color: white;
+            text-align: left;
+            margin-left: 20%;
+        }
+        .ut{
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: gold;
+        }
+        /* 종속 선택자(span.ut=class is ut but ut of span) */
+    
