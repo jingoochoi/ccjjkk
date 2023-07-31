@@ -19,16 +19,22 @@
         border
         padding(inside)
         margin(outside)=top bottom left right */
+        /* factor reset(=default reset) */
+        html,body,h1,h2{
+            margin: 0;
+            padding: 0;
+        }
         /* box common design */
         .bx{
             text-align: center;
             width: 800px;
-            border: 1px double red;
+            border: 1px dashed red;
             padding: 20px;
             margin: 0 auto;
             /* margin:1개=4방향
             2개=상하,좌우
             4개=위,오른,아래,왼 */
+            border-radius: 20px;
         }
         /* 1.header */
         #top{
@@ -74,6 +80,12 @@
             text-align: left;
             margin-left: 20%;
         }
+        .ut{
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: gold;
+        }
+        /* 종속 선택자(span.ut=class is ut but ut of span) */
     </style>
   </head>
   <body>
@@ -102,8 +114,8 @@
         <address>
             주소: 서울시 강남구 역삼동 119 대호B 8F/
             사업자번호: 333-22-55555
-            <br>대표: Tony/
-            전화: 010-2222-3333
+            <br>대표: <span class="ut">Tony</span>/
+            전화: <span class="ut">010-2222-3333</span>
         </address>
     </footer>
     <!-- 
