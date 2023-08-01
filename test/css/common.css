@@ -24,7 +24,10 @@
         }
         /* box common design */
         .bx{
-            width: 800px;
+            /* width: 800px; */
+            max-width: 1000px;
+            /* maximum width=when width under it, the size will be auto. mainly for mobile-optimizing */
+            /* minimum width=size will not be smaller than that. */
             border: 1px dashed red;
             padding: 20px;
             margin: 0 auto;
