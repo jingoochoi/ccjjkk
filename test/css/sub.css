@@ -12,3 +12,10 @@
     padding: 20px;
     outline: 1px solid;
 }
+.st4{
+    background-image: url(bear.jpg);
+}
+.st5{
+    background-image: url(mimi.jpg);
+    background-position-y: -100px;
+}
