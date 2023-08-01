@@ -15,6 +15,7 @@
 .st4{
     background-image: url(bear.jpg);
 }
+/* 부모요소를 써주면 우선순위 올라감 */
 .st5{
     background-image: url(mimi.jpg);
     background-position-y: -100px;
