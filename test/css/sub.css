@@ -4,4 +4,11 @@
     text-align: center;
     text-shadow: 2px 2px 2px red;
     font-family: serif;
+    background: url(bear.jpg) no-repeat center/cover;
+    /* background-image: url(bear.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    padding: 20px;
+    outline: 1px solid;
 }
