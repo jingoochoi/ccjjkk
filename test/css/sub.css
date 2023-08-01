@@ -1,5 +1,9 @@
 @charset "utf-8";
 @import url(common.css);
+/* subpage common font style */
+#cont{
+    font-family: sans-serif;
+}
 .st{
     text-align: center;
     text-shadow: 2px 2px 2px red;
@@ -22,7 +26,12 @@
     box-shadow: (inset) x y blur spread(shadow size) color;
     inset=inside shadow
     shadow sequence use=, */
+    margin-bottom: 30px;
 }
+.prlogo img{
+    height: 32px;
+}
+/* image has own ratio. touching both w and h makes it(=ratio) break */
 .st1{
     background-image: url(dokdo.jpg);
 }
@@ -33,4 +42,7 @@
 .st5{
     background-image: url(mimi.jpg);
     background-position-y: -100px;
+}
+.at{
+    font-size: 30px;
 }
