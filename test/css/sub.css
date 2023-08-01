@@ -64,3 +64,13 @@
     letter-spacing: 2px;
     word-spacing: 1px;
 }
+.mv{
+    height: 550px;
+    /* block like div was automatically set width:auto.
+    싸고 있는 박스 컨텐트 영역을 자동빵으로 채워준다. */
+}
+.mv iframe{
+    border: none;
+    width: 100%;
+    height: 100%;
+}
