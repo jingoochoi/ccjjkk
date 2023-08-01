@@ -12,6 +12,9 @@
     padding: 20px;
     outline: 1px solid;
 }
+.st1{
+    background-image: url(dokdo.jpg);
+}
 .st4{
     background-image: url(bear.jpg);
 }
