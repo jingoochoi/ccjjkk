@@ -52,3 +52,8 @@
 .af img{
     width: 100%;
 }
+.af figcaption{
+    font-size: 15px;
+    text-align: center;
+    color: #767676;
+}
