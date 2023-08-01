@@ -19,6 +19,9 @@
             padding: 0;
         }
         /* 그룹 선택자=',' */
+        body{
+            background-color: skyblue;
+        }
         /* box common design */
         .bx{
             width: 800px;
@@ -66,6 +69,7 @@
         }
         #cont{
             margin: 20px auto;
+            background-color: white;
         }
         #info{
             background-color: #414141;
