@@ -26,7 +26,10 @@
            other factors cannot be near, grouping factor, box model designs(width, height, border, margin, padding) are acceptable, width is screen(auto) unless control width, height content(auto) unless control height, overrided margin or margin sharing(small margin is included in big margin), width and height size is content area(content box) size
            box-sizing=box-size includes border and padding->
            box-sizing: border-box;
-           box-sizing: content-box;(default) */
+           box-sizing: content-box;(default)
+           2.inline(display: inline);
+           basically inline factors(a, img, span, b, i, em, strong, q and so on)
+           cannot include block factor(inline->block cannot also include block) exclude a tag, width and height cannnot acceptable, margin is only in left and right, padding is all accepted but top-bottom padding cannot push other inline factors */
            .bxb{
             box-sizing: border-box;
            }
