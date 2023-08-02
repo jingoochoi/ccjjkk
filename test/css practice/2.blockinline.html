@@ -23,7 +23,13 @@
            role of factor is separating content
            1.block(display: block;)
            basically block factors(h1~6, div, p, figure, header, nav and so on)
-           other factors cannot be near, grouping factor, box model designs(width, height, border, margin, padding) are acceptable, width is screen(auto) unless control width, height content(auto) unless control height */
+           other factors cannot be near, grouping factor, box model designs(width, height, border, margin, padding) are acceptable, width is screen(auto) unless control width, height content(auto) unless control height, overrided margin or margin sharing(small margin is included in big margin), width and height size is content area(content box) size
+           box-sizing=box-size includes border and padding->
+           box-sizing: border-box;
+           box-sizing: content-box;(default) */
+           .bxb{
+            box-sizing: border-box;
+           }
     </style>
 </head>
 <body>
@@ -44,7 +50,7 @@
     <h2 class="tt">block factors</h2>
     <div class="ele">
         <h1>I am h1.</h1>
-        <h4>I am h4.</h4>
+        <h4 class="bxb">I am h4.</h4>
         <div>I am div.</div>
         <p>I am p.</p>
         <header>I am header.</header>
