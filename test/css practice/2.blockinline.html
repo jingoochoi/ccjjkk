@@ -27,11 +27,22 @@
            box-sizing=box-size includes border and padding->
            box-sizing: border-box;
            box-sizing: content-box;(default)
-           2.inline(display: inline);
+           2.inline(display: inline;)
            basically inline factors(a, img, span, b, i, em, strong, q and so on)
            cannot include block factor(inline->block cannot also include block) exclude a tag, width and height cannnot acceptable, margin is only in left and right, padding is all accepted but top-bottom padding cannot push other inline factors, border is also all accepted but top-bottom padding cannot push other inline factors, but can use line-height
            img=inline factor but width, height, padding, margin, border are acceptable and affect
-           디스플레이 출신을 바꿀 수가 있다. */
+           3.inline block(display: inline-block)
+           basically inline block(button, input and so on)
+           can be in row like inline, box-model acceptable like block, box-sizing: border-box is default in case of button
+           4.the others
+           display: table;
+           display: flex;
+           display: grid
+           디스플레이 출신을 바꿀 수가 있다.
+           and display can be hidden(display: none;)=tag is exist but not shown */
+           /* 초기화나 세팅 바꿀 필요가 없는 순수태그
+                block factor-div
+                inline factor-span */
            .bxb{
             box-sizing: border-box;
            }
