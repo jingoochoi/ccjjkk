@@ -79,6 +79,14 @@
     border-bottom: 2px dashed black;
     padding: 20px;
     margin: 20px 0;
+    font-size: 15px;
+}
+hr{
+    border: 1px dashed #000;
+}
+.des{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .bq blockquote{
     padding: 15px 0;
