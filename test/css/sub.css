@@ -67,6 +67,17 @@
     /* line-height=controling the line spacing(basic is times, you can also use px) */
     /* also use for controling text to center in inline block. */
 }
+.ac p em{
+    font-style: normal;
+    color: violet;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px hotpink;
+}
+.bq{
+    background-color: #ccc;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid black;
+}
 .mv{
     height: 550px;
     /* block like div was automatically set width:auto.
