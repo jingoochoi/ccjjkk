@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block and inline</title>
+    <style>
+        .tt{
+            text-align: center;
+            border: 5px dotted yellow;
+            background-color: yellowgreen;
+        }
+        .ele * {
+            /* '*'=everything(every factors) */
+            width: 200px;
+            height: 150px;
+            border: 10px solid blue;
+            margin: 20px;
+            padding: 20px;
+        }
+        /* display
+           in browser, something that decide how the factors were shown.
+           role of factor is separating content
+           1.block(display: block;)
+           basically block factors(h1~6, div, p, figure, header, nav and so on)
+           other factors cannot be near, grouping factor, box model designs(width, height, border, margin, padding) are acceptable, width is screen(auto) unless control width, height content(auto) unless control height */
+    </style>
+</head>
+<body>
+    <h1 class="tt">block and inline</h1>
+    <h2 class="tt">inline factors</h2>
+    <div class="ele">
+        <a href="#">I am a.</a>
+        <img src="./imgs/blogo.png" alt="logo" title="I am a.">
+        <span>I am span.</span>
+        <b>I am b.</b>
+        <button>
+            I am button.
+        </button>
+        <i>I am i.</i>
+        <em>I am em.</em>
+        <strong>I am strong.</strong>
+    </div>
+    <h2 class="tt">block factors</h2>
+    <div class="ele">
+        <h1>I am h1.</h1>
+        <h4>I am h4.</h4>
+        <div>I am div.</div>
+        <p>I am p.</p>
+        <header>I am header.</header>
+    </div>
+</body>
+</html>
