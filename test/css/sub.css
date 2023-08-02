@@ -75,10 +75,19 @@
 }
 .bq{
     background-color: #ccc;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid black;
+    border-top: 2px dashed #000;
+    border-bottom: 2px dashed black;
     padding: 20px;
     margin: 20px 0;
+}
+.bq blockquote{
+    padding: 15px 0;
+    line-height: 2;
+}
+.bq img{
+    float: left;
+    border-radius: 5px;
+    margin-left: 20px;
 }
 .atbx h5{
     display: inline-block;
