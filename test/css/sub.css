@@ -89,9 +89,14 @@ hr{
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: yellowgreen;
+    line-height: 2;
 }
 .des div{
     margin-top: 20px;
+}
+.work{
+    background-color: gold;
+    padding-top: 20px;
 }
 .bq blockquote{
     padding: 15px 0;
