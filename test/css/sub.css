@@ -100,6 +100,9 @@ hr{
     padding-bottom: 20px;
     text-align: center;
 }
+.work h3{
+    margin-top: 0;
+}
 .bq blockquote{
     padding: 15px 0;
     line-height: 2;
