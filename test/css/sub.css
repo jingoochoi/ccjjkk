@@ -83,10 +83,15 @@
 }
 hr{
     border: 1px dashed #000;
+    margin: 0;
 }
 .des{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: yellowgreen;
+}
+.des div{
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 .bq blockquote{
     padding: 15px 0;
