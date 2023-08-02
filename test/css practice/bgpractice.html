@@ -30,7 +30,22 @@
             background-attachment: fixed;
             /* meaning of 'fixed'
             fixed when scroll in showing screen */
-            background-position: center center;
+            background-position: right bottom;
+            background-size: 400px 200px;
+            /* contain=show all with full-screen
+            cover=fullfill in box(can be cut)
+            number px=ratio-fixed changing */
+            /* background(only): color image repeat attachment position/size; 
+             background: yellowgreen url(./imgs/bg_mainvisual.jpg) no-repeat fixed center/cover; */
+             /* using background tag to use many bgimage */
+             /* size default= left(x) center(y) */
+        }
+        .wrap{
+            height: 100%;
+            background: url(./imgs/dc1.png) no-repeat center/400px,
+                        url(./imgs/dc2.png) no-repeat right top/400px,
+                        url(./imgs/dc3.png) no-repeat left bottom/300px,
+                        url(./imgs/dc4.png) no-repeat right/300px;
         }
     </style>
 </head>
