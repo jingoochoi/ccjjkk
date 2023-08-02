@@ -29,7 +29,9 @@
            box-sizing: content-box;(default)
            2.inline(display: inline);
            basically inline factors(a, img, span, b, i, em, strong, q and so on)
-           cannot include block factor(inline->block cannot also include block) exclude a tag, width and height cannnot acceptable, margin is only in left and right, padding is all accepted but top-bottom padding cannot push other inline factors */
+           cannot include block factor(inline->block cannot also include block) exclude a tag, width and height cannnot acceptable, margin is only in left and right, padding is all accepted but top-bottom padding cannot push other inline factors, border is also all accepted but top-bottom padding cannot push other inline factors, but can use line-height
+           img=inline factor but width, height, padding, margin, border are acceptable and affect
+           디스플레이 출신을 바꿀 수가 있다. */
            .bxb{
             box-sizing: border-box;
            }
