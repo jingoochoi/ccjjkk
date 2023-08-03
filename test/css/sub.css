@@ -209,6 +209,32 @@ hr{
 .cnew ul li::after{
     content: '⬅';
 }
+/* changing color in each li */
+.cnew li:first-child a{
+    color: red;
+}
+.cnew li:nth-child(2) a{
+    color: skyblue;
+}
+.cnew li:last-child a{
+    color: gold;
+}
+/* 제목 링크 땡땡땡땡(one-line)
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+/* two-line
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2(the number of line);
+    -webkit-box-orient: vertical;
+    !must control the box height */
+.nbx li,.nbx dd,.nbx td{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .snew dt{
     font-size: 25px;
     display: inline-block;
