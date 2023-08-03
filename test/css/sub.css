@@ -198,3 +198,12 @@ hr{
     font-weight: normal;
     background-image: linear-gradient(to right,skyblue,transparent);
 }
+/* ::=virtual factor
+    before=front of the factor
+    after=back of the factor */
+.cnew ul li::before{
+    content: '➡';
+}
+.cnew ul li::after{
+    content: '⬅';
+}
