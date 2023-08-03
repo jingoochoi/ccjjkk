@@ -95,7 +95,12 @@ hr{
     margin-top: 20px;
 }
 .work{
-    background-color: gold;
+    /* background-color: gold; */
+    /* gradation
+        linear-greadient(direction or angle,col1 (percent),col2 (percent));
+        1.direction=to top, to bottom, to left, to right
+        2.angle=(number)deg */
+    background-image: linear-gradient(45deg,skyblue,pink);
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
@@ -150,4 +155,8 @@ hr{
 .al a:hover{
     background-color: red;
     box-shadow: 0 0 10px 5px gold;
+}
+.nbx{
+    margin: 20px 0;
+    padding: 20px 0;
 }
