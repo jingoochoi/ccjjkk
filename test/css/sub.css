@@ -188,3 +188,13 @@ hr{
     text-decoration: none;
     line-height: 2.5;
 }
+.nbx a:hover{
+    color: yellowgreen;
+    text-shadow: 1px 1px 1px #000;
+}
+.nbx h3{
+    font-family: 'Black And White Picture';
+    font-size: 30px;
+    font-weight: normal;
+    background-image: linear-gradient(to right,skyblue,transparent);
+}
