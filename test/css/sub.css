@@ -104,6 +104,14 @@ hr{
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
+    /* backgroun option +
+        background-clip: setting the range
+        1.border-box(default)
+        2.padding-box
+        3.content-box */
+    border-left: 1px dashed #000;
+    border-right: 1px dashed #000;
+    
 }
 .work h3{
     margin-top: 0;
