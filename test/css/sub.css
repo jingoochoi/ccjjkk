@@ -200,10 +200,24 @@ hr{
 }
 /* ::=virtual factor
     before=front of the factor
-    after=back of the factor */
+    after=back of the factor
+    mandatory:content
+    image->url() */
 .cnew ul li::before{
     content: '➡';
 }
 .cnew ul li::after{
     content: '⬅';
+}
+.snew dt{
+    font-size: 25px;
+    display: inline-block;
+    background-color: yellowgreen;
+    padding: 10px;
+    border-radius: 50%;
+    border: 5px dotted #000;
+    margin-top: 50px;
+}
+.snew dd::before{
+    content: '📜';
 }
