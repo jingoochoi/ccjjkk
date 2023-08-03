@@ -18,6 +18,10 @@
             margin: 0;
             padding: 0;
         }
+        /* list blit,bumber removing */
+        ul,ol{
+            list-style: none;
+        }
         /* 그룹 선택자=',' */
         body{
             background-color: skyblue;
