@@ -219,6 +219,14 @@ hr{
 .cnew li:last-child a{
     color: gold;
 }
+.snew dt:first-child{
+    color: pink;
+    background-color: yellow;
+}
+.snew dt:last-of-type{
+    color: blue;
+    background-color: pink;
+}
 /* 제목 링크 땡땡땡땡(one-line)
     white-space: nowrap;
     overflow: hidden;
