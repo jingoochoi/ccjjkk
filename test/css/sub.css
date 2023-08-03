@@ -111,10 +111,12 @@ hr{
         3.content-box */
     border-left: 1px dashed #000;
     border-right: 1px dashed #000;
-    
 }
 .work h3{
     margin-top: 0;
+    font-family: 'Black And White Picture';
+    font-weight: normal;
+    font-size: 25px;
 }
 .bq blockquote{
     padding: 15px 0;
