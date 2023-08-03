@@ -111,12 +111,25 @@ hr{
         3.content-box */
     border-left: 1px dashed #000;
     border-right: 1px dashed #000;
+    box-shadow: inset 0 0 10px;
 }
 .work h3{
     margin-top: 0;
     font-family: 'Black And White Picture';
     font-weight: normal;
     font-size: 25px;
+}
+.work img{
+    border: 15px ridge gold;
+    /* ridge=photo frame */
+}
+.work figcaption{
+    font-size: 20px;
+}
+.work figcaption cite{
+    font-style: normal;
+    padding: 10px;
+    color: #777;
 }
 .bq blockquote{
     padding: 15px 0;
