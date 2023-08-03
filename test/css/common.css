@@ -14,7 +14,7 @@
         padding(inside)
         margin(outside)=top bottom left right */
         /* factor reset(=default reset) */
-        html,body,h1,h2,figure,blockquote{
+        html,body,h1,h2,figure,blockquote,ul,ol,dl,dd{
             margin: 0;
             padding: 0;
         }
