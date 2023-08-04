@@ -309,3 +309,6 @@ hr{
     height: 70px;
     vertical-align: middle;
 }
+.pnew tr+tr td{
+    border-top: 1px solid #aaa;
+}
