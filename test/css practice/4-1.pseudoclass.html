@@ -304,23 +304,37 @@
             /* 두번째 div
             font - 30px 궁서
             글자색 - blueviolet */
-            
+            .part2 div:nth-of-type(2){
+                font: 30px "궁서";
+                color: blueviolet;
+            }
             /* 첫번째 i 
             font - bold 20px
             글자색 - palevioletred */
-            
+            .part2 i:first-of-type{
+                font: bold 20px sans-serif;
+                color: palevioletred;
+            }
 
             /* 3번째 div이후 div형제요소 모두
             font - 궁서체, 글자색 - red */
-            /* .part2 div:nth-of-type(3)~div{ */
-
+                .part2 div:nth-of-type(3)~div{
+                    font:  "궁서체";
+                    color: red;
+                }
             /* 3번째 div이후 i형제요소 모두
             font - 궁서체, 글자색 - red */
-            /* .part2 div:nth-of-type(3)~i{ */
-
+                .part2 div:nth-of-type(3)~i{
+                    font:  "궁서체";
+                    color: rebeccapurple;
+                }
             /* 3번째 div이후 모든형제요소(*)
             font - 궁서체, 글자색 - red */
-            
+            .part2 div:nth-of-type(3)~*{
+                font:  "궁서체";
+                color: royalblue;
+            }
+            /* *=all factors */
             
 
 
