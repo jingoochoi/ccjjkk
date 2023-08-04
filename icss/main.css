@@ -18,12 +18,35 @@ body h1{
     color: #000;
     text-decoration: none;
 }
+.p1::before{
+    content: 'N';
+    background-color: yellowgreen;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+.p1::after{
+    content: '📰';
+}
 h3{
     margin: 0;
+}
+h3::before{
+    content: '📆';
+}
+h3::after{
+    content: '📌';
 }
 li{
     line-height: 1;
 }
 .p2 h2{
     margin-bottom: 20px;
+}
+h1::before{
+    content: '📋';
+}
+h1::after{
+    content: '👨‍💻';
 }
