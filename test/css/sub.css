@@ -312,3 +312,13 @@ hr{
 .pnew tr+tr td{
     border-top: 1px solid #aaa;
 }
+.kospi{
+    text-align: center;
+    background-color: yellowgreen;
+    padding: 0 3px;
+    width: 300px;
+    margin: 0 auto;
+}
+.kospi h3{
+    margin-top: 0;
+}
