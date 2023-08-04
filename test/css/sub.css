@@ -269,4 +269,6 @@ hr{
 }
 .pnew h3::before{
     content: '📷';
+    vertical-align: -2px;
+    font-size: 50px;
 }
