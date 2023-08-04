@@ -280,6 +280,7 @@ hr{
     margin: 0 auto;
     border: 1px solid #ccc;
     border-collapse: collapse;
+    max-width: 500px;
 }
 .pnew td:first-child{
     width: 50px;
@@ -290,7 +291,6 @@ hr{
 .pnew td:nth-child(2){
     background-color: #e4e4e4;
     padding: 0 20px;
-    width: 400px;
 }
 .pnew td div{
     overflow: hidden;
@@ -298,6 +298,7 @@ hr{
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    line-height: 1.5;
 }
 .pnew td:last-child{
     background-color: #ccc;
