@@ -54,6 +54,7 @@
         /* h2요소 맨앞에 이미지 넣기 */
         h2::before{
             content: url(./imgs/blogo.png);
+            vertical-align: middle;
         }
         /* image nust be used as original source, but can be controlled size after making box and be controlled as bgimage. */
         
@@ -64,9 +65,16 @@
             /* after add content, it is like a span factor.
                 diplay:block is like a div */
             display: inline-block;
-            width: 50px;
-            height: 50px;
-            background-color: red;
+            width: 40px;
+            height: 60px;
+            /* background-color: red; */
+            background: url(./imgs/bg_logo_a_01.png) no-repeat center/80%;
+            border: 2px solid gray;
+            border-radius: 5px;
+            box-shadow: 0 0 10px purple,
+            10px 10px 5px 2px #aaa;
+            vertical-align: middle;
+            margin-left: 20px;
         }
         
 
@@ -86,47 +94,64 @@
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
-        
-        
-
-        /* dd전체와 
-        dd.story>h3에 가상요소 before적용하기 */
-        
-        
-
-
-        /* 출연배우의 dd부터 아이콘변경 */
-        
-        
+        dt::before{
+            content: '📺★';
+            color: gold;
+        }
+        /* dd전체 before적용하기 */
+        dd::before{
+            content: '🤴';
+        }
+         /* 출연배우의 dd부터 아이콘변경 */
+        dt:nth-of-type(2)~dd::before{
+            content: '🎬';
+        }
         /* 아티스트의 dd부터 아이콘변경 */
-        
-
+        dt:nth-of-type(3)~dd::before{
+            content: '🎧';
+        }
         /* 스토리의 dd는 가상요소 없애기 */
-        
-        
+        dd.story::before{
+            display: none;
+        }
         /* 스토리의 dd 아래 h3 이모지변경 */
-        
+        dd.story h3::before{
+            content: '📜';
+        }
         
 
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
-        
+        .story p:first-of-type::first-letter{
+            color: blue;
+            font-size: 50px;
+        }
         
         
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
-        
+        .story p:first-of-type::first-line{
+            color: yellowgreen;
+        }
         
 
 
 
         /* 두번째 p태그는 태그로 
         첫번째 글자(b태그), 첫번째 줄(span)변경 */
-        
+        b{
+            color: red;
+            font-size: 50px;
+        }
+        span{
+            color: #999;
+        }
 
         
 
         /* 기타 가상요소 ::selection */
         /* 드래그 선택시 글자색 배경색 설정변경! */
-        
+        ::selection{
+            color: pink;
+        }
         
         /* ::selection만쓰면 전체가 다 적용됨! 
         특정선택자::selection 으로 쓰면 자식태그로 싸지 않은 글자만 적용됨!*/
@@ -154,9 +179,9 @@
         <dd>육성재</dd>
 
         <dt>아티스트</dt>
-        <dd>헤이즈</dd>
-        <dd>마마무</dd>
-        <dd>찬열,펀치</dd>
+        <dd>헤이즈🌂</dd>
+        <dd>마마무🥬</dd>
+        <dd>찬열,펀치🥊</dd>
 
         <dt>스토리</dt>
         <dd class="story">
@@ -166,7 +191,7 @@
                 벌어지는 신비로운 낭만 설화
             </p>
             <p>
-                <b>불</b><span>멸의 삶을 끝내기 위해 인간 신부가</span> <br> 필요한 도깨비, 그와 기묘한 동거를 시작한 기억상실증 저승사자. 그런 그들 앞에 '도깨비 신부'라
+                <b>불</b><span>멸의 삶을 끝내기 위해 인간 신부가</span> <br> 필요한 도깨비🧟‍♂️, 그와 기묘한 동거를 시작한 기억상실증 저승사자🕴. 그런 그들 앞에 '도깨비 신부👰'라
                 주장하는
                 '죽었어야 할 운명'의 소녀가 나타나며
                 벌어지는 신비로운 낭만 설화
