@@ -300,7 +300,7 @@ hr{
     -webkit-box-orient: vertical;
 }
 .pnew td:last-child{
-    background-color: #e4e4e4;
+    background-color: #ccc;
     padding-right: 7px;
 }
 .pnew img{
