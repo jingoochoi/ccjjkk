@@ -263,3 +263,10 @@ hr{
 .snew dd::before{
     content: '📜';
 }
+.pnew h3{
+    background-image: none;
+    text-align: center;
+}
+.pnew h3::before{
+    content: '📷';
+}
