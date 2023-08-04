@@ -44,6 +44,12 @@ li{
 .p2 h2{
     margin-bottom: 20px;
 }
+.p2 h2::before{
+    content: '🎥';
+}
+.p2 h2::after{
+    content: '📜';
+}
 h1::before{
     content: '📋';
 }
