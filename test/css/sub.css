@@ -302,6 +302,7 @@ hr{
 .pnew td:last-child{
     background-color: #ccc;
     padding-right: 7px;
+    padding-left: 7px;
 }
 .pnew img{
     height: 70px;
