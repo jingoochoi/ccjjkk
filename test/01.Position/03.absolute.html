@@ -14,7 +14,10 @@
             /* 글자세로중앙 */
             line-height: 100px;
         }
-
+        #a1{position: absolute;background: url(./images/ab1.jpg);
+            /* 3.absolute=절대적인 부로를 기준하여 위치를 이동,부모자격을 따져서 기준을 삼음(위치속성을 쓴 경우),위치이동값 쓰기 전과 후로 구분이 가능함(전=위에 있는 스태틱 존중,어떤 자식요소로 있는 경우=부모자격 없은 부모박스에도 가마니 위치함)(후=위치이동값 사용한 부분에 대해서만 스태틱 아닌 것만 부모다),앱솔루트 아래에 위치한 스태틱은 앱솔루트 인식불가능->위나 아래 위치 */
+        }
+        #a2{position: absolute;background: url(./images/ab1.jpg);}
         /* 첫번째 박스에 포지션 체크 */
         #r1{
             position: relative;
@@ -26,8 +29,8 @@
         }
         #r2{background: url(./images/ab4.jpg) no-repeat center/cover;
         position: relative;
-        bottom: 77px;
-        right: -124px;}
+        bottom: 10px;
+        right: -70px;}
         #s1{
             background-color: lightcoral;
         }
