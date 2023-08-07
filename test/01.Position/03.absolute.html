@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03. absolute 포지션</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;/* fwb */
+            /* 글자세로중앙 */
+            line-height: 100px;
+        }
+
+        /* 첫번째 박스에 포지션 체크 */
+        #r1{
+            position: relative;
+            /* 2.relative=top bottom left right are acceptible, original location is standrd,other factors are not had an effect,original location is fixed(so the original design is not changed),seeting with only two standard(top or bottom,left or right),margin is also acceptible with other static factors,위아래 관계가 성립(upper than static,later relative is upper than former one,z-index number is upper)
+            relative-top(bottom) left(right)=static */
+            /* z-index=겹치는 포지션을 준 경우 위치순러를 정하여 디스플레이 전환(default=0),숫자 비교용(클수로 위에),it is under than static when it is minus but also under than body,부모 인덱스부터 비교하기 때문에 여러 부분에 주지 말좌! */
+            /* 부모자격 */
+            top: 50px;
+            left: 50px;
+            background: url(./images/ab5.jpg) no-repeat center/cover;
+            z-index: 1;/*z-index is higher than other*/
+        }
+        #r2{background: url(./images/ab4.jpg) no-repeat center/cover;
+        position: relative;
+        bottom: 77px;
+        right: -124px;}
+        #s1{
+            background-color: lightcoral;
+        }
+        #s2{
+            background-color: lightblue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- .bx#s$*3 -->
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s1">s1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s2">s2</div>
+    <!-- zen coding=emmet coding
+    .=class
+    #=id
+    $=number increasing
+    *=repeat
+    {}=data(꺽쇠사이값)
+    []=속성세팅값
+    >=하위직계
+    +=형제
+    ()=요소구분 -->
+</body>
+</html>
