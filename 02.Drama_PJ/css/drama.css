@@ -12,3 +12,20 @@ html,body{
     margin: 0;
     padding: 0;
 }
+.tbl{font-family: 'Hahmlet';
+color: #222;
+border-collapse: collapse;}
+#drama{font-size: 24px;
+margin: 0 auto;
+max-width: 1000px;}
+#drama caption{font-size: 35px;
+font-weight: bold;
+letter-spacing: 5px;
+padding: 50px 0 20px;}
+/* table title default=center */
+#drama td,#drama th{padding: 8px 10px;}
+/* table
+1.display is block
+2.width=content;
+3.word wrap if the box became smaller than content
+(image->vertical scroll appear */
