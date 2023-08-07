@@ -18,11 +18,15 @@
         /* 첫번째 박스에 포지션 체크 */
         #r1{
             position: relative;
+            /* 2.relative=top bottom left right are acceptible, original location is standrd,other factors are not had an effect,original location is fixed(so the original design is not changed),seeting with only two standard(top or bottom,left or right) */
             top: 50px;
             left: 50px;
             background: url(./images/ab5.jpg) no-repeat center/cover;
         }
-        #r2{background-color: lightgreen;}
+        #r2{background: url(./images/ab5.jpg) no-repeat center/cover;
+            position: relative;
+            bottom: 77px;
+            right: -124px;}
         #s1{
             background-color: lightcoral;
         }
