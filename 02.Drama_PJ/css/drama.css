@@ -29,7 +29,16 @@ padding: 50px 0 20px;}
 border-bottom: 2px solid #000;}
 #drama tbody tr:last-of-type td{border-bottom: 2px solid #000;}
 #drama tbody tr:nth-of-type(even){background-color: #eee;}
-#drama tfoot td{text-align: center;}
+#drama tfoot td{text-align: center;
+padding: 45px 0;}
+#drama a{color: #000;
+text-decoration: none;}
+#drama tbody a:hover{color: pink;
+text-decoration: underline;
+text-decoration-style: dashed;}
+#drama tfoot a:hover{color: green;
+text-decoration: overline;
+text-decoration-style: wavy;}
 /* table
 1.display is block
 2.width=content;
