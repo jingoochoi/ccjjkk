@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>01. static 포지션</title>
+    <title>02. relative 포지션</title>
     <style>
         .bx{
             width: 100px;
@@ -16,20 +16,17 @@
         }
 
         /* 첫번째 박스에 포지션 체크 */
-        #s1{
-            background-color: lightgreen;
-            /* css position
-            for arranging location effectively
-            1.static(default)=top bottom left right are unacceptible,using margin for location(other static factors are had an effect) */
-            /* 위치이동속성=선택요소의 위치를 이동, 포지션에 따라 다르게 적용(top,bottom,left,right) */
+        #r1{
             position: relative;
-            top: 100px;
-            left: 100px;
+            top: 50px;
+            left: 50px;
+            background: url(./images/ab5.jpg) no-repeat center/cover;
         }
-        #s2{
+        #r2{background-color: lightgreen;}
+        #s1{
             background-color: lightcoral;
         }
-        #s3{
+        #s2{
             background-color: lightblue;
         }
 
@@ -37,9 +34,10 @@
 </head>
 <body>
     <!-- .bx#s$*3 -->
+    <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
+    <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
-    <div class="bx" id="s3">s3</div>
     <!-- zen coding=emmet coding
     .=class
     #=id
