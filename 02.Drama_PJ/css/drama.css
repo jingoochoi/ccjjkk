@@ -28,6 +28,8 @@ padding: 50px 0 20px;}
 #drama th{border-top: 2px solid #000;
 border-bottom: 2px solid #000;}
 #drama tbody tr:last-of-type td{border-bottom: 2px solid #000;}
+#drama tbody tr:nth-of-type(even){background-color: #eee;}
+#drama tfoot td{text-align: center;}
 /* table
 1.display is block
 2.width=content;
