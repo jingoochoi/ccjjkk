@@ -43,6 +43,8 @@ text-decoration-style: wavy;}
 .gubun{width: 1000px;max-width: 95%;margin-bottom: 200px;margin: 0 auto;overflow: hidden;}
 #gubun{font-size: 20px;float: right;border: 1px solid #999;border-collapse: separate;border-spacing: 5px;}
 #gubun td{padding: 5px;}
+#gubun tr:first-of-type td:first-of-type{border-right: 1px dotted #999;}
+#gubun tr+tr td{border-top: 4px dotted #999;}
 /* border-spacing=gap between cells
 border-spacing: 가로 세로
 border-spacing: 양방향 */
