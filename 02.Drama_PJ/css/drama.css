@@ -25,6 +25,7 @@ padding: 50px 0 20px;}
 /* table title default=center */
 #drama td,#drama th{padding: 8px 10px;}
 #drama tbody td{border-bottom: 1px solid #222;}
+#drama tbody tr td:first-of-type{text-align: center;}
 #drama th{border-top: 2px solid #000;
 border-bottom: 2px solid #000;background-color: #ccc;}
 #drama tbody tr:last-of-type td{border-bottom: 2px solid #000;}
