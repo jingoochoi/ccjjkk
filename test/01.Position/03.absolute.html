@@ -52,7 +52,8 @@
         .a5 img{vertical-align: top;}
         /* there is a gap under an only one image naturally in box(4px)
         use vertical-align to remove the gap */
-        .absimg{width: 92px;height: 115px;border: 10px ridge goldenrod;}
+        .absimg{width: 92px;height: 115px;border: 10px ridge goldenrod;margin: 0 auto;border-radius: 50%;overflow: hidden;position: relative;}
+        /* overflow: hidden;=부모자격 있을 때만 앱솔루트 자식들 숨김 */
         .absimg img{position: absolute;}
         /* because it is gentle absolute even static
         z-control,later one is upper */
@@ -75,7 +76,7 @@
         <img src="./images/ab2.jpg" alt="thanos">
     </div>
     <!-- absolute override -->
-    <div class="absimg">
+    <div class="absimg" title="absolute override">
         <img src="./images/ab3.jpg" alt="thor">
         <img src="./images/ab4.jpg" alt="docs">
     </div>
