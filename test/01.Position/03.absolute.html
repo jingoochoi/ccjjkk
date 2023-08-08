@@ -15,7 +15,7 @@
             line-height: 300px;
         }
         #a1{position: absolute;background: url(./images/ab1.jpg) no-repeat center/cover;
-            /* 3.absolute=절대적인 부로를 기준하여 위치를 이동,부모자격을 따져서 기준을 삼음(위치속성을 쓴 경우),위치이동값 쓰기 전과 후로 구분이 가능함(전=위에 있는 스태틱 존중,어떤 자식요소로 있는 경우=부모자격 없은 부모박스에도 가마니 위치함)(후=위치이동값 사용한 부분에 대해서만 스태틱 아닌 것만 부모다),앱솔루트 아래에 위치한 스태틱은 앱솔루트 인식불가능->위나 아래 위치,위치이동값 쓰지 않은 부분에 대해서는 부모 안 찾음,부모자격이 있는 요소들 중 가장 가까운 것이 부모다,부모자격이 모두 없으면 윈도우가 부모(not body,스크롤 위쪽의 화면),넓이높이가 퍼센트면 부모자격 기준(일반적으로 바로 싸고 있는 직계부모박스가 기준임) */
+            /* 3.absolute=절대적인 부로를 기준하여 위치를 이동,부모자격을 따져서 기준을 삼음(위치속성을 쓴 경우),위치이동값 쓰기 전과 후로 구분이 가능함(전=위에 있는 스태틱 존중,어떤 자식요소로 있는 경우=부모자격 없은 부모박스에도 가마니 위치함)(후=위치이동값 사용한 부분에 대해서만 스태틱 아닌 것만 부모다),앱솔루트 아래에 위치한 스태틱은 앱솔루트 인식불가능->위나 아래 위치,위치이동값 쓰지 않은 부분에 대해서는 부모 안 찾음,부모자격이 있는 요소들 중 가장 가까운 것이 부모다,부모자격이 모두 없으면 윈도우가 부모(not body,스크롤 위쪽의 화면),넓이높이가 퍼센트면 부모자격 기준(일반적으로 바로 싸고 있는 직계부모박스가 기준임),앱솔루트끼리는 서로 겹친다 */
             /* absolute size=content size is default */
             /* non-block + absolute = block(because of the size control).so, absolute=block */
             /* non-static position=relative,absolute,fixed,sticky */
@@ -46,8 +46,20 @@
         .s7{background-color: lightgreen;position: relative;}
         .s8{background-color: lightcyan;}
         .abs{position: absolute;width: 50px;height: 50px;color: #fff;background: url(./images/ab1.jpg) no-repeat center/cover;}
-        .a4{top: 0;left: 0;}
+        .a4{top: 0;left: 0;width: 25%;height: 40%;}
         .spa{position: absolute;bottom: 0;right: 0;border: 4px solid rebeccapurple;}
+        .a5{position: absolute;top: 20%;right: 10%;outline: 2px solid red;}
+        .a5 img{vertical-align: top;}
+        /* there is a gap under an only one image naturally in box(4px)
+        use vertical-align to remove the gap */
+        .absimg{width: 92px;height: 115px;border: 10px ridge goldenrod;}
+        .absimg img{position: absolute;}
+        /* because it is gentle absolute even static
+        z-control,later one is upper */
+        .absimg img:last-of-type{opacity: 0;transition: 0.5s;}
+        /* transition: 속성 시간(이것만 쓰면 모든 속성이 적용) 이징 지연시간;(animating) */
+        /* opcity:(0~1);=transparent */
+        .absimg:hover img:last-of-type{opacity: 1;}
     </style>
 </head>
 <body>
@@ -58,14 +70,23 @@
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
     <div class="bx" id="a2" title="standard is window.no parent.">a2</div>
+    <!-- absolute size -->
+    <div class="a5" title="absolute tize">
+        <img src="./images/ab2.jpg" alt="thanos">
+    </div>
+    <!-- absolute override -->
+    <div class="absimg">
+        <img src="./images/ab3.jpg" alt="thor">
+        <img src="./images/ab4.jpg" alt="docs">
+    </div>
     <!-- absolute finding parent -->
     <div class="bx2 s5">s5
         <div class="bx2 s6">s6
             <div class="bx2 s7">s7
                 <div class="bx2 s8">s8
-                    <div class="abs a3">a3</div>
-                    <div class="abs a4">a4</div>
-                    <span class="spa">i am span abs</span>
+                    <div class="abs a3" title="i am gentle">a3</div>
+                    <div class="abs a4" title="finding up parents">a4</div>
+                    <span class="spa" title="block changed auto">i am span abs</span>
                 </div>
             </div>
         </div>
