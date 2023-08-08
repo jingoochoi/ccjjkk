@@ -26,7 +26,7 @@ padding: 50px 0 20px;}
 #drama td,#drama th{padding: 8px 10px;}
 #drama tbody td{border-bottom: 1px solid #222;}
 #drama th{border-top: 2px solid #000;
-border-bottom: 2px solid #000;}
+border-bottom: 2px solid #000;background-color: #ccc;}
 #drama tbody tr:last-of-type td{border-bottom: 2px solid #000;}
 #drama tbody tr:nth-of-type(even){background-color: #eee;}
 #drama tfoot td{text-align: center;
