@@ -14,19 +14,11 @@
             /* 글자세로중앙 */
             line-height: 300px;
         }
-        /* fixed position
-        1.window is parent->similar to absolute but parent is different
-        2.fixed in screen when scroll
-        3.위치속성값 없으면 젠틀앱솔과 똑같음
-        4.size is content size unless control size
-        5.lnline + fixed = block
-        6.부모요소가 아무리 많이 싸여있어도 픽스드 주면 화면을 기준하여 위치를 잡는다.
-        7.son is also fixed if parent also fixed */
-        /* use
-        screen-fixed (do not care about scroll)
-        appear after hidden at the outside of screen
-        screen standard design(?)
-        단, 배경고정과는 다르다 */
+        .stbx{position: sticky;text-align: center;font-size: 30px;padding: 50px;background-color: lightpink;width: 50%;left: 50px;top: 200px;}
+        /* sticky position
+        1.위치값 탑 설정에 따라 화면에 고정됨
+        2.relative at first, 위치값 from top if set top. fixed at the moment of top setting
+        3.sticky accepting span->wraping box is standard(전체 스크롤 시 적용요소가 바디 바로 아래 자식요소로 있어야 함,부모요소를 만들고 그 부모요소들 중 오버플로우 적용된 경우 불가,특정박스 하위요소인 경우 박스 내부 화면을 기준으로 하기 때문에 반드시 height(auto제외)가 세팅되어야 함) */
         .fxb{position: fixed;background: url(./images/ab0.jpg) repeat-x 0/auto 100%;z-index: 999;width: 100%;height: 200px;top: 0;font-size: 35px;line-height: 200px;text-align: center;color: white;}
         .f2{top: 0;left: 0;}
         #a1{position: absolute;background: url(./images/ab1.jpg) no-repeat center/cover;margin-top: 10px;
@@ -44,8 +36,7 @@
         }
         #r2{background: url(./images/ab4.jpg) no-repeat center/cover;
         position: relative;
-        bottom: 137px;
-        right: -237px;}
+        }
         #s1{
             background-color: lightcoral;
         }
@@ -84,15 +75,17 @@
 </head>
 <body>
     <!-- .bx#s$*3 -->
+    
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
-    <div class="fxb f1">i am gentle fixed</div>
+    <div class="stbx f2">i am sticky.none-disapear.</div>
+    <!-- <div class="fxb f1">i am gentle fixed</div> -->
     <div class="bx" id="a1" title="i am gentle">a1</div>
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s2">s2</div>
     <div class="bx" id="a2" title="standard is window.no parent.">a2</div>
     <!-- fixed position -->
-    <div class="fxb f2">i am fixed.window is parent.</div>
+    <!-- <div class="fxb f2">i am sticky.none-disapear.</div> -->
     <div class="fp">
         <img src="./images/ab0.jpg" alt="poster">
         <span>poster</span>
