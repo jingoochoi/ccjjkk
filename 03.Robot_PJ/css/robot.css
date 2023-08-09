@@ -37,7 +37,7 @@ body *{outline: 2px dashed yellow;}
 .body div{position: absolute;}
 .neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;border-radius: 0 0 40% 40%;}
 .arm{width: 50px;height: 200px;}
-.arm span{}
+.arm span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;}
 .arm1{left: -70px;}
 .arm2{right: -70px;}
 .leg{width: 80px;height: 250px;top: 100%;}
