@@ -14,3 +14,6 @@
 
 html,body,h1,h2,h3,ul,ol{margin: 0;padding: 0;}
 body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
+body *{outline: 2px dashed yellow;}
+.boxrobot{padding: 200px 0 50px;}
+.head{width: 250px;height: 250px;margin: 0 auto;}
