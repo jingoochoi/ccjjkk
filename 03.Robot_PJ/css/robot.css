@@ -33,5 +33,5 @@ body *{outline: 2px dashed yellow;}
 .ear2{right: -50px;border-radius: 0 50% 50% 0;}
 .body{width: 250px;height: 400px;position: relative;margin: 0 auto;margin-top: 50px;}
 .body div{position: absolute;}
-.neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;}
+.neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;border-radius: 0 0 40% 40%;}
 /* center=calc(50% of parent - content width/2) */
