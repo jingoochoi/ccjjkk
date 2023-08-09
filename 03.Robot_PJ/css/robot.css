@@ -18,7 +18,7 @@ body *{outline: 2px dashed yellow;}
 .metal1{background: url(../images/metal01.jpg) no-repeat center/cover;}
 .metal2{background: url(../images/metal02.jpg) no-repeat center/cover;}
 .mainarea{overflow: hidden;}
-.boxrobot{padding: 200px 0 50px;margin-top: 30px;}
+.boxrobot{padding: 200px 0 600px;margin-top: 30px;}
 .head{width: 250px;height: 250px;margin: 0 auto;background: url(../images/metal01.jpg) no-repeat center/cover;position: relative;border-radius: 40%;z-index: 3;}
 .head::before{content: '';display: block;position: absolute;top: -60px;left: -25px;width: 300px;height: 200px;background: url(../images/hair.png) no-repeat 0/100% 100%;}
 .head:hover::before{content: '';display: block;position: absolute;top: -150px;left: -80px;width: 400px;height: 500px;background: url(../images/hair2.png) no-repeat 0/100% 100%;}
@@ -36,13 +36,14 @@ body *{outline: 2px dashed yellow;}
 .body::after{content: '';display: block;position: absolute;width: 257px;height: 100px;background-image: linear-gradient(to top,green,yellowgreen);bottom: 0;left: -18px;}
 .body div{position: absolute;}
 .neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;border-radius: 0 0 40% 40%;}
-.arm{width: 50px;height: 200px;}
-.arm span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;}
+.arm{width: 50px;height: 200px;border-radius: 20%;}
+.arm span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
 .arm1{left: -70px;}
 .arm2{right: -70px;}
-.leg{width: 80px;height: 250px;top: 100%;}
-.leg1{left: 0;}
-.leg2{right: 0;}
+.leg{width: 80px;height: 250px;top: 95%;border-radius: 20%;}
+.leg span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
+.leg1{left: 10px;}
+.leg2{right: 10px;}
 .sd{width: 80px;height: 80px;top: -15px;}
 .sd1{left: -85px;border-radius: 50% 0 0 50%;}
 /* border-radius: 왼위 오위(&대각선) 오아 */
