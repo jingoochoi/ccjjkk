@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>05. sticky 포지션 응용</title>
+        <style>
+            html,body{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                height: 3000px;
+            }
+
+            /* 공통박스 */
+            .bx{
+                position: sticky;
+                /* 포지션 스티키! */
+                text-align: center;
+                margin-top: 300px;
+                top: 0;
+            }
+            .bx:nth-child(2){top: 105px;}
+            .bx:nth-child(3){top: calc(105px*2);}
+            .bx:nth-child(4){top: calc(105px*3);}
+            .bx:nth-child(5){top: calc(105px*4);}
+            .bx:nth-child(6){top: calc(105px*5);}
+            /* css calculating
+            calc()=사칙연산,덧셈과 뺄셈은 띄어쓰기,단위필수 */
+        </style>
+    </head>
+    <body>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_01.jpg" alt="picaso">
+        </div>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_02.jpg" alt="picaso">
+        </div>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_03.jpg" alt="picaso">
+        </div>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_04.jpg" alt="picaso">
+        </div>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_05.jpg" alt="picaso">
+        </div>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_06.jpg" alt="picaso">
+        </div>
+        <div class="bx">
+            <img src="./sticky_imgs/picaso_07.jpg" alt="picaso">
+        </div>
+    </body>
+</html>
