@@ -15,6 +15,8 @@
 html,body,h1,h2,h3,ul,ol{margin: 0;padding: 0;}
 body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 body *{outline: 2px dashed yellow;}
+.metal1{background: url(../images/metal01.jpg) no-repeat center/cover;}
+.metal2{background: url(../images/metal02.jpg) no-repeat center/cover;}
 .mainarea{overflow: hidden;}
 .boxrobot{padding: 200px 0 50px;margin-top: 30px;}
 .head{width: 250px;height: 250px;margin: 0 auto;background: url(../images/metal01.jpg) no-repeat center/cover;position: relative;border-radius: 40%;}
