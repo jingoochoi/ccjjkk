@@ -39,6 +39,8 @@ body *{outline: 2px dashed yellow;}
 .arm{width: 50px;height: 200px;border-radius: 20%;}
 .arm span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
 .arm span::after{content: '';display: block;position: absolute;top: 100%;left: calc(50% - 70px/2);width: 70px;height: 100px;outline: 2px dashed lime;background: url(../images/hand_left.png) no-repeat 0/100%; }
+.arm1 span::after{margin-left: 6px;}
+.arm2 span::after{background: url(../images/hand_right.png) no-repeat 0/100%;margin-left: -6px;}
 .arm1{left: -70px;}
 .arm2{right: -70px;}
 .leg{width: 80px;height: 250px;top: 95%;border-radius: 20%;}
