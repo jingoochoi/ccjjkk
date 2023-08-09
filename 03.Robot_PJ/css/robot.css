@@ -12,3 +12,5 @@
     font-family: 'Orbitron', sans-serif;
 */
 
+html,body,h1,h2,h3,ul,ol{margin: 0;padding: 0;}
+body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
