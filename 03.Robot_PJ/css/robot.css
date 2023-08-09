@@ -24,3 +24,6 @@ body *{outline: 2px dashed yellow;}
 .eye2{background-image: url(../images/e2.jpg);top: 50px;right: 50px;}
 .nose{background: url(../images/nose.jpg) no-repeat center/cover;width: 50px;height: 50px;top: 100px;left: 100px;border-radius: 50%;}
 .mouth{background: url(../images/mouth.png) no-repeat center/100% 100%;width: 150px;height: 80px;left: 50px;bottom: 10px;}
+.ear{top: 100px;width: 50px;height: 50px;background: url(../images/metal02.jpg) no-repeat center/cover;}
+.ear1{left: -50px;border-radius: 50% 0 0 50%;}
+.ear2{right: -50px;border-radius: 0 50% 50% 0;}
