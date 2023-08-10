@@ -38,7 +38,7 @@ body *{outline: 2px dashed yellow;}
 .neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;border-radius: 0 0 40% 40%;}
 .arm{width: 50px;height: 200px;border-radius: 20%;}
 .arm span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
-.arm span:hover{transform: rotate(2880deg);transition: transform 20s;transform-origin: center top;}
+.arm span:hover{transform: rotate(2880deg);transition: transform 10s linear;transform-origin: center top;}
 .arm span::before{content: '';display: block;position: absolute;width: 50px;height: 50px;background: url(../images/metal01.jpg) no-repeat 0/100%;border-radius: 50%;top: -25px;left: -5px;}
 .arm span:hover::before{transform: rotate(2880deg);transition: transform 10s linear;}
 .arm span::after{content: '';display: block;position: absolute;top: 100%;left: calc(50% - 70px/2);width: 70px;height: 100px;background: url(../images/hand_left.png) no-repeat 0/100%; }
@@ -48,7 +48,7 @@ body *{outline: 2px dashed yellow;}
 .arm2{right: -60px;top: 30px;transform: rotate(-45deg);transform-origin: left top;}
 .leg{width: 80px;height: 250px;top: 95%;border-radius: 20%;}
 .leg span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
-.leg span::before{content: '';display: block;position: absolute;top: 50%;left: -5%;width: 110%;height: 60%;background-image: linear-gradient(to right,pink,hotpink);border-top: 5px solid #000;}
+.leg span::before{content: '';display: block;position: absolute;top: 50%;left: -5%;width: 110%;height: 60%;background-image: linear-gradient(to right,pink,hotpink);border-top: 5px solid #000;border-radius: 0 0 30% 30%;}
 .leg span::after{content: '';display: block;position: absolute;top: 100%;left: -20%;width: 120%;height: 80px;background-image: linear-gradient(to right,pink,hotpink);border-radius: 50% 50% 0 0;border: 5px solid #000;border-bottom: 10px solid black;}
 .leg1{left: 10px;}
 .leg2{right: 10px;}
