@@ -94,14 +94,14 @@
             /* 배경색변경 */
             background-color: palevioletred;
             /* 트랜지션 원본(양방향/돌아올때) */
-            
+            transition:  2s,background-color 5s 2s;
             /* 전체 2초가 애니, 배경만 2초후 5초간 애니 */
             
         }
         /* 오버시 트랜지션 별도 설정하기! */
         #tr3:hover span{
             /* 위치이동 */
-            top: -1200px;
+            top: 100px;
             left: 70%;
             /* 크기변경 */
             width: 400px;
@@ -110,7 +110,7 @@
             background-color: lightgreen;
 
             /* 오버시 트랜지션 별도로 지정하기 */
-            
+            transition:  5s,top 1s ease-out 4s;
             /* 전체는 5초간 애니, top속성만 4초후 1초간 마지막에 천천히 애니 */
         }
         
@@ -129,7 +129,7 @@
             /* 배경색변경 */
             background-color: royalblue;
             /* 트랜지션 원본(양방향/돌아올때) */
-            
+            transition:  2s;
             
         }
         /* 체크박스가 체크되면 그 다음 형제요소를 변경하여
