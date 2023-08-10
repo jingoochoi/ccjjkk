@@ -58,5 +58,5 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 /* border-radius: 왼위 오위(&대각선) 오아 */
 .sd2{right: -75px;border-radius: 0 50% 50% 0;}
 .tv{top: 6%;left: 50%;transform: translateX(-50%);width: 190px;height: 120px;background: url(../images/tv.jpg) no-repeat 0/100%;border-radius: 20px;}
-.screen{position: absolute;top: 5px;left: 11px;width: 133px;height: 100px;background-color: red;border-radius: 15px;}
+.screen{position: absolute;top: 5px;left: 11px;width: 133px;height: 100px;background-color: red;border-radius: 10px;}
 /* center=calc(50% of parent - content width/2) */
