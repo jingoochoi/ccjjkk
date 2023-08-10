@@ -5,15 +5,20 @@
         <title>스타벅스 응용</title>
         <style>
             body {
-                background: #000 url(./starbucks_img/reserve_bg.jpg) no-repeat top/100%;
+                background: #000 url(./starbucks_img/reserve_bg.jpg) no-repeat fixed center/cover;
             }
             #trans10{
+                position: absolute;
+                top: calc(50% - 334px/2);
+                left: calc(50% - 334px/2);
+                /* another way
+                top: 50%;left: 50%;transform: translate(-50%,-50%); */
                 width: 334px;
                 height: 334px;
                 /* 가운데정렬풀기 */
                 text-align: left;
                 /* outline: 2px dashed lime; */
-                margin: 300px auto;
+                margin: 0 auto;
                 
             }
             /* 이미지에 겹치도록 앱솔루트 포지션 셋팅 */
