@@ -37,7 +37,7 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 .body div{position: absolute;}
 .neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;border-radius: 0 0 40% 40%;}
 .arm{width: 50px;height: 200px;border-radius: 20%;}
-.arm::before{}
+.arm::before{content: '';display: block;position: absolute;width: 80px;height: 80px;background: url(../images/metal01.jpg) no-repeat 0/100%;}
 .arm span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
 .arm span:hover{transform: rotate(-2880deg);transition: transform 6s linear;transform-origin: center top;}
 .arm span::before{content: '';display: block;position: absolute;width: 50px;height: 50px;background: url(../images/metal01.jpg) no-repeat 0/100%;border-radius: 50%;top: -25px;left: -5px;outline: 3px solid black;}
