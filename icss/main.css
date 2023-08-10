@@ -18,6 +18,9 @@ body h1{
     color: #000;
     text-decoration: none;
 }
+.rbt a{color: #000;text-decoration: none;}
+.rbt::before{content: '🍔';}
+.rbt::after{content: '🎤';}
 .p1::before{
     content: 'N';
     background-color: yellowgreen;
