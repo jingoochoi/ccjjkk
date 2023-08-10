@@ -69,7 +69,7 @@
             */
             #trans1:hover img {
                 /* 트랜스폼 Y축회전 - tfry */
-                
+                transform: rotateY(180deg);filter: grayscale(100%);filter: blur(3px);
                 /* CSS 필터적용하기 
                 : 필터속성은 흑백, 흐림, 세피아, 명암,
                 채도 등 출력 이미지를 변경하고자 할때
@@ -85,15 +85,15 @@
             */
             #trans2 img {
                 /* 트랜스폼 X축회전 : tfrx */
-                
+                transform: rotateX(180deg);
                 /* 필터 흐림효과 */
-                
+                filter: blur(3px);
             }
             #trans2:hover img {
                 /* 트랜스폼 X축회전 : tfrx */
-                
+                transform: rotateX(0);
                 /* 흐림 복원 */
-                
+                filter: blur(0);
             }
 
             /* 
