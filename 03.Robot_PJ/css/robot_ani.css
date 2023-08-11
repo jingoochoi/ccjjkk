@@ -57,11 +57,11 @@
 @keyframes hypeboy2 {
     to{transform: rotate(-2880deg);transition: transform 6s linear;}
 }
-.boxrobot{animation: rocotani 5s linear 3s   forwards;}
-.arm2 span::before{animation: hypeboy2 6s linear 3s   ;}
-.arm2 span{animation: hypeboy 6s linear 3s   ;transform-origin: center top;}
+.boxrobot{animation: rocotani 5s linear 2.5s   forwards;}
+.arm2 span::before{animation: hypeboy2 6s linear 2.5s   ;}
+.arm2 span{animation: hypeboy 6s linear 2.5s   ;transform-origin: center top;}
 @keyframes walking {
     to{transform: scaleY(0.9);}
 }
-.leg1{animation: walking .4s ease-in-out 3s 12 alternate ;}
-.leg2{animation: walking .4s ease-in-out 3.4s 12 alternate ;}
+.leg1{animation: walking .4s ease-in-out 2.5s 12 alternate ;}
+.leg2{animation: walking .4s ease-in-out 2.9s 12 alternate ;}
