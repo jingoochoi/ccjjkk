@@ -12,14 +12,34 @@
     }
     여러장면 코딩법
     @keyframes 키프레임명{
-        0%{시작css}
+        0%{시작css}=from
         10%{중간css}
         11%{중간css}
         20%{중간css}
         ......
-        100%{끝css}
-    } */
+        100%{끝css}=to
+    }
+    만약 첫 장면이 이미 css에 설정되어있으면 from 생략가능
+    시간계산법
+    내가 지정한 %의 장면은 전체시간*%/100=해당시간
+    키프레임 호출법
+    animation: name time easing delay repeat direction lastscene;
+    1) 이름(animation-name) : keyframe 이름
+    2) 시간(animation-duration) : 애니메이션 동작시간(초단위:s)
+    3) 이징(animation-timing-function) : easing 가속도
+    4) 지연(animation-delay) : 애니메이션 시작지연시간(초단위:s)
+    5) 반복여부(animation-iteration-count) : 애니메이션 반복횟수
+    - 기본값 1, 숫자를 쓰면 반복횟수
+    - 영원히는 infinite(인피니트)
+    6) 방향(animation-direction) : 시작->끝
+    - 대체경로 설정하기 : alternate : 시작->끝,끝->시작
+    - 대체경로는 반복횟수가 2이상 또는 infinite 이여야함
+    7) 마지막상태(animation-fill-mode) : 애니메이션이 끝났을때
+    - 처음상태로 돌아가는 것이 기본!
+    - 마지막 상태를 유지하고 싶을때 forwards(앞쪽에...즉,애니끝장면)
+ */
 @keyframes logoani {
-    from{}
-    to{}
+    /* from{} */
+    to{top: 10px;left: 10px;transform: scale(1);}
 }
+.logo{animation: logoani 1s ease-in-out 1s   forwards;}
