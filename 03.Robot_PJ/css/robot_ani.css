@@ -51,15 +51,15 @@
 @keyframes rocotani {
     to{transform: scale(0.6) translate(0,-30%);}
 }
-@keyframes hypeboy {
+@keyframes ditto {
     to{transform: rotate(-2880deg);transition: transform 6s linear;transform-origin: center top;}
 }
-@keyframes hypeboy2 {
+@keyframes ditto2 {
     to{transform: rotate(-2880deg);transition: transform 6s linear;}
 }
 .boxrobot{animation: rocotani 5s linear 2.5s   forwards;}
-.arm2 span::before{animation: hypeboy2 6s linear 2.5s   ;}
-.arm2 span{animation: hypeboy 6s linear 2.5s   ;transform-origin: center top;}
+.arm2 span::before{animation: ditto2 6s linear 2.5s   ;}
+.arm2 span{animation: ditto 6s linear 2.5s   ;transform-origin: center top;}
 @keyframes walking {
     to{transform: scaleY(0.9);}
 }
