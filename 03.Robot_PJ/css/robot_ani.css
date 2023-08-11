@@ -58,8 +58,8 @@
     to{transform: rotate(-2880deg);transition: transform 6s linear;}
 }
 .boxrobot{animation: rocotani 5s linear 3s   forwards;}
-.arm2 span::before{animation: hypeboy2 5s linear 3s   ;}
-.arm2 span{animation: hypeboy 5s linear 3s   ;transform-origin: center top;}
+.arm2 span::before{animation: hypeboy2 6s linear 3s   ;}
+.arm2 span{animation: hypeboy 6s linear 3s   ;transform-origin: center top;}
 @keyframes walking {
     to{transform: scaleY(0.9);}
 }
