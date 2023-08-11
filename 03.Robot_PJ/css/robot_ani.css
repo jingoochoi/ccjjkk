@@ -54,8 +54,11 @@
 @keyframes hypeboy {
     to{transform: rotate(-2880deg);transition: transform 6s linear;transform-origin: center top;}
 }
+@keyframes hypeboy2 {
+    to{transform: rotate(-2880deg);transition: transform 6s linear;}
+}
 .boxrobot{animation: rocotani 5s linear 3s   forwards;}
-.arm2 span::before{animation: hypeboy 5s linear 3s   ;}
+.arm2 span::before{animation: hypeboy2 5s linear 3s   ;}
 .arm2 span{animation: hypeboy 5s linear 3s   ;}
 @keyframes walking {
     to{transform: scaleY(0.9);}
