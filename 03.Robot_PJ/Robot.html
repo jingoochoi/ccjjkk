@@ -51,9 +51,9 @@
                                      3.ArmDp-zijuc(supershy) -->
                             </div>
                             <div class="boxbtn">
-                                <button onclick="change()">ch1</button>
-                                <button onclick="change()">ch2</button>
-                                <button onclick="change()">ch3</button>
+                                <button onclick="change('1')">ch1</button>
+                                <button onclick="change('2')">ch2</button>
+                                <button onclick="change('3')">ch3</button>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,10 @@
             console.log("by",me);
             // console is browser console(f12)
             document.getElementById('mv').src='https://www.youtube.com/embed/pSUydWEqKwE';
-
-            function change(){console.log('change')}
+            // function is for saving code
+            // code will operate if summon function
+            // function name(element){code}
+            function change(food){console.log('change',food);}
         </script>
     </body>
 </html>
