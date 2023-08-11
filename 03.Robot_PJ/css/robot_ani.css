@@ -48,3 +48,7 @@
     from{transform: rotate(-45deg);}
     to{transform: rotate(45deg);}
 }
+@keyframes rocotani {
+    to{transform: scale(1) translate(0,0);}
+}
+.boxrobot{animation: rocotani 5s linear 3s   forwards;}
