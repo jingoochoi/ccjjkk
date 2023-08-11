@@ -40,6 +40,11 @@
  */
 @keyframes logoani {
     /* from{} */
-    to{top: 10px;left: 10px;transform: scale(1);}
+    60%{top: 10px;left: 10px;transform: scale(1);}
+    100%{top: 10px;left: 10px;transform: scale(1) rotate(-45deg);}
 }
-.logo{animation: logoani 1s ease-in-out 1s   forwards;}
+.logo{animation: logoani 1s ease-in-out 1s   forwards,swingani .5s ease-in-out 2s infinite alternate;}
+@keyframes swingani {
+    from{transform: rotate(-45deg);}
+    to{transform: rotate(45deg);}
+}
