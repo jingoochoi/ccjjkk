@@ -46,7 +46,7 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 .arm2 span:hover::before{transform: rotate(-2880deg);transition: transform 6s linear;}
 .arm span::after{content: '';display: block;position: absolute;top: 100%;left: calc(50% - 70px/2);width: 70px;height: 100px;background: url(../images/hand_left.png) no-repeat 0/100%;}
 .arm1 span::after{margin-left: 6px;}
-.arm2 span::after{background: url(../images/hand_right.png) no-repeat 0/100%;margin-left: -6px;z-index: 3;}
+.arm2 span::after{background: url(../images/hand_right.png) no-repeat 0/100%;margin-left: -6px;}
 .arm1{left: -60px;top: 50px;transform: rotate(90deg);transform-origin: right top;}
 .arm2{right: -60px;top: 30px;transform: rotate(-45deg);transform-origin: left top;}
 .leg{width: 80px;height: 250px;top: 95%;border-radius: 20%;transform-origin: top;}
