@@ -49,7 +49,7 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 .arm2 span::after{background: url(../images/hand_right.png) no-repeat 0/100%;margin-left: -6px;}
 .arm1{left: -60px;top: 50px;transform: rotate(90deg);transform-origin: right top;}
 .arm2{right: -60px;top: 30px;transform: rotate(-45deg);transform-origin: left top;}
-.leg{width: 80px;height: 250px;top: 95%;border-radius: 20%;}
+.leg{width: 80px;height: 250px;top: 95%;border-radius: 20%;transform-origin: top;}
 .leg::after{content: '';display: block;position: absolute;width: 80px;height: 80px;background: url(../images/metal01.jpg) no-repeat 0/100%;border-radius: 30%;top: 90%;left: calc(50% - 80px/2);outline: 3px solid black;}
 .leg span{position: absolute;width: 80%;height: 80%;left: 10%;top: 100%;border-radius: 20%;}
 .leg span::before{content: '';display: block;position: absolute;top: 50%;left: -5%;width: 110%;height: 60%;background-image: linear-gradient(to right,pink,hotpink);border-top: 5px solid #000;border-radius: 0 0 30% 30%;}
