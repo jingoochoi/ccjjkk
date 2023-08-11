@@ -65,3 +65,7 @@
 }
 .leg1{animation: walking .4s ease-in-out 2s 14 alternate ;}
 .leg2{animation: walking .4s ease-in-out 2.4s 14 alternate ;}
+@keyframes mouthani {
+    to{transform: scaleY(.5);}
+}
+.mouth{animation: mouthani .3s linear 8s infinite alternate ;}
