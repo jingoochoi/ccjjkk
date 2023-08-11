@@ -45,15 +45,16 @@
                         <div class="sd sd2 metal1"></div>
                         <div class="tv">
                             <div class="screen">
-                                <iframe src="https://www.youtube.com/embed/11cta61wi0g" id="mv"></iframe>
+                                <iframe src="https://www.youtube.com/embed/11cta61wi0g" id="mv" allow="autoplay"></iframe>
                                 <!-- 1.11cta61wi0g(hype boy)
                                      2.pSUydWEqKwE(dito)
                                      3.ArmDp-zijuc(supershy) -->
                             </div>
                             <div class="boxbtn">
-                                <button onclick="change('1')">ch1</button>
-                                <button onclick="change('2')">ch2</button>
-                                <button onclick="change('3')">ch3</button>
+                                <button onclick="change('11cta61wi0g')">ch1</button>
+                                <button onclick="change('pSUydWEqKwE')">ch2</button>
+                                <button onclick="change('ArmDp-zijuc')">ch3</button>
+                                <button onclick="size()">🔄</button>
                             </div>
                         </div>
                     </div>
@@ -86,7 +87,11 @@
             // function is for saving code
             // code will operate if summon function
             // function name(element){code}
-            function change(food){console.log('change',food);}
+            function change(food){console.log('change',food);document.getElementById('mv').src='https://www.youtube.com/embed/'+food+'?autoplay=1';}//change function
+            function size(){console.log('size');
+            // control class
+            document.getElementsByClassName('tv').item(0).classList.toggle('on');
+            }//size function with class
         </script>
     </body>
 </html>
