@@ -63,5 +63,5 @@
 @keyframes walking {
     to{transform: scaleY(0.9);}
 }
-.leg1{animation: walking .4s ease-in-out 2.5s 12 alternate ;}
-.leg2{animation: walking .4s ease-in-out 2.9s 12 alternate ;}
+.leg1{animation: walking .4s ease-in-out 2s 14 alternate ;}
+.leg2{animation: walking .4s ease-in-out 2.4s 14 alternate ;}
