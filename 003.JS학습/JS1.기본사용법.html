@@ -115,21 +115,31 @@
             // innerHTML->document.get
             // use variable(variable name is address,no quotation,no spacing,print when)
             function look(){console.log('look');document.getElementById('name').innerHTML='<img src="./images/kim.png" alt="kim">';var goal=document.getElementsByClassName('pbox')[0];goal.style.background='url(./images/kimbs.jpg) no-repeat top/cover';goal.style.color='lime';goal.style.fontSize='40px';goal.style.lineHeight='100px';goal.style.textShadow='2px 2px 2px #000';goal.style.transition='all 2s,transform 1s 2s,top 3s 2s,left 3s 2s';goal.style.width='600px';goal.style.height='600px';goal.style.borderRadius='50%';goal.style.top='50%';goal.style.left='50%';goal.style.transform='translate(-50%,-50%) rotate(360deg) scale(1.3)';document.body.style.backgroundColor='lightgreen';document.body.style.transition='3s 2s';}//function look
+            function change(){console.log('change');var goal=document.getElementsByClassName('pbox').item(0);goal.style.backgroundImage="url(https://image.kmib.co.kr/online_image/2022/0727/2022072621325079008_1658838770_0017317378.jpg)";goal.innerHTML='woo to the young<br>to the woo';}//function change
+            function free(vincent,van){console.log('free',vincent,van);}//function free
     </script>
     <style>
-        .pbox{position: absolute;top: 0;left: 0;margin: 0;padding: 0;border: 4px solid purple;box-sizing: border-box;width: 500px;height: 500px;line-height: 50px;font-size: 30px;text-align: center;white-space: nowrap;cursor: pointer;padding-top: 200px;}
+        .pbox{position: absolute;top: 0;left: 0;margin: 0;padding: 0;border: 4px solid purple;box-sizing: border-box;width: 500px;height: 500px;line-height: 50px;font-size: 30px;text-align: center;white-space: nowrap;cursor: pointer;padding-top: 200px;user-select: none;/*텍스트 선택방지*/}
+        .woniya{position: absolute;top: 0;right: 0;width: 200px;height: 200px;border-radius: 50%;background-repeat: no-repeat;background-size: cover;box-sizing: border-box;}
+        .woniya:nth-child(1){right: 400px;background-image: url(./images/01.png);}
+        .woniya:nth-child(2){right: 200px;background-image: url(./images/02.png);}
+        .woniya:nth-child(3){background-image: url(./images/03.png);}
     </style>
 </head>
 
 <body>
 
     <!-- 드라마 소개박스 -->
-    <p class="pbox" title="여기를 클릭하세요!" onclick="look()">
+    <p class="pbox" title="여기를 클릭하세요! 더블클릭 시 우영우" onclick="look()" ondblclick="change()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
         
     </p>
-
+    <div class="boxya">
+        <div class="woniya" onmouseover="free(0,'별이 빛나는 밤')"></div>
+        <div class="woniya" onmouseover="free(1,'론강의 별이 빛나는 밤')"></div>
+        <div class="woniya" onmouseover="free(2,'밤의 카페 테라스')"></div>
+    </div>
 </body>
 
 </html>
