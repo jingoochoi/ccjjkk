@@ -101,7 +101,7 @@
             
             [ JS에서 요소 선택 후 CSS변경하기 ]
 
-            선택요소.style.스타일시트속성명 = 속성값
+            1.선택요소.style.스타일시트속성명 = 속성값
             - 선택요소의 CSS특정 속성값을 변경함
             - 스타일시트 속성명은 모두 변수형으로 JS브라우저
             객체의 속성으로 만들어져 있다!
@@ -114,7 +114,8 @@
 
                 -> JS에서 CSS를 변경하면 요소 태그 내부에
                 style속성으로 인라인코딩 되어 들어간다!
-                (최우선 적용!)*/
+                (최우선 적용!)
+                2.한 번에 css setting=style.cssText='' but 상단 스타일 속성명 무시됨, `을 이용하여 엔터 허용 문자를 넣어준다*/
             // document.write('<h1>me</h1>');
             // alert('gomahera');
             // console.log('colon');
@@ -122,7 +123,7 @@
             // use variable(variable name is address,no quotation,no spacing,print when)
             function look(){console.log('look');document.getElementById('name').innerHTML='<img src="./images/kim.png" alt="kim">';var goal=document.getElementsByClassName('pbox')[0];goal.style.background='url(./images/kimbs.jpg) no-repeat top/cover';goal.style.color='lime';goal.style.fontSize='40px';goal.style.lineHeight='100px';goal.style.textShadow='2px 2px 2px #000';goal.style.transition='all 2s,transform 1s 2s,top 3s 2s,left 3s 2s';goal.style.width='600px';goal.style.height='600px';goal.style.borderRadius='50%';goal.style.top='50%';goal.style.left='50%';goal.style.transform='translate(-50%,-50%) rotate(360deg) scale(1.3)';document.body.style.backgroundColor='lightgreen';document.body.style.transition='3s 2s';}//function look
             function change(){console.log('change');var goal=document.getElementsByClassName('pbox').item(0);goal.style.backgroundImage="url(https://image.kmib.co.kr/online_image/2022/0727/2022072621325079008_1658838770_0017317378.jpg)";goal.innerHTML='woo to the young<br>to the woo';}//function change
-            function free(vincent,van){console.log('free',vincent,van);var fool=document.querySelectorAll('.boxya .woniya');/*기존보다 더 간단해진 방식*/}//function free
+            function free(vincent,van){console.log('free',vincent,van);var fool=document.querySelectorAll('.boxya .woniya')[vincent];/*기존보다 더 간단해진 방식*/console.log('yeah',fool,fool.length);fool.style.transition='1s ease-out,border-radius 1s 1s';fool.style.top='calc(100% - 200px)';fool.style.right='calc(100% - 200px - '+vincent+'*200px)';fool.style.borderRadius='0';fool.style.border='10px ridge goldenrod';fool.innerHTML='<h4>고흐<br>'+van+'</h4>';/*한 번에 css setting=style.cssText but 상단 스타일 속성명 무시됨, `을 이용하여 엔터 허용 문자를 넣어준다*/fool.querySelector('h4').style.cssText=`position: absolute;bottom: 10px;width: 100%;color: white;font-size: 14px;text-align: center;margin: 0;padding: 0;`;}//function free
     </script>
     <style>
         .pbox{position: absolute;top: 0;left: 0;margin: 0;padding: 0;border: 4px solid purple;box-sizing: border-box;width: 500px;height: 500px;line-height: 50px;font-size: 30px;text-align: center;white-space: nowrap;cursor: pointer;padding-top: 200px;user-select: none;/*텍스트 선택방지*/}
