@@ -5,18 +5,54 @@
     <meta charset="UTF-8">
     <title>JS01. 자바스크립트 기본 + DOM선택법</title>
     <!-- javascript area(internal) -->
-    <script></script>
+    <script>
+        /* javascript
+            change the design or fuction of fixed html and css design
+            
+            coding area=internal(script in html with data in script element),external(.js file, summon with src in html page)
+            <script src="(./)name.js">
+            inline(js code in html fact)
+            <h1 onclick="js code">
+                
+            role of javascript
+            1.change html
+            2.redifine design of css
+            role standard of each language
+            1.html=constructure
+            2.css=design
+            3.javascript=programming
+            
+            print-out of javascript
+            1.document.write(content)=print on the top of html
+            2.window.alert(content)=pop-up(window 생략가능),제어권 가짐
+            3.consol.log(content)=print in console(use a lot for developing)
+            
+            character of js code
+            명령어 실행코드는 만나는 즉시 실행됨. 그래서 내가 원하는 시점의 이벤트에 명령어코드가 실행되려면 함수가 필요하다.
+            
+            js function
+            특정실행코드를 특정이벤트에 실행하도록 호출시에만 코드를 실행하는 코드저장공간
+            function 함수명(전달요인){코드}
+            ->함수명(값)
+            값은 함수의 전달요인 개수만큼 보낸다.*/
+            // document.write('<h1>me</h1>');
+            // alert('gomahera');
+            // console.log('colon');
+            // innerHTML->document.get
+            function look(){console.log('look');document.getElementById('name').innerHTML='<img src="./images/kim.png" alt="kim">'}//function look
+    </script>
     <style>
-
+        .pbox{position: absolute;top: 0;left: 0;margin: 0;padding: 0;border: 4px solid purple;box-sizing: border-box;width: 600px;height: 400px;line-height: 150px;font-size: 40px;text-align: center;white-space: nowrap;cursor: pointer;}
     </style>
 </head>
 
 <body>
 
     <!-- 드라마 소개박스 -->
-    <p class="pbox" title="여기를 클릭하세요!">
+    <p class="pbox" title="여기를 클릭하세요!" onclick="look()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
+        
     </p>
 
 </body>
