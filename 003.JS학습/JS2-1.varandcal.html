@@ -15,6 +15,20 @@
         // text for variable name=mainly english alphabet without beginning with number(function,var,if,for,let,cont...also unavailble)
         // 일반적으로 데이터형을 선언시 정해주는데 자바스크립트는 할당시 데이터형을 정함->데이터형을 정하는 방법으로 타입스크립트 사용
         // character of variable=같은 지역에서 오직 하나의 var만 사용,값을 중간에 바꾸면 기존값을 덮어쓴다
+        // print variable among string data=''+one+'',2) ES6의 새로운 방법:
+                // [ 템플릿 리터럴! ]
+                // https://www.w3schools.com/js/js_string_templates.asp
+
+                // -> 변수를 섞어쓸 문자 데이터를 따옴표를 안씀!
+                // 백틱(back-tics:`)으로 쌈
+                // (백틱 내부에는 엔터가 자유롭다!)
+
+                // -> 변수는 ${...}로 삽입한다!
+                // ${...} -> interpolation(보간법,내삽법)
+                // -> 중괄호 사이에는 수식도 가능함!
+
+                // 예) var home = "아름다운";
+                // "나의집" -> `나의 ${home} 집`
         var a='b';//string
         var b=true;//boolean
         var c=7;//number
