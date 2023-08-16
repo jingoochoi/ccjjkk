@@ -7,7 +7,7 @@
     <style>
         body *{outline: 2px dashed #ccc;}
         body div *{outline-color: red;}
-        html,body{margin: 0;padding: 0;}
+        html,body,h1,h2,h3{margin: 0;padding: 0;}
         .inbox{max-width: 1200px;margin: 0 auto;}
         .inbox::after,.grouppart::after{content: '';display: block;clear: both;}
         .partbox{float: left;box-sizing: border-box;padding: 15px;border: 1px solid #000;height: 100%;}
@@ -68,8 +68,20 @@
                 <div class="partbox col-3"></div>
                 <div class="partbox col-3"></div>
             </div>
-            <div class="grouppart grouppart4"></div>
-            <div class="grouppart grouppart5"></div>
+            <div class="grouppart grouppart4">
+                <div class="partbox col-2"></div>
+                <div class="partbox col-2"></div>
+                <div class="partbox col-2"></div>
+                <div class="partbox col-2"></div>
+                <div class="partbox col-2"></div>
+                <div class="partbox col-2"></div>
+            </div>
+            <div class="grouppart grouppart5">
+                <div class="partbox col-3"></div>
+                <div class="partbox col-3"></div>
+                <div class="partbox col-3"></div>
+                <div class="partbox col-3"></div>
+            </div>
             
         </main>
     </div>
