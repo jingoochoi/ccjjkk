@@ -21,8 +21,8 @@ html,body,h1,h2,h3{margin: 0;padding: 0;}
 #banner{background-color: limegreen;}
 #main{background-color: pink;}
 #footer{background-color: lightblue;}
-.header .partbox{height: 100px;}
-.banner .partbox{height: 300px;}
+.header .partbox{height: 120px;}
+.banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 360px;}
 .main .grouppart2 .partbox{height: 120px;}
 .main .grouppart3 .partbox{height: 220px;}
