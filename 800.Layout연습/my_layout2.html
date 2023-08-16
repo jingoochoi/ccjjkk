@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout practice-float</title>
+    <style>
+        body *{outline: 2px dashed #ccc;}
+        body div *{outline-color: red;}
+        html,body{margin: 0;padding: 0;}
+        .inbox{max-width: 1200px;margin: 0 auto;}
+        .inbox::after,.grouppart::after{content: '';display: block;clear: both;}
+        .partbox{float: left;box-sizing: border-box;padding: 15px;border: 1px solid #000;height: 100%;}
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        
+        .header .partbox{height: 100px;}
+        .banner .partbox{height: 300px;}
+        .main .partbox{height: 200px;}
+        .footer .partbox{height: 100px;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <header class="header inbox">
+            <div class="partbox col-2"></div>
+            <div class="partbox col-7"></div>
+            <div class="partbox col-3"></div>
+        </header>
+    </div>
+    <div id="banner">
+        <section class="banner inbox">
+            <div class="partbox col-9"></div>
+            <div class="partbox col-3"></div>
+        </section>
+    </div>
+    <div id="main">
+        <main class="main inbox">
+            <div class="grouppart">
+            <div class="partbox col-3"></div>
+            <div class="partbox col-3"></div>
+            <div class="partbox col-3"></div>
+            <div class="partbox col-3"></div>
+            </div>
+            <div class="grouppart"></div>
+            <div class="grouppart"></div>
+            <div class="grouppart"></div>
+            <div class="grouppart"></div>
+            
+        </main>
+    </div>
+    <div id="footer">
+        <footer class="footer inbox">
+            <div class="partbox col-2"></div>
+            <div class="partbox col-8"></div>
+            <div class="partbox col-2"></div>
+        </footer>
+    </div>
+</body>
+</html>
