@@ -34,7 +34,7 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 .ear2{right: -50px;border-radius: 0 50% 50% 0;}
 .body{width: 220px;height: 400px;position: relative;margin: 0 auto;margin-top: 50px;}
 .body::before{content: 'kim joon hyun';text-align: center;font-size: 50px;display: block;position: absolute;width: 257px;height: 150px;background-image: linear-gradient(to top,green,yellowgreen);top: 150px;left: -18px;border-radius: 30px 30px 20px 20px;clip-path: polygon(5% 0,95% 0,100% 50%,100% 100%,0 100%,0 50%);}
-.body::after{content: 'New Jeans';text-align: center;font-size: 53px;display: block;position: absolute;width: 257px;height: 100px;background-image: linear-gradient(to top,darkblue,lightblue);bottom: 0;left: -18px;border-radius: 20px;}
+.body::after{content: 'New Jeans';text-align: center;font-size: 53px;display: block;position: absolute;width: 257px;height: 120px;background-image: linear-gradient(to top,darkblue,lightblue);bottom: -19px;left: -18px;border-radius: 20px;clip-path: polygon(0 0,100% 0,100% 100%,55% 100%,50% 95%,45% 100%,0 100%);}
 .body div{position: absolute;}
 .neck{width: 50px;height: 80px;left: calc(50% - 50px/2);top: -60px;border-radius: 0 0 40% 40%;}
 .arm{width: 50px;height: 200px;border-radius: 20%;}
