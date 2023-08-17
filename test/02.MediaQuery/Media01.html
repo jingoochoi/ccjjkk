@@ -287,11 +287,18 @@
             *****************************************/
 
             /* 세로모드 시작 */
-            
+            @media screen and (orientation:portrait) and (max-width:1000px){
+                .bx{background-position-y: top;background-size: auto 60%;}
+                .screen{top: 130px;}
+            }
             /* 세로모드 끝 */
 
             /* 가로모드 시작 */
-            
+            @media screen and (orientation:landscape) and (max-width:1000px){
+                .tit{text-align: left;text-indent: 15px;}
+                .bx{background-position: center -11%;background-size: auto 54%;}
+                .screen{top: 14%;transform: translateX(-57%);}
+            }
             /* 가로모드 끝 */
         </style>
     </head>
