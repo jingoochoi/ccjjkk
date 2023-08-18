@@ -69,3 +69,7 @@
     to{transform: scaleY(.5);}
 }
 .mouth{animation: mouthani .3s linear 8s infinite alternate ;}
+@keyframes balloonani {
+    to{transform: scale(1);}
+}
+.linktitle{animation: balloonani 1s ease-in 8.5s   forwards;}
