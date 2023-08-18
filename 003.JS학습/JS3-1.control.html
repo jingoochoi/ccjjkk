@@ -21,12 +21,16 @@
                 var score=jumsu.value;//입력값 읽기 혹은 쓰기
                 // console.log(score);
                 var message;
-                if(score>=90){message='best';}
-                else if(score>=80){message='better';}
-                else if(score>=70){message='good';}
-                else if(score>=60){message='need more effort';}
-                else{message='re-test';}
-                console.log(message);
+                var fontColor;
+                if(score>=90){message='best';fontColor='skyblue';}
+                else if(score>=80){message='better';fontColor='green';}
+                else if(score>=70){message='good';fontColor='purple';}
+                else if(score>=60){message='need more effort';fontColor='orange';}
+                else{message='re-test';fontColor='red';}
+                message='result is '+message;
+                // console.log(message);
+                jexp.innerHTML=message;
+                jexp.style.color=fontColor;
             }//function jumsu
         /************************************************* 
             [ if문 ]
