@@ -233,6 +233,30 @@
             again, total dogs are ${dog}.<br>
             oh, dog got 2.
          `);
+         /********************************************** 
+            6. 논리연산자 : true / false가 나오는
+            경우에 이를 조합하여 결과를 리턴하는 연산자
+
+            (1) 논리합(OR) -> || (바를 2개쓴다)
+                - 여러조건 중 하나만 true 이면 true
+            (2) 논리곱(AND) -> && (엔퍼센드를 2개쓴다)
+                - 여러조건 중 모두 true 이면 true
+            (3) 논리부정(NOT) -> ! (느낌표)
+                - true 이면 false, false 이면 true
+
+        **********************************************/
+       var gender='female';
+       var age=25;
+       document.write(`
+            <h1>6.논리 연산자</h1>
+            we want the person whose gender is ${gender}.<br>
+            are you female?${gender=='female'}<br>
+            to recognize age,check her age is between 20 and 30.<br>
+            her age is ${age}.<br>
+            is she older than 20?${age>=20}<br>
+            is she younger than 30?${age<=30}<br>
+            is she female in 20s?${gender=='female'&&age>=20&&age<=30}
+       `);
     </script>
     <style>
         body{font-size: 40px;}
