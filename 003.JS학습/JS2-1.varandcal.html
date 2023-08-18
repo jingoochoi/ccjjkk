@@ -241,7 +241,7 @@
                 - 여러조건 중 하나만 true 이면 true
             (2) 논리곱(AND) -> && (엔퍼센드를 2개쓴다)
                 - 여러조건 중 모두 true 이면 true
-            (3) 논리부정(NOT) -> ! (느낌표)
+            (3) 논리부정(NOT) -> ! (조건문 앞에 느낌표)
                 - true 이면 false, false 이면 true
 
         **********************************************/
@@ -262,6 +262,33 @@
        gender='male';
        age=30;
        condition();
+       var member='kakao';
+       var gender2='female';
+       var age2=19;
+       var register=function(){document.write(`
+            <br><br>★register info★<br><br>
+            1)group:${member}<br>
+            2)gender:${gender2}<br>
+            3)age:${age2}<br>
+            4)condition check:<br>
+            -kakao member?${member==='kakao'}<br>
+            -gender male?${gender2==='male'}<br>
+            -age under 20?${age2<20}<br>
+            -male under 20?${gender2==='male'&&age2<20}<br>
+            5)final check:<br>
+            -kakao memeber or male under 20?${member==='kakao'||(gender2==='male'&&age2<20)}<br><br>
+        `);};//register function
+        register();
+        member='naver';
+        gender2='male';
+        age2=15;
+        register();
+        var person='female';
+        document.write(`
+            ★논리부정★
+            a person's gender is ${person}.<br>
+            if female,false.${!person==='female'}
+        `);
     </script>
     <style>
         body{font-size: 40px;}
