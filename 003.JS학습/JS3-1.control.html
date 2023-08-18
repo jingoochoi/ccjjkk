@@ -21,8 +21,8 @@
                 var score=jumsu.value;//입력값 읽기 혹은 쓰기
                 // console.log(score);
                 var message;
-                if(score>=90){message='top';}
-                else if(score>=80){message='best';}
+                if(score>=90){message='best';}
+                else if(score>=80){message='better';}
                 else if(score>=70){message='good';}
                 else if(score>=60){message='need more effort';}
                 else{message='re-test';}
@@ -102,8 +102,19 @@
         <h2 class="tit">if문 연습</h2>
         <h3 id="jexp">평가출력</h3>
         <label for="jumsu">점수입력:</label>
-        <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" />
-        
+        <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode==13)jumsu()" />
+        <!-- 
+        [ onkeypress 이벤트 속성 ]
+        -> 키보드를 치면 발생하는 이벤트 속성
+        if조건문
+        조건식 : event.keyCode === 13(carriage return)
+        -> 키보드의 키코드가 13번이냐? 엔터키 눌렀냐?
+        -> 엔터키의 키코드는 13번이다!
+        -> true이면 jumsu() 라는 함수를 호출해라!
+
+        참고) 키코드 참조: 아스키코드
+        https://www.w3schools.com/charsets/ref_html_ascii.asp
+     -->
 
         <!-- 버튼클릭시 클릭이벤트 속성과 미리만든 함수를 연결한다! -->
         <button class="sbtn" onclick="jumsu()">평가하기</button>
