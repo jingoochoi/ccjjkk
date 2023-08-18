@@ -71,6 +71,7 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 .boxtext small{font: 0.75rem 'Chakra Petch';line-height: 3;color: yellow;display: block;text-align: center;}
 .desc{font: 0.75rem 'Barlow';line-height: 1.8;letter-spacing: 1px;word-spacing: 2px;column-count: 3;column-rule: 5px dotted lightgreen;column-gap: 95px;text-align: justify;text-indent: 20px;}
 .desc::first-letter{font-size: 30px;color: orange;font-weight: bold;}
+#bottomarea{color: white;font: 30px 'Black Ops One';text-shadow: 2px 2px 2px #000;background-color: #00000077;text-align: center;padding: 50px;}
 /* 다단설정=다중열속성(column-count=개수,column-rule=구분선,collumn-gap=사이간격)
 영어는 저스티파이 정렬 시 깨진다->word-break: break-all; */
 /* center=calc(50% of parent - content width/2) */
