@@ -67,7 +67,7 @@ body{background: url(../images/bg.jpg) no-repeat fixed top/cover;}
 .boxbtn{position: absolute;bottom: 0;right: 0;width: 40px;height: 90px;}
 .boxbtn button{width: 100%;}
 .linktitle{position: absolute;top: 5vh;right: -100px;color: orangered;font-size: 5vw;background-color: white;padding: 5vw 3vw;border-radius: 50%;border: 10px dashed orangered;text-decoration: none;transition:  .5s;transform: scale(0);transform-origin: left bottom;}
-.linktitle::after{content: '';position: absolute;bottom: -3px;left: -24px;width: 0;height: 0;border-left: 16px solid transparent;border-right: 16px solid transparent;border-top: 100px solid red;transform: rotate(45deg);}
+.linktitle::after{content: '';position: absolute;bottom: -1px;left: -24px;width: 0;height: 0;border-left: 16px solid transparent;border-right: 16px solid transparent;border-top: 100px solid red;transform: rotate(45deg);}
 .linktitle:hover{background-image: radial-gradient(circle,yellow,blue);}
 /* [ 2. 원형 그라데이션 ]
 
