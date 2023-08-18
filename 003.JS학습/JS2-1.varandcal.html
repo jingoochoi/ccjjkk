@@ -247,16 +247,21 @@
         **********************************************/
        var gender='female';
        var age=25;
-       document.write(`
+       // 익명함수는 할당하거나 다른 함수구역에 쓴다.
+       var condition=function(){document.write(`
             <h1>6.논리 연산자</h1>
             we want the person whose gender is ${gender}.<br>
             are you female?${gender=='female'}<br>
-            to recognize age,check her age is between 20 and 30.<br>
-            her age is ${age}.<br>
-            is she older than 20?${age>=20}<br>
-            is she younger than 30?${age<=30}<br>
-            is she female in 20s?${gender=='female'&&age>=20&&age<=30}
-       `);
+            to recognize age,check the age is between 20 and 30.<br>
+            the age is ${age}.<br>
+            is the person older than 20?${age>=20}<br>
+            is the person younger than 30?${age<=30}<br>
+            is the person female in 20s?${gender=='female'&&age>=20&&age<=30}
+       `);};//condition function
+       condition();
+       gender='male';
+       age=30;
+       condition();
     </script>
     <style>
         body{font-size: 40px;}
