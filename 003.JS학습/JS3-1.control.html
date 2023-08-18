@@ -13,7 +13,21 @@
                 2. 점수에 따른 메시지 글자색 변경
                 3. 점수에 따른 칭찬스티커 보이기
         ******************************************/
-            
+            function jumsu(){
+                // console.log('jumsu');
+                var jumsu=document.querySelector('#jumsu');
+                var jexp=document.querySelector('#jexp');
+                // console.log('check',jumsu,jexp);
+                var score=jumsu.value;//입력값 읽기 혹은 쓰기
+                // console.log(score);
+                var message;
+                if(score>=90){message='top';}
+                else if(score>=80){message='best';}
+                else if(score>=70){message='good';}
+                else if(score>=60){message='need more effort';}
+                else{message='re-test';}
+                console.log(message);
+            }//function jumsu
         /************************************************* 
             [ if문 ]
             - 조건문을 검사하여 true이면
@@ -77,6 +91,7 @@
                 text-align: center;
                 background-image: linear-gradient(to bottom, lightgreen, lightsalmon);
             }
+            button{cursor: pointer;}
         </style>
         
     </head>
@@ -91,7 +106,7 @@
         
 
         <!-- 버튼클릭시 클릭이벤트 속성과 미리만든 함수를 연결한다! -->
-        <button class="sbtn">평가하기</button>
+        <button class="sbtn" onclick="jumsu()">평가하기</button>
 
         <!-- 
         [ label요소 ]
