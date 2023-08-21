@@ -12,13 +12,16 @@
         ul::after,ol::after,.clb::after{content: '';display: block;clear: both;}
         .partbox{float: left;}
         .logo{line-height: 80px;}
+        .logo img{width: min(133px,13vw);}
         nav{padding: 0 min(100px,8vw);}
-        .gnb li{float: left;}
+        .gnb>ul>li{float: left;position: relative;}
         .gnb a{color: white;text-decoration: none;font-size: min(18px,2.3vw);padding: 0 min(32px,1.3vw);line-height: 80px;}
-        .mainarea{margin: 0 auto;max-width: 1000px;min-height: 600px;line-height: 600px;text-align: center;font-size: min(18px,1.3vw);border: 10px dashed lightgreen;border-radius: 30px;}
-        .submenu{position: absolute;width: min(200px,13vw);border-radius: 10px;background-color: #ffffff33;text-align: center;}
+        .mainarea{margin: 100px auto;max-width: 1000px;min-height: 600px;line-height: 600px;text-align: center;font-size: min(18px,1.3vw);border: 10px dashed lightgreen;border-radius: 30px;}
+        .submenu{position: absolute;width: min(200px,13vw);border-radius: 10px;background-color: #ffffff33;text-align: center;box-shadow: inset 0 0 3px lightblue;border: 0;padding: 0;left: 50%;transform: translateX(-50%);height: 0;overflow: hidden;transition:  .3s ease-in-out;}
+        .gnb>ul>li:hover .submenu{height: calc(40px*4);}
         .submenu li{width: 100%;}
-        .submenu a{line-height: 50px;font-size: min(20px,2vw);}
+        .submenu a{line-height: 50px;font-size: min(20px,2vw);display: block;width: 100%;height: 100%;padding: 0;line-height: 30px;font-size: min(13px,1.3vw);opacity: 0.3;}
+        .submenu a:hover{opacity: 1;transform: scale(1.1);font-weight: bold;}
     </style>
 </head>
 <body>
