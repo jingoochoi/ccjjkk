@@ -17,20 +17,23 @@
                 // console.log('jumsu');
                 var jumsu=document.querySelector('#jumsu');
                 var jexp=document.querySelector('#jexp');
+                var jshow=document.querySelector('.jshow');
                 // console.log('check',jumsu,jexp);
                 var score=jumsu.value;//입력값 읽기 혹은 쓰기
                 // console.log(score);
                 var message;
                 var fontColor;
-                if(score>=90){message='best';fontColor='skyblue';}
-                else if(score>=80){message='better';fontColor='green';}
-                else if(score>=70){message='good';fontColor='purple';}
-                else if(score>=60){message='need more effort';fontColor='orange';}
-                else{message='re-test';fontColor='red';}
+                var bgPosition;
+                if(score>=90){message='best';fontColor='skyblue';bgPosition='100% 50%';}
+                else if(score>=80){message='better';fontColor='green';bgPosition='100% 50%';}
+                else if(score>=70){message='good';fontColor='purple';bgPosition='100% 50%';}
+                else if(score>=60){message='need more effort';fontColor='orange';bgPosition='100% 50%';}
+                else{message='re-test';fontColor='red';bgPosition='100% 50%';}
                 message='result is '+message;
-                // console.log(message);
+                // console.log(message,bgPosition,jshow);
                 jexp.innerHTML=message;
                 jexp.style.color=fontColor;
+                jshow.style.backgroundPosistion=bgPosition;
             }//function jumsu
         /************************************************* 
             [ if문 ]
