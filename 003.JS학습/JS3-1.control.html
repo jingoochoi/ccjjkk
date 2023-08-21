@@ -21,6 +21,10 @@
                 // console.log('check',jumsu,jexp);
                 var score=jumsu.value;//입력값 읽기 혹은 쓰기
                 // console.log(score);
+
+                // check the validity of the input value
+                // whether number or not(including blank) & whether number is from 0 to 100 or not
+                if(score==''){jexp.innerHTML='please input number';console.log('input number');}
                 var message;
                 var fontColor;
                 var bgPosition;
