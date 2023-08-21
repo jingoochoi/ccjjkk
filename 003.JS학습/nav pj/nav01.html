@@ -7,13 +7,27 @@
     <style>
         html,body,h1{margin: 0;padding: 0;}
         h1{text-align: center;padding: 20px;}
-        body{color: white;background: #0a130a url(./images/nav1bg.png) no-repeat fixed center/cover;}
+        body{color: white;background: #0a134d url(./images/nav1bg.png) no-repeat fixed center/cover;}
+        ul,ol{list-style: none;margin: 0;padding: 0;}
+        ul::after,ol::after{content: '';display: block;clear: both;}
+        .gnb li{float: left;}
+        .gnb a{color: white;text-decoration: none;font-size: 2vw;}
     </style>
 </head>
 <body>
     <h1>horizon nav sub dropdown vertical</h1>
     <header class="toparea">
         <h1 class="logo"><a href="#"><img src="./images/nav1logo.png" alt="logo"></a></h1>
+        <nav class="gnb">
+            <ul>
+                <li><a href="#">Vision Processor</a></li>
+                <li><a href="#">ADAS Processor</a></li>
+                <li><a href="#">AHD™</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </nav>
     </header>
     <main class="mainarea">
         content
