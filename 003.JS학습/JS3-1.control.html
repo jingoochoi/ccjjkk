@@ -25,8 +25,14 @@
                 // check the validity of the input value
                 // whether number or not(including blank) & whether number is from 0 to 100 or not
                 // trim()->remove space(bar)
-                if(score.trim()==''){jexp.innerHTML='please input number';console.log('input number');return;}
-                else if(score==toString){jexp.innerHTML='please input number!!!';return;}
+                // input요소.focus();->인풋깜빡 포커스
+                if(score.trim()==''){jexp.innerHTML='please input number';console.log('input number');jumsu.value='';jumsu.focus();jexp.style.color='black';jshow.style.backgroundPosition='-50% 0%';return;}
+                // code under the 'return' is ignored.
+
+                // isNaN=is Not a Number?->check whether number or not
+                console.log(isNaN(score));
+                if(isNaN(score)){jexp.innerHTML='please input number!!!';jumsu.value='';jumsu.focus();jexp.style.color='black';jshow.style.backgroundPosition='-50% 0%';return;}
+                if(score>100||score<0){jexp.innerHTML='please input between 0 and 100';jumsu.value='';jumsu.focus();jexp.style.color='black';jshow.style.backgroundPosition='-50% 0%';return;}
                 var message;
                 var fontColor;
                 var bgPosition;
