@@ -40,7 +40,27 @@
                 font-size: 42px;
             }
         </style>
-        
+        <script>
+            // html요소를 선택할 경우 실행순서가 중요
+            // html 본문요소가 모두 로딩 후에 선택해야 함
+            // 로딩 후 선택법
+            // 1.code->script->body end
+            // 2.making a loading zone
+
+            // loading zone
+            window.addEventListener('DOMContentLoaded',loadEvent);
+            // load->전체 요소 로딩 후에 발생
+            // DOMContentLoaded->html 요소만 다 그려지면 발생
+            function loadEvent(){
+                // console.log('load complete');
+                var btns=document.querySelectorAll('.btns');
+                // console.log(btns);
+                btns[0].onclick=changeImg;
+            }//load
+            function changeImg(){
+                console.log('change');
+            }//changeImg
+        </script>
     </head>
 
     <body>
