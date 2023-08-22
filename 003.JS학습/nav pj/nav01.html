@@ -14,10 +14,13 @@
         .logo{line-height: 80px;}
         .logo img{width: min(133px,13vw);}
         nav{padding: 0 min(100px,8vw);}
-        .gnb>ul>li{float: left;position: relative;}
-        .gnb a{color: white;text-decoration: none;font-size: min(18px,2.3vw);padding: 0 min(32px,1.3vw);line-height: 80px;}
+        .gnb>ul>li{float: left;position: relative;padding: 30px 0;}
+        .gnb a{color: white;text-decoration: none;font-size: min(18px,2.3vw);padding: 0 min(32px,1.3vw);display: block;}
+        .gnb>ul>li>a::after{content: '';display: block;width: 0;height: 2px;background-color: white;transition:  .2s;margin-left: 100%;margin-top: 5px;}
+        .gnb>ul>li:hover>a::after{width: 100%;margin-left: 0;transition: width .2s;margin-top: 5px;}
         .mainarea{margin: 100px auto;max-width: 1000px;min-height: 600px;line-height: 600px;text-align: center;font-size: min(18px,1.3vw);border: 10px dashed lightgreen;border-radius: 30px;}
-        .submenu{position: absolute;width: min(200px,13vw);border-radius: 10px;background-color: #ffffff33;text-align: center;box-shadow: inset 0 0 3px lightblue;border: 0;padding: 0;left: 50%;transform: translateX(-50%);height: 0;overflow: hidden;transition:  .3s ease-in-out;}
+        .submenu{position: absolute;width: min(200px,13vw);border-radius: 10px;background-color: #ffffff33;text-align: center;box-shadow: inset 0 0 3px lightblue;border: 0;padding: 0;left: 50%;transform: translateX(-50%);height: 0;overflow: hidden;transition:  .3s ease-in-out;top: 70px;}
+        /* 젠틀하기 때문에 탑으로 조정해도 되지만 크게 조정해야 하므로 마진탑으로도 조정한다 */
         .gnb>ul>li.m5:hover .submenu{height: calc(30px*5);}
         .gnb>ul>li.m1:hover .submenu{height: calc(30px);}
         .gnb>ul>li.m3:hover .submenu{height: calc(30px*3);}
