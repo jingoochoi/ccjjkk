@@ -16,12 +16,12 @@ h1.tit{text-align: center;padding: 20px;}
 body{color: white;background: #0a134d url(./images/nav1bg.png) no-repeat fixed center/cover;}
 ul,ol{list-style: none;margin: 0;padding: 0;}
 ul::after,ol::after,.clb::after{content: '';display: block;clear: both;}
-.inbox{max-width: 1650px;margin: 0 auto;outline: 2px dashed lime;}
+.inbox{max-width: 1650px;margin: 0 auto;}
 .partbox{float: left;}
 .logo{line-height: 80px;}
 .logo img{width: min(133px,13vw);}
 nav{padding: 0 min(100px,8vw);}
-.gnb{max-width: 820px;outline: 3px dotted yellow;margin: 0 auto;}
+.gnb{max-width: 820px;margin: 0 auto;}
 .gnb>ul>li{float: left;position: relative;padding: 30px 0;}
 .gnb a{color: white;text-decoration: none;font-size: min(18px,1.1vw);padding: 0 min(32px,1.3vw);display: block;}
 .gnb>ul>li>a::after{content: '';display: block;width: 0;height: 2px;background-color: white;transition:  .2s;margin-left: 100%;margin-top: 5px;}
