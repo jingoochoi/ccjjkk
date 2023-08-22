@@ -1,5 +1,6 @@
 @charset "utf-8";
 #header{background-color: lightblue;}
+#main{min-height: 800px;}
 #footer{background-color: lightblue;}
 .header .partbox{height: 120px;}
 .footer .partbox{height: 100px;}
