@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>if문 연습</title>
+        <title>switch문 연습</title>
         <!-- 웹폰트 CDN -->
         <link href="https://fonts.googleapis.com/css?family=Audiowide&amp;display=swap" rel="stylesheet" />
         <style>
@@ -70,16 +70,23 @@
                 var scene=document.querySelector('#scene');
                 var isrc;
                 // console.log(scene);
-                if(btntxt=='포스터'){isrc='./images/ala1.jpg';}
-                else if(btntxt=='장면1'){isrc='./images/ala2.jpg';}
-                else if(btntxt=='장면2'){isrc='./images/ala3.jpg';}
-                else if(btntxt=='장면3'){isrc='./images/ala4.jpg';}
-                // console.log(isrc);
+                // if(btntxt=='포스터'){isrc='./images/ala1.jpg';}
+                // else if(btntxt=='장면1'){isrc='./images/ala2.jpg';}
+                // else if(btntxt=='장면2'){isrc='./images/ala3.jpg';}
+                // else if(btntxt=='장면3'){isrc='./images/ala4.jpg';}
+                // // console.log(isrc);
+                // scene.src=isrc;
+                // // change img src
+                // // 1.element.src=value;
+                // // 2.element.setAttribute(src,value);
+                // // scene.setAttribute('src',isrc);
+                switch(btntxt){
+                    case '포스터':isrc='./images/ala1.jpg';break;
+                    case '장면1':isrc='./images/ala2.jpg';break;
+                    case '장면2':isrc='./images/ala3.jpg';break;
+                    case '장면3':isrc='./images/ala4.jpg';break;
+                }
                 scene.src=isrc;
-                // change img src
-                // 1.element.src=value;
-                // 2.element.setAttribute(src,value);
-                // scene.setAttribute('src',isrc);
             }//changeImg
         </script>
     </head>
