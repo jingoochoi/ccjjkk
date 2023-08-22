@@ -38,5 +38,5 @@ nav{padding: 0 min(100px,8vw);}
 .topmeny li{float: left;padding: 30px;}
 .topmeny li a{display: block;font-size: min(18px,1.7vw);color: white;text-decoration: none;}
 .topmeny>li>a::after{content: '';display: block;width: 0;height: 2px;background-color: white;transition:  .2s;margin-left: 100%;margin-top: 5px;}
-.topmeny i{cursor: pointer;} 
+.topmeny i{cursor: pointer;margin-top: min(10px,1vw);}
 .topmeny>li:hover>a::after{width: 100%;margin-left: 0;transition: width .2s;margin-top: 5px;}
