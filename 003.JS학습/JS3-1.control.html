@@ -122,7 +122,12 @@
                 case "나성":message = "나성에 가면 편지를 전해줘요♬";break;
                 default:message='none';
             }
-            console.log(message);
+            // console.log(message);
+            if(message=='none')message='be not registered';
+            else{
+                message=`${txt}'s local number is ${message}`
+            }
+            info.innerHTML=message;
         }//local function
         /* [ switch case문 ]
         - 단일조건을 분류하여 실행문을 만들어 줄때 사용하는 제어문
