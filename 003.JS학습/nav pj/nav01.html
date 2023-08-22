@@ -10,6 +10,7 @@
         body{color: white;background: #0a134d url(./images/nav1bg.png) no-repeat fixed center/cover;}
         ul,ol{list-style: none;margin: 0;padding: 0;}
         ul::after,ol::after,.clb::after{content: '';display: block;clear: both;}
+        .inbox{max-width: 1650px;margin: 0 auto;outline: 2px dashed lime;}
         .partbox{float: left;}
         .logo{line-height: 80px;}
         .logo img{width: min(133px,13vw);}
@@ -31,7 +32,8 @@
 </head>
 <body>
     <h1 class="tit">horizon nav sub dropdown vertical</h1>
-    <header class="toparea clb">
+    <header class="toparea">
+        <div class="inbox clb">
         <div class="partbox">
             <h1 class="logo"><a href="#"><img src="./images/nav1logo.png" alt="logo"></a></h1>
         </div>
@@ -97,6 +99,7 @@
                 </ul>
             </nav>
         </div>
+    </div>
     </header>
     <main class="mainarea">
         content
