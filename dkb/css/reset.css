@@ -1,2 +1,4 @@
 @charset "utf-8";
-html,body,h1,h2,h3{margin: 0;padding: 0;}
+html,body,h1,h2,h3,ul,ol,dl,dt,dd,p,figure{margin: 0;padding: 0;}
+ul,ol{list-style: none;}
+a{color: #000;text-decoration: none;float: left;}

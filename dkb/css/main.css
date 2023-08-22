@@ -1,8 +1,9 @@
 @charset "utf-8";
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
 body *{outline: 2px dashed #ccc;}
 body div *{outline-color: red;}
-
-
 #banner{background-color: limegreen;}
 #main{background-color: pink;}
 .banner .partbox{height: 530px;}
