@@ -3,11 +3,8 @@ body *{outline: 2px dashed #ccc;}
 body div *{outline-color: red;}
 
 
-
 #banner{background-color: limegreen;}
 #main{background-color: pink;}
-
-
 .banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 455px;}
 .main .grouppart2 .partbox{height: 298px;}
