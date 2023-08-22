@@ -101,6 +101,9 @@
             // console.log(target,info);
             var txt=target.value;
             // console.log(txt);
+            if(txt.trim()==''){alert('please insert local name');target.value='';target.focus();return;}
+            // break->제어문 나감
+            // return->exit function
             var message;
             switch(txt){
                 case '서울':message='02';break;
