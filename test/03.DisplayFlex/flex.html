@@ -80,22 +80,7 @@
 
                 _________________________________________
 
-                [ justify-content 속성 ]
-
-                - 진행방향정렬속성 (justify 양쪽정렬의 뜻)
-                - content 는 진행방향으로 여러개의 
-                아이템요소가 있으니까 컨텐트임!
-
-                1) flex-start : 처음위치(기본값)
-                2) flex-end : 끝위치
-                3) center : 중앙
-                4) space-between : 
-                    아이템요소 양쪽끝에 붙고 사이간격 일정
-                5) space-around : 
-                    아이템요소 양쪽간격 일정
-                6) space-evenly : 
-                    아이템요소 양쪽과 사이간격 일정
-
+                
                 _______________________________________
 
                 [ align-items 속성 ]
@@ -136,6 +121,23 @@
             .flexbox li:nth-child(5){background: url(./images/m05_bg.jpg) no-repeat center/cover;}
             .tit{position: absolute;top: 100px;left: 30%;transform: translateX(-50%);width: 300px;height: 100px;border: 5px double white;}
             .tit li{width: 30px;height: 30px;border: 3px solid white;border-radius: 50%;background-color: red;text-align: center;font: bold 13px/30px Verdana;color: white;}
+            .t1{display: flex;justify-content: space-evenly;align-items: center;}
+            /* [ justify-content 속성 ]
+
+                - 진행방향정렬속성 (justify 양쪽정렬의 뜻)
+                - content 는 진행방향으로 여러개의 
+                아이템요소가 있으니까 컨텐트임!
+
+                1) flex-start : 처음위치(기본값)
+                2) flex-end : 끝위치
+                3) center : 중앙
+                4) space-between : 
+                    아이템요소 양쪽끝에 붙고 사이간격 일정
+                5) space-around : 
+                    아이템요소 양쪽간격 일정
+                6) space-evenly : 
+                    아이템요소 양쪽과 사이간격 일정
+ */
         </style>
     </head>
     <body>
