@@ -1,7 +1,14 @@
 @charset "utf-8";
-#header{background-color: lightblue;}
+/* #header{background-color: lightblue;} */
 #main{min-height: 800px;}
 #footer{background-color: lightblue;}
 .header .partbox{height: 120px;}
-.headerlogo img{margin-top: 20px;width: 123px;}
+.headerlogo img{margin-top: 30px;width: 123px;}
+.topmenu ul{display: flex;justify-content: flex-end;padding: 13px 13px 3px;}
+.topmenu li+li{margin-left: 12px;}
+.topmenu a{font-size: 1.3rem;}
+.gnb ul{display: flex;justify-content: flex-end;}
+.gnb ul li a{font-size: 1.5rem;display: block;padding: 23px 13px;white-space: nowrap;font-weight: bold;}
+.gnb ul li:hover a{color: red;}
+.gnb ul li:nth-child(3)~li:nth-child(-n+6) a::after{content: '▼';display: inline-block;transform: scale(.5);}
 .footer .partbox{height: 100px;}

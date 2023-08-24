@@ -4,7 +4,7 @@
 @import url(common.css);
 body *{outline: 2px dashed #ccc;}
 body div *{outline-color: red;}
-#banner{background-color: limegreen;}
+#banner{background: url(../imgs/bg_mainvisual.jpg) no-repeat center/ 100%;}
 #main{background-color: pink;}
 .banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 455px;}
