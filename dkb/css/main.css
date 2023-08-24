@@ -5,6 +5,7 @@
 body *{outline: 2px dashed #ccc;}
 body div *{outline-color: red;}
 #banner{background: url(../imgs/bg_mainvisual.jpg) no-repeat center/ 100%;}
+.dkb img{position: absolute;left: 73%;top: 26%;}
 #main{background-color: pink;}
 .banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 455px;}
