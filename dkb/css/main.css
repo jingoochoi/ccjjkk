@@ -6,6 +6,19 @@ body *{outline: 2px dashed #ccc;}
 body div *{outline-color: red;}
 #banner{background: url(../imgs/bg_mainvisual.jpg) no-repeat center/ 100%;}
 .dkb img{position: absolute;left: 73%;top: 26%;}
+#dokebimenu{position: sticky;top: 0;background-color: white;}
+.dokebimenu ul{display: flex;padding: 12px 0;}
+
+.dokebimenu ul li a{font-size: 1.5rem;display: block;padding: 10px 23px;white-space: nowrap;font-weight: bold;}
+.dokebimenu>ul>li:hover>a{color: red;}
+.dokebimenu ul li.on a{background-color: rgb(255, 0, 0);border-radius: 30px;color: white;}
+.besub{position: relative;}
+.besub> a::after{content: '▼';display: inline-block;transform: scale(.5);}
+
+.dkbsub{position: absolute;width: 100%;border: 1px solid red;border-radius: 30px;display: none;}
+.dokebimenu li:hover .dkbsub{display: block;}
+.dkbsub a{display: block;padding: 10px 13px;}
+.dkbsub a:hover{color: red;}
 #main{background-color: pink;}
 .banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 455px;}
