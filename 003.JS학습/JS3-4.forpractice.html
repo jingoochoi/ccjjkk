@@ -34,7 +34,8 @@
                 width: 150px;
                 /* 크기줄임 */
             }
-            .rbtn{cursor: pointer;margin-bottom: 30px;width: 100px;height: 33px;font-weight: bold;font-size: 20px;}
+            .rbtn{cursor: pointer;margin-bottom: 3px;width: 100px;height: 33px;font-weight: bold;font-size: 20px;border-radius: 30px;}
+            .infobox{position: absolute;background-color: #0000ff77;padding: 13px;border-radius: 0 0 30px 0;font-size: 1.2vw;color: white;}
         </style>
         <!-- JS코드구역 -->
         <!-- do not write in script tag when use external js -->
@@ -58,13 +59,18 @@
         <요소 data-내가만든이름="값">
      -->
 
-        <!-- 현재 미니언즈 개수표시 -->
+        
+
+        <!-- 파란상자 -->
+        <div class="Bcase">
+            <div class="infobox">
+                <!-- 현재 미니언즈 개수표시 -->
         <h2 class="stxt">현재 미니언즈 그룹개수 : <span>0</span>개</h2>
 
         <!-- 리셋을 한다면 이렇게...! -->
         <button class="rbtn">리셋</button>
-
-        <!-- 파란상자 -->
-        <div class="Bcase"></div>
+            </div>
+            <div class="minispace"></div>
+        </div>
     </body>
 </html>
