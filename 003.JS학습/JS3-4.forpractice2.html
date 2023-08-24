@@ -8,32 +8,20 @@
     <style>
         html,body{margin: 0;padding: 0;}
         ul,ol{list-style: none;margin: 0;padding: 0;}
+        body *{outline: 1px solid gray;}
         .tit{text-align: center;}
         .listbox{max-width: 1300px;margin: 0 auto;}
-        .listbox ul{display: flex;}
-        .listbox ul li{flex-basis: 30%;}
+        .listbox ul{display: flex;flex-wrap: wrap;gap: 3vw;}
+        /* gap: verticalgap horisongap; */
+        .listbox ul li{flex-basis: calc((100% - 3vw*2)/3);position: relative;}
+        .listbox img{width: 100%;}
+        .iteminfo{position: absolute;bottom: 0;width: 100%;text-align: center;color: white;background-color: #00000077;}
     </style>
 </head>
 <body>
     <h1 class="tit">shopping mall item list</h1>
     <section class="listbox">
-        <ul>
-            <li>
-                <img src="./images/dress/1.jpg" alt="dress">
-                <h3>name</h3>
-                <h4>price</h4>
-            </li>
-            <li>
-                <img src="./images/dress/1.jpg" alt="dress">
-                <h3>name</h3>
-                <h4>price</h4>
-            </li>
-            <li>
-                <img src="./images/dress/1.jpg" alt="dress">
-                <h3>name</h3>
-                <h4>price</h4>
-            </li>
-        </ul>
+        
     </section>
 </body>
 </html>
