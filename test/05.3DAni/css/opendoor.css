@@ -34,7 +34,7 @@ body{
 
 /* 전체랩핑박스 */
 .wrap{
-    /* overflow: hidden; */
+    overflow: hidden;
     /* 3D문이 잘려보이지 않게 위아래 패딩줌! */
     padding: 50px 0;
 }
@@ -45,6 +45,11 @@ body{
     height: 300px;
     margin: 0 auto;
     background-color: #900;
+    transform: translateY(130%);
+    animation: doorup 1s  cubic-bezier(0.18, 0.89, 0.32, 1.28) 1s forwards;
+}
+@keyframes doorup {
+    to{transform: translateY(0);}
 }
 /* 문프레임 */
 .frame{
@@ -77,6 +82,7 @@ body{
         2가지를 같이 셋팅함!
     ***********************************************/
     animation: swing1 3s ease-in-out  infinite alternate ;
+    cursor: none;
 }
 
 /* 배경이미지 크기변경으로 파도치는 키프레임 */
@@ -145,7 +151,7 @@ body{
 /* 엘사박스 */
 #elsa{position: absolute;top: 0;width: 150px;height: 280px;overflow: hidden;}
 /* 엘사이미지 */
-#elsa img{margin-left: 130px;transform-origin: bottom;animation: elsanim 1s ease-in-out .3s infinite alternate ;animation-play-state: paused;}
+#elsa img{margin-left: 130px;transform-origin: bottom;animation: elsanim 1s ease-in-out  infinite alternate ;animation-play-state: paused;}
 .cont:hover #elsa img{
     animation-play-state: running;
 }
