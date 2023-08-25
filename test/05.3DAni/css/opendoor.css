@@ -76,12 +76,12 @@ body{
         -> 두 값 중에 하나만 쓸 수 있고 복합일 경우
         2가지를 같이 셋팅함!
     ***********************************************/
-    
+    animation: swing1 3s ease-in-out  infinite alternate ;
 }
 
 /* 배경이미지 크기변경으로 파도치는 키프레임 */
 @keyframes swing1 {
-    to{}
+    to{background-size: auto 120%;}
 }
 
 
@@ -143,7 +143,13 @@ body{
 }
 
 /* 엘사박스 */
-
+#elsa{position: absolute;top: 0;width: 150px;height: 280px;overflow: hidden;}
 /* 엘사이미지 */
-
+#elsa img{margin-left: 130px;transform-origin: bottom;animation: elsanim 1s ease-in-out .3s infinite alternate ;animation-play-state: paused;}
+.cont:hover #elsa img{
+    animation-play-state: running;
+}
 /* 엘사 애니 키프레임 */
+@keyframes elsanim {
+    to{transform: rotate(-5deg);}
+}
