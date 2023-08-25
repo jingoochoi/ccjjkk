@@ -119,48 +119,57 @@ body{
 
 /* 지구 */
 #earth{
-    position: absolute;
-    
+    position: absolute;top: calc(50% - var(--earth-size)/2);left: calc(50% - var(--earth-size)/2);
+    background: url(../images/earth.png)no-repeat 0/100%;
+    width: var(--earth-size);height: var(--earth-size);
+    animation: earth 20s linear  infinite  ;
 }
 
 /* 지구회전 키프레임 */
 @keyframes earth {
     from{
-        
+        transform: rotate(0deg) translateX(-250px) rotate(0deg);
     }
     to{
-        
+        transform: rotate(360deg) translateX(-250px) rotate(-360deg);
     }
 } /* 지구회전 키프레임 */
 
 /* 달 */
 #moon{
     position: absolute;
+    background: url(../images/moon.png)no-repeat 0/100%;
+    width: var(--moon-size);height: var(--moon-size);
+    top: calc(50% - var(--moon-size)/2);left: calc(50% - var(--moon-size)/2);
+    animation: moon 20s linear  infinite  ;
 }
 
 /* 달회전 키프레임 */
 @keyframes moon {
     from{
-        
+        transform: rotate(0deg) translateX(70px) rotate(0deg);
     }
     to{
-        
+        transform: rotate(-360deg) translateX(70px) rotate(360deg);
     }
 } /* 달회전 키프레임 */
 
 /* 목성 */
 #jupiter{
     position: absolute;
-    
+    background: url(../images/jupiter.png)no-repeat 0/100%;
+    width: var(--jupiter-size);height: var(--jupiter-size);
+    top: calc(50% - var(--jupiter-size)/2);left: calc(50% - var(--jupiter-size)/2);
+    animation: jupiter 20s linear  infinite  ;
 }
 
 /* 목성회전 키프레임 */
 @keyframes jupiter {
     from{
-        
+        transform: rotate(0deg) translateX(-500px);
     }
     to{
-        
+        transform: rotate(360deg) translateX(-500px);
     }
 } /* 목성회전 키프레임 */
 
