@@ -72,6 +72,22 @@
                 target[3].title='click for fighting';
                 target[3].style.cursor='pointer';
                 target[3].addEventListener('click',arr2[3]);
+                const arr3=[];
+                // const로 리터럴 선언, 할당 후 배열값을 바꾸는 건 자유롭다
+                // 배열형만 못 바꾼다
+                arr3.length=8;//추후 추가 가능
+                arr3[0]='mount';
+                arr3[1]='grandpa';
+                arr3[2]='cap';
+                arr3[3]='hat';
+                arr3[4]='fly';
+                arr3[5]='go';
+                arr3[6]='and';
+                arr3[7]='do';
+                console.log(arr3.valueOf());//값만 찍어도 브라우저가 찍어줌
+                arr3.join('^');//데이터베이스에 데이터를 하나로 만들어넣을 때 많이 쓰기도 함.
+                arr3.push('by kim');//add sth at the end
+                target[2].innerHTML=arr3.join('✅');
             }//ld
             
         </script>
