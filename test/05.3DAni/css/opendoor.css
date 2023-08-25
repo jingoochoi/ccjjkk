@@ -14,9 +14,21 @@ html,body,h1{
 body{
     background-color: #9c0;
     /* 배경색 애니메이션: 이시이지반방마 */
-    /* animation: bgAni 10s linear infinite; */
+    animation: bgAni 10s linear infinite;
 }
-
+@keyframes bgAni {
+    0%{background-color: #9c0;}
+    10%{background-color: yellowgreen;}
+    20%{background-color: yellow;}
+    30%{background-color: red;}
+    40%{background-color: brown;}
+    50%{background-color: orangered;}
+    60%{background-color: orange;}
+    70%{background-color: lightblue;}
+    80%{background-color: blue;}
+    90%{background-color: mediumseagreen;}
+    100%{background-color: #9c0;}
+}
 /* 전체 타이틀 */
 .tit{
     /* height: 50px;
