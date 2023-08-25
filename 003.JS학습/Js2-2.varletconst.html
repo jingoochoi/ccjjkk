@@ -72,14 +72,19 @@
 
             ////// 중괄호로 블록영역을 만들어 본다! //////////
             /**********************************************/
-            {console.log('block');console.log(seoul);console.log(jeju);
+            {//console.log('block');console.log(seoul);
             var seoul='gangnam';//var don't care about {}
-            let jeju='mara';
-            console.log('block');console.log(seoul);}
+            let jeju='mara';//Cannot access 'jeju' before initialization(ban hoisting)
+            // console.log('block');console.log(seoul);console.log(jeju);
+            let toktok='line';
+            // console.log(toktok);
+            // var sport='ho';//Identifier 'sport' has already been declared(중괄호 안에 var로 선언하면 전역이 되므로 이미 전역에 렛으로 선언했으므로 중복금지)
+            }
             /**********************************************/
 
             // 블록바깥에서 전역변수 찍기!
-            console.log('block');console.log(seoul);
+            // console.log('block');console.log(seoul);console.log(jeju);
+            // console.log(toktok);
             //////////////////////////////////////////////
 
             //////////////////////////////////////////
