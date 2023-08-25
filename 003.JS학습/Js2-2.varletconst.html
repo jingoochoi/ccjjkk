@@ -13,13 +13,17 @@
                 2.all-area variable used out of function area
                 3.같은 이름을 함수 내에서 선언없이 할당하면 전역var가 덮어씌어짐.
                 4.함수영역에서 전역값과 같은 이름의 지역값을 선언하여 사용하면 전역값과 연결성이 끊어지고 지역값만을 지칭
+                5.같은 영역에서 같은 이름의 값을 다시 선언하면 덮어쓴다
                 -----
                 지역값=local var(다른 함수나 바깥 영역에서 지역값을 참조할 수 없다(사용불가))
                 전역값=global var(함수영역 바깥에서 선언,어떤 함수에서도 참조가능(사용가능)->공유하고자 하는 데이터를 저장할 때 많이 사용)                
                 ____________________________________________
 
 
-                [ let ] : 
+                [ let ] : block area variable({} is block)
+                1.렛으로 선언하면 전역과 지역을 별개로 관리하여 같은 이름의 값도 별개로 인식
+                2.선언 후 아래쪽에서 사용해야 한다(호이스팅 엄격 금지)
+                3.같은 영역에서 같은 이름의 값을 중복선언 못함
 
                 ****************************************
 
@@ -34,18 +38,29 @@
             // 1. 함수 중괄호에서 var ///////////////
             function callMe() {
                 var usa = "미국";
-                console.log('1'+usa);
+                // console.log('1'+usa);
                 korea='korea';
+                rabbit='rrbb';
             } ////////// callMe 함수 ///////////////
             ////////////////////////////////////////
 
             // 함수 바깥에서 변수를 선언하면 전역변수!
             var korea = "한국";
             var uk = "영국";
-            console.log(korea);
-            console.log(uk);
+            // console.log(korea);
+            // console.log(uk);
             callMe();
-            console.log(korea);
+            // console.log(korea);
+            // console.log(uk);
+            var uk='uk';
+            // console.log(uk);//became local var
+            // console.log(vr);//unassigned var,hoisting the var vr
+            var vr;
+            // console.log(rabbit);
+            rabbit='rb';
+            // console.log(rabbit);
+            // 선언없이 지역에서 할당한 값은 전역에 등록되므로 관리가 어려워지고 나중에 소스관리에 리스크로 작용->선언없이 사용하지 말라고 권고된다
+
             //////////////////////////////////////////////////
             /////////////// let,const 테스트 //////////////////
             //////////////////////////////////////////////////
@@ -57,11 +72,14 @@
 
             ////// 중괄호로 블록영역을 만들어 본다! //////////
             /**********************************************/
-            
+            {console.log('block');console.log(seoul);console.log(jeju);
+            var seoul='gangnam';//var don't care about {}
+            let jeju='mara';
+            console.log('block');console.log(seoul);}
             /**********************************************/
 
             // 블록바깥에서 전역변수 찍기!
-            
+            console.log('block');console.log(seoul);
             //////////////////////////////////////////////
 
             //////////////////////////////////////////
