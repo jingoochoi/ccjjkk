@@ -96,15 +96,21 @@ body{
 /* 태양박스 */
 #sun{
     position: absolute;
-
+    top: 0;left: 0;
+    width: var(--sun-size);height: var(--sun-size);
+    border-radius: 50%;
+    box-shadow: 0 0 60px 10px orange;
+    overflow: hidden;
 }
 /* 태양이미지 */
 #sun img{
+    width: 100%;height: 100%;
+    animation: flame 30s linear  infinite alternate ;
 }
 /* 태양이 이글거리는 애니메이션 키프레임 */
 @keyframes flame {
     to{
-        
+        transform: scale(1.3);
     }
 } /* 키프레임 */
 
