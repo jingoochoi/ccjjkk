@@ -28,14 +28,24 @@
     --sun-size: 250px;
     /* 지구크기 */
     --earth-size: 80px;
+    /* 지구거리 */
+    --earth-trans-size: -250px;
     /* 달크기 */
     --moon-size: 40px;
+    /* 달거리 */
+    --moon-trans-size: 60px;
     /* 목성크기 */
     --jupiter-size: 150px;
+    /* 목성거리 */
+    --jupiter-trans-size: 400px;
     /* 토성크기 */
     --saturn-size: 160px;
+    /* 토성거리 */
+    --saturn-trans-size: -550px;
     /* 명왕성크기 */
     --pluto-size: 50px;
+    /* 명왕성거리 */
+    --pluto-trans-size: 650px;
 }
 
 html,body{
@@ -128,10 +138,10 @@ body{
 /* 지구회전 키프레임 */
 @keyframes earth {
     from{
-        transform: rotate(0deg) translateX(-250px) rotate(0deg);
+        transform: rotate(0deg) translateX(var(--earth-trans-size)) rotate(0deg);
     }
     to{
-        transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+        transform: rotate(360deg) translateX(var(--earth-trans-size)) rotate(-360deg);
     }
 } /* 지구회전 키프레임 */
 
@@ -147,10 +157,10 @@ body{
 /* 달회전 키프레임 */
 @keyframes moon {
     from{
-        transform: rotate(0deg) translateX(70px) rotate(0deg);
+        transform: rotate(0deg) translateX(var(--moon-trans-size)) rotate(0deg);
     }
     to{
-        transform: rotate(-360deg) translateX(70px) rotate(360deg);
+        transform: rotate(-360deg) translateX(var(--moon-trans-size)) rotate(360deg);
     }
 } /* 달회전 키프레임 */
 
@@ -166,17 +176,20 @@ body{
 /* 목성회전 키프레임 */
 @keyframes jupiter {
     from{
-        transform: rotate(0deg) translateX(-500px);
+        transform: rotate(0deg) translateX(var(--jupiter-trans-size)) rotate(0deg);
     }
     to{
-        transform: rotate(360deg) translateX(-500px);
+        transform: rotate(360deg) translateX(var(--jupiter-trans-size)) rotate(-360deg);
     }
 } /* 목성회전 키프레임 */
 
 /* 토성 */
 #saturn{
     position: absolute;
-    
+    background: url(../images/saturn.png)no-repeat 0/100%;
+    width: var(--saturn-size);height: var(--saturn-size);
+    top: calc(50% - var(--saturn-size)/2);left: calc(50% - var(--saturn-size)/2);
+    animation: saturn 40s linear  infinite  ;
 }
 /* 가상요소로 토성이미지 배경으로 넣기 */
 
@@ -184,10 +197,10 @@ body{
 /* 토성회전 키프레임 */
 @keyframes saturn {
     from{
-        
+        transform: rotate(0deg) translateX(var(--saturn-trans-size)) rotate(0deg);
     }
     to{
-        
+        transform: rotate(360deg) translateX(var(--saturn-trans-size)) rotate(-360deg);
     }
 } /* 토성회전 키프레임 */
 
