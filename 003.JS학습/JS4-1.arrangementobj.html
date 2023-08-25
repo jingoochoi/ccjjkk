@@ -66,7 +66,12 @@
                 const arr1=new Array('1993.10.12','183cm','65kg','person',4567,'seo');
                 console.log(arr1,typeof arr1);
                 for(let i=0;i<target.length;i++){target[i].innerHTML=arr1[i];}
-                arr1
+                arr2=['move','flag',1919,function(){alert('go');this.style.background=`url(https://blog.kakaocdn.net/dn/H4k8p/btqUUqx7TLT/VAMfjsV79wqyKIfOGXn5P0/img.jpg) repeat-x 0/auto 100%`;}]
+                console.log(arr2);
+                target[3].innerHTML=`${arr2[0]},${arr2[1]},${arr2[2]}`;
+                target[3].title='click for fighting';
+                target[3].style.cursor='pointer';
+                target[3].addEventListener('click',arr2[3]);
             }//ld
             
         </script>
