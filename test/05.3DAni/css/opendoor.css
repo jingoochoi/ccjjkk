@@ -14,7 +14,7 @@ html,body,h1{
 body{
     background-color: #9c0;
     /* 배경색 애니메이션: 이시이지반방마 */
-    animation: bgAni 10s linear infinite;
+    /* animation: bgAni 10s linear infinite; */
 }
 
 /* 전체 타이틀 */
@@ -34,7 +34,7 @@ body{
 
 /* 전체랩핑박스 */
 .wrap{
-    overflow: hidden;
+    /* overflow: hidden; */
     /* 3D문이 잘려보이지 않게 위아래 패딩줌! */
     padding: 50px 0;
 }
@@ -54,7 +54,7 @@ body{
     height: 280px;
     margin: 0 auto;
     background: url(../images/seashore.jpg) no-repeat center/auto 100%;
-
+    perspective: 300px;
     /******************************* 
         [ 3D 원근설정 ]
         1. 셋팅위치 : 3D원근 설정을 할
@@ -80,7 +80,9 @@ body{
 }
 
 /* 배경이미지 크기변경으로 파도치는 키프레임 */
-
+@keyframes swing1 {
+    to{}
+}
 
 
 /* 문짝 */
@@ -94,9 +96,10 @@ body{
     background-color: #c90;
 
     /* 문짝회전 */
+    transform: rotateY(0deg);
     
     /* 축변경 */
-    
+    transform-origin: left;
     /* 
         [트랜스폼 회전축 변경속성]
         transform-origin: 가로축 세로축
@@ -105,7 +108,8 @@ body{
     */
 
     /* 애니메이션: 이시이지반방마 */
-    
+    animation: firstopendoor 1s ease-in-out forwards ,opendoor 2s ease-in-out 1s infinite alternate  ;
+    animation-play-state: paused;
 }
 
 /* 문짝부모에 오버시 문짝애니작동! */
@@ -114,10 +118,15 @@ body{
 }
 
 /* 문짝 처음열기 키프레임 */
-
+@keyframes firstopendoor {
+    to{transform: rotateY(50deg);}
+}
 
 /* 문짝 여닫기 키프레임 */
-
+@keyframes opendoor {
+    from{transform: rotateY(50deg);}
+    to{transform: rotateY(-50deg);}
+}
 
 
 
