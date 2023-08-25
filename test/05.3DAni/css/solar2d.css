@@ -90,8 +90,13 @@ body{
     font-size: 80px;
     text-align: center;
     padding-top: 20px;
+    
+    animation: title 10s linear  infinite  ;
 }
-
+@keyframes title {
+    from{transform: translateX(70%);}
+    to{transform: translateX(-70%);}
+}
 /* 태양계박스 */
 #solar{
     position: absolute;
