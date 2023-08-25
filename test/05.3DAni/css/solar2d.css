@@ -94,8 +94,8 @@ body{
     animation: title 10s linear  infinite  ;
 }
 @keyframes title {
-    from{transform: translateX(70%);}
-    to{transform: translateX(-70%);}
+    from{transform: translateX(65%);}
+    to{transform: translateX(-65%);}
 }
 /* 태양계박스 */
 #solar{
