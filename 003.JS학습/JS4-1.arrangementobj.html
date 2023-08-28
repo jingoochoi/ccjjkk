@@ -58,7 +58,53 @@
                     예컨데 자동차, 볼펜, 물통, 가방 등
                     독립된 별도의 기능이 있어야하고 명사적특징과
                     동사적 특징이 모두 있어야 객체다!*/
-                    /******************************************** 
+                    
+            window.addEventListener('DOMContentLoaded',ld);
+            function ld(){
+                // console.log('load complete');
+                let target=document.querySelectorAll('.cont');
+                // console.log(target);
+                const arr1=new Array('1993.10.12','183cm','65kg','person',4567,'seo');
+                // console.log(arr1,typeof arr1);
+                for(let i=0;i<target.length;i++){target[i].innerHTML=arr1[i];}
+                arr2=['move','flag',1919,function(){alert('go');this.style.background=`url(https://blog.kakaocdn.net/dn/H4k8p/btqUUqx7TLT/VAMfjsV79wqyKIfOGXn5P0/img.jpg) repeat-x 0/auto 100%`;}]
+                // console.log(arr2);
+                target[3].innerHTML=`${arr2[0]},${arr2[1]},${arr2[2]}`;
+                target[3].title='click for fighting';
+                target[3].style.cursor='pointer';
+                target[3].addEventListener('click',arr2[3]);
+                const arr3=[];
+                // const로 리터럴 선언, 할당 후 배열값을 바꾸는 건 자유롭다
+                // 배열형만 못 바꾼다
+                arr3.length=8;//추후 추가 가능
+                arr3[0]='mount';
+                arr3[1]='grandpa';
+                arr3[2]='cap';
+                arr3[3]='hat';
+                arr3[4]='fly';
+                arr3[5]='go';
+                arr3[6]='and';
+                arr3[7]='do';
+                // console.log(arr3.valueOf());//값만 찍어도 브라우저가 찍어줌
+                arr3.join('^');//데이터베이스에 데이터를 하나로 만들어넣을 때 많이 쓰기도 함.
+                arr3.push('by kim');//add sth at the end
+                target[2].innerHTML=arr3.join('✅');
+                const ssg=new Object({
+            'name?':'son suk goo',
+            birthday:'1983.02.07',
+            height:'178',
+            weight:'80',
+            blood:'c',
+            gender:'male',
+            password:7777,
+            letter:function(){
+                alert('what are u doing?');
+            }
+           })
+           console.log(ssg);
+           target[2].innerHTML=`your actor is ${ssg['name?']}. weight is ${ssg.weight}. birthday is ${ssg.birthday}.`;
+            }//ld
+            /******************************************** 
                         [ 객체(Object) 란? ]
 
                 - 일반적으로 JS에서 객체란 속성과 메서드를
@@ -107,38 +153,7 @@
                 - 객체명.속성명
 
             ********************************************/
-            window.addEventListener('DOMContentLoaded',ld);
-            function ld(){
-                console.log('load complete');
-                let target=document.querySelectorAll('.cont');
-                console.log(target);
-                const arr1=new Array('1993.10.12','183cm','65kg','person',4567,'seo');
-                console.log(arr1,typeof arr1);
-                for(let i=0;i<target.length;i++){target[i].innerHTML=arr1[i];}
-                arr2=['move','flag',1919,function(){alert('go');this.style.background=`url(https://blog.kakaocdn.net/dn/H4k8p/btqUUqx7TLT/VAMfjsV79wqyKIfOGXn5P0/img.jpg) repeat-x 0/auto 100%`;}]
-                console.log(arr2);
-                target[3].innerHTML=`${arr2[0]},${arr2[1]},${arr2[2]}`;
-                target[3].title='click for fighting';
-                target[3].style.cursor='pointer';
-                target[3].addEventListener('click',arr2[3]);
-                const arr3=[];
-                // const로 리터럴 선언, 할당 후 배열값을 바꾸는 건 자유롭다
-                // 배열형만 못 바꾼다
-                arr3.length=8;//추후 추가 가능
-                arr3[0]='mount';
-                arr3[1]='grandpa';
-                arr3[2]='cap';
-                arr3[3]='hat';
-                arr3[4]='fly';
-                arr3[5]='go';
-                arr3[6]='and';
-                arr3[7]='do';
-                console.log(arr3.valueOf());//값만 찍어도 브라우저가 찍어줌
-                arr3.join('^');//데이터베이스에 데이터를 하나로 만들어넣을 때 많이 쓰기도 함.
-                arr3.push('by kim');//add sth at the end
-                target[2].innerHTML=arr3.join('✅');
-            }//ld
-            
+           
         </script>
     </head>
 
