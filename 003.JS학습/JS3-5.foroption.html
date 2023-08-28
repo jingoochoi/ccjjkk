@@ -50,9 +50,10 @@
                         // console.log(i);
 
                          // for option
-                        if(i==4||i==7){continue;}
+                        if((i==4||i==7)&&txt=='for문옵션1'){continue;}
                         // continue=operating for excluding this condition
-
+                        if(i>5&&txt=='for문옵션2'){continue;}
+                        if(((i>=2&&i<=4)||i==9)&&txt=='for문옵션연습1'){continue;}
                         target.innerHTML+=`<img src="./images/num/num_0${i}.png" alt="number">`
                     }
                 }//showNum
