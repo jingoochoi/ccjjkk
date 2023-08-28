@@ -189,6 +189,7 @@
             //6.teaser
             tonyFilm.trailer=function(){
                 console.log('trailer','XvH4t7pvDc0');
+                playMovie('XvH4t7pvDc0');
             }
         //    console.log('my object',tonyFilm);
            target[5].style.lineHeight='34px';
@@ -196,10 +197,7 @@
            target[5].style.fontSize='14px';
            const showMovieInfo=function(){
             // console.log('info');
-            playMovie('XvH4t7pvDc0');
-           }
-           showMovieInfo();
-           target[5].innerHTML=`
+            target[5].innerHTML=`
                 🎬영화명 : ${tonyFilm.title}
                 🎬감독 : ${tonyFilm.director}<br>
                 🎬배우 : ${tonyFilm.actor}
@@ -207,7 +205,10 @@
                 🎬등급 : ${tonyFilm.ratings}
            `;
            target[5].title=`trailor ${tonyFilm.title} is available when u click here.`;
-           target[5].onclick=playMovie;
+           target[5].onclick=tonyFilm.trailer;
+           }
+           showMovieInfo();
+           
            function playMovie(mcode){
                 console.log(mcode);
                 let mvbox=document.querySelector('#mvbox');
