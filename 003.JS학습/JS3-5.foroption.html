@@ -54,6 +54,8 @@
                         // continue=operating for excluding this condition
                         if(i>5&&txt=='for문옵션2'){continue;}
                         if(((i>=2&&i<=4)||i==9)&&txt=='for문옵션연습1'){continue;}
+                        if(i%2==0&&txt=='for문옵션연습2')continue;
+                        if(i%2==1&&txt=='for문옵션연습3')continue;
                         target.innerHTML+=`<img src="./images/num/num_0${i}.png" alt="number">`
                     }
                 }//showNum
@@ -95,6 +97,20 @@
         <div>
             <h2>2~4,9빼고 돌리기</h2>
             <button>for문옵션연습1</button>
+            <br /><br />
+            <div class="forCls"></div>
+        </div>
+
+        <div>
+            <h2>짝수 빼고 돌려</h2>
+            <button>for문옵션연습2</button>
+            <br /><br />
+            <div class="forCls"></div>
+        </div>
+
+        <div>
+            <h2>홀수 빼고 돌려</h2>
+            <button>for문옵션연습3</button>
             <br /><br />
             <div class="forCls"></div>
         </div>
