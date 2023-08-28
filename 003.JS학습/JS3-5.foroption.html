@@ -12,6 +12,7 @@
             body,button{
                 font-size: min(20px,1.5vw);
             }
+            button{cursor: pointer;}
             .forCls {
                 height: 100px;
                 border: 4px dotted lightseagreen;
@@ -21,7 +22,42 @@
                 height: 100px;
             }
         </style>
-        
+        <script>
+            window.addEventListener('load',summon);
+            function summon(){
+                // console.log('com');
+                let btns=document.querySelectorAll('button');
+                // console.log(btns);
+                let cnt=btns.length;
+                for(let i=0;i<cnt;i++){
+                    // console.log(i);
+                    btns[i].onclick=showNum;
+                }
+                }
+                function showNum(){
+                    let txt=this.innerHTML;
+                    // console.log(i,this);
+
+                    // 부모요소선택
+                    // parentElement
+                    let target=this.parentElement.querySelector('.forCls');
+                    // console.log(target);
+
+                   
+
+                    target.innerHTML='';
+                    for(let i=1;i<=10;i++){
+                        // console.log(i);
+
+                         // for option
+                        if(i==4||i==7){continue;}
+                        // continue=operating for excluding this condition
+
+                        target.innerHTML+=`<img src="./images/num/num_0${i}.png" alt="number">`
+                    }
+                }//showNum
+            ;//summon
+        </script>
     </head>
 
     <body>
@@ -57,7 +93,7 @@
 
         <div>
             <h2>2~4,9빼고 돌리기</h2>
-            <button>for문옵션연습</button>
+            <button>for문옵션연습1</button>
             <br /><br />
             <div class="forCls"></div>
         </div>
