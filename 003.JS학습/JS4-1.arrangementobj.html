@@ -99,10 +99,72 @@
             password:7777,
             letter:function(){
                 alert('what are u doing?');
+                target[2].style.background='url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%';
+                target[2].style.color='white';
+                target[2].style.textShadow='0 0 3px black';
+                target[2].innerHTML='to be continued...';
+                target[2].style.lineHeight='84px';
+                target[2].style.tranform='scale(1.2)';
+                target[2].style.transition='1s ease-out 1s';
             }
            })
-           console.log(ssg);
+        //    console.log(ssg);
            target[2].innerHTML=`your actor is ${ssg['name?']}. weight is ${ssg.weight}. birthday is ${ssg.birthday}.`;
+           target[2].onclick=ssg.letter;
+           target[2].title=`click for checking the letter of ${ssg['name?']}`;
+           target[2].style.cursor='pointer';
+           /*************************************** 
+                [ new 키워드 없이 바로 객체 생성하기 ] 
+                -> 객체 리터럴 (추천방식!)
+
+                - 방법: 변수 선언 후 이퀄 뒤에 바로 중괄호 사용!
+                예) let obj = {속성명:값,속성명:값,...};
+
+                [ 객체의 속성 셋팅시 문자형 또는 변수형 사용하기 ]
+                
+                1. 문자형 속성 - 따옴표로 싸는 방법
+
+                예) let obj = {"나는나":"호호호","너는너":"하하하"}
+                -> 문자형 속성의 객체 호출시
+                객체명[문자형속성명]
+                예) obj["나는나"]
+
+                2. 변수형 속성 - 따옴표로 안싸는 방법
+                예) let obj = {name:"김수현",tall:"186cm"};
+                -> 변수형 속성의 객체 호출시
+                객체명.속성명
+                예) obj.name
+
+                또는
+
+                객체명["속성명"]
+                예) obj["name"]
+                -> 반드시 변수형 속성명을 따옴표로 싸서
+                문자형으로 표시해야함!
+                obj[name] -> 에러남!
+
+                -> 만약 문자형으로 설정된 경우에도
+                변수형으로 사용될 수 있는 문자면 변수형호출가능!
+                예) var obj = {"하하하":"나나나"}
+                    obj["하하하"] 또는 obj.하하하
+
+            ***************************************/
+           const gu={name:'kong',tall:'184',weight:'74',com:'management soop',work:'dkb',msgFn:function(txt){
+            alert(txt);
+           }};
+        //    console.log(gu);
+           target[1].style.lineHeight='23px';
+           target[1].innerHTML=`
+           i am ${gu.name}.
+           weight is ${gu.weight}.<br>
+           my work is ${gu.work}.<br>
+           i work in ${gu.com}. see u.`;
+           target[1].title='please click for letter';
+           target[1].style.cursor='pointer';
+           target[1].onclick=function(){
+            gu.msgFn('welcome to\nkong page');
+            // \n=br in alert
+           }
             }//ld
             /******************************************** 
                         [ 객체(Object) 란? ]
