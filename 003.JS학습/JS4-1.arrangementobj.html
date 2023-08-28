@@ -190,12 +190,12 @@
             tonyFilm.trailer=function(){
                 console.log('trailer','XvH4t7pvDc0');
             }
-           console.log('my object',tonyFilm);
+        //    console.log('my object',tonyFilm);
            target[5].style.lineHeight='34px';
            target[5].style.cursor='pointer';
            target[5].style.fontSize='14px';
            const showMovieInfo=function(){
-            console.log('info');
+            // console.log('info');
             playMovie('XvH4t7pvDc0');
            }
            showMovieInfo();
@@ -207,10 +207,47 @@
                 🎬등급 : ${tonyFilm.ratings}
            `;
            target[5].title=`trailor ${tonyFilm.title} is available when u click here.`;
-           target[5].onclick=tonyFilm.trailer;
+           target[5].onclick=playMovie;
            function playMovie(mcode){
                 console.log(mcode);
                 let mvbox=document.querySelector('#mvbox');
+                mvbox.innerHTML=`
+                    <div id="mv">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${mcode}?autoplay=1" allow="autoplay"></iframe>
+                        <button class="cbtn">x</button>
+                    </div>
+                `;
+                let mv=document.querySelector('#mv');
+                let css=mv.style;
+                css.position='fixed';
+                css.top='50%';
+                css.left='50%';
+                css.transform='translate(-50%,-50%)';
+                css.width='700px';
+                css.height='450px';
+                css.backgroundColor='black';
+                let cbtn=document.querySelector('.cbtn');
+                cbtn.style.cssText=`
+                    position:absolute;
+                    top:0;
+                    right:-70px;
+                    width:50px;
+                    height:50px;
+                    border:none;
+                    color:white;
+                    background-color:blue;
+                    font-size:40px;
+                    font-weight:bold;
+                    border-radius:50%;
+                    cursor:pointer;
+                    line-height:50px;
+                `;
+                mv.querySelector('iframe').style.border='none';
+                cbtn.onclick=function(){
+                    mv.remove();
+                    document.body.classList.remove('on');
+                };
+                document.body.classList.add('on');
            }
             }//ld
             /******************************************** 
