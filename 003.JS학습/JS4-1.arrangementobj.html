@@ -174,6 +174,43 @@
             // \n=br in alert
             // there is not ',' but '+'
            }
+           const tonyFilm={};
+            //movie info
+            //1.title
+            tonyFilm.title='창궐';
+            //2.director
+            tonyFilm.director='김성훈';
+            //3.actors
+            tonyFilm.actor='현빈,장동건,조우진,기타등등등등등';
+            //4.genre
+            tonyFilm.genre='액션사극';
+            //5.age
+            tonyFilm.ratings='15세';
+            //6.teaser
+            tonyFilm.trailer=function(){
+                console.log('trailer','XvH4t7pvDc0');
+            }
+           console.log('my object',tonyFilm);
+           target[5].style.lineHeight='34px';
+           target[5].style.cursor='pointer';
+           target[5].style.fontSize='14px';
+           const showMovieInfo=function(){
+            console.log('info');
+            playMovie('XvH4t7pvDc0');
+           }
+           showMovieInfo();
+           target[5].innerHTML=`
+                🎬영화명 : ${tonyFilm.title}
+                🎬감독 : ${tonyFilm.director}<br>
+                🎬배우 : ${tonyFilm.actor}
+                🎬장르 : ${tonyFilm.genre}
+                🎬등급 : ${tonyFilm.ratings}
+           `;
+           target[5].title=`trailor ${tonyFilm.title} is available when u click here.`;
+           target[5].onclick=tonyFilm.trailer;
+           function playMovie(mcode){
+                console.log(mcode);
+           }
             }//ld
             /******************************************** 
                         [ 객체(Object) 란? ]
