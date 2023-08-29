@@ -173,7 +173,7 @@
         const scene = [
             "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F1ee63066-4239-11ec-b414-b1f6389ab345.jpg", 
             "https://cdn.britannica.com/57/75757-050-122EC2ED/Changgyong-Palace-background-Seoul.jpg", 
-            "https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg","https://www.wallpaperflare.com/static/353/548/867/cityscape-seoul-south-korea-landscape-wallpaper-preview.jpg","https://wallpaperaccess.com/full/11675.jpg","https://wallpaperaccess.com/full/11676.jpg","https://wallpaperaccess.com/full/11678.jpg","https://wallpaperaccess.com/full/5480068.jpg","https://wallpaperaccess.com/full/11682.jpg"
+            "https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg","https://www.wallpaperflare.com/static/353/548/867/cityscape-seoul-south-korea-landscape-wallpaper-preview.jpg","https://wallpaperaccess.com/full/11675.jpg","https://wallpaperaccess.com/full/11676.jpg","https://wallpaperaccess.com/full/11678.jpg","https://wallpaperaccess.com/full/5480068.jpg","https://wallpaperaccess.com/full/11682.jpg","https://wallpaperaccess.com/full/5480079.jpg"
         ];
 
             /*////////////////////////////////
@@ -302,8 +302,16 @@
             /// 일정시간 후 한번만 애국가 가사  /////////
             /// body에 h2태그로 넣기 ///////////////////
             ///////////////////////////////////////////
-            
-
+            function myFn(){
+                // console.log('fn',arguments,typeof arguments,typeof scene);
+                for(let i=0;i<arguments.length;i++){
+                    document.body.innerHTML+=`<h2>${arguments[i]}</h2>`;
+                }
+            }
+            // argumensts can be used in anonymous fn, but not be in arrow fn
+            setTimeout(() => {
+                myFn('동해물과','백두산이','마르고','닳도록','하느님이','보우하사','우리나라','만세');
+            }, 2000);
             /************************************************ 
                 함수명: myFn
                 기능: 파라미터 얼마든지 받아서 h2만들어 넣기
@@ -313,7 +321,8 @@
                 let bgbox=document.querySelector('.bgbox');
                 let hcode='';
                 hcode+='<ul>';
-                    for(let i=0;i<3;i++){
+                    let scenecnt=scene.length;
+                    for(let i=0;i<scenecnt;i++){
                         hcode+=`<li ${i==0?"class='on'":""}></li>`;
                     }
                 hcode+='</ul>';
@@ -326,7 +335,7 @@
                 setInterval(() => {
                     bgli[seq].classList.remove('on');
                     seq++;
-                    if(seq==3)seq=0;
+                    if(seq==bgli.length)seq=0;
                     bgli[seq].classList.add('on');
                 }, 1000);
             })
