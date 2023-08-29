@@ -178,7 +178,9 @@
             function Korea(txt) {
                 // 1.함수호출,전달값 확인
                 alert(txt);
-                Ri(txt+'리');
+                let ri= Ri(txt+'리');
+                alert(ri);
+                return ri+'국 만세';
             } ///// Korea함수 ////////////////
             //////////////////////////////////
 
@@ -189,7 +191,9 @@
             function Ri(txt) {
                 // 1.함수호출,전달값 확인
                 alert(txt);
-                Na(txt+'나');
+                let na= Na(txt+'나');
+                alert(na);
+                return na+'민';
             } ///// Ri함수 ////////////////
             //////////////////////////////////
 
@@ -200,7 +204,9 @@
             function Na(txt) {
                 // 1.함수호출,전달값 확인
                 alert(txt);
-                Ra(txt+'라');
+                let ra= Ra(txt+'라');
+                alert(ra);
+                return ra+'한';
             } ///// Na함수 ////////////////
             //////////////////////////////////
 
@@ -211,6 +217,7 @@
             function Ra(txt) {
                 // 1.함수호출,전달값 확인
                 alert(txt);
+                return txt+' 대';
                 callMe(txt);
             } ///// Ra함수 ////////////////
             //////////////////////////////////
@@ -301,7 +308,7 @@
     </head>
 
     <body>
-        <button onclick="Korea('우')">
+        <button onclick="alert(Korea('우'))">
             우리나라 대한민국 만세 프로젝트 시작!
         </button>
         <!-- 
