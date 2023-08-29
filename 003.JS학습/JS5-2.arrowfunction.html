@@ -62,29 +62,59 @@
         ****************************************************/
 
         // 일반적인 할당형 함수 /////
-        
+        let x=function(a,b){return a*b;};
+        // console.log(x(100,20));
 
 
         // 축약형 화살표함수 /////
-        
+        let y=(a,b)=>{return a*b;};
+        // console.log(y(300,20));
 
         // 축약형 화살표함수 좀 더 축약! /////
-        
+        let z=(a,b)=>a*b;
+        // console.log(z(400,20));
 
         // 일반적인 함수 할당
-        
+        const my=function(x){return `i am ${x}`};
 
         // 함수호출하기
-        
+        // console.log(my('rich'));
 
 
         // 완전축약형!
-        
+        const we=x=>`we are ${x}`;
         /////////// we함수 ///////
-
+                // querySelector 짧게
+        const qs=x=>document.querySelector(x)
+        const qa=x=>document.querySelectorAll(x)
         // 함수호출하기
-        
+        // console.log(we('rich'));
+        window.addEventListener('DOMContentLoaded',()=>{
+            // console.log('load')
+            let btn=qa('.btn')
+            // console.log(btn)
+            btn[0].onclick=()=>{
+                /************************************ 
+                화살표함수를 사용할때
+                this 키워드의 의미는 다르다!!!
 
+                화살표함수에서 this는 window객체를 의미!
+                (자신을 생성한 객체를 가리킨다!
+                즉, 여기서는 window로딩구역안에 생성되어서
+                window객체를 가리키고 만약 이것이 어떤
+                Object안에 메서드라면 그 Object를 가리킴!)
+                -> JS this키워드를 자세히 알아볼것임!!!
+
+                this 키워드 대신
+                event.currentTarget 을 사용하여
+                현재요소 자신을 의미하도록
+                코딩해야함!
+
+            ************************************/
+                console.log(event.currentTarget)
+                event.currentTarget.innerHTML='arrow function'
+            }
+        })
 </script>
 
 </head>
