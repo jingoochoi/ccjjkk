@@ -14,6 +14,7 @@ html{font-size: 10px;}
 body{color: white;}
 body *{outline: 2px dashed yellow;}
 /* ios bg setting(fixed) */
-.page{height: 100vh;}
+.page{height: 100vh;position: relative;}
 .tit{text-align: center;font-size: 4rem;}
+.avengersbox{position: absolute;width: 300px;height: 400px;top: calc(50% - 400px/2);left: calc(50% - 300px/2);background: url(../ab_img/ab0.jpg)no-repeat center/cover;border-radius: 50%;box-shadow: 0 0 50px 10px cyan,inset 0 0 30px lightgreen;}
 .character{}
