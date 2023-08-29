@@ -331,7 +331,9 @@
                 }, 1000);
             })///
             function myFn(){
-                // console.log('fn',arguments,typeof arguments,typeof scene);
+                console.log(Array.isArray(arguments),Array.isArray(scene),);
+                Array.from(arguments);
+                console.log(Array.isArray(Array.from(arguments)));
                 let letters=document.querySelector('.letters');
                 // DOM constructure was affected if add in body,so limit to special box under the body
                 for(let i=0;i<arguments.length;i++){
@@ -342,6 +344,10 @@
             setTimeout(() => {
                 myFn('동해물과','백두산이','마르고','닳도록','하느님이','보우하사','우리나라','만세');
             }, 2000);
+            // 유사배열객체=>배열형식의 객체, 그러나 배열 아니다. 배열 메서드 직접 사용불가
+            // test whether array or not->Array.isArray(variable or 값)
+            // 유사배열을 배열로 전환->Array.from(variable or 값)
+            // html collection is also 유사배열
         </script>
     </head>
 
