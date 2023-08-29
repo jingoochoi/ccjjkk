@@ -333,6 +333,7 @@
             function myFn(){
                 // console.log('fn',arguments,typeof arguments,typeof scene);
                 let letters=document.querySelector('.letters');
+                // DOM constructure was affected if add in body,so limit to special box under the body
                 for(let i=0;i<arguments.length;i++){
                     letters.innerHTML+=`<h2>${arguments[i]}</h2>`;
                 }
