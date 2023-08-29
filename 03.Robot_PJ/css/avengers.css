@@ -10,4 +10,10 @@
 */
 @import url(./reset.css);
 body::before{content: '';position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: -1; background: url(../ab_img/space.jpg) no-repeat fixed center/cover;}
+html{font-size: 10px;}
+body{color: white;}
+body *{outline: 2px dashed yellow;}
+/* ios bg setting(fixed) */
 .page{height: 100vh;}
+.tit{text-align: center;font-size: 4rem;}
+.character{}
