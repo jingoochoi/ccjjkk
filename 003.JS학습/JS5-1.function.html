@@ -302,16 +302,7 @@
             /// 일정시간 후 한번만 애국가 가사  /////////
             /// body에 h2태그로 넣기 ///////////////////
             ///////////////////////////////////////////
-            function myFn(){
-                // console.log('fn',arguments,typeof arguments,typeof scene);
-                for(let i=0;i<arguments.length;i++){
-                    document.body.innerHTML+=`<h2>${arguments[i]}</h2>`;
-                }
-            }
-            // argumensts can be used in anonymous fn, but not be in arrow fn
-            setTimeout(() => {
-                myFn('동해물과','백두산이','마르고','닳도록','하느님이','보우하사','우리나라','만세');
-            }, 2000);
+           
             /************************************************ 
                 함수명: myFn
                 기능: 파라미터 얼마든지 받아서 h2만들어 넣기
@@ -338,15 +329,28 @@
                     if(seq==bgli.length)seq=0;
                     bgli[seq].classList.add('on');
                 }, 1000);
-            })
+            })///
+            function myFn(){
+                // console.log('fn',arguments,typeof arguments,typeof scene);
+                let letters=document.querySelector('.letters');
+                for(let i=0;i<arguments.length;i++){
+                    letters.innerHTML+=`<h2>${arguments[i]}</h2>`;
+                }
+            }
+            // argumensts can be used in anonymous fn, but not be in arrow fn
+            setTimeout(() => {
+                myFn('동해물과','백두산이','마르고','닳도록','하느님이','보우하사','우리나라','만세');
+            }, 2000);
         </script>
     </head>
 
     <body>
         <div class="bgbox"></div>
+        
         <button onclick="alert(Korea('우'))">
             우리나라 대한민국 만세 프로젝트 시작!
         </button>
+        <div class="letters"></div>
         <!-- 
             [JS 일반적인 실행순서]
             1. 위에서 아래로
