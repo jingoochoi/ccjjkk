@@ -5,9 +5,14 @@
         <title>JS5-1. 함수(function)</title>
         <style>
             body {
-                background: url(https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg?1601402564) no-repeat fixed center/cover;
+                margin: 0;min-height: 100vh;
+                /* background: url(https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg?1601402564) no-repeat fixed center/cover; */
             }
-
+            
+            .bgbox{position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;z-index: -1;}
+            ul{margin: 0;padding: 0;list-style: none;width: 100%;height: 100%;}
+            li{width: 100%;height: 100%;position: absolute;opacity: 0;transition:  1s ease-in-out;}
+            li.on{opacity: 1;z-index: 1;}
             h2 {
                 font-size: 5vh;
                 color: #fff;
@@ -223,7 +228,7 @@
             //////////////////////////////////
 
             // 선언적함수보다 위에서 이 함수를 호출! //
-            callMe("함수위에서 호출!");
+            // callMe("함수위에서 호출!");
             // 호출됨! 어떻게? -> 미리로딩되었다는 증거!
             // 코드위에서 호출되므로 이것을 함수호출 호이스팅(Hoisting)
             // 이라고 부른다!
@@ -249,7 +254,7 @@
             }; /////// myHome 함수 ////////////////
 
             // 할당형 익명함수를 코드 아래에서 호출!
-            myHome("익명함수 아래에서 호출!");
+            // myHome("익명함수 아래에서 호출!");
             // 만약 함수를 처음부터 호출하는 경우라면 할당형 익명함수는
             // 반드시 생성후 아랫쪽에서 호출해야한다!
 
@@ -303,11 +308,26 @@
                 함수명: myFn
                 기능: 파라미터 얼마든지 받아서 h2만들어 넣기
             ************************************************/
-            
+            window.addEventListener('DOMContentLoaded',function(){
+                console.log('load');
+                let bgbox=document.querySelector('.bgbox');
+                let hcode='';
+                hcode+='<ul>';
+                    for(let i=0;i<3;i++){
+                        hcode+='<li></li>';
+                    }
+                hcode+='</ul>';
+                bgbox.innerHTML=hcode;
+                let bgli= bgbox.querySelectorAll('li');
+                for(let i=0;i<bgli.length;i++){
+                    bgli[i].style.background=`url(${scene[i]}) no-repeat center/cover`;
+                }
+            })
         </script>
     </head>
 
     <body>
+        <div class="bgbox"></div>
         <button onclick="alert(Korea('우'))">
             우리나라 대한민국 만세 프로젝트 시작!
         </button>
