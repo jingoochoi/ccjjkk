@@ -67,7 +67,22 @@
                     }
                 }
                 }
-                
+                const wrap=qs('.wrap')
+                // console.log(wrap)
+                const move=qs('.flyer')
+                // console.log(move)
+                wrap.onmousemove=(e)=>{
+                    // event object is sent to inside of event function
+                    // console.log(event.pageX,event.pageY)
+                    move.style.top=e.pageY+'px'
+                    move.style.left=e.pageX+'px'
+                }
+                wrap.onmouseenter=()=>{
+                    move.style.display='block'
+                }
+                wrap.onmouseleave=()=>{
+                    move.style.display='none'
+                }
             }
         </script>
         <style>
@@ -90,12 +105,26 @@
                 border-radius: 10px;
                 font-size: 24px;
                 line-height: 2;
+                cursor: none;
             }
 
             .wrap > div {
                 color: #444;
             }
-
+            .flyer{
+                position: fixed;
+                top: 0;
+                left: 0;
+                transform: translate(-50%,-50%);
+                width: 200px;
+                height: 300px;
+                background: url(./images/ala1.jpg) no-repeat center/cover;
+                transition: .2s ease-out;
+                /* display: none; */
+                /* pointer-events:auto;(default)
+                    none-ignore underevent element */
+                pointer-events: none;
+            }
             h1,
             h2,
             h3 {
@@ -148,6 +177,8 @@
             <!--3.영화스토리-->
             <h3>영화스토리</h3>
             <div class="minfo"></div>
+
+            <div class="flyer"></div>
         </div>
     </body>
 </html>
