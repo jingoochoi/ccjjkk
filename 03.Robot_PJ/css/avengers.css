@@ -35,4 +35,4 @@ body *{outline: 2px dashed yellow;}
 .hero:nth-child(2){transform: translate(-200%, 50%);}
 .hero:nth-child(3){transform: translate(0, 200%);}
 .hero:nth-child(4){transform: translate(200%, 50%);}
-.hero:nth-child(5){transform: translate(200%,-100%);}
+.hero:nth-child(5){transform: translate(200%,-130%);}

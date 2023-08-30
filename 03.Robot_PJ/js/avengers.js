@@ -4,6 +4,7 @@ const qa=(x)=>document.querySelectorAll(x)
 const avengers=qs('.avengersbox')
 // console.log(avengers)
 let hcode=''
+let num=1;
 for(let x in character){
     // console.log(x)
     hcode+=`
@@ -11,7 +12,7 @@ for(let x in character){
     <!-- 이미지 -->
     <img src="./ab_img/${character[x]['이미지명']}.png" alt="${x}">
     <!-- 소개글박스 -->
-    <article class="txt">
+    <article class="txt ${num>=3?'right':''}">
         <div>
             <h3>${x}</h3>
             <p>${character[x]['설명']}</p>
@@ -19,6 +20,7 @@ for(let x in character){
     </article>
 </div>
     `
+    num++
 }
 // console.log(hcode)
  /************************************************* 
@@ -36,3 +38,4 @@ for(let x in character){
                     객체[변수] 로 쓰면됨!
 
             *************************************************/
+avengers.innerHTML=hcode
