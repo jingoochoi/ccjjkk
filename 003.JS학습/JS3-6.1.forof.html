@@ -15,6 +15,7 @@
             function ldd(){
                 // console.log('log')
                 let btns=qa('.btngo')
+                const minfo=qa('.minfo')
                 // console.log(btns)
                 /******************************************* 
                 [ for of 문 ]
@@ -39,7 +40,28 @@
                 for(let x of btns){
                     // console.log(x)
                     x.onclick=()=>{
-                    console.log('me')
+                    // console.log('me',event.currentTarget)
+                    let btxt=x.innerHTML;
+                    // console.log(btxt)
+                    let mvinfo;
+                    switch (btxt) {
+                            case "조제":
+                            mvinfo=mv1;
+                            break;
+                            case "원더 우먼 1984":
+                            mvinfo=mv2;
+                            break;
+                            case "도굴":
+                            mvinfo=mv3;
+                            break;
+                    
+                        
+                    }
+                    // console.log(mvinfo)
+                    // console.log(Array.isArray(mvinfo))
+                    for(let y of mvinfo){
+                        console.log(y)
+                    }
                 }
                 }
                 
