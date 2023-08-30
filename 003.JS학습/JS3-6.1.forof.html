@@ -9,6 +9,11 @@
             const mv1 = ["조제", "한지민(조제), 남주혁(영석)", "자신을 ‘조제’로 불러달라는 그녀처음 만난 그날부터 ‘조제’는 ‘영석’에게 잊을 수 없는 이름으로 남는다.할머니와 단둘이 사는 집, 그곳에서 책을 읽고 상상하며자신만의 세계를 살고 있는 ‘조제’.우연히 만난 그녀에게 특별한 감정을 느끼기 시작한 ‘영석’은천천히, 그리고 솔직하게 다가가기 시작한다.하지만 처음 경험해보는 사랑이 설레는 한편 가슴 아픈 ‘조제’는자신에게 찾아온 낯선 감정을 밀어내는데…기억할 거야너와 함께한 모든 순간을"];
             const mv2 = ["원더 우먼 1984", "갤 가돗(다이애나/원더우먼), 크리스 파인(스티브 트레버)", "1984년 모든 것이 활기찬 시대, 다이애나 프린스는 고고학자로서 인간들 사이에서 조용히 살고 있다. 단지 원더 우먼으로서 위기에 처한 사람을 구할 때만 빼고는. 그런 다이애나 앞에 거짓말처럼 죽었던 스티브 트레버가 나타나고, 거부할 수 없는 적마저 함께 찾아오는데…"];
             const mv3 = ["도굴", "이제훈(동구), 조우진(존스박사)", "흙 맛만 봐도 보물을 찾아내는 타고난 천재 도굴꾼 강동구(이제훈).자칭 한국의 '인디아나 존스'로 불리는 고분벽화 도굴 전문가 존스 박사(조우진), 전설의 삽질 달인 삽다리(임원희)를 만나 환상(?)의 팀플레이를 자랑하며 위험천만하고도 짜릿한 도굴의 판을 키운다."];
+            const img_src={
+                "조제":"https://t1.daumcdn.net/movie/f954c555d152096c5a3c77dab117fbe34ba65aa8",
+                "원더 우먼 1984":"https://t1.daumcdn.net/movie/b1720df6b54fb7632590d5d05edd986a28433c9b",
+                "도굴":"https://t1.daumcdn.net/movie/99a4d42206a028764e86c5bff8cf0021db985223",
+            }
             window.addEventListener('DOMContentLoaded',ldd)
             const qs=x=>document.querySelector(x)
             const qa=x=>document.querySelectorAll(x)
@@ -78,6 +83,7 @@
                     move.style.left=e.pageX+'px'
                 }
                 wrap.onmouseenter=()=>{
+                    move.style.backgroundImage=`url(${img_src[minfo[0].innerHTML]})`
                     move.style.display='block'
                 }
                 wrap.onmouseleave=()=>{
