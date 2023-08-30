@@ -18,7 +18,7 @@ body{color: white;}
 .tit{text-align: center;font-size: 4rem;}
 .avengersbox{position: absolute;width: 300px;height: 400px;top: calc(50% - 400px/2);left: calc(50% - 300px/2);background: url(../ab_img/ab0.jpg)no-repeat center/cover;border-radius: 50%;box-shadow: 0 0 50px 10px cyan,inset 0 0 30px lightgreen;}
 .hero{position: absolute;width: 150px;height: 150px;top: calc(50% - 150px/2);left: calc(50% - 150px/2);}
-.hero img{object-fit: cover;width: 100%;height: 100%;border-radius: 50%;}
+.hero img{object-fit: cover;width: 100%;height: 100%;border-radius: 50%;box-shadow: 0 0 30px 10px lightgreen;}
 /* 
         [ object-fit 속성 ]
         -> 이미지나 동영상을 박스에 맞출때
