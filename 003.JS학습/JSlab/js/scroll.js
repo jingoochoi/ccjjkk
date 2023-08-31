@@ -13,7 +13,7 @@ function wlfn(e) {
     stswl=1;//ban a lot of wheel
     setTimeout(() => {
         stswl=0
-    }, 800);//ban a lot of wheel
+    }, 100);//ban a lot of wheel
     let delta=e.wheelDelta//wheel direction(-=down,+=up)
     // console.log(delta)
     if(delta<0)bgnum++
