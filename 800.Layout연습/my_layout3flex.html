@@ -24,6 +24,8 @@
         .col-10 {width: 83.33%;}
         .col-11 {width: 91.66%;}
         .col-12 {width: 100%;}
+        .col-none{display: none;}
+        .col-block{display: block;}
         #header{background-color: lightblue;}
         #banner{background-color: limegreen;}
         #main{background-color: pink;}
@@ -40,6 +42,7 @@
         .footer{display: flex;flex-wrap: wrap;}
         .footer .partbox{height: 100px;}
         @media screen and (max-width:800px) {
+            /* 그리드구성 클래스셋을 다른 이름으로 하나 더 만들고 미리 요소에 클래스를 주면 해당 크기로 미디어쿼리 시 덮어쓴다 */
         .col2-1 {width: 8.33%;}
         .col2-2 {width: 16.66%;}
         .col2-3 {width: 25%;}
@@ -52,6 +55,8 @@
         .col2-10 {width: 83.33%;}
         .col2-11 {width: 91.66%;}
         .col2-12 {width: 100%;}
+        .col2-none{display: none;}
+        .col2-block{display: block;}
         }
     </style>
 </head>
