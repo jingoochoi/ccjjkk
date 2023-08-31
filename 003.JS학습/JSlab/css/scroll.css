@@ -1,6 +1,7 @@
 @charset "utf-8";
 html,body,h1,h2,h3{margin: 0;padding: 0;}
 html{scroll-behavior: smooth;}
+html,body{overflow: hidden;}
 .inbox{max-width: 2000px;margin: 0 auto;outline: 2px dashed red;}
 .page .inbox{height: 100vh;position: relative;}
 .bgcom{background-repeat: no-repeat;background-position: center;background-size: cover;}
