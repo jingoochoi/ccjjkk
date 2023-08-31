@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout one page auto scroll</title>
+    <style>
+        html,body,h1,h2,h3{margin: 0;padding: 0;}
+        #header{position: fixed;width: 100%;height: 200px;background-color: lightblue;z-index: 999;}
+        .inbox{max-width: 2000px;margin: 0 auto;outline: 2px dashed red;}
+        .page .inbox{height: 100vh;position: relative;background-image: linear-gradient(to bottom,lightpink,lightgreen);}
+        
+    </style>
+</head>
+<body>
+    <div id="header">
+        <header class="inbox"></header>
+        <div id="content">
+            <main>
+                <section class="page">
+                    <div class="inbox"></div>
+                </section>
+                <section class="page">
+                    <div class="inbox"></div>
+                </section>
+                <section class="page">
+                    <div class="inbox"></div>
+                </section>
+                <section class="page">
+                    <div class="inbox"></div>
+                </section>
+                <section class="page">
+                    <div class="inbox"></div>
+                </section>
+                <section class="page">
+                    <div class="inbox"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div id="footer">
+        <footer class="inbox"></footer>
+    </div>
+</body>
+</html>
