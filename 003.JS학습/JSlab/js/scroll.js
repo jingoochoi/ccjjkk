@@ -1,5 +1,9 @@
 let bgnum=0;
 let stswl=0;
+setTimeout(() => {
+    window.scrollTo(0,0)//reset when f5
+}, 10);
+
 window.addEventListener('wheel',wlfn)
 function wlfn(e) {
     // console.log('f')
