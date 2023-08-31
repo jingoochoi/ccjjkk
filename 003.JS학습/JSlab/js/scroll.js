@@ -6,8 +6,8 @@ function wlfn(e) {
     // console.log(delta)
     if(delta<0)bgnum++
     else bgnum--
-    if(bgnum<0)bgnum=0
-    if(bgnum>6)bgnum=6
+    if(bgnum<0)bgnum=6
+    if(bgnum>6)bgnum=0
     // console.log(bgnum)
     window.scrollTo(0,window.innerHeight*bgnum)
 }
