@@ -5,7 +5,7 @@
 body *{outline: 2px dashed #ccc;}
 body div *{outline-color: red;}
 #banner{background: url(../imgs/bg_mainvisual.jpg) no-repeat center/ 100%;}
-.dkb img{position: absolute;left: 73%;top: 26%;}
+.dkb img{position: absolute;left: 88%;top: 26%;}
 #dokebimenu{position: sticky;top: 0;background-color: white;}
 .dokebimenu ul{display: flex;padding: 12px 0;}
 
@@ -19,6 +19,10 @@ body div *{outline-color: red;}
 .dokebimenu li:hover .dkbsub{display: block;background-color: white;}
 .dkbsub a{display: block;padding: 10px 13px;}
 .dkbsub a:hover{color: red;}
+.catarea{position: relative;}
+.catbox{display: flex;flex-wrap: wrap;width: 100%;margin: 0 auto;position: absolute;bottom: 5%;justify-content: space-evenly;}
+.catbox article{outline: 2px dashed blue;width: 20%;aspect-ratio: 2/1;
+}
 #main{background-color: pink;}
 .banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 455px;}
