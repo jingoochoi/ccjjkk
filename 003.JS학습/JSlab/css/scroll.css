@@ -5,11 +5,11 @@ html,body{overflow: hidden;}
 .inbox{max-width: 2000px;margin: 0 auto;outline: 2px dashed red;}
 .page .inbox{height: 100vh;position: relative;}
 .bgcom{background-repeat: no-repeat;background-position: center;background-size: cover;}
-.pg1{background: url(../labimg/auto_scroll/pic1.png);}
-.pg2{background: url(../labimg/auto_scroll/pic2.png);}
-.pg3{background: url(../labimg/auto_scroll/pic3.png);}
-.pg4{background: url(../labimg/auto_scroll/pic4.png);}
-.pg5{background: url(../labimg/auto_scroll/pic5.png);}
-.pg6{background: url(../labimg/auto_scroll/pic6.png);}
-.pg7{background: url(../labimg/auto_scroll/pic7.png);}
-#header{position: fixed;width: 100%;height: 200px;background-color: lightblue;z-index: 999;}
+.pg1{background-image: url(../labimg/auto_scroll/pic1.png);}
+.pg2{background-image: url(../labimg/auto_scroll/pic2.png);}
+.pg3{background-image: url(../labimg/auto_scroll/pic3.png);}
+.pg4{background-image: url(../labimg/auto_scroll/pic4.png);}
+.pg5{background-image: url(../labimg/auto_scroll/pic5.png);}
+.pg6{background-image: url(../labimg/auto_scroll/pic6.png);}
+.pg7{background-image: url(../labimg/auto_scroll/pic7.png);}
+#header{position: fixed;width: 100%;height: 200px;background-color: rgba(173, 216, 230, 0.644);z-index: 999;}
