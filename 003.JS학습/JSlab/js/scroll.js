@@ -1,5 +1,10 @@
+let bgnum=0;
 window.addEventListener('wheel',wlfn)
-function wlfn() {
+function wlfn(e) {
     // console.log('f')
-    
+    let delta=e.wheelDelta
+    // console.log(delta)
+    if(delta<0)bgnum++
+    else bgnum--
+    window.scrollTo(0,window.innerHeight*bgnum)
 }
