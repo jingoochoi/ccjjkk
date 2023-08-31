@@ -1,0 +1,1 @@
+window.addEventListener('wheel',wlfn)
