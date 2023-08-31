@@ -15,8 +15,8 @@ body div *{outline-color: red;}
 .besub{position: relative;}
 .besub> a::after{content: '▼';display: inline-block;transform: scale(.5);}
 
-.dkbsub{position: absolute;width: 100%;border: 1px solid red;border-radius: 30px;display: none;}
-.dokebimenu li:hover .dkbsub{display: block;}
+.dkbsub{position: absolute;width: 100%;border: 1px solid red;border-radius: 20px;display: none;}
+.dokebimenu li:hover .dkbsub{display: block;background-color: white;}
 .dkbsub a{display: block;padding: 10px 13px;}
 .dkbsub a:hover{color: red;}
 #main{background-color: pink;}
