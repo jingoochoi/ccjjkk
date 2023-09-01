@@ -53,7 +53,7 @@ transform-style:preserve-3d; */
             음의 방향 -360도+30도=-330도
         */
 }
-.rotate{animation: cube 10s linear  infinite  ;
+.rotate{animation: cube 20s linear  infinite  ;
     /* animation-play-state: paused; */
 }
 .rotate:hover{animation: cube 3s linear  infinite  ;animation-play-state: paused;}
