@@ -20,6 +20,6 @@ function clft() {
     // console.log(btngo,cube)
     btngo.onclick=()=>{
         // console.log('b')
-        
+        cube.classList.toggle('on')
     }
 }
