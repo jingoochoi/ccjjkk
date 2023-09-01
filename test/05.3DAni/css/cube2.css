@@ -9,7 +9,7 @@ body{
     background-image: linear-gradient(to bottom, #a1f4e0, #ef95fb);
     height: 100vh;
 }
-.wrap{perspective: 60vh;position: relative;height: 200vh;}
+.wrap{perspective: 60vh;position: fixed;height: 100vh;width: 100vw;overflow: scroll;}
 :root{--cubesize:300px;}
 /* 작동버튼 */
 .btngo{
@@ -24,13 +24,13 @@ body{
 .btngo:hover{
     background-color: lime;
 }
-.ctt{height: 200vh;transform-style: preserve-3d;position: relative;}
+.ctt{height: 300vh;transform-style: preserve-3d;position: relative;}
 .cube{position: absolute;width: var(--cubesize);height: var(--cubesize);top: calc(50vh - var(--cubesize)/2);left: calc(50vw - var(--cubesize)/2);transform: rotateY(30deg);transform-style: preserve-3d;}
 .cube2{top: calc(150vh - var(--cubesize)/2);}
 /* 3d setting
 입체로 설정할 요소의 부모박스(혹 상위요소)에 아래와 같이 설정함
 transform-style:preserve-3d; */
-.cube span{position: absolute;width: 100%;height: 100%;opacity: 0.9;}
+.cube span{position: absolute;width: 100%;height: 100%;opacity: 1;}
 .cube span:nth-child(1){background: url(../images/seoulCity.jpg)no-repeat center/cover;transform: translateZ(calc(var(--cubesize)/2));}
 .cube span:nth-child(2){background: url(../images/newyorkCity.jpg)no-repeat right/auto 105%;transform:rotateY(90deg) translateZ(calc(var(--cubesize)/2)) ;}
 .cube span:nth-child(3){background: url(../images/parisCity.jpg)no-repeat center/cover ;transform:rotateY(180deg) translateZ(calc(var(--cubesize)/2)) ;}
@@ -50,5 +50,7 @@ transform-style:preserve-3d; */
             음의 방향 -360도+30도=-330도
         */
 }
-.rotate{animation: cube 3s linear  infinite  ;animation-play-state: paused;}
-.rotate.on{animation: cube 3s linear  infinite  ;animation-play-state: running;}
+.rotate{animation: cube 3s linear  infinite  ;
+    /* animation-play-state: paused; */
+}
+.rotate:hover{animation: cube 3s linear  infinite  ;animation-play-state: paused;}
