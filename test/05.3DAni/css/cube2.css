@@ -10,7 +10,7 @@ body{
     height: 100vh;
 }
 .wrap{perspective: 60vh;position: fixed;height: 100vh;width: 100vw;overflow: scroll;}
-:root{--cubesize:300px;}
+:root{--boxwidth:150px;--boxheight:200px;--zsize:30vh;}
 /* 작동버튼 */
 .btngo{
     position: fixed;
@@ -25,18 +25,21 @@ body{
     background-color: lime;
 }
 .ctt{height: 300vh;transform-style: preserve-3d;position: relative;}
-.cube{position: absolute;width: var(--cubesize);height: var(--cubesize);top: calc(50vh - var(--cubesize)/2);left: calc(50vw - var(--cubesize)/2);transform: rotateY(30deg);transform-style: preserve-3d;}
-.cube2{top: calc(150vh - var(--cubesize)/2);}
+.cube{position: absolute;width: var(--boxwidth);height: var(--boxheight);top: calc(50vh - var(--boxheight)/2);left: calc(50vw - var(--boxwidth)/2);transform: rotateY(30deg);transform-style: preserve-3d;}
+.cube2{top: calc(150vh - var(--boxheight)/2);}
 /* 3d setting
 입체로 설정할 요소의 부모박스(혹 상위요소)에 아래와 같이 설정함
 transform-style:preserve-3d; */
 .cube span{position: absolute;width: 100%;height: 100%;opacity: 1;}
-.cube span:nth-child(1){background: url(../images/seoulCity.jpg)no-repeat center/cover;transform: translateZ(calc(var(--cubesize)/2));}
-.cube span:nth-child(2){background: url(../images/newyorkCity.jpg)no-repeat right/auto 105%;transform:rotateY(90deg) translateZ(calc(var(--cubesize)/2)) ;}
-.cube span:nth-child(3){background: url(../images/parisCity.jpg)no-repeat center/cover ;transform:rotateY(180deg) translateZ(calc(var(--cubesize)/2)) ;}
-.cube span:nth-child(4){background: url(../images/cityMain.jpg)no-repeat center/cover ;transform:rotateY(-90deg) translateZ(calc(var(--cubesize)/2)) ;}
-.cube span:nth-child(5){background: url(../images/citys.jpg)no-repeat center/cover ;transform:rotateX(90deg) translateZ(calc(var(--cubesize)/2)) ;}
-.cube span:nth-child(6){background: url(../images/London_city.jpg)no-repeat center/cover ;transform:rotateX(-90deg) translateZ(calc(var(--cubesize)/2)) ;}
+.cube span:nth-child(1){background: url(../images/imgs_moving/mv1.jpg)no-repeat center/cover;transform: translateZ(var(--zsize));}
+.cube span:nth-child(2){background: url(../images/imgs_moving/mv2.jpg)no-repeat center/cover;transform:rotateY(calc(40deg*1)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(3){background: url(../images/imgs_moving/mv3.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*2)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(4){background: url(../images/imgs_moving/mv4.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*3)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(5){background: url(../images/imgs_moving/mv5.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*4)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(6){background: url(../images/imgs_moving/mv6.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*5)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(7){background: url(../images/imgs_moving/mv7.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*6)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(8){background: url(../images/imgs_moving/mv8.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*7)) translateZ(var(--zsize)) ;}
+.cube span:nth-child(9){background: url(../images/imgs_moving/mv9.jpg)no-repeat center/cover ;transform:rotateY(calc(40deg*8)) translateZ(var(--zsize)) ;}
 @keyframes cube {
     to{transform: rotateY(-330deg);}
     /* 
@@ -50,7 +53,7 @@ transform-style:preserve-3d; */
             음의 방향 -360도+30도=-330도
         */
 }
-.rotate{animation: cube 3s linear  infinite  ;
+.rotate{animation: cube 10s linear  infinite  ;
     /* animation-play-state: paused; */
 }
 .rotate:hover{animation: cube 3s linear  infinite  ;animation-play-state: paused;}
