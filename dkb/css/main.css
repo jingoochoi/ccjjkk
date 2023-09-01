@@ -20,7 +20,7 @@ body div *{outline-color: red;}
 .catbox article:hover
 .imgbox figcaption img:first-child{display: none;}
 .dkb img{position: absolute;left: 88%;top: 26%;}
-.descbox{background: url(../imgs/eachBG.jpg)no-repeat bottom/cover;height: 50%;overflow: auto;}
+.descbox{background: url(../imgs/eachBG.jpg)no-repeat bottom/cover;height: 50%;overflow: auto;border-radius: 13px;}
 .descbox h3{font-family: 'Gugi';font-size: min(2.3rem,1.3vw);font-weight: normal;white-space: nowrap;padding: 13px 10px 3px;letter-spacing: -1px;}
 .descbox p{font-family: 'Single Day','ZCOOL kuaile';font-size: min(2rem,1.3vw);padding: min(1vw,1.3rem);text-align: justify;}
 #dokebimenu{position: sticky;top: 0;background-color: white;}
