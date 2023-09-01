@@ -9,7 +9,7 @@ body{
     background-image: linear-gradient(to bottom, #a1f4e0, #ef95fb);
     height: 100vh;
 }
-.wrap{perspective: 60vh;position: relative;height: 20vh;}
+.wrap{perspective: 60vh;position: relative;height: 200vh;}
 :root{--cubesize:300px;}
 /* 작동버튼 */
 .btngo{
