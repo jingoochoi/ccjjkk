@@ -24,7 +24,7 @@ body{
 .btngo:hover{
     background-color: lime;
 }
-.ctt{height: 300vh;transform-style: preserve-3d;position: relative;}
+.ctt{height: 200vh;transform-style: preserve-3d;position: relative;}
 .cube{position: absolute;width: var(--cubesize);height: var(--cubesize);top: calc(50vh - var(--cubesize)/2);left: calc(50vw - var(--cubesize)/2);transform: rotateY(30deg);transform-style: preserve-3d;}
 .cube2{top: calc(150vh - var(--cubesize)/2);}
 /* 3d setting
