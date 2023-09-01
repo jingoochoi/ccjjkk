@@ -8,7 +8,7 @@ body div *{outline-color: red;}
 .catarea{position: relative;aspect-ratio: 2/1;}
 .catbox{display: flex;flex-wrap: wrap;width: 100%;margin: 0 auto;position: absolute;bottom: 5%;justify-content: space-evenly;}
 .catbox article{outline: 2px dashed blue;width: 20%;aspect-ratio: 2/1.3;position: relative;}
-.catctt{height: 200%;display: flex;flex-direction: column;position: absolute;width: 100%;bottom: 0;}
+.catctt{height: 180%;display: flex;flex-direction: column;position: absolute;width: 100%;bottom: 0;}
 .catctt .part{flex: 1;}
 .imgbox>img{width: 100%;}
 .imgbox figcaption{text-align: center;margin-top: -23%;}
@@ -19,6 +19,9 @@ body div *{outline-color: red;}
 .catbox article:hover
 .imgbox figcaption img:first-child{display: none;}
 .dkb img{position: absolute;left: 88%;top: 26%;}
+.descbox{background: url(../imgs/eachBG.jpg)no-repeat bottom/cover;height: 50%;overflow: auto;}
+.descbox h3{font-family: 'Gugi';font-size: min(2.3rem,1.3vw);font-weight: normal;white-space: nowrap;padding: 13px 10px 3px;letter-spacing: -1px;}
+.descbox p{font-family: 'Single Day','ZCOOL kuaile';font-size: min(2rem,1.3vw);padding: min(1vw,1.3rem);text-align: justify;}
 #dokebimenu{position: sticky;top: 0;background-color: white;}
 .dokebimenu ul{display: flex;padding: 12px 0;}
 
