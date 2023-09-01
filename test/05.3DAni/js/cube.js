@@ -18,8 +18,11 @@ function clft() {
     const btngo=qs('.btngo')
     const cube=qs('.cube')
     // console.log(btngo,cube)
-    btngo.onclick=()=>{
+    btngo.onclick=(e)=>{
         // console.log('b')
         cube.classList.toggle('on')
+        let btxt=e.currentTarget.innerHTML
+        // console.log(btxt)
+        e.currentTarget.innerHTML=btxt==='ROLL'?'STOP!':'ROLL'
     }
 }
