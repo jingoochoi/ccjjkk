@@ -14,7 +14,7 @@ body{
 /* 3d setting
 입체로 설정할 요소의 부모박스에 아래와 같이 설정함
 transform-style:preserve-3d; */
-.cube span{position: absolute;width: 100%;height: 100%;opacity: 0.5;outline: 1px solid gray;}
+.cube span{position: absolute;width: 100%;height: 100%;opacity: 0.9;outline: 1px solid gray;}
 .cube span:nth-child(1){background: url(../images/seoulCity.jpg)no-repeat center/cover;transform: translateZ(calc(var(--cubesize)/2));}
 .cube span:nth-child(2){background: url(../images/newyorkCity.jpg)no-repeat right/auto 105%;transform:rotateY(90deg) translateZ(calc(var(--cubesize)/2)) ;}
 .cube span:nth-child(3){background: url(../images/parisCity.jpg)no-repeat center/cover ;transform:rotateY(180deg) translateZ(calc(var(--cubesize)/2)) ;}
