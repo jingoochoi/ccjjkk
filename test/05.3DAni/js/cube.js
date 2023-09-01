@@ -10,3 +10,16 @@
     버튼으로 변경되어 있음!
 
 *************************************/
+window.addEventListener('DOMContentLoaded',clft)
+const qs=x=>document.querySelector(x)
+const qa=x=>document.querySelectorAll(x)
+function clft() {
+    // console.log('b')
+    const btngo=qs('.btngo')
+    const cube=qs('.cube')
+    // console.log(btngo,cube)
+    btngo.onclick=()=>{
+        // console.log('b')
+        
+    }
+}
