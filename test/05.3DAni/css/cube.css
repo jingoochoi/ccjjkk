@@ -10,6 +10,19 @@ body{
     height: 100vh;
 }
 :root{--cubesize:300px;}
+/* 작동버튼 */
+.btngo{
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    border-radius: 10px; 
+    cursor: pointer;   
+}
+.btngo:hover{
+    background-color: lime;
+}
 .cube{position: absolute;width: var(--cubesize);height: var(--cubesize);top: calc(50% - var(--cubesize)/2);top:calc(50% - var(--cubesize)/2);left: calc(50% - var(--cubesize)/2);transform-style: preserve-3d;transform: rotateX(10deg) rotateY(30deg);}
 /* 3d setting
 입체로 설정할 요소의 부모박스에 아래와 같이 설정함
@@ -34,4 +47,5 @@ transform-style:preserve-3d; */
             음의 방향 -360도+30도=-330도
         */
 }
-.rotate{animation: cube 3s linear  infinite  ;}
+.rotate{animation: cube 3s linear  infinite  ;animation-play-state: paused;}
+.rotate.on{animation: cube 3s linear  infinite  ;animation-play-state: running;}
