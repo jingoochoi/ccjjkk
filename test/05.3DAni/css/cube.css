@@ -10,14 +10,28 @@ body{
     height: 100vh;
 }
 :root{--cubesize:300px;}
-.cube{position: absolute;width: var(--cubesize);height: var(--cubesize);outline: 2px solid red;top: calc(50% - var(--cubesize)/2);top:calc(50% - var(--cubesize)/2);left: calc(50% - var(--cubesize)/2);transform-style: preserve-3d;transform: rotateX(10deg) rotateY(30deg);}
+.cube{position: absolute;width: var(--cubesize);height: var(--cubesize);top: calc(50% - var(--cubesize)/2);top:calc(50% - var(--cubesize)/2);left: calc(50% - var(--cubesize)/2);transform-style: preserve-3d;transform: rotateX(10deg) rotateY(30deg);}
 /* 3d setting
 입체로 설정할 요소의 부모박스에 아래와 같이 설정함
 transform-style:preserve-3d; */
-.cube span{position: absolute;width: 100%;height: 100%;opacity: 0.9;outline: 1px solid gray;}
+.cube span{position: absolute;width: 100%;height: 100%;opacity: 0.9;}
 .cube span:nth-child(1){background: url(../images/seoulCity.jpg)no-repeat center/cover;transform: translateZ(calc(var(--cubesize)/2));}
 .cube span:nth-child(2){background: url(../images/newyorkCity.jpg)no-repeat right/auto 105%;transform:rotateY(90deg) translateZ(calc(var(--cubesize)/2)) ;}
 .cube span:nth-child(3){background: url(../images/parisCity.jpg)no-repeat center/cover ;transform:rotateY(180deg) translateZ(calc(var(--cubesize)/2)) ;}
 .cube span:nth-child(4){background: url(../images/cityMain.jpg)no-repeat center/cover ;transform:rotateY(-90deg) translateZ(calc(var(--cubesize)/2)) ;}
 .cube span:nth-child(5){background: url(../images/citys.jpg)no-repeat center/cover ;transform:rotateX(90deg) translateZ(calc(var(--cubesize)/2)) ;}
 .cube span:nth-child(6){background: url(../images/London_city.jpg)no-repeat center/cover ;transform:rotateX(-90deg) translateZ(calc(var(--cubesize)/2)) ;}
+@keyframes cube {
+    to{transform: rotateX(370deg) rotateY(-330deg);}
+    /* 
+            x축 양의 방향으로 10도에서 출발
+            양의 방향 360도+10도=370도
+            음의 방향 -360도+10도=-350도
+            ____________________________
+
+            y축 양의 방향으로 30도에서 출발
+            양의 방향 360도+30도=390도
+            음의 방향 -360도+30도=-330도
+        */
+}
+.rotate{animation: cube 3s linear  infinite  ;}
