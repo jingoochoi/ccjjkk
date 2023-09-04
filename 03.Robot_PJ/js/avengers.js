@@ -42,3 +42,11 @@ avengers.innerHTML=hcode
 setTimeout(() => {
     avengers.classList.add('on')
 }, 2000);
+let mytit=qs('.t1')
+let tit1=''
+for (let x of mytit.innerHTML) {
+    // console.log(x)
+    tit1+=`<span>${x}</span>`
+    // console.log(tit1)
+    mytit.innerHTML=tit1
+}

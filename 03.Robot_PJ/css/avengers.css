@@ -16,6 +16,10 @@ body{color: white;}
 /* ios bg setting(fixed) */
 .page{height: 100vh;position: relative;}
 .tit{text-align: center;font-size: 4rem;}
+.t1{font-family: "Monoton", cursive;font-weight: normal;animation: avgs 3s linear 4s infinite  ;transform: translateX(60%) translateY(100%);}
+@keyframes avgs {
+    to{transform: translateX(-60%) translateY(100%);}
+}
 .avengersbox{position: absolute;width: 300px;height: 400px;top: calc(50% - 400px/2);left: calc(50% - 300px/2);background: url(../ab_img/ab0.jpg)no-repeat center/cover;border-radius: 50%;box-shadow: 0 0 50px 10px cyan,inset 0 0 30px lightgreen;transform: scale(0);transition:  2s ease-in-out;}
 .avengersbox.on{transform: scale(1);}
 
