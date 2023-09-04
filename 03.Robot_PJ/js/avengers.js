@@ -61,3 +61,12 @@ let up=qs('.up')
 up.onclick=function () {
     window.scrollTo(0,-window.innerHeight)
 }
+window.addEventListener('wheel',wft)
+function wft(e) {
+    let dt=e.wheelDelta
+    // console.log(dt)
+    if (dt<0) {
+        window.scrollTo(0,window.innerHeight)
+    }
+    else window.scrollTo(0,-window.innerHeight)
+}
