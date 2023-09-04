@@ -13,7 +13,13 @@
         .link{position: absolute;bottom: 10%;width: 100%;color: white;text-decoration: none;left: 0;font-size: min(23px,2vw);font-weight: bold;text-shadow: 0 0 5px #000;white-space: nowrap;cursor: none;}
         .link:hover{color: red;}
         :root{--moversize:50px;}
-        .mover{position: absolute;width: var(--moversize);height: var(--moversize);border-radius: 50%;background-color: aqua;top: 0;left: 0;transition:  .1s linear;transform: translate(-50%,-50%);pointer-events: none;}
+        .mover{position: absolute;width: var(--moversize);height: var(--moversize);border-radius: 50%;background-color: aqua;top: 0;left: 0;transition:  .1s linear;transform: translate(-50%,-50%);pointer-events: none;mix-blend-mode: exclusion;opacity: 0;}
+        /* mix-blend-mode
+            겹치는 색상을 처리하는 블렌딩 모드 속성
+            겹치는 요소의 색상을 섞어서 디스플레이 처리
+            밝은색 섞기(screen)
+            어둔색 섞기(darken)
+            반전(exclusion) */
     </style>
 </head>
 <body>

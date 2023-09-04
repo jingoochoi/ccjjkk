@@ -42,4 +42,19 @@ function ldft() {
         4. screenX, screenY
         -> 모니터 화면을 기준*/
     }
+    document.body.onmouseenter=function () {
+        mover.style.opacity='1'
+    }
+    document.body.onmouseleave=function () {
+        mover.style.opacity='0'
+    }
+    const link=qa('.link')
+    link.forEach(e=>{
+        e.onmouseenter=function () {
+            mover.style.transform='scale(2)'
+        }
+        e.onmouseleave=function () {
+            mover.style.transform='scale(1)'
+        }
+    })
 }
