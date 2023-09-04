@@ -10,11 +10,12 @@
 */
 @import url(./reset.css);
 body::before{content: '';position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: -1; background: url(../ab_img/space.jpg) no-repeat fixed center/cover;}
-html{font-size: 10px;overflow: hidden;}
+html{font-size: 10px;scroll-behavior: smooth;overflow: hidden;}
 body{color: white;}
 /* body *{outline: 2px dashed yellow;} */
 /* ios bg setting(fixed) */
 .page{height: 100vh;position: relative;}
+.character{position: relative;}
 .tit{text-align: center;font-size: 4rem;}
 .t1{font-family: "Monoton", cursive;font-weight: normal;animation: avgs 5s linear 5.5s infinite  ;transform: translateX(63%) translateY(100%);}
 .t1::before{content: '🦌';}
@@ -42,7 +43,8 @@ body{color: white;}
     */
 .txt{position: absolute;top: 50%;right: 110%;width: 300px;font-size: 2rem;line-height: 1.3;background-color: #ffffff77;border-radius: 13px;text-shadow: 1px 1px 1px #000;
 transform: translateY(20%);overflow: hidden;height: 0;transition:  .3s ease-in-out;}
-.hero:hover .txt{height: 200px;transform: translateY(-50%);}
+.avengersbox.active .hero:hover .txt{height: 200px;transform: translateY(-50%);}
+
 .txt>div{padding: 2rem;}
 .txt.right{right: auto;left: 110%;}
 .txt h3{font-size: 2.2rem;color: cyan;text-align: center;}
@@ -51,3 +53,9 @@ transform: translateY(20%);overflow: hidden;height: 0;transition:  .3s ease-in-o
 .avengersbox.on .hero:nth-child(3){transform: translate(0, 200%) rotateY(720deg);}
 .avengersbox.on .hero:nth-child(4){transform: translate(200%, 50%) rotateY(720deg);}
 .avengersbox.on .hero:nth-child(5){transform: translate(200%,-130%) rotateY(720deg);}
+.down{position: absolute;bottom: 13px;right: 3px;font-size: 3rem;cursor: pointer;}
+.trailer{position: relative;}
+.t2{font-family: 'Single Day';}
+.trailerbox{aspect-ratio: 1280/720;position: absolute;top: 50%;left: 50%;width: 1280px;z-index: 33;transform: translate(-50%,-50%);}
+.trailerbox iframe{width: 100%;height: 100%;}
+.up{position: absolute;top: 13px;right: 3px;font-size: 3rem;cursor: pointer;}

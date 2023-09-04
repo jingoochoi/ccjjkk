@@ -42,6 +42,9 @@ avengers.innerHTML=hcode
 setTimeout(() => {
     avengers.classList.add('on')
 }, 2000);
+setTimeout(() => {
+    avengers.classList.add('active')
+}, 5000);
 let mytit=qs('.t1')
 let tit1=''
 for (let x of mytit.innerHTML) {
@@ -49,4 +52,12 @@ for (let x of mytit.innerHTML) {
     tit1+=`<span>${x}</span>`
     // console.log(tit1)
     mytit.innerHTML=tit1
+}
+let show=qs('.down')
+show.onclick=function () {
+    window.scrollTo(0,window.innerHeight)
+}
+let up=qs('.up')
+up.onclick=function () {
+    window.scrollTo(0,-window.innerHeight)
 }
