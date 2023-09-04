@@ -16,8 +16,11 @@ body{color: white;}
 /* ios bg setting(fixed) */
 .page{height: 100vh;position: relative;}
 .tit{text-align: center;font-size: 4rem;}
-.avengersbox{position: absolute;width: 300px;height: 400px;top: calc(50% - 400px/2);left: calc(50% - 300px/2);background: url(../ab_img/ab0.jpg)no-repeat center/cover;border-radius: 50%;box-shadow: 0 0 50px 10px cyan,inset 0 0 30px lightgreen;}
-.hero{position: absolute;width: 150px;height: 150px;top: calc(50% - 150px/2);left: calc(50% - 150px/2);}
+.avengersbox{position: absolute;width: 300px;height: 400px;top: calc(50% - 400px/2);left: calc(50% - 300px/2);background: url(../ab_img/ab0.jpg)no-repeat center/cover;border-radius: 50%;box-shadow: 0 0 50px 10px cyan,inset 0 0 30px lightgreen;transform: scale(0);transition:  2s ease-in-out;}
+.avengersbox.on{transform: scale(1);}
+
+.hero{position: absolute;width: 150px;height: 150px;top: calc(50% - 150px/2);left: calc(50% - 150px/2);transition:  1s ease-in-out 2s;opacity: 0;}
+.avengersbox.on .hero{opacity: 1;transform: rotateX(720deg);}
 .hero img{object-fit: cover;width: 100%;height: 100%;border-radius: 50%;box-shadow: 0 0 30px 10px lightgreen;}
 /* 
         [ object-fit 속성 ]
@@ -35,8 +38,8 @@ transform: translateY(20%);overflow: hidden;height: 0;transition:  .3s ease-in-o
 .txt>div{padding: 2rem;}
 .txt.right{right: auto;left: 110%;}
 .txt h3{font-size: 2.2rem;color: cyan;text-align: center;}
-.hero:nth-child(1){transform: translate(-200%,-100%);}
-.hero:nth-child(2){transform: translate(-200%, 50%);}
-.hero:nth-child(3){transform: translate(0, 200%);}
-.hero:nth-child(4){transform: translate(200%, 50%);}
-.hero:nth-child(5){transform: translate(200%,-130%);}
+.avengersbox.on .hero:nth-child(1){transform: translate(-200%,-100%) rotateY(720deg);}
+.avengersbox.on .hero:nth-child(2){transform: translate(-200%, 50%) rotateY(720deg);}
+.avengersbox.on .hero:nth-child(3){transform: translate(0, 200%) rotateY(720deg);}
+.avengersbox.on .hero:nth-child(4){transform: translate(200%, 50%) rotateY(720deg);}
+.avengersbox.on .hero:nth-child(5){transform: translate(200%,-130%) rotateY(720deg);}

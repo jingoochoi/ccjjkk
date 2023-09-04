@@ -39,3 +39,6 @@ for(let x in character){
 
             *************************************************/
 avengers.innerHTML=hcode
+setTimeout(() => {
+    avengers.classList.add('on')
+}, 2000);
