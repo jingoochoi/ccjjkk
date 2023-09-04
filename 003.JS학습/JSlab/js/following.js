@@ -26,6 +26,7 @@ function ldft() {
     document.body.onmousemove=function (e) {
         mover.style.top=e.pageY+'px'
         mover.style.left=e.pageX+'px'
+        // scroll-moving very softly when use clientY
         /*★[[ 이벤트발생시 위치값 ]]★
         1. clientX, clientY
         -> 현재 보이는 브라우저 화면이 기준
