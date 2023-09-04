@@ -7,14 +7,19 @@
     <script src="js/following.js"></script>
     <style>
         html,body{margin: 0;padding: 0;}
-        .contbox{display: flex;flex-wrap: wrap;}
-        .contbox img{position: relative;}
-        .link{position: absolute;bottom: 0;left: 50%;}
+        .contbox{display: flex;flex-wrap: wrap;cursor: none;}
+        .contbox>div{position: relative;text-align: center;flex-basis: 25%;}
+        .contbox>div>img{width: 100%;height: 100%;object-fit: cover;}
+        .link{position: absolute;bottom: 10%;width: 100%;color: white;text-decoration: none;left: 0;font-size: min(23px,2vw);font-weight: bold;text-shadow: 0 0 5px #000;white-space: nowrap;cursor: none;}
+        .link:hover{color: red;}
+        :root{--moversize:50px;}
+        .mover{position: absolute;width: var(--moversize);height: var(--moversize);border-radius: 50%;background-color: aqua;top: 0;left: 0;transition:  .1s linear;transform: translate(-50%,-50%);pointer-events: none;}
     </style>
 </head>
 <body>
     <div class="contbox">
         
     </div>
+    <div class="mover"></div>
 </body>
 </html>

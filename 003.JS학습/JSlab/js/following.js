@@ -16,4 +16,30 @@ function ldft() {
     }
     // console.log(hcode)
     contbox.innerHTML=hcode
+    const mover=qs('.mover')
+    // console.log(mover)
+
+    //mover box center
+    // let gap=mover.clientWidth/2
+    // console.log(gap)
+
+    document.body.onmousemove=function (e) {
+        mover.style.top=e.pageY+'px'
+        mover.style.left=e.pageX+'px'
+        /*★[[ 이벤트발생시 위치값 ]]★
+        1. clientX, clientY
+        -> 현재 보이는 브라우저 화면이 기준
+        -> mainly used for fixed position
+
+        2. offsetX, offsetY
+        -> 이벤트 대상이 기준
+        -> in case that special box get location from parent box
+
+        3. pageX, pageY
+        -> 전체 문서를 기준(스크롤 화면을 포함)
+        -> mainly used for absolute position
+
+        4. screenX, screenY
+        -> 모니터 화면을 기준*/
+    }
 }
