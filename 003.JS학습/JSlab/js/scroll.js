@@ -31,3 +31,43 @@ function wlfn(e) {
     // console.log(bgnum)
     window.scrollTo(0,window.innerHeight*bgnum)
 }
+/* 모바일 이벤트처리
+    
+    [ 모바일 터치 스크린에서 사용하는 이벤트 종류 ]
+    1. touchstart - 손가락이 화면에 닿을때 발생
+    2. touchend - 손가락이 화면에서 떨어질때 발생
+    3. touchmove - 손가락이 화면에 닿은채로 움직일때 발생
+    
+    [ 화면터치 이벤트관련 위치값 종류 ]
+    1. screenX, screenY : 디바이스 화면을 기준한 x,y 좌표
+    2. clientX, clientY : 브라우저 화면을 기준한 x,y 좌표(스크롤미포함)
+    3. pageX, pageY : 스크롤을 포함한 브라우저 화면을 기준한 x,y 좌표 */
+window.addEventListener('touchstart',tsft)
+window.addEventListener('touchend',teft)
+let postart=0;let posend=0;
+function tsft(e) {
+    // console.log('b')
+    postart=e.touches[0].screenY
+    // console.log(postart)
+}
+function teft(e) {
+    // console.log('b')
+    posend=e.changedTouches[0].screenY
+    // console.log(posend)
+    let minus=postart-posend
+    // console.log(minus)
+    if (minus==0) {
+        return
+    }
+    mvpg(minus>0?1:0)
+    function mvpg(direction) {
+        // console.log(direction)
+        if(direction==1) pg_num++;
+        else pg_num--;
+        
+        // 한계수체크(양끝페이지고정!)
+        if(pg_num<0) pg_num=0;
+        if(pg_num==total_pg) pg_num = total_pg-1;
+        window.scrollTo(0,window.innerHeight*pg_num);
+    }
+}
