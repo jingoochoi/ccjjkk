@@ -16,7 +16,7 @@ body{color: white;}
 /* ios bg setting(fixed) */
 .page{height: 100vh;position: relative;}
 .tit{text-align: center;font-size: 4rem;}
-.t1{font-family: "Monoton", cursive;font-weight: normal;animation: avgs 3s linear 5s infinite  ;transform: translateX(63%) translateY(100%);}
+.t1{font-family: "Monoton", cursive;font-weight: normal;animation: avgs 5s linear 5.5s infinite  ;transform: translateX(63%) translateY(100%);}
 .t1::before{content: '🦌';}
 .t1::after{content: '🛷';}
 .t1 span:nth-of-type(odd){color: red;}
