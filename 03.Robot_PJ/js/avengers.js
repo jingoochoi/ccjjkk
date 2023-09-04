@@ -70,3 +70,4 @@ function wft(e) {
     }
     else window.scrollTo(0,-window.innerHeight)
 }
+qs('iframe').addEventListener('wheel',e=>e.stopPropagation())
