@@ -10,13 +10,17 @@
 */
 @import url(./reset.css);
 body::before{content: '';position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: -1; background: url(../ab_img/space.jpg) no-repeat fixed center/cover;}
-html{font-size: 10px;}
+html{font-size: 10px;overflow: hidden;}
 body{color: white;}
 /* body *{outline: 2px dashed yellow;} */
 /* ios bg setting(fixed) */
 .page{height: 100vh;position: relative;}
 .tit{text-align: center;font-size: 4rem;}
 .t1{font-family: "Monoton", cursive;font-weight: normal;animation: avgs 3s linear 4s infinite  ;transform: translateX(60%) translateY(100%);}
+.t1::before{content: '🦌';}
+.t1::after{content: '🎅';}
+.t1 span:nth-of-type(odd){color: red;}
+.t1 span:nth-of-type(even){color: green;}
 @keyframes avgs {
     to{transform: translateX(-60%) translateY(100%);}
 }
