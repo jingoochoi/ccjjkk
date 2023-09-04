@@ -62,12 +62,12 @@ function teft(e) {
     mvpg(minus>0?1:0)
     function mvpg(direction) {
         // console.log(direction)
-        if(direction==1) pg_num++;
-        else pg_num--;
-        
+        if(direction==1) bgnum++;
+        else bgnum--;
+
         // 한계수체크(양끝페이지고정!)
-        if(pg_num<0) pg_num=0;
-        if(pg_num==total_pg) pg_num = total_pg-1;
-        window.scrollTo(0,window.innerHeight*pg_num);
+        if(bgnum<0) bgnum=0;
+        if(bgnum==totalpg) bgnum = totalpg-1;
+        window.scrollTo(0,window.innerHeight*bgnum);
     }
 }
