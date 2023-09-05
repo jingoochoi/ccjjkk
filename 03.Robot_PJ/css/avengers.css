@@ -31,6 +31,7 @@ body{color: white;}
 .hero{position: absolute;width: 150px;height: 150px;top: calc(50% - 150px/2);left: calc(50% - 150px/2);transition:  1s ease-in-out 2s;opacity: 0;}
 .avengersbox.on .hero{opacity: 1;transform: rotateX(720deg);}
 .hero img{object-fit: cover;width: 100%;height: 100%;border-radius: 50%;box-shadow: 0 0 30px 10px lightgreen;}
+.hero img:hover{transform: rotate(360deg);transition: transform 1s linear;}
 /* 
         [ object-fit 속성 ]
         -> 이미지나 동영상을 박스에 맞출때
