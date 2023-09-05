@@ -32,7 +32,28 @@
             }
         </style>
         <script>
-            
+            const qs=(x)=>document.querySelector(x)
+            const qa=(x)=>document.querySelectorAll(x)
+            window.addEventListener('DOMContentLoaded',ldft)
+            function ldft() {
+                // console.log('b')
+                qs('a').onclick=function(){
+                    // console.log('b')
+                    event.currentTarget.style.backgroundColor='red'
+                }
+                qs('p').onclick=function(){
+                    event.currentTarget.style.backgroundColor='yellow'
+                }
+                qs('div').onclick=function(){
+                    event.currentTarget.style.backgroundColor='green'
+                }
+                qs('body').onclick=function(){
+                    event.currentTarget.style.backgroundColor='blue'
+                }
+            }
+            /*
+
+            */
         </script>
     </head>
 
