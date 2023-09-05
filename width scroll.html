@@ -8,15 +8,18 @@
         html,body{margin: 0;padding: 0;}
         html{scroll-behavior: smooth;overflow: hidden;}
         .tres{width: 300%;display: flex;}
-        .each{width: 100%;text-align: center;font-size: 1000%;}
+        .each{width: 100%;text-align: center;font-size: 1000%;background-repeat: no-repeat;background-position: top;background-size: 600px;aspect-ratio: 3/2;}
+        .each:nth-of-type(1){background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20121207_161%2Fevent_bank_1354851347844o78KR_JPEG%2FIMG_9925.JPG&type=sc960_832);}
+        .each:nth-of-type(2){background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20130603_221%2Fevent_bank_1370243666246JpTO9_JPEG%2FIMG_8755.JPG&type=sc960_832);}
+        .each:nth-of-type(3){background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAyMjdfMTIx%2FMDAxNjE0NDM2MzI4NjUx.ySU-5eH1f_DknNGNco5G-H3pqtHPlB6yLU7F-8bh6fwg.H7IwkQILQR7-j5ZytIvKqM4meo0Rr3TCaJEzQM6Cxb4g.JPEG.soundx87%2F58d394f7ab304c2eb73f5bf0a84125d6.jpg&type=sc960_832);}
         .page{font-size: 300%;position: fixed;bottom: 0;left: 50%;transform: translateX(-50%);}
     </style>
 </head>
 <body>
     <div class="tres">
-        <div class="each">1</div>
-        <div class="each">2</div>
-        <div class="each">3</div>
+        <div class="each"></div>
+        <div class="each"></div>
+        <div class="each"></div>
         <div class="page">page no.1</div>
     </div>
     <script>
