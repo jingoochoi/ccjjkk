@@ -213,6 +213,10 @@
             function mfft() {
                 let last=box2.querySelectorAll('li')
                 box2.insertBefore(last[last.length-1],last[0])
+                 /************************************************* 
+                    ※ appendChild() 와 insertBefore()는 대상을
+                    정하는 것에 따라 중간에 적용할 수 있다!
+                *************************************************/
             }
             })
             window.addEventListener('click',clft)
