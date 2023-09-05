@@ -202,6 +202,12 @@
                 a.querySelector('img').title='also be removed'
             })
             })
+            window.addEventListener('click',clft)
+            function clft() {
+                qs('.rs').onclick=function(){
+                    window.location.reload()
+                }
+            }
         </script>
     </head>
 
@@ -281,7 +287,8 @@
                 <h2>요소의 생성,삭제,이동하기</h2>
                 <button class="nbt">새리스트생성</button> <br /><br />
                 <button class="mvl">맨뒤이동</button> <br /><br />
-                <button class="mvf">맨앞이동</button>
+                <button class="mvf">맨앞이동</button> <br /><br />
+                <button class="rs">reset</button>
                 <ul>
                     <li>
                         <img src="images/ab1.jpg" alt="아이언맨" title="아이언맨" />
