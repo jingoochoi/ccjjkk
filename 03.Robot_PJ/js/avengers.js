@@ -1,6 +1,9 @@
 // console.log(character)
 const qs=(x)=>document.querySelector(x)
 const qa=(x)=>document.querySelectorAll(x)
+setTimeout(() => {
+    window.scrollTo(0,0)
+}, 300);
 const avengers=qs('.avengersbox')
 // console.log(avengers)
 let hcode=''
@@ -56,10 +59,12 @@ for (let x of mytit.innerHTML) {
 let show=qs('.down')
 show.onclick=function () {
     window.scrollTo(0,window.innerHeight)
+    qs('.trailerbox iframe').src='https://www.youtube.com/embed/Ko2NWhXI9e8?autoplay=1';
 }
 let up=qs('.up')
 up.onclick=function () {
     window.scrollTo(0,-window.innerHeight)
+    qs('.trailerbox iframe').src='https://www.youtube.com/embed/Ko2NWhXI9e8';
 }
 window.addEventListener('wheel',wft)
 function wft(e) {
@@ -69,5 +74,9 @@ function wft(e) {
         window.scrollTo(0,window.innerHeight)
     }
     else window.scrollTo(0,-window.innerHeight)
+    if (dt<0) {
+        qs('.trailerbox iframe').src='https://www.youtube.com/embed/Ko2NWhXI9e8?autoplay=1';
+    }
+    else {qs('.trailerbox iframe').src='https://www.youtube.com/embed/Ko2NWhXI9e8';}
 }
 qs('iframe').addEventListener('wheel',e=>e.stopPropagation())
