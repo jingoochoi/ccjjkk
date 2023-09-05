@@ -33,11 +33,14 @@
                 num=2
             }
         }
-        window.addEventListener('keypress',kbdft)
+        document.addEventListener('keydown',kbdft)
         function kbdft() {
-            let k=event.key
-            if (k=='ArrowRight') {
+            if (event.key=='ArrowRight') {
                 num++
+                window.scrollTo(window.innerWidth*num,0)
+            }
+            if (event.key=='ArrowLeft') {
+                num--
                 window.scrollTo(window.innerWidth*num,0)
             }
         }
