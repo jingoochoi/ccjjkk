@@ -205,7 +205,14 @@
             addevt(mvlast,'click',mlft)
             function mlft() {
                 // console.log('b')
-                box2
+                let first=box2.querySelectorAll('li')[0]
+                box2.appendChild(first)
+            }
+            const mvfirst=qs('.mvf')
+            addevt(mvfirst,'click',mfft)
+            function mfft() {
+                let last=box2.querySelectorAll('li')
+                box2.insertBefore(last[last.length-1],last[0])
             }
             })
             window.addEventListener('click',clft)
