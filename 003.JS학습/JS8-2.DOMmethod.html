@@ -46,6 +46,7 @@
             #div02 ul li {
                 padding: 10px;
             }
+            button{cursor: pointer;}
         </style>
         <script>
             const qs=(x)=>document.querySelector(x)
@@ -179,6 +180,27 @@
                     -> 선택요소.setAttributeNode(새로운속성)
 
                 **************************************************/
+            const btnnew=qs('.nbt')
+            const box2=qs('#div02 ul')
+            // console.log(box2)
+            //    console.log(btnnew)
+            const avennm=['ironman','thanos','thor','docs','starroad']
+            addevt(btnnew,'click',maker)
+            function maker() {
+                // console.log('b')
+                let newe=document.createElement('li')
+                // console.log(Math.ceil(Math.random()*5))
+                let rdnb=Math.ceil(Math.random()*5)
+                newe.innerHTML=`<img src="images/ab${rdnb}.jpg" alt="${avennm[rdnb-1]}" title="remove when click">`
+                newe.onclick=function(){
+                    newe.remove()
+                }
+                box2.appendChild(newe)
+            }
+            box2.querySelectorAll('li').forEach(function (a) {
+                a.onclick=function(){a.remove()}
+                a.querySelector('img').title='also be removed'
+            })
             })
         </script>
     </head>
