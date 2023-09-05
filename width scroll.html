@@ -9,6 +9,7 @@
         html{scroll-behavior: smooth;overflow: hidden;}
         .tres{width: 300%;display: flex;}
         .each{width: 100%;text-align: center;font-size: 1000%;}
+        .page{font-size: 300%;position: fixed;bottom: 0;left: 50%;transform: translateX(-50%);}
     </style>
 </head>
 <body>
@@ -16,8 +17,12 @@
         <div class="each">1</div>
         <div class="each">2</div>
         <div class="each">3</div>
+        <div class="page">page no.1</div>
     </div>
     <script>
+        setTimeout(() => {
+            window.scrollTo(0,0)
+        }, 10);
         window.addEventListener('wheel',wft)
         let num=0
         function wft() {
@@ -32,6 +37,8 @@
             if (num>2) {
                 num=2
             }
+            let page=document.querySelector('.page')
+            page.innerHTML=`page no.${num+1}`
         }
         document.addEventListener('keydown',kbdft)
         function kbdft() {
@@ -43,7 +50,16 @@
                 num--
                 window.scrollTo(window.innerWidth*num,0)
             }
+            if (num<0) {
+                num=0
+            }
+            if (num>2) {
+                num=2
+            }
+            let page=document.querySelector('.page')
+            page.innerHTML=`page no.${num+1}`
         }
+        
     </script>
 </body>
 </html>
