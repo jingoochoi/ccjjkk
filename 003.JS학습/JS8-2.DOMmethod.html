@@ -48,7 +48,34 @@
             }
         </style>
         <script>
-            
+            const qs=(x)=>document.querySelector(x)
+            const qa=(x)=>document.querySelectorAll(x)
+            window.addEventListener('DOMContentLoaded',function () {
+                // console.log('b')
+                const smenu=qa('.smenu')
+                // console.log(smenu)
+                for(let x of smenu){
+                    // console.log(x)
+                    x.onmouseover=function(){
+                        // console.log(x)
+                        let hv=x.querySelector('div').querySelector('ol').offsetHeight
+                        /******************************************************** 
+                        [ 선택요소의 현재 크기, 위치값 알아오는 JS속성 ]
+                        1. 선택요소.offsetWidth : 가로값
+                        2. 선택요소.offsetHeight : 높이값
+                        3. 선택요소.offsetTop : top 위치값
+                        4. 선택요소.offsetLeft : left 위치값            
+                ********************************************************/
+                        // console.log(hv)
+                        x.querySelector('div').style.height=hv+'px'
+                        x.querySelector('div').style.transition='height .3s ease-out'
+                    }
+                    x.onmouseout=function(){
+                        // console.log(x)
+                        x.querySelector('div').style.height='0'
+                    }
+                }
+            })
         </script>
     </head>
 
