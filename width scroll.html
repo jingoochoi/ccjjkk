@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width scroll</title>
+    <style>
+        html,body{margin: 0;padding: 0;}
+        html{scroll-behavior: smooth;overflow: hidden;}
+        .tres{width: 300%;display: flex;}
+        .each{width: 100%;text-align: center;font-size: 1000%;}
+    </style>
+</head>
+<body>
+    <div class="tres">
+        <div class="each">1</div>
+        <div class="each">2</div>
+        <div class="each">3</div>
+    </div>
+    <script>
+        window.addEventListener('wheel',wft)
+        let num=0
+        function wft() {
+            let dt=event.wheelDelta
+            if (dt<0) {
+                num++
+            }else num--
+            window.scrollTo(window.innerWidth*num,0)
+            if (num<0) {
+                num=0
+            }
+            if (num>2) {
+                num=2
+            }
+        }
+        window.addEventListener
+    </script>
+</body>
+</html>
