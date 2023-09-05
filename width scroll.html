@@ -69,7 +69,31 @@
             let page=document.querySelector('.page')
             page.innerHTML=`page no.${num+1}`
         }
-        
+        window.addEventListener('touchstart',tsft)
+        window.addEventListener('touchend',teft)
+        let ts;let te;
+        function tsft() {
+            ts=event.touches[0].screenY
+        }
+        function teft() {
+            te=event.changedTouches[0].screenY
+            let gap=ts-te
+            if (gap>0) {
+                num++
+            }
+            if (gap<0) {
+                num--
+            }
+            window.scrollTo(0,window.innerHeight*num)
+            if (num<0) {
+                num=0
+            }
+            if (num>2) {
+                num=2
+            }
+            let page=document.querySelector('.page')
+            page.innerHTML=`page no.${num+1}`
+        }
     </script>
 </body>
 </html>
