@@ -35,10 +35,9 @@
         }
         window.addEventListener('keypress',kbdft)
         function kbdft() {
-            
-            event.key.ArrowRight.onkeypress=function(){
+            let k=event.key
+            if (k=='ArrowRight') {
                 num++
-                window.scrollTo
                 window.scrollTo(window.innerWidth*num,0)
             }
         }
