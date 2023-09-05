@@ -51,16 +51,18 @@
                 // 추가 이벤트는 반드시 이벤트리스너를 사용
                 const sonft=function(){
                     event.currentTarget.style.outline='20px dotted pink'
+                    // event.stopImmediatePropagation()
                 }
                 qs('a').addEventListener('click',sonft)
                 qs('a').onclick=function(){
-                    event.stopPropagation()
+                    // event.stopPropagation()
                     // console.log('b')
                     event.currentTarget.style.backgroundColor='red'
                     // showLog()
                 }
                 qs('p').onclick=function(){
                     event.currentTarget.style.backgroundColor='yellow'
+                    
                     // showLog()
                 }
                 qs('div').onclick=function(){
@@ -70,6 +72,11 @@
                 qs('body').onclick=function(){
                     event.currentTarget.style.backgroundColor='blue'
                     // showLog()
+                }
+                qs('.clear').onclick=function(){
+                    window.removeEventListener('click',sonft)
+                    // qs('a').onclick=''
+                    window.location.reload()
                 }
             }
             /*
@@ -174,7 +181,7 @@
                 <a href="#">내방</a>
             </p>
         </div>
-
+        <button class="clear" style="font-size: 3vw;">clear 'a' event</button>
 
     </body>
 </html>
