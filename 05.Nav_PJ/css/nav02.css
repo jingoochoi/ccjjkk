@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 네비게이션 유형1 CSS - nav01.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Nanum+Gothic&display=swap');
 
 html,
 body,
@@ -27,3 +27,9 @@ a {
     color: #222;
     text-decoration: none;
 }
+.gnb{padding: 15px 0;border-top: 1px solid #ccc;border-BOTTOM: 1px solid #ccc;}
+.gnb ul{display: flex;justify-content: center;font-family: 'Nanum Gothic', sans-serif;}
+.gnb ul li a{display: block;padding: 10px 20px;font-size: 16px;font-weight: bold;}
+.gnb ul li a:hover{color: hotpink;position: relative;}
+.gnb ul li a:hover::after{width: 100%;height: 2px;background-color: hotpink;content: '';display: block;position: absolute;left: 0;top: 53px;}
+.smenu{display: none;}
