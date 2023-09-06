@@ -46,7 +46,54 @@ addEvt(window,"DOMContentLoaded", loadFn);
     기능: 로딩 후 버튼 이벤트 및 기능구현
 ******************************************/
 function loadFn() {
-    console.log("로딩완료!");
+    // console.log("로딩완료!");
+    const abtn=qsa('.abtn')
+    const slide=qs('#slide')
+    abtn.forEach(a=>{addEvt(a,'click',gs)})
 
+    function gs() {
+        // console.log(this)
+        // classList.contains(classname)=boolean whether contains classname
+        if (this.classList.contains('ab2')) {
+            slide.style.left='-100%'
+            slide.style.transition='.3s ease-in-out'
+            setTimeout(() => {
+                slide.appendChild(slide.querySelectorAll('li')[0])
+                slide.style.left='0'
+                slide.style.transition='none'
+            }, 300);
+        }
+        if (this.classList.contains('ab1')) {            
+            slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
+            slide.style.left='-100%'
+            slide.style.transition='none'
+            setTimeout(() => {
+                slide.style.left='0'
+                slide.style.transition='.3s ease-in-out'
+            }, 0);
+        }
+    }
+    addEvt(document,'keydown',kdft)
+    function kdft() {
+        // console.log('b')
+        if (event.key=='ArrowRight') {
+            slide.style.left='-100%'
+            slide.style.transition='.3s ease-in-out'
+            setTimeout(() => {
+                slide.appendChild(slide.querySelectorAll('li')[0])
+                slide.style.left='0'
+                slide.style.transition='none'
+            }, 300);
+        }
+        if (event.key=='ArrowLeft') {
+            slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
+            slide.style.left='-100%'
+            slide.style.transition='none'
+            setTimeout(() => {
+                slide.style.left='0'
+                slide.style.transition='.3s ease-in-out'
+            }, 0);
+        }
+    }
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
