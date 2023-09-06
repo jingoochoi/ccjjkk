@@ -39,7 +39,7 @@ a {
 .gnb>ul>li:nth-child(4)~li .smenu{right: 30%;}
 .gnb>ul>li:hover .smenu{display: block;}
 .smenu ul{display: flex;}
-.smenu ul li{padding: 10px 2px;}
+.smenu ul li{padding: 10px 1px;}
 .smenu a{display: block;font-size: 15px;padding: 5px 10px;}
 .smenu a:hover{background-color: darkblue;font-size: 15px;color: white;font-weight: bold;}
 /* https://web2002.co.kr/img/ver12/visual_img_gansam.jpg */
