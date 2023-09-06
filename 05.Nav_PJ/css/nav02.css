@@ -29,16 +29,17 @@ a {
     text-decoration: none;
 }
 .gnb{padding: 15px 0;border-top: 1px solid #ccc;border-BOTTOM: 1px solid #ccc;background-color: #fff;position: sticky;top: 0;z-index: 333;}
-.gnb >ul{display: flex;justify-content: center;font-family: 'Nanum Gothic', sans-serif;}
+.gnb >ul{display: flex;justify-content: center;font-family: 'Nanum Gothic', sans-serif;white-space: nowrap;}
 .gnb>ul>li::after{content: '';position: absolute;width: 100%;height: 70px;background-color: white;left: 0;margin-top: 16px;display: none;}
 .gnb>ul>li:hover::after{display: block;border-bottom: 4px solid darkblue;}
 .gnb >ul >li >a{display: block;padding: 10px 20px;font-size: 16px;font-weight: bold;position: relative;}
 .gnb >ul >li >a:hover{color: hotpink;}
-.gnb >ul >li >a:hover::after{width: 100%;height: 2px;background-color: hotpink;content: '';display: block;position: absolute;left: 0;top: 53px;}
+.gnb >ul >li:hover >a::after{width: 100%;height: 2px;background-color: hotpink;content: '';display: block;position: absolute;left: 0;top: 53px;}
 .smenu{display: none;position: absolute;padding-top: 25px;z-index: 1;}
+.gnb>ul>li:nth-child(4)~li .smenu{right: 30%;}
 .gnb>ul>li:hover .smenu{display: block;}
 .smenu ul{display: flex;}
-.smenu ul li{padding: 10px 15px;}
+.smenu ul li{padding: 10px 2px;}
 .smenu a{display: block;font-size: 15px;padding: 5px 10px;}
 .smenu a:hover{background-color: darkblue;font-size: 15px;color: white;font-weight: bold;}
 /* https://web2002.co.kr/img/ver12/visual_img_gansam.jpg */
