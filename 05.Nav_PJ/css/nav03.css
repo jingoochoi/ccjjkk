@@ -57,7 +57,7 @@ font-family: 'Noto Sans KR', sans-serif;
  #top .gnb dd:hover a{color: red;}
  dt{line-height: 100px;text-align: center;font-size: 17px;}
  dd{text-align: center;font-size: 15px;line-height: 2;}
- .tlink{display: flex;margin-top: 30px;justify-content: center;gap: 0 1vw;}
+ .tlink{display: flex;margin-top: 30px;justify-content: space-between;gap: 0 1vw;}
  .tlink img{height: 30px;}
  .lang{position: relative;}
  .lang a::after{content: 'KOR';position: absolute;color: white;bottom: 0;right: -15px;font-size: 12px;}
