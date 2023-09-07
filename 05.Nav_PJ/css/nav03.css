@@ -61,6 +61,8 @@ font-family: 'Noto Sans KR', sans-serif;
  .tlink img{height: 30px;}
  .lang{position: relative;}
  .lang a::after{content: 'KOR';position: absolute;color: white;bottom: 0;right: -15px;font-size: 12px;}
+ #top:hover .lang a::after{content: 'KOR';position: absolute;color: black;bottom: 0;right: -15px;font-size: 12px;}
  .store{position: relative;}
+ #top:hover .store a::after{content: 'STORE';position: absolute;color: black;bottom: 0;right: -15px;font-size: 12px;}
  .store a::after{content: 'STORE';position: absolute;color: white;bottom: 0;right: -17px;font-size: 12px;}
  
