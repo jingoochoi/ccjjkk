@@ -54,13 +54,35 @@
 
     ****************************************************/
     .tit{text-align: center;font-size: max(3vw,23px);}
-    .grid{display: grid;max-width: 1200px;margin: 0 auto;outline: 2px dashed lightcoral;grid-template-columns: repeat(5,1fr);grid-auto-rows: 300px;grid-row-gap: max(13px,1.3vw);grid-column-gap: max(13px,1.3vw);justify-items: center;}
-    .grid div{aspect-ratio: 280/400;position: relative;}
+    .grid{display: grid;max-width: 1200px;margin: 0 auto;outline: 2px dashed lightcoral;grid-template-columns: repeat(5,1fr);grid-auto-rows: 300px;grid-row-gap: min(13px,1.3vw);grid-column-gap: min(13px,1.3vw);}
+    .grid div{position: relative;}
     .grid div:nth-child(5){grid-column: 4/6;grid-row: 1/3;}
     .grid div:nth-child(6){grid-column: 1/4;grid-row: 2/5;}
     /* 개별요소에 차지하는 값을 줘서 혼자 튀게 놔둔다 */
+    /************************************* 
+        
+            [ 그리드 위치 영역 속성 ]
+
+            1. 가로방향 위치속성
+                grid-column : 시작위치번호 / 끝위치번호;
+
+            2. 세로방향 위치속성
+                grid-row : 시작위치번호 / 끝위치번호;
+
+            -> 각 위치값은 그리드 기준선 번호를 참고함
+            (브라우저에서 그리드 소스 버튼을 클릭하여
+            볼 수 있음!)
+
+            >>>>> 셋팅시 유의사항 <<<<<<<
+            - grid-column 을 설정할때 만약 그리드범위에
+            넘치면 자동으로 아랫줄로 떨어진다!
+            그러므로 grid-row를 따로 잡아줄 필요가 없다!
+            단, 별도의 위치를 세로방향으로 변경해야할 경우
+            grid-row를 설정해야 한다!
+        
+        *************************************/
     .grid aside{position: absolute;width: 100%;text-align: center;color: white;bottom: 0;background-color: #00000077;font-size: min(1.2vw,12px);}
-    img{width: 100%;height: 100%;object-fit: cover;object-position: top;vertical-align: middle;}
+    img{width: 100%;height: 100%;object-fit: cover;object-position: top;vertical-align: middle;aspect-ratio: 280/400;}
     @media screen and (max-width:500px) {
         .grid{grid-template-columns: repeat(1,1fr);}
     }
