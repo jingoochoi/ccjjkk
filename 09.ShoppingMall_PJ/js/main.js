@@ -40,7 +40,7 @@ addEvt(window,"DOMContentLoaded", loadFn);
             li에 클래스 "on"주기(나머진 빼기->초기화!)
 
 *****************************************************/
-
+let clicksts=0
 /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
@@ -54,6 +54,13 @@ function loadFn() {
     function gs() {
         // console.log(this)
         // classList.contains(classname)=boolean whether contains classname
+        if (clicksts==1) {
+            return
+        }
+        clicksts=1
+        setTimeout(() => {
+            clicksts=0
+        }, 300);
         if (this.classList.contains('ab2')) {
             slide.style.left='-100%'
             slide.style.transition='.3s ease-in-out'
@@ -76,6 +83,13 @@ function loadFn() {
     addEvt(document,'keydown',kdft)
     function kdft() {
         // console.log('b')
+        if (clicksts==1) {
+            return
+        }
+        clicksts=1
+        setTimeout(() => {
+            clicksts=0
+        }, 300);
         if (event.key=='ArrowRight') {
             slide.style.left='-100%'
             slide.style.transition='.3s ease-in-out'
