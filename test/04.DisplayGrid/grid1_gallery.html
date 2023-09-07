@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid1 gallery</title>
+    <style>
+        /**************************************************** 
+                    [ 그리드 디스플레이 ]
+
+        - 가로,세로 양방향 레이아웃을 위한 디스플레이 속성
+        - 주요 속성:
+        1. grid-template-colums
+            - 가로방향 width폭을 지정하는 속성
+            - 값은 순서대로 값을씀 (개수만큼 한줄 컬럼결정)
+            - 반복을 사용할 수 있다
+                -> repeat(개수,설정값)개수*반복수치개수=컬럼수
+            - 설정값: px,%,vw,rem 등 구체적인값
+                또는 비율값 -> 숫자fr (가로크기 전체의 비율)
+                fr은 fraction에서 나온말
+                예) 1fr 2fr -> 1:2비율 
+            - 가로 사이즈 단위를 띄어쓰기로 나열하면 개수만큼 그 크기의 세로컬럼이 만들어짐
+        2. grid-template-rows
+            - 세로방향의 height값을 지정하는 속성
+            - 값은 순서대로 값을씀(쓴 개수만큼)
+            - 나머지는 1번과 동일
+            - 만약 이 값을 설정하지 않으면 모든 박스에 대한
+            기본비를 유지함!(내가 원하는 비는 별도로 설정함)auto
+            -> 기본비에 대한 기준은 내부컨텐츠임
+            (이미지라면 이미지 기본비를 기준함)
+
+        2-2. grid-auto rows
+            - 모든 이미지 하이트 동일하게 적용
+            
+        3. grid-column-gap
+            - 가로방향 사이간격
+        
+        4. grid-row-gap
+            - 세로방향 사이간격
+        ________________________________
+        
+        5.  가로정렬, 세로정렬은 flex와 개념상 동일하다! 
+        - 한줄일때 (진행방에 여러개있을 경우)
+        justify-content -> 가로진행방향 정렬
+        align-content -> 세로진행방향 정렬
+        - 여러줄일때
+        justify-items -> 가로방향 다중 정렬 (flex에 없음!)
+        align-items -> 세로방향 다중 정렬
+
+        ___________________________________
+
+        그리드 사용 예시 사이트: 매치 리스트
+        https://www.matchroomboxing.com/
+
+    ****************************************************/
+    .tit{text-align: center;font-size: max(3vw,23px);}
+    .grid{display: grid;max-width: 1200px;margin: 0 auto;outline: 2px dashed lightcoral;grid-template-columns: repeat(5,1fr);grid-auto-rows: 300px;grid-row-gap: 13px;grid-column-gap: 13px;}
+    img{width: 100%;height: 100%;object-fit: cover;object-position: top;}
+    </style>
+</head>
+<body>
+    <h1 class="tit">grid1-image gallery</h1>
+    <div class="grid">
+        <div>
+            <img src="./dress/1.jpg" alt="dress">
+            <aside>
+                <h2>name1</h2>
+                <h3>price1</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/2.jpg" alt="dress">
+            <aside>
+                <h2>name2</h2>
+                <h3>price2</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/3.jpg" alt="dress">
+            <aside>
+                <h2>name3</h2>
+                <h3>price3</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/4.jpg" alt="dress">
+            <aside>
+                <h2>name4</h2>
+                <h3>price4</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/5.jpg" alt="dress">
+            <aside>
+                <h2>name5</h2>
+                <h3>price5</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/6.jpg" alt="dress">
+            <aside>
+                <h2>name6</h2>
+                <h3>price6</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/7.jpg" alt="dress">
+            <aside>
+                <h2>name7</h2>
+                <h3>price7</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/8.jpg" alt="dress">
+            <aside>
+                <h2>name8</h2>
+                <h3>price8</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/9.jpg" alt="dress">
+            <aside>
+                <h2>name9</h2>
+                <h3>price9</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/10.jpg" alt="dress">
+            <aside>
+                <h2>name10</h2>
+                <h3>price10</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/11.jpg" alt="dress">
+            <aside>
+                <h2>name11</h2>
+                <h3>price11</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/12.jpg" alt="dress">
+            <aside>
+                <h2>name12</h2>
+                <h3>price12</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/13.jpg" alt="dress">
+            <aside>
+                <h2>name13</h2>
+                <h3>price13</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/14.jpg" alt="dress">
+            <aside>
+                <h2>name14</h2>
+                <h3>price14</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/15.jpg" alt="dress">
+            <aside>
+                <h2>name15</h2>
+                <h3>price15</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/16.jpg" alt="dress">
+            <aside>
+                <h2>name16</h2>
+                <h3>price16</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/17.jpg" alt="dress">
+            <aside>
+                <h2>name17</h2>
+                <h3>price17</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/18.jpg" alt="dress">
+            <aside>
+                <h2>name18</h2>
+                <h3>price18</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/19.jpg" alt="dress">
+            <aside>
+                <h2>name19</h2>
+                <h3>price19</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/20.jpg" alt="dress">
+            <aside>
+                <h2>name20</h2>
+                <h3>price20</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/21.jpg" alt="dress">
+            <aside>
+                <h2>name21</h2>
+                <h3>price21</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/22.jpg" alt="dress">
+            <aside>
+                <h2>name22</h2>
+                <h3>price22</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/23.jpg" alt="dress">
+            <aside>
+                <h2>name23</h2>
+                <h3>price23</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/24.jpg" alt="dress">
+            <aside>
+                <h2>name24</h2>
+                <h3>price24</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/25.jpg" alt="dress">
+            <aside>
+                <h2>name25</h2>
+                <h3>price25</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/26.jpg" alt="dress">
+            <aside>
+                <h2>name26</h2>
+                <h3>price26</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/27.jpg" alt="dress">
+            <aside>
+                <h2>name27</h2>
+                <h3>price27</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/28.jpg" alt="dress">
+            <aside>
+                <h2>name28</h2>
+                <h3>price28</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/29.jpg" alt="dress">
+            <aside>
+                <h2>name29</h2>
+                <h3>price29</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/30.jpg" alt="dress">
+            <aside>
+                <h2>name30</h2>
+                <h3>price30</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/31.jpg" alt="dress">
+            <aside>
+                <h2>name31</h2>
+                <h3>price31</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/32.jpg" alt="dress">
+            <aside>
+                <h2>name32</h2>
+                <h3>price32</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/33.jpg" alt="dress">
+            <aside>
+                <h2>name33</h2>
+                <h3>price33</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/34.jpg" alt="dress">
+            <aside>
+                <h2>name34</h2>
+                <h3>price34</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/35.jpg" alt="dress">
+            <aside>
+                <h2>name35</h2>
+                <h3>price35</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/36.jpg" alt="dress">
+            <aside>
+                <h2>name36</h2>
+                <h3>price36</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/37.jpg" alt="dress">
+            <aside>
+                <h2>name37</h2>
+                <h3>price37</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/38.jpg" alt="dress">
+            <aside>
+                <h2>name38</h2>
+                <h3>price38</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/39.jpg" alt="dress">
+            <aside>
+                <h2>name39</h2>
+                <h3>price39</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/40.jpg" alt="dress">
+            <aside>
+                <h2>name40</h2>
+                <h3>price40</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/41.jpg" alt="dress">
+            <aside>
+                <h2>name41</h2>
+                <h3>price41</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/42.jpg" alt="dress">
+            <aside>
+                <h2>name42</h2>
+                <h3>price42</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/43.jpg" alt="dress">
+            <aside>
+                <h2>name43</h2>
+                <h3>price43</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/44.jpg" alt="dress">
+            <aside>
+                <h2>name44</h2>
+                <h3>price44</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/45.jpg" alt="dress">
+            <aside>
+                <h2>name45</h2>
+                <h3>price45</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/46.jpg" alt="dress">
+            <aside>
+                <h2>name46</h2>
+                <h3>price46</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/47.jpg" alt="dress">
+            <aside>
+                <h2>name47</h2>
+                <h3>price47</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/48.jpg" alt="dress">
+            <aside>
+                <h2>name48</h2>
+                <h3>price48</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/49.jpg" alt="dress">
+            <aside>
+                <h2>name49</h2>
+                <h3>price49</h3>
+            </aside>
+        </div>
+        <div>
+            <img src="./dress/50.jpg" alt="dress">
+            <aside>
+                <h2>name50</h2>
+                <h3>price50</h3>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
