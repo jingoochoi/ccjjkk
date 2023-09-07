@@ -54,8 +54,16 @@
 
     ****************************************************/
     .tit{text-align: center;font-size: max(3vw,23px);}
-    .grid{display: grid;max-width: 1200px;margin: 0 auto;outline: 2px dashed lightcoral;grid-template-columns: repeat(5,1fr);grid-auto-rows: 300px;grid-row-gap: 13px;grid-column-gap: 13px;}
-    img{width: 100%;height: 100%;object-fit: cover;object-position: top;}
+    .grid{display: grid;max-width: 1200px;margin: 0 auto;outline: 2px dashed lightcoral;grid-template-columns: repeat(5,1fr);grid-auto-rows: 300px;grid-row-gap: max(13px,1.3vw);grid-column-gap: max(13px,1.3vw);justify-items: center;}
+    .grid div{aspect-ratio: 280/400;position: relative;}
+    .grid div:nth-child(5){grid-column: 4/6;grid-row: 1/3;}
+    .grid div:nth-child(6){grid-column: 1/4;grid-row: 2/5;}
+    /* 개별요소에 차지하는 값을 줘서 혼자 튀게 놔둔다 */
+    .grid aside{position: absolute;width: 100%;text-align: center;color: white;bottom: 0;background-color: #00000077;font-size: min(1.2vw,12px);}
+    img{width: 100%;height: 100%;object-fit: cover;object-position: top;vertical-align: middle;}
+    @media screen and (max-width:500px) {
+        .grid{grid-template-columns: repeat(1,1fr);}
+    }
     </style>
 </head>
 <body>
