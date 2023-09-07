@@ -21,6 +21,7 @@ font-family: 'Noto Sans KR', sans-serif;
      margin: 0;
      padding: 0;
  }
+ ul{list-style: none;}
  body {
      width: 100vw;
      height: 100vh;
@@ -41,11 +42,17 @@ font-family: 'Noto Sans KR', sans-serif;
      font-size: 7vh;
      color: #fff;
  }
- .top{display: flex;justify-content: space-between;gap: 0 2vw;margin-top: 30px;position: fixed;top: 0;left: 0;right: 0;font-family: 'Maven Pro', sans-serif;}
+ .top{display: flex;justify-content: space-between;gap: 0 2vw;position: fixed;top: 0;left: 0;right: 0;font-family: 'Maven Pro', sans-serif;overflow: hidden;height: 100px;transition:  .3s ease-in-out;}
+ .top:hover{height: 300px;background-color: #fff;}
+ .top:hover a{color: #000;}
+ .top:hover .blind img:last-child{display: inline;}
+ .top:hover .blind img:first-child{display: none;}
  .logo img{height: 50px;margin-top: 23px;}
  .navpart{width: 70%;}
  .gnb{display: flex;justify-content: center;gap: 0 2vw;}
  .gnb dl:first-child img{transform: translateY(23px);}
+ .gnb dl:hover dt a{color: red;}
+ .gnb dd:hover a{color: red;}
  dt{line-height: 100px;text-align: center;font-size: 17px;}
  dd{text-align: center;font-size: 15px;line-height: 2;}
  .tlink{display: flex;margin-top: 30px;justify-content: center;gap: 0 1vw;}
