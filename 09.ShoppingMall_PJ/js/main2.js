@@ -40,13 +40,89 @@ addEvt(window,"DOMContentLoaded", loadFn);
             li에 클래스 "on"주기(나머진 빼기->초기화!)
 
 *****************************************************/
-
+let clicksts=0
+const TIME=300
 /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
 ******************************************/
 function loadFn() {
-    console.log("로딩완료!");
+    // console.log("로딩완료!");
+    const abtn=qsa('.abtn')
+    const slide=qs('#slide')
+    const indic=qsa('.indic li')
+    // data-=user setting attribute
+    slide.querySelectorAll('li').forEach((a,idx)=>a.setAttribute('data-seq',idx))
+    abtn.forEach(a=>{addEvt(a,'click',gs)})
 
+    function gs() {
+        // console.log(this)
+        // classList.contains(classname)=boolean whether contains classname
+        if (clicksts==1) {
+            return
+        }
+        clicksts=1
+        setTimeout(() => {
+            clicksts=0
+        }, TIME);
+        if (this.classList.contains('ab2')) {
+            slide.style.top='-100%'
+            slide.style.transition=TIME+'ms ease-in-out'
+            setTimeout(() => {
+                slide.appendChild(slide.querySelectorAll('li')[0])
+                slide.style.top='0'
+                slide.style.transition='none'
+            }, TIME);
+        }
+        if (this.classList.contains('ab1')) {            
+            slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
+            slide.style.top='-100%'
+            slide.style.transition='none'
+            setTimeout(() => {
+                slide.style.top='0'
+                slide.style.transition=TIME+'ms ease-in-out'
+            }, 0);
+        }
+        let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
+        indic.forEach(function (a,idx) {
+            if (idx==nowsq) {
+                a.classList.add('on')
+            }else a.classList.remove('on')
+        })
+    }
+    addEvt(document,'keydown',kdft)
+    function kdft() {
+        // console.log('b')
+        if (clicksts==1) {
+            return
+        }
+        clicksts=1
+        setTimeout(() => {
+            clicksts=0
+        }, 300);
+        if (event.key=='ArrowRight') {
+            slide.style.top='-100%'
+            slide.style.transition='.3s ease-in-out'
+            setTimeout(() => {
+                slide.appendChild(slide.querySelectorAll('li')[0])
+                slide.style.top='0'
+                slide.style.transition='none'
+            }, 300);
+        }
+        if (event.key=='ArrowLeft') {
+            slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
+            slide.style.top='-100%'
+            slide.style.transition='none'
+            setTimeout(() => {
+                slide.style.top='0'
+                slide.style.transition='.3s ease-in-out'
+            }, 0);
+        }
+        let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
+        indic.forEach(function (a,idx) {
+            if (idx==nowsq) {
+                a.classList.add('on')
+            }else a.classList.remove('on')
+        })
+    }
 } //////////////// loadFn 함수 ///////////////
-/////////////////////////////////////////////
