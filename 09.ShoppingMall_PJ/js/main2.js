@@ -54,7 +54,7 @@ function loadFn() {
     // data-=user setting attribute
     slide.querySelectorAll('li').forEach((a,idx)=>a.setAttribute('data-seq',idx))
     abtn.forEach(a=>{addEvt(a,'click',gs)})
-
+    
     function gs() {
         // console.log(this)
         // classList.contains(classname)=boolean whether contains classname
@@ -83,6 +83,7 @@ function loadFn() {
                 slide.style.transition=TIME+'ms ease-in-out'
             }, 0);
         }
+        // console.log(this)
         let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
@@ -118,7 +119,9 @@ function loadFn() {
                 slide.style.transition='.3s ease-in-out'
             }, 0);
         }
-        let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
+        // console.log(this)
+        let nowsq=slide.querySelectorAll('li')[event.key=='ArrowRight'?1:0].getAttribute('data-seq')
+        
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')

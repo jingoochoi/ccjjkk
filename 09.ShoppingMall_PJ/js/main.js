@@ -118,7 +118,7 @@ function loadFn() {
                 slide.style.transition='.3s ease-in-out'
             }, 0);
         }
-        let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
+        let nowsq=slide.querySelectorAll('li')[event.key='ArrowRight'?1:0].getAttribute('data-seq')
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
