@@ -31,6 +31,7 @@ font-family: 'Noto Sans KR', sans-serif;
      color: #fff;
      text-decoration: none;
  }
+ .inbox{max-width: 1600px;margin: 0 auto;}
 .blind img:last-child{display: none;}
  /* 전체 타이틀 */
  .tit {
@@ -40,10 +41,12 @@ font-family: 'Noto Sans KR', sans-serif;
      font-size: 7vh;
      color: #fff;
  }
- .top{display: flex;justify-content: center;gap: 0 100px;}
+ .top{display: flex;justify-content: space-between;gap: 0 2vw;margin-top: 30px;position: fixed;top: 0;left: 0;right: 0;}
  .logo img{height: 50px;}
- 
- .gnb{display: flex;justify-content: center;gap: 0 30px;}
- 
+ .navpart{width: 70%;}
+ .gnb{display: flex;justify-content: center;gap: 0 2vw;}
+ .gnb dl:first-child img{transform: translateY(23px);}
+ dt{line-height: 100px;text-align: center;}
+ dd{text-align: center;}
  .tlink{display: flex;}
  
