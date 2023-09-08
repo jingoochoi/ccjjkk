@@ -15,5 +15,21 @@ function ldfn() {
     dcbx.forEach(e=>{
         e.onwheel=e=>e.stopPropagation()
     })//stop the event bubbling of event obj
-    
+    const livebx=domft.qs('.livebox')
+    // console.log(livebx)
+    let hcode='<ul>'
+    livept.forEach(a=>{
+        hcode+=`
+        <li>
+            <figure>
+                <img src="imgs/live_photo/${a.img}.jpg" alt="${a.title}">
+                <figcaption>${a.title}</figcaption>
+            </figure>
+        </li>
+        `
+        // console.log(hcode)
+        
+    })
+    hcode+='</ul>'
+    livebx.innerHTML=hcode
 }
