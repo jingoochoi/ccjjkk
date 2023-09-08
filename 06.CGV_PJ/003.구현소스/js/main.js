@@ -4,7 +4,9 @@
 const domft={
     // 요소선택함수 ////////
      qs : (x) => document.querySelector(x),
+     qsel : (d,x) => d.querySelector(x),
      qsa : (x) => document.querySelectorAll(x),
+     qsael : (e,x) => e.querySelectorAll(x),
      addevt:(a,b,c)=>a.addEventListener(b,c),
 }
 const postermn=domft.qsa('.postermn a')
@@ -20,6 +22,8 @@ const mvcode={
 }
 postermn.forEach(a=>{
     domft.addevt(a,'click',function () {
-        // console.log('b',this)
+        let me=this
+        console.log(domft.qsel(a,'li'))
+
     })
 })
