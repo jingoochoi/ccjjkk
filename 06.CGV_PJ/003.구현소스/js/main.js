@@ -11,6 +11,7 @@ const domft={
 }
 const postermn=domft.qsa('.postermn a')
 const screen=domft.qs('.screen')
+const list=domft.qsa('.postermn>ul>li')
 // console.log(postermn,screen)
 const mvcode={
     '닥터스트레인지2':'mI9oyFMUlfg',
@@ -30,8 +31,9 @@ postermn.forEach(a=>{
         screen.innerHTML=`
         <iframe src="https://www.youtube.com/embed/${mvcode[mt]}?autoplay=1" allow="autoplay"></iframe>
         `
+        list.forEach(a=>a.classList.remove('on'))
         // console.log(a.parentElement)
         a.parentElement.classList.add('on')
-        
+
     })
 })
