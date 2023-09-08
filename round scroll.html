@@ -14,7 +14,7 @@
         .box1{position: absolute;top: 30%;left: 30%;}
         .box2{position: absolute;top: 30%;right: 30%;}
         button{cursor: pointer;}
-        .sult{position: absolute;bottom: 30%;left: 0;right: 0;}
+        .sult{position: absolute;bottom: 30%;left: 0;right: 0;cursor: pointer;}
     </style>
 </head>
 <body>
@@ -26,8 +26,8 @@
                 <div class="tit1">player</div>
                 <div class="play">0</div>
                 <div class="bt">
-                    <button class="hits">hit</button>
-                    <button class="stay">stay</button>
+                    <button class="hits" onclick="clft()">hit</button>
+                    <button class="stay" onclick="clft()">stay</button>
                 </div>
             </div>
             <div class="box2">
@@ -79,6 +79,45 @@
                     window.scrollTo(0,0)
                 }
             }
+        }
+        window.addEventListener('DOMContentLoaded',clft)
+        let play=document.querySelector('.play')
+        let sult=document.querySelector('.sult')
+        let pose=0
+        // console.log(play,draw)
+        function clft() {
+            
+            document.querySelector('.hits').onclick=function(){
+                let draw=Math.ceil(Math.random()*11)
+                if (pose>10&&draw==11) {
+                    draw=draw-10
+                }
+                pose+=draw
+                // console.log(pose,draw)
+                play.innerHTML=pose
+                if (pose>21) {
+                    sult.innerHTML=`burst.<br>click here to reset`
+                }
+            }
+            document.querySelector('.stay').onclick=function(){
+                let card=Math.ceil(Math.random()*10+16)
+                // console.log(card)
+                document.querySelector('.deal').innerHTML=card
+                if (card>21) {
+                    sult.innerHTML=`dealer burst. you win.<br>click here to reset`
+                    return
+                }
+                if (pose>card) {
+                    sult.innerHTML=`you win.<br>click here to reset`
+                }
+                if (pose==card) {
+                    sult.innerHTML=`push (means draw).<br>click here to reset`
+                }
+                if (pose<card) {
+                    sult.innerHTML=`dealer win. you lose.<br>click here to reset`
+                }
+            }
+            sult.onclick=function(){window.location.reload()}
         }
     </script>
 </body>
