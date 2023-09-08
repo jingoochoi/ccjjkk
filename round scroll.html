@@ -16,11 +16,13 @@
             to{text-shadow: 0 0 30px aquamarine;}
         }
         .key1{font-size: 2rem;position: fixed;bottom: 0;left: 0;right: 0;z-index: 333;}
+        .rtt1{position: absolute;bottom: 0;right: 0;font-size: 3rem;}
         .each:nth-child(3){background-color: blue;font-size: 3rem;position: relative;}
         .box1{position: absolute;top: 30%;left: 30%;}
         .box2{position: absolute;top: 30%;right: 30%;}
         button{cursor: pointer;}
         .sult{position: absolute;bottom: 30%;left: 0;right: 0;cursor: pointer;}
+        .rtt3{position: absolute;top: 0;right: 0;font-size: 3rem;}
     </style>
 </head>
 <body>
@@ -28,8 +30,11 @@
         <div class="each">
             <span>TONY<br>WEB</span>
             <div class="key1">왼쪽 화살표나 오른쪽 화살표를 눌러 이동해주세요</div>
+            <div class="rtt1">↻</div>
         </div>
-        <div class="each">2</div>
+        <div class="each">
+            <div class="rtt2">↻</div>
+        </div>
         <div class="each">
             <h1>🃏BLACK JACK🃏</h1>
             <div class="box1">
@@ -45,8 +50,11 @@
                 <div class="deal">0</div>
             </div>
             <div class="sult"></div>
+            <div class="rtt3">↻</div>
         </div>
-        <div class="each">4</div>
+        <div class="each">
+            <div class="rtt1">↻</div>
+        </div>
     </div>
     <script>
         setTimeout(() => {
