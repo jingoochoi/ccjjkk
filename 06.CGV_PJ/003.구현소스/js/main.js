@@ -22,8 +22,13 @@ const mvcode={
 }
 postermn.forEach(a=>{
     domft.addevt(a,'click',function () {
-        let me=this
-        console.log(domft.qsel(a,'li'))
-
+        // let me=this
+        // console.log(domft.qsel(a,'li'))
+        let mt=domft.qsel(a,'li').innerHTML
+        // console.log(mt)
+        // console.log(mvcode[mt])
+        screen.innerHTML=`
+        <iframe src="https://www.youtube.com/embed/${mvcode[mt]}?autoplay=1" allow="autoplay"></iframe>
+        `
     })
 })
