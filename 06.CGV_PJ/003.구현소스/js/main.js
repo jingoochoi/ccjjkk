@@ -30,5 +30,8 @@ postermn.forEach(a=>{
         screen.innerHTML=`
         <iframe src="https://www.youtube.com/embed/${mvcode[mt]}?autoplay=1" allow="autoplay"></iframe>
         `
+        // console.log(a.parentElement)
+        a.parentElement.classList.add('on')
+        
     })
 })

@@ -26,9 +26,10 @@ animation: title .3s ease-in  infinite alternate ;}
 .screen{position: absolute;background-color: black;top: 38%;left: 50.5%;width: 60%;height: 60%;transform: translate(-50%,-50%);}
 .screen iframe{width: 100%;height: 100%;border: none;}
 .postermn{position: absolute;bottom: 3%;left: 50%;transform: translateX(-50%);width: 900px;}
-.postermn ul{display: flex;gap: 0 20px;}
-.postermn >ul >li{flex: 1;position: relative;overflow: hidden;}/*등분할*/
-
+.postermn ul{display: flex;gap: 0 20px;perspective: 50vh;}
+.postermn >ul >li{flex: 1;position: relative;overflow: hidden;transform: rotateX(30deg);transform-origin: bottom;transition:  .3s;}/*등분할*/
+.postermn>ul>li:hover,
+.postermn>ul>li.on{transform: rotateX(0);z-index: 1;outline: 1px solid aquamarine;}
 .postermn >ul >li img{width: 100%;}
 .postermn >ul >li .mvinfo{position: absolute;top: 100%;width: 100%;height: 100%;text-align: center;background-color: #00000077;transition: top .5s ease-out;font-family: 'Cute Font', cursive;font-size: 2.5rem;}
 .postermn>ul>li:hover .mvinfo{top: 0;}
