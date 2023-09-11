@@ -11,7 +11,7 @@ body{
     text-align: center;
     color: #aaa;
 }
-a{color: #aaa;text-decoration: none;}
+a{color: #aaa;text-decoration: none;line-height: 2;}
 body h1{
     font-family: 'Black And White Picture';
     font-weight: normal;
