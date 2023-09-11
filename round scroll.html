@@ -106,7 +106,7 @@
         function clft() {
             
             document.querySelector('.hits').onclick=function(){
-                let draw=Math.ceil(Math.random()*11)
+                let draw=Math.ceil(Math.random()*10+1)
                 if (pose>10&&draw==11) {
                     draw=draw-10
                 }
@@ -117,8 +117,9 @@
                     sult.innerHTML=`burst.<br>click here to reset`
                 }
             }
+            let card=Math.ceil(Math.random()*10+16)
             document.querySelector('.stay').onclick=function(){
-                let card=Math.ceil(Math.random()*10+16)
+                
                 // console.log(card)
                 document.querySelector('.deal').innerHTML=card
                 if (card>21) {
@@ -135,7 +136,11 @@
                     sult.innerHTML=`dealer win. you lose.<br>click here to reset`
                 }
             }
-            sult.onclick=function(){window.location.reload()}
+            sult.onclick=function(){
+                play.innerHTML='0'
+                pose=0
+                card.innerHTML='0'
+            }
         }
     </script>
 </body>
