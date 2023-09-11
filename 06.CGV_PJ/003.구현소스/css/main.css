@@ -39,6 +39,9 @@ animation: title .3s ease-in  infinite alternate ;}
 .gnb li:nth-child(2) .smenu li:hover a::after{content: '🎫';float: right;}
 .gnb li:nth-child(3) .smenu li:hover a::after{content: '🎪';float: right;}
 .gnb li:nth-child(4) .smenu li:hover a::after{content: '🎉';float: right;}
+.line{border-top: 1px solid #ccc;}
+.cam{position: absolute;bottom: -5px;right: -60px;transform: rotate(30deg);}
+.cam img{width: 50px;}
 /**************** 2.메인영역 ****************/
 .main{background: url(../images/bg.jpg)no-repeat 0/100%;position: relative;aspect-ratio: 1200/788;}
 .screen{position: absolute;background-color: black;top: 38%;left: 50.5%;width: 60%;height: 60%;transform: translate(-50%,-50%);}
