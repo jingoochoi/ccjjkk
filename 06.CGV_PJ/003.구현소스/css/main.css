@@ -21,15 +21,24 @@ animation: title .3s ease-in  infinite alternate ;}
 @keyframes title {
     to{text-shadow: 0 0 10px aquamarine;}
 }
-.gnb{position: absolute;right: 10px;bottom: 10px;}
+.gnb{position: absolute;right: 10px;bottom: 0;}
 .gnb ul{display: flex;font-family: 'Jua';gap: 0 20px;}
 .gnb>ul>li{position: relative;}
+.gnb>ul>li:hover .smenu{display: block;}
 .gnb >ul>li>a{font-size: 2rem;transition:  .3s;padding-bottom: 10px;display: inline-block;}
-.gnb>ul>li>a:hover{text-shadow: 0 0 20px aquamarine;
+.gnb>ul>li:hover>a{text-shadow: 0 0 20px aquamarine;
     animation: title .3s ease-in  infinite alternate ;color: aquamarine;}
-.smenu{position: absolute;width: 140px;background: url(../images/bg_smenu.png)no-repeat center/cover;padding: 10px;border-radius: 3px;left: 50%;transform: translateX(-50%);}
-.smenu::before{content: '';position: absolute;width: 10px;height: 10px;background-color: red;clip-path: polygon(50% 0,100% 100%,0 100%);left: 50%;transform: translateX(-50%);top: -10px;}
+.smenu{position: absolute;width: 140px;background: url(../images/bg_smenu.png)no-repeat center/cover;padding: 10px;border-radius: 3px;left: 50%;transform: translateX(-50%);filter: drop-shadow(0 0 5px white);display: none;}
+/* if use box-shadow, not for pseudo but for box
+    use filter:drop-shadow */
+.smenu::before{content: '';position: absolute;width: 10px;height: 10px;background-color: #373737;clip-path: polygon(50% 0,100% 100%,0 100%);left: 50%;transform: translateX(-50%);top: -10px;}
+.smenu ol{border: 1px solid #ccc;padding: 10px;}
 .smenu a{font-size: 1.5rem;line-height: 2;}
+.smenu li:hover a{color: red;}
+.smenu li:hover a::after{content: '🎬';float: right;}
+.gnb li:nth-child(2) .smenu li:hover a::after{content: '🎫';float: right;}
+.gnb li:nth-child(3) .smenu li:hover a::after{content: '🎪';float: right;}
+.gnb li:nth-child(4) .smenu li:hover a::after{content: '🎉';float: right;}
 /**************** 2.메인영역 ****************/
 .main{background: url(../images/bg.jpg)no-repeat 0/100%;position: relative;aspect-ratio: 1200/788;}
 .screen{position: absolute;background-color: black;top: 38%;left: 50.5%;width: 60%;height: 60%;transform: translate(-50%,-50%);}
