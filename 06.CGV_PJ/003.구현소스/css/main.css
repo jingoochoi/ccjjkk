@@ -15,7 +15,7 @@ body{
 }
 
 /**************** 1.상단영역 ****************/
-.header{height: 80px;background: url(../images/curtain.jpg)repeat-x;position: relative;}
+.header{height: 80px;background: url(../images/curtain.jpg)repeat-x;position: relative;z-index: 333;}
 .tit{color: aquamarine;font-size: 40px;font-family: 'Jua', sans-serif;text-align: center;line-height: 80px;text-shadow: 0 0 20px aquamarine;
 animation: title .3s ease-in  infinite alternate ;}
 @keyframes title {
@@ -23,9 +23,13 @@ animation: title .3s ease-in  infinite alternate ;}
 }
 .gnb{position: absolute;right: 10px;bottom: 10px;}
 .gnb ul{display: flex;font-family: 'Jua';gap: 0 20px;}
-.gnb >ul>li>a{font-size: 2rem;transition:  .3s;}
+.gnb>ul>li{position: relative;}
+.gnb >ul>li>a{font-size: 2rem;transition:  .3s;padding-bottom: 10px;display: inline-block;}
 .gnb>ul>li>a:hover{text-shadow: 0 0 20px aquamarine;
     animation: title .3s ease-in  infinite alternate ;color: aquamarine;}
+.smenu{position: absolute;width: 140px;background: url(../images/bg_smenu.png)no-repeat center/cover;padding: 3px;border-radius: 3px;left: 50%;transform: translateX(-50%);}
+.smenu::before{content: '';position: absolute;width: 10px;height: 10px;background-color: red;clip-path: polygon(50% 0,100% 100%,0 100%);left: 50%;transform: translateX(-50%);top: -10px;}
+.smenu a{font-size: 1.5rem;line-height: 2;}
 /**************** 2.메인영역 ****************/
 .main{background: url(../images/bg.jpg)no-repeat 0/100%;position: relative;aspect-ratio: 1200/788;}
 .screen{position: absolute;background-color: black;top: 38%;left: 50.5%;width: 60%;height: 60%;transform: translate(-50%,-50%);}
