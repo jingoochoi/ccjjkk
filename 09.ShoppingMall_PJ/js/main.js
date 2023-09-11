@@ -51,6 +51,7 @@ function loadFn() {
     const abtn=qsa('.abtn')
     const slide=qs('#slide')
     const indic=qsa('.indic li')
+    
     // data-=user setting attribute
     slide.querySelectorAll('li').forEach((a,idx)=>a.setAttribute('data-seq',idx))
     abtn.forEach(a=>{addEvt(a,'click',gs)})
@@ -65,14 +66,9 @@ function loadFn() {
         setTimeout(() => {
             clicksts=0
         }, TIME);
+        let isr=this.classList.contains('ab2')
         if (this.classList.contains('ab2')) {
-            slide.style.left='-100%'
-            slide.style.transition=TIME+'ms ease-in-out'
-            setTimeout(() => {
-                slide.appendChild(slide.querySelectorAll('li')[0])
-                slide.style.left='0'
-                slide.style.transition='none'
-            }, TIME);
+            rightsl()
         }
         if (this.classList.contains('ab1')) {            
             slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
@@ -83,13 +79,26 @@ function loadFn() {
                 slide.style.transition=TIME+'ms ease-in-out'
             }, 0);
         }
-        let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
+        chgid(isr)
+        
+    }
+    
+    function chgid(isr) {
+        let nowsq=slide.querySelectorAll('li')[isr?1:0].getAttribute('data-seq')
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
             }else a.classList.remove('on')
         })
-        clearInterval(autoI)
+    }
+    function rightsl() {
+        slide.style.left='-100%'
+        slide.style.transition=TIME+'ms ease-in-out'
+        setTimeout(() => {
+            slide.appendChild(slide.querySelectorAll('li')[0])
+            slide.style.left='0'
+            slide.style.transition='none'
+        }, TIME);
     }
     addEvt(document,'keydown',kdft)
     function kdft() {
