@@ -89,6 +89,7 @@ function loadFn() {
                 a.classList.add('on')
             }else a.classList.remove('on')
         })
+        clearInterval(autoI)
     }
     addEvt(document,'keydown',kdft)
     function kdft() {
@@ -118,12 +119,24 @@ function loadFn() {
                 slide.style.transition='.3s ease-in-out'
             }, 0);
         }
-        let nowsq=slide.querySelectorAll('li')[event.key='ArrowRight'?1:0].getAttribute('data-seq')
+        let nowsq=slide.querySelectorAll('li')[event.key=='ArrowRight'?1:0].getAttribute('data-seq')
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
             }else a.classList.remove('on')
         })
+    }
+    let autoI;
+    let stsi=0
+    function slideauto() {
+        autoI= setInterval(() => {
+            abtn[1].click()
+    
+        }, 3000);
+        
+    }
+    function clearauto() {
+        clearInterval(autoI)
     }
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
