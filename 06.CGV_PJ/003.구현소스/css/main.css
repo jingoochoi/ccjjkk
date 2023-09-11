@@ -27,7 +27,7 @@ animation: title .3s ease-in  infinite alternate ;}
 .gnb >ul>li>a{font-size: 2rem;transition:  .3s;padding-bottom: 10px;display: inline-block;}
 .gnb>ul>li>a:hover{text-shadow: 0 0 20px aquamarine;
     animation: title .3s ease-in  infinite alternate ;color: aquamarine;}
-.smenu{position: absolute;width: 140px;background: url(../images/bg_smenu.png)no-repeat center/cover;padding: 3px;border-radius: 3px;left: 50%;transform: translateX(-50%);}
+.smenu{position: absolute;width: 140px;background: url(../images/bg_smenu.png)no-repeat center/cover;padding: 10px;border-radius: 3px;left: 50%;transform: translateX(-50%);}
 .smenu::before{content: '';position: absolute;width: 10px;height: 10px;background-color: red;clip-path: polygon(50% 0,100% 100%,0 100%);left: 50%;transform: translateX(-50%);top: -10px;}
 .smenu a{font-size: 1.5rem;line-height: 2;}
 /**************** 2.메인영역 ****************/
