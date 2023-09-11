@@ -41,7 +41,13 @@ animation: title .3s ease-in  infinite alternate ;}
 .gnb li:nth-child(4) .smenu li:hover a::after{content: '🎉';float: right;}
 .line{border-top: 1px solid #ccc;}
 .cam{position: absolute;bottom: -5px;right: -60px;transform: rotate(30deg);}
-.cam img{width: 50px;}
+.cam img{width: 50px;z-index: 2;position: relative;}
+.gnb:hover .cam{transform: rotate(0);transition: transform .3s linear;}
+.beam{width: 0px;height: 50px; position: absolute;right: -0px;bottom: 5px;background: url(../images/bim.png)no-repeat center/auto 100%;pointer-events: none;z-index: 1;transform: translateX(-30px);}
+.gnb:hover .beam{width: 200px;right: -20px;transition: width .3s linear .3s,height .3s linear .3s;z-index: 1;animation: beam .3s linear  infinite alternate ;}
+@keyframes beam {
+    to{opacity: 0.3;}
+}
 /**************** 2.메인영역 ****************/
 .main{background: url(../images/bg.jpg)no-repeat 0/100%;position: relative;aspect-ratio: 1200/788;}
 .screen{position: absolute;background-color: black;top: 38%;left: 50.5%;width: 60%;height: 60%;transform: translate(-50%,-50%);}
