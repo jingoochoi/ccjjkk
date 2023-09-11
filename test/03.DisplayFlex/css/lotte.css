@@ -111,6 +111,11 @@
 /* li넓어지기 */
 .cont>ul>li:hover{
    flex: 1.2;
+   /* number in the flex attribute
+   1=등분할
+   1> larger than others
+   1< smaller than others
+   .xxx is possible */
 }
 /* 가상요소 암전 밝아지기 */
 .cont>ul>li:hover::before{
