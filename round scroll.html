@@ -8,10 +8,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
         html,body{margin: 0;padding: 0;}
         html{scroll-behavior: smooth;overflow: hidden;}
-        .four{display: grid;width: 200%;height: 200%;grid-template-columns: repeat(2,1fr);grid-template-rows: repeat(2,100vh);}
+        .four{display: grid;width: 200%;height: 200%;grid-template-columns: repeat(2,1fr);grid-template-rows: repeat(2,100vh);position: relative;}
+        .four::after{content: url(https://icons-for-free.com/iconfiles/png/512/arrows+line+rotate+icon-1320191124541335012.png);position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
         .each{width: 100%;height: 100%;text-align: center;font-size: 1000%;}
         .each:first-child{background-color: green;position: relative;}
-        span{position: absolute;top: 50%;left: 50%;width: 430px;height: 400px;transform: translate(-50%,-50%);text-shadow: 0 0 10px aquamarine;color: aquamarine;animation: neon 1s linear  infinite alternate ;font-family: 'Courgette', cursive;font-weight: bold;}
+        span{position: absolute;top: 50%;left: 50%;width: 430px;height: 400px;transform: translate(-50%,-50%);text-shadow: 0 0 10px aquamarine;color: aquamarine;animation: neon .5s linear  infinite alternate ;font-family: 'Courgette', cursive;font-weight: bold;}
         @keyframes neon {
             to{text-shadow: 0 0 30px aquamarine;}
         }
@@ -30,10 +31,10 @@
         <div class="each">
             <span>TONY<br>WEB</span>
             <div class="key1">왼쪽 화살표나 오른쪽 화살표를 눌러 이동해주세요</div>
-            <div class="rtt1">↻</div>
+            
         </div>
         <div class="each">
-            <div class="rtt2">↻</div>
+            
         </div>
         <div class="each">
             <h1>🃏BLACK JACK🃏</h1>
@@ -50,10 +51,10 @@
                 <div class="deal">0</div>
             </div>
             <div class="sult"></div>
-            <div class="rtt3">↻</div>
+            
         </div>
         <div class="each">
-            <div class="rtt1">↻</div>
+            
         </div>
     </div>
     <script>
