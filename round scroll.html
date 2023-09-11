@@ -117,9 +117,8 @@
                     sult.innerHTML=`burst.<br>click here to reset`
                 }
             }
-            let card=Math.ceil(Math.random()*10+16)
             document.querySelector('.stay').onclick=function(){
-                
+                let card=Math.ceil(Math.random()*10+16)
                 // console.log(card)
                 document.querySelector('.deal').innerHTML=card
                 if (card>21) {
@@ -139,7 +138,8 @@
             sult.onclick=function(){
                 play.innerHTML='0'
                 pose=0
-                card.innerHTML='0'
+                document.querySelector('.deal').innerHTML='0'
+                sult.innerHTML=''
             }
         }
     </script>
