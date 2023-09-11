@@ -80,7 +80,7 @@ function loadFn() {
             }, 0);
         }
         chgid(isr)
-        
+        clearauto()
     }
     
     function chgid(isr) {
@@ -136,16 +136,21 @@ function loadFn() {
         })
     }
     let autoI;
-    let stsi=0
+    
     function slideauto() {
         autoI= setInterval(() => {
-            abtn[1].click()
-    
+            // abtn[1].click()
+            rightsl()
+            chgid(1)
         }, 3000);
         
     }
+    slideauto()
     function clearauto() {
         clearInterval(autoI)
+        setTimeout(() => {
+            slideauto()
+        }, 10000);
     }
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
