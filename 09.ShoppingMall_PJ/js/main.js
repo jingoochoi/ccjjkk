@@ -136,7 +136,7 @@ function loadFn() {
         })
     }
     let autoI;
-    
+    let autot
     function slideauto() {
         autoI= setInterval(() => {
             // abtn[1].click()
@@ -148,7 +148,8 @@ function loadFn() {
     slideauto()
     function clearauto() {
         clearInterval(autoI)
-        setTimeout(() => {
+        clearTimeout(autot)//stop timeout overriding(gwang cl gum ji)
+        autot= setTimeout(() => {
             slideauto()
         }, 10000);
     }
