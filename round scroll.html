@@ -102,15 +102,20 @@
         let play=document.querySelector('.play')
         let sult=document.querySelector('.sult')
         let pose=0
+        let jack=0
         // console.log(play,draw)
         function clft() {
             
             document.querySelector('.hits').onclick=function(){
+                jack++
                 let draw=Math.ceil(Math.random()*10+1)
                 if (pose>10&&draw==11) {
                     draw=draw-10
                 }
                 pose+=draw
+                if (jack==2&&pose==21) {
+                    sult.innerHTML=`black jack<br>click here to reset`
+                }
                 // console.log(pose,draw)
                 play.innerHTML=pose
                 if (pose>21) {
