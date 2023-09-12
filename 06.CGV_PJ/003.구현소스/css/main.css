@@ -44,7 +44,7 @@ animation: title .3s ease-in  infinite alternate ;}
 .cam img{width: 50px;z-index: 2;position: relative;}
 .gnb:hover .cam{transform: rotate(0);transition: transform .3s linear;}
 .beam{width: 200px;height: 50px; position: absolute;right: -0px;bottom: 5px;background: url(../images/bim.png)no-repeat center/auto 100%;pointer-events: none;z-index: 1;transform: translateX(-30px);opacity: 0;}
-.gnb:hover .beam{width: 200px;right: -20px;transition: width .3s linear .3s,height .3s linear .3s;z-index: 1;animation: beam .01s linear .3s infinite alternate ;opacity: 0;}
+.gnb:hover .beam{width: 200px;right: -20px;transition: width .3s linear .3s,height .3s linear .3s;z-index: 1;animation: beam .03s linear .3s infinite alternate ;opacity: 0;}
 @keyframes beam {
     to{opacity: 1;}
 }
