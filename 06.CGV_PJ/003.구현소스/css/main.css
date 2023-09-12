@@ -64,4 +64,12 @@ animation: title .3s ease-in  infinite alternate ;}
 ol{display: flex;flex-direction: column;justify-content: center;height: 100%;gap: 10% 0;}
 .mvinfo li:first-child{color: aquamarine;}
 /**************** 3.하단영역 ****************/
-.footer{height: 100px;}
+.footer{height: 100px;display: flex;align-items: center;}
+.snsb{margin-left: auto;}
+address{color: white;font-size: 1.3rem;font-style: normal;line-height: 2;margin-left: 30px;}
+.snsb ol{display: flex;flex-direction: row;gap: 10px;}
+.snsb a{font-size: 3rem;}
+.snsb li:nth-child(1):hover a{color: cornflowerblue;}
+.snsb li:nth-child(2):hover a{color: lightskyblue;}
+.snsb li:nth-child(3):hover a{color: lightcoral;}
+.snsb li:nth-child(4):hover a{color: red;}
