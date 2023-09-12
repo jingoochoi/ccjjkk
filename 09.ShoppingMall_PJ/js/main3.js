@@ -76,4 +76,27 @@ function loadFn() {
             // a.isSameNode()
         })
     }
+    addEvt(document,'keydown',kdft)
+    function kdft() {
+        if (event.key=='ArrowRight') {
+            snum++
+            if (snum==cnts) {
+                snum=0
+            }
+        }
+        if (event.key=='ArrowLeft') {
+            snum--
+            if (snum<0) {
+                snum=cnts-1
+            }
+        }
+        slide[snum].classList.add('on')
+        slide.forEach(a=>{
+            if (!a.isSameNode(slide[snum])) {
+                
+                a.classList.remove('on')
+            }
+            // a.isSameNode()
+        })
+    }
 }/////////////// loadFn 함수 //////////////
