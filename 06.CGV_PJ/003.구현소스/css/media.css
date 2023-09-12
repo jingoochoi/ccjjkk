@@ -9,12 +9,25 @@
 
 /************* 1050px 이하 사이즈 시작 *************/
 @media screen and (max-width: 1050px) {
-    
+    .gnb{bottom: -90px;}
+    .gnb ul{flex-direction: column;align-items: flex-end;position: relative;top: 50px;left: 70px;display: none;height: 140px;}
+    .gnb:hover ul{display: flex;}
+    .cam{bottom: 100px;right: -80px;}
+    .gnb>ul>li:hover .smenu{display: none;}
 }
 /************* 1050px 이하 사이즈 종료 *************/
 
 /************* 800px 이하 사이즈 시작 *************/
 @media screen and (max-width: 800px) {
-    
+    .main{aspect-ratio: 1/1.3;background-position:  top;}
+    .screen{top: 20%;height: 30%;}
+    .postermn{width: 90%;}
+    .postermn>ul{width: 100%;flex-wrap: wrap;}
+    .postermn>ul>li{flex-basis: calc(100%/3 - 20px);}
+    .postermn>ul>li.on{flex-basis: calc(100%/3 - 20px);}
+    .postermn>ul>li .mvinfo{font-size: 3.3vw;}
+    .footer{flex-direction: column;}
+    address{width: 70%;margin: 0 auto;text-align: justify;font-size: 1rem;}
+    .snsb{margin-left: 0;}
 }
 /************* 800px 이하 사이즈 종료 *************/
