@@ -8,4 +8,5 @@ const domFn = {
     // 이벤트셋팅함수
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
-  
+  const gnbbox=domFn.qs('.gnb')
+  console.log(gnbbox)
