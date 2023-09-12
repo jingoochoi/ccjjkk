@@ -1,4 +1,4 @@
-// 쇼핑몰 배너 JS - 02.세로방향 배너 슬라이드 //
+// 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 //
 
 // DOM 선택함수
 const qs = (x) => document.querySelector(x);
@@ -19,19 +19,19 @@ addEvt(window,"DOMContentLoaded", loadFn);
     3. 변경 대상: 슬라이드 박스(#slide)
     4. 기능 설계:
 
-        (1) 아랫쪽 버튼 클릭시 다음 슬라이드가
-            나타나도록 슬라이드 박스의 top값을
+        (1) 오른쪽 버튼 클릭시 다음 슬라이드가
+            나타나도록 슬라이드 박스의 left값을
             -100%로 변경시킨다.
             -> 슬라이드 이동후!!! 
             바깥에 나가있는 첫번째 슬라이드
             li를 잘라서 맨뒤로 보낸다!
-            동시에 top값을 0으로 변경한다!
+            동시에 left값을 0으로 변경한다!
 
-        (2) 윗쪽 버튼 클릭시 이전 슬라이드가
+        (2) 왼쪽버튼 클릭시 이전 슬라이드가
             나타나도록 하기위해 우선 맨뒤 li를
-            맨앞으로 이동하고 동시에 top값을
+            맨앞으로 이동하고 동시에 left값을
             -100%로 변경한다.
-            그 후 top값을 0으로 애니메이션하여
+            그 후 left값을 0으로 애니메이션하여
             슬라이드가 왼쪽에서 들어온다.
 
         (3) 공통기능: 슬라이드 위치표시 블릿
@@ -51,10 +51,11 @@ function loadFn() {
     const abtn=qsa('.abtn')
     const slide=qs('#slide')
     const indic=qsa('.indic li')
+    
     // data-=user setting attribute
     slide.querySelectorAll('li').forEach((a,idx)=>a.setAttribute('data-seq',idx))
     abtn.forEach(a=>{addEvt(a,'click',gs)})
-    
+
     function gs() {
         // console.log(this)
         // classList.contains(classname)=boolean whether contains classname
@@ -65,14 +66,9 @@ function loadFn() {
         setTimeout(() => {
             clicksts=0
         }, TIME);
+        let isr=this.classList.contains('ab2')
         if (this.classList.contains('ab2')) {
-            slide.style.top='-100%'
-            slide.style.transition=TIME+'ms ease-in-out'
-            setTimeout(() => {
-                slide.appendChild(slide.querySelectorAll('li')[0])
-                slide.style.top='0'
-                slide.style.transition='none'
-            }, TIME);
+            rightsl()
         }
         if (this.classList.contains('ab1')) {            
             slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
@@ -83,13 +79,26 @@ function loadFn() {
                 slide.style.transition=TIME+'ms ease-in-out'
             }, 0);
         }
-        // console.log(this)
-        let nowsq=slide.querySelectorAll('li')[this.classList.contains('ab2')?1:0].getAttribute('data-seq')
+        chgid(isr)
+        clearauto()
+    }
+    
+    function chgid(isr) {
+        let nowsq=slide.querySelectorAll('li')[isr?1:0].getAttribute('data-seq')
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
             }else a.classList.remove('on')
         })
+    }
+    function rightsl() {
+        slide.style.top='-100%'
+        slide.style.transition=TIME+'ms ease-in-out'
+        setTimeout(() => {
+            slide.appendChild(slide.querySelectorAll('li')[0])
+            slide.style.top='0'
+            slide.style.transition='none'
+        }, TIME);
     }
     addEvt(document,'keydown',kdft)
     function kdft() {
@@ -119,13 +128,30 @@ function loadFn() {
                 slide.style.transition='.3s ease-in-out'
             }, 0);
         }
-        // console.log(this)
         let nowsq=slide.querySelectorAll('li')[event.key=='ArrowRight'?1:0].getAttribute('data-seq')
-        
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
             }else a.classList.remove('on')
         })
     }
+    let autoI;
+    let autot
+    function slideauto() {
+        autoI= setInterval(() => {
+            // abtn[1].click()
+            rightsl()
+            chgid(1)
+        }, 3000);
+        
+    }
+    slideauto()
+    function clearauto() {
+        clearInterval(autoI)
+        clearTimeout(autot)//stop timeout overriding(gwang cl gum ji)
+        autot= setTimeout(() => {
+            slideauto()
+        }, 10000);
+    }
 } //////////////// loadFn 함수 ///////////////
+/////////////////////////////////////////////
