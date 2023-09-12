@@ -14,7 +14,7 @@ addEvt(window,"DOMContentLoaded", loadFn);
 
 /******************************************** 
  * 
-    [ 페이드 효과 슬라이드 기능정의 ]
+    [ fade 효과 슬라이드 기능정의 ]
     -> 슬라이드 순번에 대한 전역변수를 사용한다!
 
     1. 오른쪽 버튼클릭시 다음 순번슬라이드에
@@ -37,5 +37,43 @@ addEvt(window,"DOMContentLoaded", loadFn);
 ******************************************/
 function loadFn() {
     console.log("로딩완료!");
+    let snum=0
+    // 1. 대상선정
+    // 1-1.이벤트 대상: .abtn
+    const abtn = qsa('.abtn');
+    // 1-2.변경 대상: #slide
+    const slide = qsa('#slide li');
+    const cnts=slide.length
+    // 1-3.블릿박스 대상:
+    const indic = qsa('.indic li');
 
+
+    // 대상확인
+    // console.log('대상',abtn,slide,indic)
+    abtn.forEach(a=>{
+        addEvt(a,'click',gs)
+    })
+    function gs() {
+        let isr=this.classList.contains('ab2')
+        // slide[snum].classList.remove('on')
+        if (isr) {
+            snum++
+            if (snum==cnts) {
+                snum=0
+            }
+        }else{
+            snum--
+            if (snum<0) {
+                snum=cnts-1
+            }
+        }
+        slide[snum].classList.add('on')
+        slide.forEach(a=>{
+            if (!a.isSameNode(slide[snum])) {
+                
+                a.classList.remove('on')
+            }
+            // a.isSameNode()
+        })
+    }
 }/////////////// loadFn 함수 //////////////
