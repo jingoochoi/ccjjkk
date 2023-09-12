@@ -14,4 +14,36 @@ const domFn = {
   })
   function shows() {
     // console.log(this)
+    let issub=domFn.qsEl(this,'.smenu')
+    // console.log(issub)
+    if (issub) {
+        // null equals to false in condition of if
+        // console.log('b')
+        let hv=domFn.qsEl(issub,'ol').clientHeight
+        issub.style.height=hv+'px'
+        // issub.onmouseleave=function () {
+        //     issub.style.height=0
+        // }
+        // 전체 순회하며 현재만 빼고 처리함
+        // .isSameNode(compared ele)->same=true,!same=false
+        gnbli.forEach(a=>{
+            let sult=a.isSameNode(this)
+            let target=domFn.qsEl(a,'.smenu')
+            if (!sult) {
+                // issub.style.height=0
+                if (target) {
+                    target.style.height=0
+                }
+            }
+        })
+    }
+    else {
+        gnbli.forEach(a=>{
+            let target=domFn.qsEl(a,'.smenu')
+                // issub.style.height=0
+                if (target) {
+                    target.style.height=0
+                }
+        })
+    }
   }
