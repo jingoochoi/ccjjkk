@@ -21,7 +21,9 @@ const domFn = {
         // console.log('b')
         let hv=domFn.qsEl(issub,'ol').clientHeight
         issub.style.height=hv+'px'
-       
+        issub.onmouseleave=function () {
+            issub.style.height=0
+        }
         // 전체 순회하며 현재만 빼고 처리함
         // .isSameNode(compared ele)->same=true,!same=false
         gnbli.forEach(a=>{
@@ -44,7 +46,5 @@ const domFn = {
                 }
         })
     }
-     // issub.onmouseleave=function () {
-        //     issub.style.height=0
-        // }
+     
   }
