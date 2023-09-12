@@ -20,7 +20,8 @@ const domFn = {
         // null equals to false in condition of if
         // console.log('b')
         let hv=domFn.qsEl(issub,'ol').clientHeight
-        issub.style.height=hv+'px'
+        issub.style.height= (issub.clientHeight==0?hv:0)+'px'
+        
         issub.onmouseleave=function () {
             issub.style.height=0
         }
