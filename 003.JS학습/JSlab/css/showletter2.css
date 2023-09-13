@@ -1,0 +1,47 @@
+@charset "utf-8";
+body {
+    background-color: darkslateblue;
+}
+/* 글자스테이지 */
+.stage {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: 2px dashed yellow;
+
+    /* 글자설정 */
+    font-size: 40px;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* 글자개별박스 셋팅 */
+.stage span {
+    /* 트랜스폼 적용위해 */
+    display: block;
+    /* 트랜지션: 속시이지 */
+}
+.style1 span{
+    
+    /* 현재위치로 부터 이동 */
+    transform: translate(500%, -300%);
+    /* 투명도 0 */
+    opacity: 0;
+    transition: 0.03s ease-in;
+}
+.style1.on span{
+    
+    /* 현재위치로 부터 이동 */
+    transform: translate(0,0);
+    /* 투명도 0 */
+    opacity: 1;
+    
+}
+.style2 span{color: darkslateblue;}
+.style2.on span:nth-child(even){color: green;}
+.style2.on span:nth-child(odd){color: red;}
