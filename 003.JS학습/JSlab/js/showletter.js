@@ -19,7 +19,18 @@ for (let x of mytxt) {
     if (x==' ') {
         hcode+='&nbsp;'
     }else
-    hcode+=`<span>${x}</span>`
+    hcode+=`<span style="transition-delay: ${seqnum*0.2}s">${x}</span>`
+
+    seqnum++
 }
 // console.log(hcode)
 stage.innerHTML=hcode
+// setTimeout(() => {
+    
+    
+//         stage.classList.add('on')
+    
+// }, 3000);
+stage.onclick=function () {
+    stage.classList.toggle('on')
+}
