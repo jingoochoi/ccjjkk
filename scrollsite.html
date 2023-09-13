@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alpha beta</title>
+    <style>
+        html,body{margin: 0;padding: 0;}
+        html{scroll-behavior: smooth;overflow: hidden;}
+        /* body *{outline: 1px solid black;} */
+        .head{width: 100%;height: 300px;position: fixed;top: 0;}
+        .logo{width: 100%;height: 200px;display: flex;justify-content: center;align-items: center;}
+        .menu{width: 100%;height: 100px;display: flex;justify-content: space-evenly;align-items: center;}
+        .li{width: 20%;height: 100px;text-align: center;display: flex;justify-content: center;align-items: center;}
+        .li.on{width: 20%;height: 100px;text-align: center;display: flex;justify-content: center;align-items: center;color: red;}
+        .main{width: 400%;height: 1000px;display: grid;grid-template-columns: repeat(4,1fr);}
+        .each{display: flex;justify-content: center;align-items: center;}
+        .foot{width: 100%;height: 200px;display: flex;justify-content: center;align-items: center;position: fixed;bottom: 0;}
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="logo">logo</div>
+        <div class="menu">
+            <div class="li">alpha</div>
+            <div class="li">beta</div>
+            <div class="li">gamma</div>
+            <div class="li">delta</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="each">alpha</div>
+        <div class="each">beta</div>
+        <div class="each">gamma</div>
+        <div class="each">delta</div>
+    </div>
+    <div class="foot">welcome to my web site.</div>
+    <script>
+        setTimeout(() => {
+            window.scrollTo(0,0)
+        }, 10);
+        document.addEventListener('keydown',kdft)
+        let li=document.querySelectorAll('.li')
+        let num=0
+        if (num==0) {
+            li[0].classList.add('on')
+        }
+        function kdft() {
+            if (event.key=='ArrowRight') {
+                num++
+            }
+            if (event.key=='ArrowLeft') {
+                num--
+            }
+            window.scrollTo(window.innerWidth*num,0)
+            if (num>3) {
+                num=3
+            }
+            if (num<0) {
+                num=0
+            }
+            
+            li.forEach((a,b)=>{
+                if (num==b) {
+                    a.classList.add('on')
+                }else a.classList.remove('on')
+            })
+        }
+    </script>
+</body>
+</html>
