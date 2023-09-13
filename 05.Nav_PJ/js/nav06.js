@@ -9,4 +9,29 @@ const domFn = {
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
   const gnbbox=domFn.qs('.gnb')
-  console.log(gnbbox)
+  let hcode=''
+  for (let x in mdata) {
+    hcode +=
+    `
+    <ul>
+        <li>
+            <a href="">${x}</a>
+            <div class="smenu">
+                <aside class="smbx">
+                    <h2>
+                        <div class="stit">2차</div>
+                        <a href="">전체보기</a>
+                        <div class="swrap">
+                            <dl>
+                                <dt></dt>
+                                <dd><a hrefa></dd>
+                            </dl>
+                        </div>
+                    </h2>
+                </aside>
+            </div>
+        </li>
+    </ul>
+    `
+  }
+  console.log(hcode)
