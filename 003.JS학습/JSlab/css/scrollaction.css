@@ -1,9 +1,11 @@
 @charset "utf-8";
  /* 웹폰트 */
  @import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+ /* html{scroll-behavior: smooth;} */
  body {
      height: 350vh;
      background-image: linear-gradient(to bottom, lightcoral, lightgreen, lightblue);
+     /* scroll-behavior: smooth; */
  }
  /* 타이틀 */
  .tit {
