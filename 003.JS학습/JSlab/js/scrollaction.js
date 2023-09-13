@@ -20,6 +20,7 @@ const domFn = {
 const scact=domFn.qsa('.scact')
 // console.log(scact)
   domFn.addEvt(window,'scroll',scrft)
+  domFn.addEvt(window,'scroll',mvwm)
 //   let pos1=scact[0].getBoundingClientRect().top
 //   let pos2=scact[1].getBoundingClientRect().top
 //   let pos3=scact[2].getBoundingClientRect().top
@@ -79,3 +80,12 @@ const scact=domFn.qsa('.scact')
                 setTimeout(() => {
                     stage.classList.add("on");                    
                 }, 2000);
+    let limit=document.body.clientHeight - window.innerHeight
+    
+    function mvwm() {
+      let wtop=window.innerHeight*scrollY/limit
+      domFn.qs('#woman').style.top=wtop+'px'
+      if (scrollY==0) {
+        domFn.qs('#woman').style.top='-20%'
+      }
+    }
