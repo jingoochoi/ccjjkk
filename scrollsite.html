@@ -11,8 +11,8 @@
         .head{width: 100%;height: 300px;position: fixed;top: 0;}
         .logo{width: 100%;height: 200px;display: flex;justify-content: center;align-items: center;}
         .menu{width: 100%;height: 100px;display: flex;justify-content: space-evenly;align-items: center;}
-        .li{width: 20%;height: 100px;text-align: center;display: flex;justify-content: center;align-items: center;}
-        .li.on{width: 20%;height: 100px;text-align: center;display: flex;justify-content: center;align-items: center;color: red;}
+        .li{width: 20%;height: 100px;text-align: center;display: flex;justify-content: center;align-items: center;cursor: pointer;}
+        .li.on{width: 20%;height: 100px;text-align: center;display: flex;justify-content: center;align-items: center;color: red;cursor: pointer;}
         .main{width: 400%;height: 1000px;display: grid;grid-template-columns: repeat(4,1fr);}
         .each{display: flex;justify-content: center;align-items: center;}
         .foot{width: 100%;height: 200px;display: flex;justify-content: center;align-items: center;position: fixed;bottom: 0;}
@@ -64,6 +64,20 @@
                 if (num==b) {
                     a.classList.add('on')
                 }else a.classList.remove('on')
+            })
+        }
+        window.addEventListener('click',clft)
+        // let snum=0
+        function clft() {
+            li.forEach((a,b)=>{
+                a.onclick=function(){
+                    window.scrollTo(window.innerWidth*b,0)
+                    a.classList.add('on')
+                    // if (!a.isSameNode(li[num])) {
+                    //     a.classList.remove('on')
+                    // }
+                    num=b
+                }
             })
         }
     </script>
