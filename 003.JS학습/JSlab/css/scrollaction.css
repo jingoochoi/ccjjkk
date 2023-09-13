@@ -59,6 +59,10 @@
 .stage{
      display: flex;
  }
+ .setit2{transform: rotate(360deg);opacity: 0;transition:  1.2s ease-in-out;}
+ .setit2.on{transform: rotate(0);opacity: 1;}
+ .setit3{transform: translate(-100%,-100%) scale(0);transition:  1.2s ease-in-out;}
+ .setit3.on{transform: translate(0,0) scale(1);}
 
  /* 글자개별박스 셋팅 */
  .stage span {

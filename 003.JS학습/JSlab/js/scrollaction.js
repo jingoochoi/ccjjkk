@@ -17,13 +17,14 @@ const domFn = {
 // 2. document.scrollingElement.scrollTop
 // 3. document.documentElement.scrollTop
 // 4. document.querySelector('html').scrollTop
-const scact=domFn.qsa('.scact')
+const scact=domFn.qsa('.hide')
 // console.log(scact)
   domFn.addEvt(window,'scroll',scrft)
   domFn.addEvt(window,'scroll',mvwm)
-//   let pos1=scact[0].getBoundingClientRect().top
-//   let pos2=scact[1].getBoundingClientRect().top
-//   let pos3=scact[2].getBoundingClientRect().top
+  domFn.addEvt(window,'scroll',mvtt)
+  let pos1=scact[0].offsetTop
+  let pos2=scact[1].offsetTop
+  let pos3=scact[2].offsetTop
   function scrft() {
     // console.log(window.scrollY)
     // console.log()
@@ -87,5 +88,24 @@ const scact=domFn.qsa('.scact')
       domFn.qs('#woman').style.top=wtop+'px'
       if (scrollY==0) {
         domFn.qs('#woman').style.top='-20%'
+      }
+    }
+    const tit=domFn.qs('.tit')
+    function mvtt() {
+      // console.log('b')
+      if (scrollY>pos1 - window.innerHeight/2&&scrollY<pos2) {
+        tit.style.left='30%'
+        tit.style.top='50%'
+        tit.style.transition='.1s'
+      }
+      if (scrollY>pos2 - window.innerHeight/2&&scrollY<pos3) {
+        tit.style.left='70%'
+        tit.style.top='50%'
+        tit.style.transition='.1s'
+      }
+      if (scrollY>pos3 - window.innerHeight/2) {
+        tit.style.left='30%'
+        tit.style.top='50%'
+        tit.style.transition='.1s'
       }
     }
