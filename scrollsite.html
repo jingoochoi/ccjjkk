@@ -36,6 +36,8 @@
     </div>
     <div class="foot">welcome to my web site.</div>
     <script>
+        let clicks=0
+        
         setTimeout(() => {
             window.scrollTo(0,0)
         }, 10);
@@ -46,6 +48,13 @@
             li[0].classList.add('on')
         }
         function kdft() {
+            if (clicks==1) {
+            return clicks
+            }
+            clicks=1
+            setTimeout(() => {
+                clicks=0
+            }, 1000);
             if (event.key=='ArrowRight') {
                 num++
             }
@@ -69,6 +78,13 @@
         window.addEventListener('click',clft)
         // let snum=0
         function clft() {
+            if (clicks==1) {
+            return clicks
+            }
+            clicks=1
+            setTimeout(() => {
+                clicks=0
+            }, 1000);
             li.forEach((a,b)=>{
                 a.onclick=function(){
                     window.scrollTo(window.innerWidth*b,0)
