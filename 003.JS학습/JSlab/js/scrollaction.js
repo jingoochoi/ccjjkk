@@ -93,6 +93,9 @@ const scact=domFn.qsa('.hide')
     const tit=domFn.qs('.tit')
     function mvtt() {
       // console.log('b')
+      if (scrollY<pos1 - window.innerHeight/2) {
+        tit.style.top='0';tit.style.left='50%';tit.style.transition='.1s'
+      }
       if (scrollY>pos1 - window.innerHeight/2&&scrollY<pos2) {
         tit.style.left='30%'
         tit.style.top='50%'
