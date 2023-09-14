@@ -8,7 +8,7 @@ const domFn = {
     // 이벤트셋팅함수
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
-//   console.log("red","color:red;")
+  console.log("%c❤️ SITE MADE WITH LOBE BY PATRICK HENG - httsp://patrickheng.com ❤️", "background-color: #686de0; color: black; padding : 20px")
   const gnbbox=domFn.qs('.gnb')
   let hcode=''
   for (let x in mdata) {

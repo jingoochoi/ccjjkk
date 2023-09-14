@@ -1,0 +1,3 @@
+special console style in javascript
+
+console.log("%c❤️ SITE MADE WITH LOBE BY PATRICK HENG - httsp://patrickheng.com ❤️", "background-color: #686de0; color: black; padding : 20px")
