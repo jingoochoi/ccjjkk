@@ -10,7 +10,7 @@ const domFn = {
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
     bcr:a=>a.getBoundingClientRect().top
   }; /////// domFn 객체 /////////////
-  console.log("%c💃let's dance🕺","color: red; background-image: linear-gradient(to bottom right,red,orange,yellow,green,blue,darkblue,violet); line-height: 2; padding: 30px")
+  console.log("%c💃let's dance🕺","color: red; background-image: linear-gradient(to bottom right,red,orange,yellow,green,blue,darkblue,violet); line-height: 2; padding: 30px; font-size: 30px")
   const slidepg=domFn.qs('.slidePg')
   // console.log(slidepg)
   let hcode=''
