@@ -8,7 +8,7 @@ const domFn = {
     // 이벤트셋팅함수
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
-  console.log("%cwelcome to chicor", "background-image: linear-gradient(to bottom right,red,orange,yellow,green,blue,darkblue,violet); color: black; padding : 20px; font-size: 50px")
+  console.log("%cwelcome to chicor", "background-image: linear-gradient(to bottom right,red,orange,yellow,green,blue,darkblue,violet); color: black; padding : 20px; font-size: 50px; width: 100%")
   const gnbbox=domFn.qs('.gnb')
   let hcode=''
   for (let x in mdata) {
