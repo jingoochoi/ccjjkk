@@ -13,7 +13,7 @@ body{background-image: linear-gradient(to bottom,lightcoral,lightgreen);height: 
 /* .gnb>ul:first-child .smenu{display: block;} */
 .stit{font-size: 20px;}
 .smbx{display: flex;gap: 0 30px;max-width: 1200px;margin: 0 auto;}
-.smbx h2{padding-right: 20px;border-right: 1px solid #ccc;}
+.smbx h2{padding-right: 10px;border-right: 1px solid #ccc;width: 200px;}
 .swrap{display: flex;flex-wrap: wrap;}
 .smenu dl{width: 200px;}
 .swrap dt{font-size: 13px;font-weight: bold;}
