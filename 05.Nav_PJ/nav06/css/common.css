@@ -1,1 +1,10 @@
 @charset "utf-8";
+.ibx{margin: 0 auto;max-width: 1300px;outline: 2px dashed yellow;padding: 0 13px;}
+#toparea{background-color: black;}
+.topmenu{padding-top: 28px;}
+.logobox{text-align: center;}
+.gnb{display: flex;gap: 0 13px;line-height: 50px;}
+.gnb ul{}
+.gnb>ul>li:first-child> a{color: white;}
+.smenu{display: none;position: absolute;}
+.gnb>ul:first-child .smenu{display: block;}
