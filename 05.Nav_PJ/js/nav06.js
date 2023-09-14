@@ -51,3 +51,17 @@ const domFn = {
 // const aa=['','',''];+씨
 // const bb=aa.map(a=>a+'씨')->[' 씨',' 씨',' 씨']
 //   console.log(hcode)
+const li=domFn.qsa('.gnb>ul>li')
+// const smenu=domFn.qsa('.smenu')
+// console.log(li)
+li.forEach(a=>{
+    domFn.addEvt(a,'mouseover',ovft)
+    domFn.addEvt(a,'mouseout',outft)
+    function ovft() {
+        let hv=domFn.qsEl(this,'.smbx').clientHeight
+        domFn.qsEl(this,'.smenu').style.height=hv+'px'
+    }
+    function outft() {
+        domFn.qsEl(this,'.smenu').style.height=0
+    }
+})
