@@ -16,17 +16,14 @@ const domFn = {
     `
     <ul>
         <li>
-            <a href="#">1차</a>
+            <a href="#">${x}</a>
             <div class="smenu">
                 <aside class="smbx">
                     <h2>
-                        <div class="stit">1차</div>
+                        <div class="stit">${x}</div>
                         <a href="#">전체보기</a>
                         <div class="swrap">
-                            <dl>
-                                <dt>2차</dt>
-                                <dd><a href="#">3차</dd>
-                            </dl>
+                            ${menu('b')}
                         </div>
                     </h2>
                 </aside>
@@ -34,5 +31,16 @@ const domFn = {
         </li>
     </ul>
     `
+  }
+  function menu(a) {
+    let hcode=''
+    for (let x of a) {
+        hcode+=`
+        <dl>
+            <dt>2차</dt>
+            <dd><a href="#">3차</dd>
+        </dl>
+        `
+    }
   }
   console.log(hcode)
