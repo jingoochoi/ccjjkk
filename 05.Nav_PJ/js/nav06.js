@@ -22,10 +22,10 @@ const domFn = {
                     <h2>
                         <div class="stit">${x}</div>
                         <a href="#">전체보기</a>
-                        <div class="swrap">
-                            ${menu(mdata[x])}
-                        </div>
                     </h2>
+                    <div class="swrap">
+                        ${menu(mdata[x])}
+                    </div>
                 </aside>
             </div>
         </li>
