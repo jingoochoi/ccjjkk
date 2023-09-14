@@ -45,8 +45,9 @@ const domFn = {
     }
     return hcode
   }
+  gnbbox.innerHTML=hcode
 //   배열 데이터를 바꿔서 다시 배열로 만들기->.map((a,b,c)=>{code})
 // 새로 만들어진 데이터를 현재 자리에 그대로 출력코자 할 때 배열메서드 join('sth')을 이용하여 배열을 하나의 문자형 데이터로 만들어주면 편리하다
 // const aa=['','',''];+씨
 // const bb=aa.map(a=>a+'씨')->[' 씨',' 씨',' 씨']
-  console.log(hcode)
+//   console.log(hcode)
