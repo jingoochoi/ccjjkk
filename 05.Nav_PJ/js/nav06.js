@@ -8,7 +8,7 @@ const domFn = {
     // 이벤트셋팅함수
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
-  console.log("%c❤️ SITE MADE WITH LOBE BY PATRICK HENG - httsp://patrickheng.com ❤️", "background-color: #686de0; color: black; padding : 20px")
+  console.log("%cwelcome to chicor", "background-color: pink; color: black; padding : 20px; font-size: 50px")
   const gnbbox=domFn.qs('.gnb')
   let hcode=''
   for (let x in mdata) {
@@ -23,7 +23,7 @@ const domFn = {
                         <div class="stit">${x}</div>
                         <a href="#">전체보기</a>
                         <div class="swrap">
-                            ${menu('b')}
+                            ${menu(mdata[x])}
                         </div>
                     </h2>
                 </aside>
@@ -34,13 +34,18 @@ const domFn = {
   }
   function menu(a) {
     let hcode=''
-    for (let x of a) {
+    for (let x in a) {
         hcode+=`
         <dl>
-            <dt>2차</dt>
-            <dd><a href="#">3차</dd>
+            <dt>${x}</dt>
+            ${a[x].map(a=>`<dd><a href="#">${a}</dd>`).join('')}
+            
         </dl>
         `
     }
+    return hcode
   }
+//   배열 데이터를 바꿔서 다시 배열로 만들기->.map((a,b,c)=>{code})
+// const aa=['','',''];+씨
+// const bb=aa.map(a=>a+'씨')->[' 씨',' 씨',' 씨']
   console.log(hcode)
