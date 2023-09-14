@@ -35,7 +35,7 @@ const domFn = {
     }
     else if (domFn.bcr(target)>0) {
       target.style.left=0
-    }
+    }else target.style.left='-3000px'
   }
   const gnbli=domFn.qsa('.gnb>ul>li')
   const mbg=domFn.qs('.mbg')
