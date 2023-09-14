@@ -16,16 +16,16 @@ const domFn = {
     `
     <ul>
         <li>
-            <a href="">1차</a>
+            <a href="#">1차</a>
             <div class="smenu">
                 <aside class="smbx">
                     <h2>
                         <div class="stit">1차</div>
-                        <a href="">전체보기</a>
+                        <a href="#">전체보기</a>
                         <div class="swrap">
                             <dl>
                                 <dt>2차</dt>
-                                <dd><a href="">3차</dd>
+                                <dd><a href="#">3차</dd>
                             </dl>
                         </div>
                     </h2>
