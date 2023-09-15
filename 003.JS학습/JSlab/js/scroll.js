@@ -45,22 +45,30 @@ function wlfn(e) {
 }
 const gnbli=domFn.qsa('.gnb li')
 const indli=domFn.qsa('.indic li')
+const menug=[gnbli,indli]
 function chgmenu() {
     // console.log(bgnum)
-    const comf=function (a) {
+    const comf=function (target) {
         
+        target.forEach((a,b)=>{
+            if (b==bgnum) {
+                a.classList.add('on')
+            }else a.classList.remove('on')
+        })
     }
-    gnbli.forEach((a,b)=>{
-        if (b==bgnum) {
-            a.classList.add('on')
-        }else a.classList.remove('on')
-    })
-    indli.forEach((a,b)=>{
-        if (b==bgnum) {
-            a.classList.add('on')
-        }else a.classList.remove('on')
+    // comf()
+    menug.forEach(a=>comf(a))
+}
+for (let x of menug) {
+    
+    x.forEach((a,b)=>{
+        domFn.addEvt(a,'click',function () {
+            bgnum=b
+            chgmenu()
+        })
     })
 }
+
 /* 모바일 이벤트처리
     
     [ 모바일 터치 스크린에서 사용하는 이벤트 종류 ]
