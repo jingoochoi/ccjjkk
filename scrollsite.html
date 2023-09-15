@@ -90,7 +90,10 @@
             li.forEach((a,b)=>{
                 a.onclick=function(){
                     window.scrollTo(window.innerWidth*b,0)
-                    a.classList.add('on')
+                    if (b==num) {
+                        
+                        a.classList.add('on')
+                    }else a.classList.remove('on')
                     // if (!a.isSameNode(li[num])) {
                     //     a.classList.remove('on')
                     // }
