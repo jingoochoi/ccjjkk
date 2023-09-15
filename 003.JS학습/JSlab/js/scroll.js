@@ -1,17 +1,28 @@
+// DOM 함수 객체 //////////////
+const domFn = {
+    // 요소선택함수 ////////
+    qs: (x) => document.querySelector(x),
+    qsEl: (el, x) => el.querySelector(x),
+    qsa: (x) => document.querySelectorAll(x),
+    qsaEl: (el, x) => el.querySelectorAll(x),
+  
+    // 이벤트셋팅함수
+    addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
+  }; /////// domFn 객체 /////////////
+  console.log("%c🎬MOVIE🎥","color:red;background-color:pink;line-height:2;padding:30px;font-size:30px")
 let bgnum=0;
 let stswl=0;
 let totalpg=7;
 setTimeout(() => {
     window.scrollTo(0,0)//reset when f5
 }, 10);
-
-window.addEventListener('wheel',wlfn)
-window.addEventListener('DOMContentLoaded',ldfn)
-const qs=x=>document.querySelector(x)
-const qa=x=>document.querySelectorAll(x)
+domFn.addEvt(window,'wheel',wlfn)
+// window.addEventListener('wheel',wlfn)
+domFn.addEvt(window,'DOMContentLoaded',ldfn)
+// window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('l')
-    totalpg=qa('.page').length
+    totalpg=domFn.qsa('.page').length
 }
 function wlfn(e) {
     // console.log('f')
@@ -30,6 +41,25 @@ function wlfn(e) {
     if(bgnum==totalpg)bgnum=totalpg-1
     // console.log(bgnum)
     window.scrollTo(0,window.innerHeight*bgnum)
+    chgmenu()
+}
+const gnbli=domFn.qsa('.gnb li')
+const indli=domFn.qsa('.indic li')
+function chgmenu() {
+    // console.log(bgnum)
+    const comf=function (a) {
+        
+    }
+    gnbli.forEach((a,b)=>{
+        if (b==bgnum) {
+            a.classList.add('on')
+        }else a.classList.remove('on')
+    })
+    indli.forEach((a,b)=>{
+        if (b==bgnum) {
+            a.classList.add('on')
+        }else a.classList.remove('on')
+    })
 }
 /* 모바일 이벤트처리
     

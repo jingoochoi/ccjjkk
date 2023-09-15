@@ -5,34 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout one page auto scroll</title>
     <link rel="stylesheet" href="css/scroll.css">
-    <script src="js/scroll.js"></script>
+    <script src="js/scroll.js" defer></script>
 </head>
 <body>
     <div id="header">
-        <header class="inbox"></header>
+        <header class="inbox header">
+            <!-- 1-1.로고 -->
+            <h1 id="logo">
+                <a href="#">
+                    <img src="labimg/auto_scroll/logo.png" alt="메가박스로고" />
+                </a>
+            </h1>
+            <!-- 1-2.GNB메뉴 -->
+            <nav class="gnb">
+                <ul>
+                    <li class="on">
+                        <a href="#pg1">아수라</a>
+                    </li>
+                    <li>
+                        <a href="#pg2">고산자</a>
+                    </li>
+                    <li>
+                        <a href="#pg3">인천상륙작전</a>
+                    </li>
+                    <li>
+                        <a href="#pg4">봉이김선달</a>
+                    </li>
+                    <li>
+                        <a href="#pg5">비밀은없다</a>
+                    </li>
+                    <li>
+                        <a href="#pg6">아가씨</a>
+                    </li>
+                    <li>
+                        <a href="#pg7">탐정홍길동</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         
     </div>
     <div id="content">
         <main>
-            <section class="page">
+            <section id="pg1" class="page">
                 <div class="inbox bgcom pg1"></div>
             </section>
-            <section class="page">
+            <section id="pg2" class="page">
                 <div class="inbox bgcom pg2"></div>
             </section>
-            <section class="page">
+            <section id="pg3" class="page">
                 <div class="inbox bgcom pg3"></div>
             </section>
-            <section class="page">
+            <section id="pg4" class="page">
                 <div class="inbox bgcom pg4"></div>
             </section>
-            <section class="page">
+            <section id="pg5" class="page">
                 <div class="inbox bgcom pg5"></div>
             </section>
-            <section class="page">
+            <section id="pg6" class="page">
                 <div class="inbox bgcom pg6"></div>
             </section>
-            <section class="page">
+            <section id="pg7" class="page">
                 <div class="inbox bgcom pg7"></div>
             </section>
         </main>
@@ -40,5 +73,31 @@
     <div id="footer">
         <footer class="inbox"></footer>
     </div>
+    <!-- 3. 인디케이터(위치표시자) -->
+    <nav class="indic">
+        <ul>
+            <li class="on">
+                <a href="#pg1"><span>아수라</span></a>
+            </li>
+            <li>
+                <a href="#pg2"><span>고산자</span></a>
+            </li>
+            <li>
+                <a href="#pg3"><span>인천상륙작전</span></a>
+            </li>
+            <li>
+                <a href="#pg4"><span>봉이김선달</span></a>
+            </li>
+            <li>
+                <a href="#pg5"><span>비밀은없다</span></a>
+            </li>
+            <li>
+                <a href="#pg6"><span>아가씨</span></a>
+            </li>
+            <li>
+                <a href="#pg7"><span>탐정홍길동</span></a>
+            </li>
+        </ul>
+    </nav>
 </body>
 </html>
