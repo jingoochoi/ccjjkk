@@ -17,6 +17,7 @@ const domFn = {
     // 이벤트셋팅함수
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
+console.log("%c🦸‍♂️MOVING🦸‍♀️","color:red;background-color:pink;line-height:2;padding:30px;font-size:30px")
 const deg=40
 let sts=0
 let num=0
