@@ -10,20 +10,20 @@
     버튼으로 변경되어 있음!
 
 *************************************/
-window.addEventListener('DOMContentLoaded',clft)
-const qs=x=>document.querySelector(x)
-const qa=x=>document.querySelectorAll(x)
-function clft() {
-    // startSS()
-    // console.log('b')
-    const btngo=qs('.btngo')
-    const cube=qs('.cube')
-    // console.log(btngo,cube)
-    btngo.onclick=(e)=>{
-        // console.log('b')
-        cube.classList.toggle('on')
-        let btxt=e.currentTarget.innerHTML
-        // console.log(btxt)
-        e.currentTarget.innerHTML=btxt==='ROLL'?'STOP!':'ROLL'
-    }
-}
+// window.addEventListener('DOMContentLoaded',clft)
+// const qs=x=>document.querySelector(x)
+// const qa=x=>document.querySelectorAll(x)
+// function clft() {
+//     // startSS()
+//     // console.log('b')
+//     const btngo=qs('.btngo')
+//     const cube=qs('.cube')
+//     // console.log(btngo,cube)
+//     btngo.onclick=(e)=>{
+//         // console.log('b')
+//         cube.classList.toggle('on')
+//         let btxt=e.currentTarget.innerHTML
+//         // console.log(btxt)
+//         e.currentTarget.innerHTML=btxt==='ROLL'?'STOP!':'ROLL'
+//     }
+// }
