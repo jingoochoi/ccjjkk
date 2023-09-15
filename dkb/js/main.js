@@ -7,7 +7,7 @@ const domft={
      qsael : (e,x) => e.querySelectorAll(x),
      addevt:(a,b,c)=>a.addEventListener(b,c),
 }
-console.log("%c👹👰🕴👩‍🍳","background-color:pink;line-height:2;padding:30px;font-size:30px")
+console.log("%c👹🧡👰&🕴🧡👩‍🍳","background-color:pink;line-height:2;padding:30px;font-size:30px")
 window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('b')
