@@ -9,7 +9,7 @@ const domFn = {
     // 이벤트셋팅함수
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   }; /////// domFn 객체 /////////////
-  console.log("%c🎬MOVIE🎥","color:red;background-color:pink;line-height:2;padding:30px;font-size:30px")
+  console.log("%c🎬MOVIE🎥","color:red;background-image:linear-gradient(to bottom right,red,orange,yellow,green,blue,darkblue,violet);line-height:2;padding:30px;font-size:30px")
 let bgnum=0;
 let stswl=0;
 let totalpg=7;
