@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded',clft)
 const qs=x=>document.querySelector(x)
 const qa=x=>document.querySelectorAll(x)
 function clft() {
-    startSS()
+    // startSS()
     // console.log('b')
     const btngo=qs('.btngo')
     const cube=qs('.cube')
