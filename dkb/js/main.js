@@ -41,6 +41,6 @@ gnbli.forEach(a=>{
     let gnbdt=menudt[atxt]
     if (gnbdt) {
         // undefined also 'false'
-
+        
     }
 })
