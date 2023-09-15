@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* #header{background-color: lightblue;} */
+#header{position: relative;z-index: 333;}
 #main{min-height: 800px;}
 #footer{background-color: lightblue;}
 .header .partbox{height: 120px;}
@@ -7,8 +7,14 @@
 .topmenu ul{display: flex;justify-content: flex-end;padding: 13px 13px 3px;}
 .topmenu li+li{margin-left: 12px;}
 .topmenu a{font-size: 1.3rem;}
-.gnb ul{display: flex;justify-content: flex-end;}
-.gnb ul li a{font-size: 1.5rem;display: block;padding: 23px 13px;white-space: nowrap;font-weight: bold;}
-.gnb ul li:hover a{color: red;}
-.gnb ul li:nth-child(3)~li:nth-child(-n+6) a::after{content: '▼';display: inline-block;transform: scale(.5);}
+.gnb >ul{display: flex;justify-content: flex-end;}
+.gnb >ul >li >a{font-size: 1.5rem;display: block;padding: 23px 13px;white-space: nowrap;font-weight: bold;}
+.gnb >ul >li:hover >a{color: red;}
+.gnb >ul >li:nth-child(3)~li:nth-child(-n+6) >a::after{content: '▼';display: inline-block;transform: scale(.5);}
+.smenu{position: absolute;width: 100%;left: 0;background-color: #fff;overflow: hidden;height: 0;transition:  .3s ease-in-out;}
+/* .gnb ul li:hover{} */
+.smbx{max-width: 1000px;margin: 0 auto;}
+.smbx ol{font-size: 1.3rem;display: flex;white-space: nowrap;line-height: 3;flex-wrap: wrap;}
+.smbx ol li{flex-basis: 25%;overflow: hidden;text-overflow: ellipsis;}
+.smbx h2{font-size: 3.2rem;}
 .footer .partbox{height: 100px;}

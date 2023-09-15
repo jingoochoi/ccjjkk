@@ -41,6 +41,53 @@ gnbli.forEach(a=>{
     let gnbdt=menudt[atxt]
     if (gnbdt) {
         // undefined also 'false'
-        
+        a.innerHTML+=`
+            <div class="smenu">
+                <aside class="smbx">
+                    <h2>${atxt}</h2>
+                    <ol>
+                    ${gnbdt.map(a=>`
+
+                    <li>
+                        <a href="#">${a}</a>
+                    </li>
+                    `).join('')}
+                    </ol>
+                </aside>
+            </div>
+        `
     }
 })
+/************************************* 
+  [ 상위메뉴 li오버시 하위메뉴 보이기 ]
+  이벤트 대상: .gnb>ul>li
+  변경 대상: .smenu
+*************************************/
+// 1. 대상선정
+const gnb = domft.qsa('.gnb>ul>li');
+
+// 2. 이벤트 설정하기
+// 이벤트 종류: mouseover / mouseout
+gnb.forEach(ele=>{
+    if (domft.qsel(ele,'.smenu')) {
+        
+        domft.addevt(ele,'mouseover',overFn);
+        domft.addevt(ele,'mouseout',outFn);
+    }
+});
+
+// 3.함수만들기
+function overFn(){
+  // console.log('오버',this);
+  // 1.하위 .smbx 높이값 알아오기
+  let hv = domft.qsel(this,'.smbx').clientHeight;
+  // console.log('높이:',hv);
+  // 2.하위 서브메뉴박스 만큼 .smenu 높이값 주기
+  domft.qsel(this,'.smenu').style.height = hv + 'px';
+} //////////// overFn 함수 ////////////
+
+function outFn(){
+  // console.log('아웃',this);
+  // 서브메뉴 박스 높이값 0만들기!
+  domft.qsel(this,'.smenu').style.height = '0px';
+} //////////// outFn 함수 ////////////
