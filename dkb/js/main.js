@@ -7,6 +7,7 @@ const domft={
      qsael : (e,x) => e.querySelectorAll(x),
      addevt:(a,b,c)=>a.addEventListener(b,c),
 }
+console.log("%c👹👰🕴👩‍🍳","background-color:pink;line-height:2;padding:30px;font-size:30px")
 window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('b')
@@ -33,3 +34,13 @@ function ldfn() {
     hcode+='</ul>'
     livebx.innerHTML=hcode
 }
+const gnbli=domft.qsa('.gnb>ul>li')
+gnbli.forEach(a=>{
+    let atxt=domft.qsel(a,'a').innerHTML
+    // console.log(menudt[atxt])
+    let gnbdt=menudt[atxt]
+    if (gnbdt) {
+        // undefined also 'false'
+
+    }
+})
