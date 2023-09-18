@@ -29,5 +29,6 @@
     .footer{flex-direction: column;}
     address{width: 70%;margin: 0 auto;text-align: justify;font-size: 1rem;}
     .snsb{margin-left: 0;}
+    .btnmap{display: none;}
 }
 /************* 800px 이하 사이즈 종료 *************/
