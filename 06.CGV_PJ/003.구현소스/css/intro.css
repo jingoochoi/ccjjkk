@@ -38,3 +38,4 @@
         -> 기본값은 가로값,세로값 모두 center임!
 
     */
+    video{object-fit: fill;}
