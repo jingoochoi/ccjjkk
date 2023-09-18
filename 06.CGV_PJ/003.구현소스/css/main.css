@@ -16,6 +16,11 @@ body{
 
 /**************** 1.상단영역 ****************/
 .header{height: 80px;background: url(../images/curtain.jpg)repeat-x;position: relative;z-index: 333;}
+.btnmap{width: 120px;height: 80px;outline: 2px dashed yellow;position: absolute;top: 0;left: 0;overflow: hidden;cursor: pointer;}
+.btnmap::after{content: '';position: absolute;width: 200%;background: url(../images/street.jpg)repeat-x 0/50% 100%;height: 100%;animation: bg 2s linear  infinite  ;left: 0;}
+@keyframes bg {
+    to{left: -100%;}
+}
 .tit{color: aquamarine;font-size: 40px;font-family: 'Jua', sans-serif;text-align: center;line-height: 80px;text-shadow: 0 0 20px aquamarine;
 animation: title .3s ease-in  infinite alternate ;}
 @keyframes title {
@@ -73,3 +78,44 @@ address{color: white;font-size: 1.3rem;font-style: normal;line-height: 2;margin-
 .snsb li:nth-child(2):hover a{color: lightskyblue;}
 .snsb li:nth-child(3):hover a{color: lightcoral;}
 .snsb li:nth-child(4):hover a{color: red;}
+
+
+/* 구글맵 지도박스 */
+.gmap{
+    position: fixed;
+    top: -50%;
+    /* 처음에 top값으로 윗쪽에 숨김! */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 정중앙이동 */
+
+    width: 600px;
+    height: 450px;
+    background-color: #fff;
+    border: 20px solid hotpink;
+    border-radius: 10px;
+
+    z-index: 999;
+    /* 트랜지션: 속시이지 */
+    transition: top .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+/* 구글맵에 클래스"on"적용시 등장하기 */
+.gmap.on{
+    top: 50%;
+}
+/* 닫기버튼 */
+.cbtn{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/* 기본 포커스 아웃라인 제거 */
+.cbtn:focus{
+    outline: none;
+}

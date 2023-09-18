@@ -37,3 +37,12 @@ postermn.forEach(a=>{
 
     })
 })
+const btnmap=domft.qs('.btnmap')
+const gmap=domft.qs('.gmap')
+const cbtn=domft.qs('.cbtn')
+domft.addevt(btnmap,'click',function () {
+    gmap.classList.add('on')
+})
+domft.addevt(cbtn,'click',function () {
+    gmap.classList.remove('on')
+})
