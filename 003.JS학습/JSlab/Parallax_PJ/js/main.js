@@ -12,13 +12,25 @@ setTimeout(() => {
     // pos=0
     setpos(0)
 }, 10);
+domi.addEvt(window,'mouseup',()=>{
+    setpos(window.scrollY)
+})
+domi.addEvt(window,'keyup',()=>{
+    setpos(window.scrollY)
+})
 const txt=domi.qsa('.txt')
 const icon=domi.qsa('.icon')
 // console.log(txt,icon)
 domi.addEvt(window,'scroll',scrft)
 function scrft() {
-    
+    txt.forEach(a=>{move(domi.getBCR(a),a,'200')})
+    icon.forEach(a=>{move(domi.getBCR(a),a,'100')})
 }
 function move(a,b,c) {
-    console.log(a,b,c)
+    // console.log(a,b,c)
+    if (a<window.innerHeight&&a>-200) {
+        let x=c-(a*c/window.innerHeight)
+        // console.log(x)
+        b.style.transform=`translateY(${-x}px)`
+    }
 }
