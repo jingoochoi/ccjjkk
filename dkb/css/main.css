@@ -41,8 +41,8 @@ body div *{outline-color: red;}
 .banner .partbox{height: 530px;}
 .main .grouppart1 .partbox{height: 455px;}
 .main .grouppart2 .partbox{height: 298px;}
-.livebox ul{display: grid;grid-template-columns: repeat(4,1fr);grid-column-gap: 2rem;grid-row-gap: 2rem;}
-.livebox img{width: 100%;opacity: 0.7;}
-.livebox figcaption{font-size: 2rem;text-align: center;font-weight: bold;padding-top: 13px;}
+.gridbox ul{display: grid;grid-template-columns: repeat(4,1fr);grid-column-gap: 2rem;grid-row-gap: 2rem;}
+.gridbox img{width: 100%;opacity: 0.7;}
+.gridbox figcaption{font-size: 2rem;text-align: center;font-weight: bold;padding-top: 13px;}
 .main .grouppart4 .partbox{height: 542px;}
 .main .grouppart5 .partbox{height: 376px;}
