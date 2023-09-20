@@ -23,7 +23,7 @@ body div *{outline-color: red;}
 .descbox{background: url(../imgs/eachBG.jpg)no-repeat bottom/cover;height: 50%;overflow: auto;border-radius: 13px;}
 .descbox h3{font-family: 'Gugi';font-size: min(2.3rem,1.3vw);font-weight: normal;white-space: nowrap;padding: 13px 10px 3px;letter-spacing: -1px;}
 .descbox p{font-family: 'Single Day','ZCOOL kuaile';font-size: min(2rem,1.3vw);padding: min(1vw,1.3rem);text-align: justify;}
-#dokebimenu{position: sticky;top: 0;background-color: white;}
+#dokebimenu{position: sticky;top: 0;background-color: white;z-index: 333;}
 .dokebimenu ul{display: flex;padding: 12px 0;}
 
 .dokebimenu ul li a{font-size: 1.5rem;display: block;padding: 10px 23px;white-space: nowrap;font-weight: bold;}
