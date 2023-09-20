@@ -121,7 +121,7 @@ body{
     text-shadow: 2px 2px 2px #666;
     opacity: 0;
     /* 트랜지션 */
-    transition: all 1s ease-out;
+    transition: all .3s ease-out;
 }
 .gbx>div>h3{
     position: absolute;
@@ -133,7 +133,7 @@ body{
     text-shadow: 2px 2px 2px #666;
     opacity: 0;
     /* 트랜지션 */
-    transition: all 1s ease-out .5s;
+    transition: all .3s ease-out .5s;
 }
 
 .gbx>div:nth-child(3)>h2{
