@@ -1,5 +1,5 @@
 // dkb js
-import {livept,menudt,posterData} from "./data.js"
+import {menudt,griddt} from "./data.js"
 import startSS from "./smoothScroll23.js"
 const domft={
     // 요소선택함수 ////////
@@ -18,11 +18,11 @@ function ldfn() {
     dcbx.forEach(e=>{
         e.onwheel=e=>e.stopPropagation()
     })//stop the event bubbling of event obj
-    const livebx=domft.qs('.livebox')
+    const gridbx=domft.qsa('.gridbox')
     function grider() {
         // 
         let hcode='<ul>'
-        livept.forEach(a=>{
+        griddt[0].forEach(a=>{
             hcode+=`
             <li>
                 <figure>
@@ -35,7 +35,7 @@ function ldfn() {
             
         })
         hcode+='</ul>'
-        livebx.innerHTML=hcode
+        gridbx.innerHTML=hcode
     }
     // console.log(livebx)
 }
