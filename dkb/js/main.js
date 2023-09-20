@@ -19,14 +19,15 @@ function ldfn() {
         e.onwheel=e=>e.stopPropagation()
     })//stop the event bubbling of event obj
     const gridbx=domft.qsa('.gridbox')
-    function grider() {
+    gridbx.forEach((a,b)=>grider(a,b))
+    function grider(a,b) {
         // 
         let hcode='<ul>'
-        griddt[0].forEach(a=>{
+        griddt[b].forEach(a=>{
             hcode+=`
             <li>
                 <figure>
-                    <img src="imgs/live_photo/${a.img}.jpg" alt="${a.title}">
+                    <img src="imgs/${b==0?'live_photo':'poster'}/${b==0?`${a.img}`:`${a.imgName}`}.jpg" alt="${a.title}">
                     <figcaption>${a.title}</figcaption>
                 </figure>
             </li>
@@ -35,7 +36,7 @@ function ldfn() {
             
         })
         hcode+='</ul>'
-        gridbx.innerHTML=hcode
+        a.innerHTML=hcode
     }
     // console.log(livebx)
 }
