@@ -16,5 +16,6 @@
 .smbx{max-width: 1000px;margin: 0 auto;}
 .smbx ol{font-size: 1.3rem;display: flex;white-space: nowrap;line-height: 3;flex-wrap: wrap;}
 .smbx ol li{flex-basis: 25%;overflow: hidden;text-overflow: ellipsis;}
+.smbx ol li a{font-weight: bold;}
 .smbx h2{font-size: 3.2rem;}
 .footer .partbox{height: 100px;}
