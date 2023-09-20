@@ -12,7 +12,7 @@
 .catbox article:hover .catctt{height: 180%;}
 .catctt .part{flex: 1;}
 .imgbox>img{width: 100%;}
-.imgbox figcaption{text-align: center;margin-top: -20%;}
+.imgbox figcaption{text-align: center;margin-top: -22%;}
 .imgbox figcaption img{width: 50%;}
 .imgbox figcaption img:last-child{display: none;}
 .catbox article:hover
