@@ -44,6 +44,6 @@ body div *{outline-color: red;}
 .gridbox ul{display: grid;grid-template-columns: repeat(4,1fr);grid-column-gap: 2rem;grid-row-gap: 2rem;}
 .gridbox img{width: 100%;opacity: 0.7;}
 .gridbox figcaption{font-size: 2rem;text-align: center;font-weight: bold;padding-top: 13px;}
-.postbox ul{grid-template-rows: repeat(3,250px);}
-.main .grouppart4 .partbox{height: 542px;}
+.postbox ul{grid-template-rows: repeat(3,17vw);}
+/* .main .grouppart4 .partbox{height: 542px;} */
 .main .grouppart5 .partbox{height: 376px;}
