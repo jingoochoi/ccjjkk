@@ -9,7 +9,7 @@ const domft={
      qsael : (e,x) => e.querySelectorAll(x),
      addevt:(a,b,c)=>a.addEventListener(b,c),
 }
-console.log("%c👹🧡👰&🕴🧡👩‍🍳","background-color:pink;line-height:2;padding:30px;font-size:30px")
+console.log("%c🏹🧡👰&🤴🧡👸","background-color:pink;line-height:2;padding:30px;font-size:30px")
 window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('b')
@@ -19,22 +19,25 @@ function ldfn() {
         e.onwheel=e=>e.stopPropagation()
     })//stop the event bubbling of event obj
     const livebx=domft.qs('.livebox')
+    function grider() {
+        // 
+        let hcode='<ul>'
+        livept.forEach(a=>{
+            hcode+=`
+            <li>
+                <figure>
+                    <img src="imgs/live_photo/${a.img}.jpg" alt="${a.title}">
+                    <figcaption>${a.title}</figcaption>
+                </figure>
+            </li>
+            `
+            // console.log(hcode)
+            
+        })
+        hcode+='</ul>'
+        livebx.innerHTML=hcode
+    }
     // console.log(livebx)
-    let hcode='<ul>'
-    livept.forEach(a=>{
-        hcode+=`
-        <li>
-            <figure>
-                <img src="imgs/live_photo/${a.img}.jpg" alt="${a.title}">
-                <figcaption>${a.title}</figcaption>
-            </figure>
-        </li>
-        `
-        // console.log(hcode)
-        
-    })
-    hcode+='</ul>'
-    livebx.innerHTML=hcode
 }
 const gnbli=domft.qsa('.gnb>ul>li')
 gnbli.forEach(a=>{
