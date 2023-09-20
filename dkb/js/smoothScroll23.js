@@ -92,3 +92,4 @@ function SmoothScroll(target, speed, smooth) {
         );
     }()
 }
+export default startSS

@@ -1,4 +1,6 @@
 // dkb js
+import {livept,menudt,posterData} from "./data.js"
+import startSS from "./smoothScroll23.js"
 const domft={
     // 요소선택함수 ////////
      qs : (x) => document.querySelector(x),

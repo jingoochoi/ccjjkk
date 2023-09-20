@@ -53,4 +53,4 @@ const posterData = [
     { idx: "4", title: "공유, 이동욱 포스터", imgName: "poster2", date: "2023-09-18" },
     { idx: "5", title: "공유, 이동욱, 육성재 포스터", imgName: "poster1", date: "2023-09-18" },
   ]; /////////// pstData 배열 /////////
-  
+  export {livept,menudt,posterData}
