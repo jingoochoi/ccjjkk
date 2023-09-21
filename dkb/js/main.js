@@ -97,3 +97,14 @@ function outFn(){
   // 서브메뉴 박스 높이값 0만들기!
   domft.qsel(this,'.smenu').style.height = '0px';
 } //////////// outFn 함수 ////////////
+const mvbx=domft.qs('.mvimg')
+// const after=domft.qs('.mvimg::after')
+domft.addevt(mvbx,'click',showshow)
+function showshow() {
+    // console.log('b')
+    this.innerHTML=`
+        <video src="./imgs/intro_mv.mp4" controls></video>
+    `
+    // mvbx.style.zIndex='1'
+    // mvbx.after.style.display='none'
+}

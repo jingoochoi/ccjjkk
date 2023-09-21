@@ -39,7 +39,21 @@
 
 /* #main{background-color: pink;} */
 .banner .partbox{height: 530px;}
-.main .grouppart1 .partbox{height: 455px;}
+.main .intropt .partbox{height: 455px;}
+.intropt .stit{padding-bottom: 0;}
+.itrdesc{display: flex;font-size: 2rem;}
+.itrdesc h3{margin-right: 10px;}
+.itrdesc ul{display: flex;gap: 0 10px;}
+.itrdesc ul li{border: 1px solid #000;width: 30px;text-align: center;border-radius: 50%;}
+/* .itrdesc ul li i{margin: 0 auto;} */
+.intropt p{font-size: 2rem;margin-top: 30px;padding: 23px;color: #555;
+}
+.itrbtn{padding: 20px 40px;background-color: #fff;border-radius: 10px;font-size: 2rem;border: 1px solid #000;cursor: pointer;}
+.mvbx{margin-left: 30px;}
+.mvimg{aspect-ratio: 2/1.1;position: relative;}
+.mvimg::after{content: '';position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 72px;height: 72px;background: url(../imgs/play.png)no-repeat;cursor: pointer;}
+.mvimg img,.mvimg video{width: 100%;height: 100%;object-fit: cover;}
+.mvbx figcaption{font-size: 2rem;padding-top: 10px;}
 .main .grouppart2 .partbox{height: 298px;}
 .gridbox ul{display: grid;grid-template-columns: repeat(4,1fr);grid-column-gap: 2rem;grid-row-gap: 2rem;}
 .gridbox img{width: 100%;opacity: 0.7;}
