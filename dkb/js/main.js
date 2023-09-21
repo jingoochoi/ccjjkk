@@ -124,7 +124,9 @@ let ppdt=previewData.sort((a,b)=>{
 const prvbx=domft.qsa('.prvbx>div')
 prvbx.forEach((a,b)=>{
     a.innerHTML=`
+    <div>
         <h3>${ppdt[b].title}</h3>
         <p>${ppdt[b].story}</p>
+        </div>
     `
 })
