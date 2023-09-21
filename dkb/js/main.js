@@ -1,5 +1,5 @@
 // dkb js
-import {menudt,griddt} from "./data.js"
+import {menudt,griddt,previewData} from "./data.js"
 import startSS from "./smoothScroll23.js"
 const domft={
     // 요소선택함수 ////////
@@ -100,11 +100,31 @@ function outFn(){
 const mvbx=domft.qs('.mvimg')
 // const after=domft.qs('.mvimg::after')
 domft.addevt(mvbx,'click',showshow)
+let stt=0
 function showshow() {
+    if (stt==1) {
+        return
+    }
+    stt=1
     // console.log('b')
     this.innerHTML=`
-        <video src="./imgs/intro_mv.mp4" controls></video>
+        <video src="./imgs/intro_mv.mp4" controls autoplay></video>
     `
     // mvbx.style.zIndex='1'
     // mvbx.after.style.display='none'
+    this.classList.toggle('off')
+    // this.removeEventListener(showshow)
 }
+let ppdt=previewData.sort((a,b)=>{
+    let k=Number(a.idx)
+    let t=Number(b.idx)
+    return k==t?0:k>t?-1:1
+})
+// console.log(ppdt)
+const prvbx=domft.qsa('.prvbx>div')
+prvbx.forEach((a,b)=>{
+    a.innerHTML=`
+        <h3>${ppdt[b].title}</h3>
+        <p>${ppdt[b].story}</p>
+    `
+})
