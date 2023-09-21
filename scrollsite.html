@@ -40,9 +40,9 @@
         // console.log(mong)
         let clicks=0
         
-        // setTimeout(() => {
-        //     window.scrollTo(0,0)
-        // }, 10);
+        setTimeout(() => {
+            window.scrollTo(0,0)
+        }, 1);
         document.addEventListener('keydown',kdft)
         let li=document.querySelectorAll('.li')
         let num=0
@@ -89,19 +89,20 @@
             }, 1000);
             li.forEach((a,b)=>{
                 a.onclick=function(){
+                    
                     window.scrollTo(window.innerWidth*b,0)
                     num=b
-                    if (b==num) {
-                        
-                        a.classList.add('on')
-                    }else {a.classList.remove('on')}
-                    // if (!a.isSameNode(li[num])) {
-                    //     a.classList.remove('on')
-                    // }
-                    // num=b
+                }
+                if (b==num) {
+                    
+                    a.classList.add('on')
+                }
+                if (b!=num) {
+                    a.classList.remove('on')
                 }
             })
         }
+        
     </script>
 </body>
 </html>
