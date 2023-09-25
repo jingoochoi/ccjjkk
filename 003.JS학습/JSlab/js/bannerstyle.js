@@ -1,14 +1,19 @@
 // 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 //
-
 // DOM 선택함수
 const qs = (x) => document.querySelector(x);
 const qsa = (x) => document.querySelectorAll(x);
+const qsel=(a,b)=>a.querySelector(b)
 const qsael=(a,b)=>a.querySelectorAll(b)
 // addEvent 함수
 // ele - 요소, evt - 이벤트, fn - 함수
 const addEvt = 
 (ele, evt, fn) => ele.addEventListener(evt, fn);
 
+const banbx= qsa('.banbx')
+banbx.forEach(a=>{
+    // 
+    slideft(a)
+})
 // HTML태그 로딩후 loadFn함수 호출! ///
 addEvt(window,"DOMContentLoaded", slideft);
 
@@ -40,18 +45,28 @@ addEvt(window,"DOMContentLoaded", slideft);
             li에 클래스 "on"주기(나머진 빼기->초기화!)
 
 *****************************************************/
-let clicksts=0
-const TIME=300
 /****************************************** 
-    함수명: loadFn
-    기능: 로딩 후 버튼 이벤트 및 기능구현
-******************************************/
+ 함수명: loadFn
+ 기능: 로딩 후 버튼 이벤트 및 기능구현
+ ******************************************/
 function slideft(a) {
+    let clicksts=0
+    const TIME=300
     // console.log("로딩완료!");
-    const slide=qs(a)
-    const abtn=qsael(a,'.abtn')
-    const indic=qsael(a,'.indic li')
-    
+    const sdprt=a
+    const slide=qsel(sdprt,'.slide')
+    const abtn=qsael(sdprt,'.abtn')
+    let indic=qsel(sdprt,'.indic')
+    for (let i = 0; i < qsael(slide,'li').length; i++) {
+        indic.innerHTML+=`
+        <li ${i==0?'class="on"':''}>
+            <img src="labimg/dot1.png" alt="흰색">
+            <img src="labimg/dot2.png" alt="회색">
+        </li>
+        `
+        
+    }
+    indic=qsael(sdprt,'.indic li')
     // data-=user setting attribute
     slide.querySelectorAll('li').forEach((a,idx)=>a.setAttribute('data-seq',idx))
     abtn.forEach(a=>{addEvt(a,'click',gs)})
