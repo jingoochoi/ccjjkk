@@ -9,9 +9,9 @@ const gnb=ddd.qs('#gnb a')
 const info=ddd.qs('#info address')
 ddd.addEvt(sel,'change',function () {
     let seldt=lll[sel.value]
-    console.log(lll[0])
-    if (sel.value==seldt) {
-        
+    console.log(lll)
+    if (sel.value==lll.ko) {
+        // 
     }
     if (sel.value=='ko') {
         console.log('어서 오세요')
