@@ -60,7 +60,10 @@ setInterval(() => {
 let former=30
 function rdft(a,b) {
     let random=Math.floor(Math.random()*4)
-    // 
+    while (random==former) {
+        random=Math.floor(Math.random()*4)
+    }
+    former=random
     tg.forEach((a,b)=>{
 
         if (random==b) {
