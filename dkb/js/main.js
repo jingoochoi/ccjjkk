@@ -130,3 +130,16 @@ prvbx.forEach((a,b)=>{
         </div>
     `
 })
+const clipbx=domft.qs('.clipbox')
+// console.log(clipbx)
+let ccode=''
+clipData.forEach(a=>{
+    ccode+=`
+        <li>
+        <iframe src="https://www.youtube.com/embed/${a.mvid}"></iframe>
+        <h4>${a.subtit}</h4>
+        <h3>${a.title}</h3>
+        </li>
+    `
+})
+clipbx.innerHTML+=`<ul>${ccode}</ul>`
