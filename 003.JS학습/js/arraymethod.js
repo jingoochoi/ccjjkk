@@ -1,5 +1,6 @@
 import aespa from './dom.js'
  // (1) 배열변수 선언과 할당
+ console.log("%c🛒🏪","font-size:30px")
  const fruit = ["배", "사과", "용과", "딸기"];
 
  // (2) 과일명과 배경이미지명을 매칭함 -> 객체
