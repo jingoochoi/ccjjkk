@@ -45,9 +45,16 @@ function show() {
                 
                 ***************************************/
 const imbx=dd.qs('.imbx')
-let random=Math.ceil(Math.random()*3)
+let random=Math.floor(Math.random()*4)
 // console.log(random)
 // console.log(Math.ceil(Math.random()*9+3))
+const rimg = ["https://img.etnews.com/photonews/2110/1461216_20211007085904_466_0001.jpg", "https://d2qqqnyszmt41w.cloudfront.net/wp-content/uploads/2021/04/23150534/202104231445162082.jpg", "https://img.imbc.com/adams/Program/202111/132804027350463581.jpg", "https://image.ytn.co.kr/general/jpg/2021/0925/202109251350012465_d.jpg"];
+rimg.forEach(a=>{
+    imbx.innerHTML+=`
+        <div><img src="${a}" alt="drama"></div>
+    `
+})
+
 /**************************************** 
                     [ 내가 원하는 난수 만들기 ]
 
