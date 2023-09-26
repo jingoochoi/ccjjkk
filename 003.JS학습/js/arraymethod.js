@@ -24,8 +24,22 @@ import aespa from './dom.js'
 const mbtn=aespa.qsa('.mbtn')
 const showit=aespa.qs('.showit')
 const cont=aespa.qs('.cont')
+const sel=aespa.qs('#sel')
+const anum=aespa.qs('#anum')
 // console.log(mbtn,showit,cont)
-showit.innerHTML=fruit.join('🛒')
+const showft=function () {
+    showit.innerHTML=fruit.join('🛒')
+    // 
+}
+showft()
+let option=''
+for (let x in frObj) {
+    option+=`<option>${x}</option>`
+}
+sel.innerHTML=option
+const ningning=function () {
+    // 
+}
 mbtn.forEach(a=>{
     aespa.addEvt(a,'click',winter)
 })
@@ -41,4 +55,19 @@ function winter() {
         hcode+=`</ul>`
         cont.innerHTML=hcode
     }
+    else if (this.innerHTML=='뒷배열추가요~!') {
+        fruit.push(sel.value)
+    }
+    else if (this.innerHTML=='뒷배열삭제요~!') {
+        fruit.pop(sel.value)
+        // showft()
+    }
+    else if (this.innerHTML=='앞배열삭제요~!') {
+        fruit.shift(sel.value)
+        // showft()
+    }
+    else if (this.innerHTML=='앞배열추가요~!') {
+        fruit.unshift(sel.value)
+    }
+    showft()
 }
