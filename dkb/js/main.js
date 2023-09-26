@@ -1,5 +1,5 @@
 // dkb js
-import {menudt,griddt,previewData} from "./data.js"
+import {menudt,griddt,previewData,clipData} from "./data.js"
 import startSS from "./smoothScroll23.js"
 const domft={
     // 요소선택함수 ////////
