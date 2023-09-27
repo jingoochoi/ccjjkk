@@ -79,8 +79,26 @@
 .postbox ul{grid-template-rows: repeat(2,min(17vw,250px));}
 /* .main .grouppart4 .partbox{height: 542px;} */
 /* .main .grouppart5 .partbox{height: 376px;} */
-.clipbox ul{display: flex;overflow: hidden;gap: 0 .3%;}
+.clipbox ul{display: flex;overflow: hidden;gap: 0 .3%;position: relative;left: 0;}
 .clipbox ul li{flex-basis: 25%;flex-shrink: 0;border: none;}
-.clipbox ul li iframe{border: none;}
+/* .clipbox ul li iframe{border: none;} */
+.clipmv{position: relative;}
+.clipmv img{width: 100%;}
+.clipmv::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    background: url(../imgs/play.png) no-repeat;
+    cursor: pointer;
+    z-index: 333;
+}
+
 .clipbox h4{font-size: 1.3rem;}
 .clipbox h3{font-size: 2rem;}
+.cliparea{position: relative;}
+.btnbox div:first-child{position: absolute;top: 50%;left: 0;transform: translateX(-50%);border: none;background: none;width: 30px;height: 30px;font-size: 30px;opacity: 0.5;border-radius: 50%;background-color: #fff;}
+.btnbox div:last-child{position: absolute;top: 50%;right: 0;transform: translateX(50%);border: none;background: none;width: 30px;height: 30px;font-size: 30px;opacity: 0.5;border-radius: 50%;background-color: #fff;}

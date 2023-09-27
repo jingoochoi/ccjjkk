@@ -136,7 +136,7 @@ let ccode=''
 clipData.forEach(a=>{
     ccode+=`
         <li>
-        <iframe src="https://www.youtube.com/embed/${a.mvid}"></iframe>
+        <div class="clipmv"><img src="./imgs/clip_img/${a.idx}.jpg" alt="${a.subtit}"></div>
         <h4>${a.subtit}</h4>
         <h3>${a.title}</h3>
         </li>
