@@ -79,7 +79,8 @@
 .postbox ul{grid-template-rows: repeat(2,min(17vw,250px));}
 /* .main .grouppart4 .partbox{height: 542px;} */
 /* .main .grouppart5 .partbox{height: 376px;} */
-.clipbox ul{display: flex;overflow: hidden;gap: 0 2%;}
-.clipbox ul li{flex-basis: calc(25% - 2%);flex-shrink: 0;}
+.clipbox ul{display: flex;overflow: hidden;gap: 0 .3%;}
+.clipbox ul li{flex-basis: 25%;flex-shrink: 0;border: none;}
+.clipbox ul li iframe{border: none;}
 .clipbox h4{font-size: 1.3rem;}
 .clipbox h3{font-size: 2rem;}
