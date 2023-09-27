@@ -143,3 +143,28 @@ clipData.forEach(a=>{
     `
 })
 clipbx.innerHTML+=`<ul>${ccode}</ul>`
+const btns=domft.qsa('.btnbox div')
+const u=domft.qs('.clipbox ul')
+const list=domft.qsael(u,'li').length
+const lim=4
+const move=list-lim
+const block=25.5
+let mvnum=0
+btns.forEach((a)=>{
+    domft.addevt(a,'click',mc)
+})
+function mc() {
+    const righ=this.classList.contains('fa-circle-chevron-right')
+    if (righ) {
+        mvnum++
+        if(mvnum>move)mvnum=move
+        u.style.left=`-${(block*mvnum)}%`
+    }
+    else{
+        mvnum--
+        if (mvnum<0) {
+            mvnum=0
+        }
+        u.style.left=`-${(block*mvnum)}%`
+    }
+}
