@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.시작하기</title>
+    <script>
+        /*react?->frontend JS library,toolkit for building a html ui
+            (build=building and attributing the data in html const and language)
+            [how?]
+            using virtual DOM->const fast and easily
+            obj DOM before changing real DOM
+            the toolkit for updating at once
+            [2 kind of styles]
+            1.apt in needed part->by CDN(setting up is not needed)
+            2.using Node.js and so on->Node.js,react spa environment setting is needed*/
+    </script>
+    <!-- 1.리액트 기본 라이브러리 -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <!-- 2.리액트 가상돔 라이브러리 -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <!-- 3.리액트 바벨 라이브러리 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="./js/begin.jsx"></script>
+    <!-- 
+            type을 반드시 "text/babel"로
+            셋팅한다!
+            그리고 상단에 위치해도 내부적으로
+            defer처리되어 html태그 로딩후 실행됨
+         -->
+</head>
+<body>
+    <div id="mydv"></div>
+</body>
+</html>
