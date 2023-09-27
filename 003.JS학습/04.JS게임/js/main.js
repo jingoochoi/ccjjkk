@@ -3,7 +3,7 @@
 
 // DOM메서드 모듈
 import domFn from "./dom.js";
-
+console.log("%c🏁🏃‍♂️🐇VS🐢","color:red;font-size:30px")
 /********************************************** 
             [ 게임 기능정의 ]
     _________________________________
@@ -27,33 +27,97 @@ import domFn from "./dom.js";
 
 // 1. 대상선정 ///////////////////
 // (1) 거북 : #t1
-
+const turtle=domFn.qs('#t1')
 // (2) 토끼 : #r1
-
+const rabbit=domFn.qs('#r1')
 // (3) 버튼 : #btns a
-
+const button=domFn.qsa('#btns a')
 // (4) 레벨 : #level
-
+const level=domFn.qs('#level')
 // (5) 메시지박스 : #msg
-
+const message=domFn.qs('#msg')
 // (6) 토끼, 거북 위치값 변수
-
+let r1pos=0
+let t1pos=0
 // 토끼위치 : r1pos / 거북위치 : t1pos 
 
 // cg(msg);
 
 // 2. 이벤트 설정하기 ////////////
 // 대상: 버튼들 - btns변수
-
-
+button.forEach(a=>{
+    domFn.addEvt(a,'click',gg)
+})
+function gg() {
+    // console.log(this)
+    if (this.innerHTML=='토끼출발') {
+        // console.log(this)
+        // rabbit.style.left=++r1pos+'px'
+        goR1()
+    }
+    if (this.innerHTML=='거북출발') {
+        if (ttst) {
+            return
+        }
+        t1pos+=16
+        turtle.style.left=++t1pos+'px'
+        this.blur()
+        goR1()
+    }
+    if (this.innerHTML=='처음으로') {
+        location.reload()
+    }
+}
 /*********************************** 
     함수명: goR1
     기능: 토끼자동이동(인터발함수)
 ***********************************/
-
+let autoi
+function goR1() {
+    if (!autoi) {
+        // 
+        autoi=setInterval(() => {
+            rabbit.style.left=++r1pos+'px'
+            // if (650+'px'<=rabbit.style.left) {
+            //     // 
+            // }
+            whoWinner()
+        }, level.value);
+    }
+}
 
 /***************************************** 
     함수명: whoWinner
     기능: 기준값 보다 레이서위치값이 큰경우
         승자를 판별하여 메시지를 보여준다!
 *****************************************/
+let ttst=0
+function whoWinner() {
+    if (r1pos>=650||t1pos>=650) {
+        clearInterval(autoi)
+        ttst=1
+        if (t1pos>r1pos) {
+            // console.log("%c🐢'🐇,잤냐ㅅㅂㅋㅋㅋ'","font-size:30px")
+            message.innerHTML='🐇잤냐ㅋㅋㅋ'
+            message.style.display='block'
+            message.style.zIndex=333
+        }
+        if (r1pos>t1pos) {
+            message.innerHTML='🐢ㅂㅅ'
+            message.style.display='block'
+            message.style.zIndex=333
+        }
+        domFn.qs('.cover').innerHTML=`<div 
+        style='
+            position:fixed;
+            top:0;
+            left:0;
+            width:100vw;
+            height:100vh;
+            background-color:#000;
+            opacity:0.5;
+            z-index:100;
+    '></div>`
+    domFn.qs('#btns').style.zIndex=333
+    }
+}
