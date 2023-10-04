@@ -4,7 +4,7 @@
 
 /* font-family: 'Anton', sans-serif; */
 
-:root{--wide:200px;--high:300px}
+:root{--wide:130px;--high:300px}
 html,body{
     margin: 0;
     padding: 0;
@@ -16,5 +16,11 @@ body{
     /* 넘치는 자식요소 숨기기 */
     overflow: hidden;
 }
-.iphone{width: var(--wide);height: var(--high);outline: 2px solid blue;position: absolute;top: calc(50% - var(--high)/2);left: calc(50% - var(--wide)/2);}
-.iphone span{position: absolute;width: 100%;height: 100%;}
+.iphone{width: var(--wide);height: var(--high);outline: 2px solid blue;position: absolute;top: calc(50% - var(--high)/2);left: calc(50% - var(--wide)/2);transform-style: preserve-3d;transform: rotateX(10deg) rotateY(30deg);}
+.iphone span{position: absolute;width: 100%;height: 100%;background-repeat: no-repeat;background-size: 100% 100%;outline: 1px dashed red;}
+.iphone span:nth-child(1){background-image: url(../images/ip01.png);transform: translateZ(10px);}
+.iphone span:nth-child(2){background-image: url(../images/ip03.png);width: 20px;right: -10px;transform: rotateY(90deg);}
+.iphone span:nth-child(3){background-image: url(../images/ip04.png);width: 20px;left: -10px;transform: rotateY(-90deg);}
+.iphone span:nth-child(4){}
+.iphone span:nth-child(1){}
+.iphone span:nth-child(1){}
