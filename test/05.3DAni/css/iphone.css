@@ -4,7 +4,7 @@
 
 /* font-family: 'Anton', sans-serif; */
 
-:root{--wide:130px;--high:300px}
+:root{--wide:130px;--high:300px;--thick:20px;--degree:90deg}
 html,body{
     margin: 0;
     padding: 0;
@@ -16,11 +16,11 @@ body{
     /* 넘치는 자식요소 숨기기 */
     overflow: hidden;
 }
-.iphone{width: var(--wide);height: var(--high);outline: 2px solid blue;position: absolute;top: calc(50% - var(--high)/2);left: calc(50% - var(--wide)/2);transform-style: preserve-3d;transform: rotateX(10deg) rotateY(30deg);}
-.iphone span{position: absolute;width: 100%;height: 100%;background-repeat: no-repeat;background-size: 100% 100%;outline: 1px dashed red;background-color: #fff;}
+.iphone{width: var(--wide);height: var(--high);position: absolute;top: calc(50% - var(--high)/2);left: calc(50% - var(--wide)/2);transform-style: preserve-3d;transform: rotateX(10deg) rotateY(30deg);}
+.iphone span{position: absolute;width: 100%;height: 100%;background-repeat: no-repeat;background-size: 100% 100%;background-color: #fff;}
 .iphone span:nth-child(1){background-image: url(../images/ip01.png);transform: translateZ(10px);}
-.iphone span:nth-child(2){background-image: url(../images/ip03.png);width: 20px;right: -10px;transform: rotateY(90deg);}
-.iphone span:nth-child(3){background-image: url(../images/ip04.png);width: 20px;left: -10px;transform: rotateY(-90deg);}
-.iphone span:nth-child(4){background-image: url(../images/ip06.png);height: 20px;top: -10px;transform: rotateX(-90deg);}
-.iphone span:nth-child(5){background-image: url(../images/ip05.png);height: 20px;bottom: -10px;transform: rotateX(90deg);}
+.iphone span:nth-child(2){background-image: url(../images/ip03.png);width: var(--thick);right: -10px;transform: rotateY(var(--degree));}
+.iphone span:nth-child(3){background-image: url(../images/ip04.png);width: var(--thick);left: -10px;transform: rotateY(-90deg);}
+.iphone span:nth-child(4){background-image: url(../images/ip06.png);height: var(--thick);top: -10px;transform: rotateX(-90deg);}
+.iphone span:nth-child(5){background-image: url(../images/ip05.png);height: var(--thick);bottom: -10px;transform: rotateX(var(--degree));}
 .iphone span:nth-child(6){background-image: url(../images/ip02.png);transform: translateZ(-10px);}
