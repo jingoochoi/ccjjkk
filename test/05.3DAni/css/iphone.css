@@ -51,4 +51,4 @@ body{
     to{left: -200%;}
 }
 .evt{position: fixed;top: 0;left: 0;z-index: 333;display: flex;flex-wrap: wrap;width: 100%;height: 100%;}
-.evt div{width: 20%;height: 50%;outline: 1px dashed green;}
+.evt div{width: 20%;height: 50%;}
