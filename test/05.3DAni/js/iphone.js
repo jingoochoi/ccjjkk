@@ -8,16 +8,19 @@ import ive from './dom.js'
         5. 애니메이션 후에 이벤트박스를 보이게함
         (최초 width:0 -> width:100vw)
     *************************************/
-const deg=[[30,-60,''],[30,-30,''],[30,0,''],[30,30,''],[30,60,''],[-30,-60,''],[-30,-30,''],[-30,0,''],[-30,30,''],[-30,60,''],]
+const deg=[[30,-60],[30,-30],[30,0],[30,30],[30,60],[-30,-60],[-30,-30],[-30,0],[-30,30],[-30,60],]
 const evt=ive.qsa('.evt div')
 // console.log(evt)
 const iphone=ive.qs('.iphone')
 // console.log(iphone)
-const screen=ive.qs('.iphone b')
+const screen=ive.qs('.iphone span b')
 evt.forEach((a,b)=>{
     ive.addEvt(a,'mouseover',()=>rei(b))
 })
 function rei(a) {
     iphone.style.transform=`rotateX(${deg[a][0]}deg) rotateY(${deg[a][1]}deg)`
     iphone.style.transition='1s ease-out'
+    screen.style.backgroundImage=`url(./images/imgs_moving/mv${a}.jpg)`
+    screen.style.backgroundSize='100% 100%'
+    screen.style.aspectRatio='83/75'
 }
