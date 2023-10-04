@@ -9,6 +9,7 @@ import ive from './dom.js'
         (최초 width:0 -> width:100vw)
     *************************************/
 console.log("%c🍎📱","font-size:30px")
+// console.log("%c","background-image:url(./images/imgs_moving/mv0.jpg)")
 const deg=[[30,-60],[30,-30],[30,0],[30,30],[30,60],[-30,-60],[-30,-30],[-30,0],[-30,30],[-30,60],]
 const evt=ive.qsa('.evt div')
 // console.log(evt)
