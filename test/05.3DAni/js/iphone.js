@@ -27,3 +27,6 @@ function rei(a) {
     screen.style.backgroundSize='100% 100%'
     screen.style.aspectRatio='83/75'
 }
+setTimeout(() => {
+    ive.qs('.evt').style.width='100%'
+}, 2300);
