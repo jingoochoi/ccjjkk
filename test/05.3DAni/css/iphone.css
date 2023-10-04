@@ -42,3 +42,10 @@ body{
 @keyframes float {
     to{left: 0;}
 }
+.f3{bottom: 10vh;}
+.f3 .tbx{width: 400%;}
+.f3 span{display: block;text-align: center;font-family: 'Anton';font-size: 3.3vw;color: #a0a0a0;text-shadow: 2px 2px 2px #00000077;white-space: nowrap;}
+.txt-ani3{animation: span 30s linear  infinite  ;}
+@keyframes span {
+    to{left: -200%;}
+}
