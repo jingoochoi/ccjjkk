@@ -21,6 +21,7 @@ function rei(a) {
     iphone.style.transform=`rotateX(${deg[a][0]}deg) rotateY(${deg[a][1]}deg)`
     iphone.style.transition='1s ease-out'
     screen.style.backgroundImage=`url(./images/imgs_moving/mv${a}.jpg)`
+    screen.style.backgroundColor='white'
     screen.style.backgroundSize='100% 100%'
     screen.style.aspectRatio='83/75'
 }
