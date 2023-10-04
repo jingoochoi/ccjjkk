@@ -14,6 +14,10 @@ const lcode=data.map(a=>
             <td>{a.생일}</td>
         </tr>
     )
+    // console.log(lcode)
+    // map of react is not same as in js syntax
+    // js syntax is also allowed in jsx
+    // so both .js and .jsx are ok for react
 const tcode=(
     <div>
         <h1>list of my friends</h1>

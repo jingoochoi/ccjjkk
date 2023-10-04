@@ -20,6 +20,7 @@
 
         <!-- 나의 JSX -->
         <script src="./js/02.HTML출력.jsx" type="text/babel"></script>
+        <!-- .js is also allowed instead of .jsx -->
         <style>
             h1{
                 text-align: center;
@@ -34,5 +35,36 @@
     </head>
     <body>
         <div id="root"></div>
+        <script>
+            const data2 = [
+                {이름:"김소영",전화번호:"010-222-3333",생일:"20.01.20"},
+                {이름:"전우치",전화번호:"010-555-8888",생일:"18.05.20"},
+                {이름:"강감찬",전화번호:"010-666-5555",생일:"21.02.03"},
+                {이름:"공유",전화번호:"010-999-5555",생일:"79.08.20"},
+                {이름:"김마리",전화번호:"010-888-4578",생일:"00.01.02"},
+                ];
+                const lcode2=data2.map(a=>
+        `<tr>
+            <td>${a.이름}</td>
+            <td>${a.전화번호}</td>
+            <td>${a.생일}</td>
+        </tr>`
+    )
+    // console.log(lcode)
+const tcode2=(
+    `<div>
+        <h1>list of my friends</h1>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>tel</th>
+                <th>birthday</th>
+            </tr>
+            ${lcode2.join('')}
+        </table>
+    </div>`
+)
+document.body.innerHTML+=tcode2
+        </script>
     </body>
 </html>
