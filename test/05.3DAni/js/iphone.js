@@ -30,3 +30,19 @@ function rei(a) {
 setTimeout(() => {
     ive.qs('.evt').style.width='100%'
 }, 2300);
+const curs=ive.qs('.curs')
+ive.addEvt(ive.qs('.evt'),'mouseover',liz)
+function liz() {
+    /* mouseover/out=>this is standard(bubbling o)
+        mouseenter/leave=>this.border is standard(bubbling x) */
+    ive.qs('.evt').style.cursor='none'
+    ive.qs('.evt').onmousemove=function (e) {
+        curs.style.top=e.pageY+'px'
+        curs.style.left=e.pageX+'px'
+        
+    }
+    // ive.qs('.evt').onmouseenter=function () {
+    //     curs.style.backgroundImage='url(./images/earth.png) no-repeat'
+    //     // 
+    // }
+}

@@ -52,3 +52,4 @@ body{
 }
 .evt{position: fixed;top: 0;left: 0;z-index: 333;display: flex;flex-wrap: wrap;width: 0;height: 100%;}
 .evt div{width: 20%;height: 50%;}
+.curs{position: absolute;top: 0;left: 0;width: 100px;height: 100px;z-index: 3330;background: url(../images/earth.png)no-repeat center/cover;transition:  .1s linear;transform: translate(-50%,-50%);pointer-events: none;}
