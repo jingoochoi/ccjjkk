@@ -1,5 +1,5 @@
 // dkb js
-import {menudt,griddt,previewData,clipData} from "./data.js"
+import {menudt,griddt,previewData,clipData,linkData} from "./data.js"
 import startSS from "./smoothScroll23.js"
 const domft={
     // 요소선택함수 ////////
@@ -168,3 +168,24 @@ function mc() {
         u.style.left=`-${(block*mvnum)}%`
     }
 }
+const brands=domft.qs('#brands')
+const corp=domft.qs('#corp')
+let bcode=''
+for (let i = 0; i < linkData.brand.length; i++) {
+    
+    
+        bcode+=`<option value="${linkData.brand[i]}">${linkData.brand[i]}</option>`
+    
+}
+brands.innerHTML=bcode
+// corp.innerHTML
+// console.log(linkData.corp)
+const pdata=Object.keys(linkData.corp)
+corp.innerHTML=''
+pdata.forEach(a=>{
+    corp.innerHTML+=`
+    <optgroup label="${a}">
+        ${linkData.corp[a].map(b=>`<option value="${b}">${b}</option>`).join('')}
+    </optgroup>
+    `
+})
