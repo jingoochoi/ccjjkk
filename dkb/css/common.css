@@ -18,4 +18,12 @@
 .smbx ol li{flex-basis: 25%;overflow: hidden;text-overflow: ellipsis;}
 .smbx ol li a{font-weight: bold;}
 .smbx h2{font-size: 3.2rem;}
-.footer .partbox{height: 100px;}
+/* .footer .partbox{height: 100px;} */
+.infolink ul{display: flex;gap: 0 20px;}
+.infolink ul li{font-size: 1.2rem;white-space: nowrap;line-height: 3;cursor: pointer;}
+.comboarea select{width: 120px;height: 30px;border-radius: 10px;border: none;background-color: cornflowerblue;font-size: 1.3rem;}
+.corpinfo{font-style: normal;font-size: 1.3rem;line-height: 2;}
+.snsbox{position: relative;}
+.sns{bottom: -70px;position: absolute;}
+.sns ul{display: flex;gap: 0 20px;}
+.sns ul li{border: 1px solid #000;width: 30px;text-align: center;border-radius: 50%;cursor: pointer;font-size: 2rem;}
