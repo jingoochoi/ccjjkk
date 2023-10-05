@@ -57,30 +57,40 @@
             /* 원형박스 */
             border-radius: 50%;
         }
-        
+            
+        .svg1>svg{transform: rotate(-90deg);}
 
         /* circle 설정 */
-        .c1{fill: none;stroke: red;stroke-width: 20px;}
-        /* bgcolor=black default
+        .c1{fill: none;stroke: red;stroke-width: 20px;stroke-dasharray: 300%;stroke-dashoffset: 300%;transition: stroke-dashoffset 1s ease-in-out;stroke-linecap: round;}
+        /* 선끝처리 : stroke-linecap 
+                1) butt : 끝에 중심선이 보임(기본값)
+                2) square : 끝에 사각형으로 덮음
+                3) round : 끝에 둥근모양으로 덮음
+            */
+        .svg1:hover .c1{stroke-dashoffset: -300%;}
+        /* .svg1:hover .c1{stroke-dashoffset: 0;} */
+        /* bgcolor(fill)=black default
                     transparent
                     none */
         /* stroke width begins from center of stroke(line) */
-
+        /* 대시어레이-50% 먼저 주고 몇 조각인지 센후 *조각수를 한다. 50%*조각수(for animation)
+        오프셋-데시어레이만큼 주면 공백부터 시작 */
         /* 2. 블랙위도우 */
         .svg2 {
             background: url(./images/black.jpg) no-repeat top/cover;
         }
         /* 사각형 svg - rect */
-        
-
+        .rt1{fill: none;stroke: black;stroke-width: 20;stroke-linecap: round;stroke-dasharray: 13%;stroke-dashoffset: 102%;transition:  1s;}
+        .svg2:hover .rt1{stroke-dashoffset: 0;}
         /* 3. 닥스박스 : 다각형(6각형) */
         .svg3{
             background: url(./images/doc.jpg) no-repeat top/cover;
+            clip-path: polygon(50% 0,100% 33%,100% 66%,50% 100%,0 66%,0 33%);
         }
 
         /* 다각형 */
-        
-        
+        .pg1{fill: none;stroke: lawngreen;stroke-width: 20;stroke-dasharray: 300%;stroke-dashoffset: 300%;transition:  1s;stroke-linecap: round;}
+        .svg3:hover .pg1{stroke-dashoffset: 0;}
 
         /* 4. 완다 : path */
         .svg4 svg{
@@ -102,6 +112,7 @@
         <section>
             <div class="cbx svg1">
                 <svg>
+                    <!-- <circle class="c1" cx="150" cy="150" r="140" transform="rotate(-90,150,150)"/> -->
                     <circle class="c1" cx="150" cy="150" r="140"/>
                 </svg>
             </div>
@@ -110,7 +121,7 @@
         <section>
             <div class="cbx svg2">
                 <svg>
-    
+                    <rect class="rt1" width="280" height="280" x="10" y="10"></rect>
                 </svg>
             </div>
             
@@ -119,7 +130,7 @@
         <section>
             <div class="cbx svg3">
                 <svg>
-    
+                    <polygon class="pg1" points="150,10 290,100 290,200 150,290 10,200 10,100"></polygon>
                 </svg>
             </div>
             
@@ -177,7 +188,7 @@
         [ polygon 요소 : 다각형 ]
         - points 속성
         - 표현법: <polygon points="x1,y1 x2,y2 ...">
-            -> x,y 좌표를 콤마로 구분하고
+            -> x,y 좌표를 콤마로 구분하고(px)
             다른 좌표는 띄어쓰기로 구분함
 
         [ path 요소 : 자유로운 선 ]
