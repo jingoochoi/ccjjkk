@@ -63,7 +63,7 @@ import aespa from './dom.js'
  */
 console.log("%c🚢🚢🚢🚢🚢🚢🚢🚢🚢🚢","font-size:50px")
 console.log("%c👊🍓🍓🍓","font-size:30px;background-image:linear-gradient(to bottom,white,white,goldenrod,white,white);")
-console.log("%c万韩元一个糖葫芦","font-size:30px;color:red")
+console.log("%c万韩元四个糖葫芦","font-size:30px;color:red")
 // 숫자값 배열
 const raynum = [4, 5, 8, 10, 2, 1, 9, 3, 7, 6];
 // 문자값 배열
