@@ -155,13 +155,15 @@ const sel3=aespa.qs('.sel3')
 const cta3=aespa.qs('.cta3')
 aespa.addEvt(sel3,'change',winter)
 function winter() {
+
     if (this.value==1) {
-        list1.sort((m,n)=>m.idx==n.idx?0:m.idx>n.idx?1:-1)
+        list1.sort((m,n)=>m[cta3.value]==n[cta3.value]?0:m[cta3.value]>n[cta3.value]?1:-1)
         upcode()
     }
     else if(this.value==2){
-        list1.sort((m,n)=>m.idx==n.idx?0:m.idx>n.idx?-1:1)
+        list1.sort((m,n)=>m[cta3.value]==n[cta3.value]?0:m[cta3.value]>n[cta3.value]?-1:1)
         upcode()
 
     }
 }
+// console.log(list1)
