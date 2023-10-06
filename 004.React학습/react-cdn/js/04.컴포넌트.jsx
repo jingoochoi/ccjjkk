@@ -53,8 +53,46 @@ function Iron() {
     return(
         <div>
             <h2>hi, ironman</h2>
-            <img src="./images/ab1.jpg" alt="ironman" />
+            <Image iname="ab1.jpg"/>
         </div>
     )
 }
+function Image(a) {
+    return(
+        <img src={"./images/"+a.iname} alt="ironman" />
+    )
+}
 ReactDOM.render(<Iron/>,document.querySelector('#root2'))
+/************************************************* 
+    [ Props 사용하기 ]
+    props는 properties 에서 나온말
+    속성들... 즉, 변수에 값을 할당하여 전달하는 방법
+    함수의 전달값과 같고 속성으로 컴포넌트에 보낸다!
+    -> props는 05번 다음번에 자세히 다룬다!
+*************************************************/
+function Favorite(a) {
+    return(
+        <h2>
+            my favorite color is {a.color}
+            <br/>food is {a.food}
+            <br />hobby is {a.hobby}
+        </h2>
+    )
+}
+
+ReactDOM.render(<Favorite color="green🎨" food="soup🍵" hobby="game🎮"/>,document.querySelector('#root3'))
+ReactDOM.render(<Favorite color="red🎨" food="pizza🍕" hobby="soccer⚽"/>,document.querySelector('#root4'))
+function Whooo() {
+    return(
+        <div>
+            <h1>who is kim?</h1>
+            <Answer/>
+        </div>
+    )
+}
+function Answer() {
+    return(
+        <h2>kim min jae in bayern</h2>
+    )
+}
+ReactDOM.render(<Whooo/>,document.querySelector('#root5'))
