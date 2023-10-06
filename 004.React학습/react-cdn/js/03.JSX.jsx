@@ -75,8 +75,44 @@ const myl5=(
     <React.Fragment>
         <h2>list</h2>
         <ul>
-            {mydata.map(m=><li>{m.name}:{m.movie}💍</li>)}
+            {mydata.map(m=><li>{m.name}:{m.movie}:{m.idx==3?'pretty':'handsome'}💍</li>)}
         </ul>
     </React.Fragment>
 )
- ReactDOM.render(myl5,document.querySelectorAll('#root>div')[4])
+ReactDOM.render(myl5,document.querySelectorAll('#root>div')[4])
+/***************************************************** 
+    [ JSX는 홀로태그라도 끝에 닫기를 해줘야한다! ]
+    예) <br> -> <br />
+        <input type="text"> -> <input type="text" />
+*****************************************************/
+const myl6=<input type="text" value="close by itself"/>
+ReactDOM.render(myl6,document.querySelectorAll('#root>div')[5])
+/***************************************************** 
+    [ JSX에서 속성 클래스는 className 으로 표기한다! ]
+    <태그 class="클래스명">
+    class는 JS에서 키워드이므로 사용못함! 대신...
+    <태그 className="클래스명">
+*****************************************************/
+const myl7=<h1 className="myclass">set className</h1>
+ReactDOM.render(myl7,document.querySelectorAll('#root>div')[6])
+/***************************************************** 
+    [ JSX에서 조건문 사용하기 - if문 ]
+    리액트는 if명령문을 지원하지만
+    JSX내부에서는 지원하지 않는다!!!
+
+    JSX에서 조건문을 사용하려면?
+    JSX 외부에서 if문을 사용하거나
+    아니면 내부에서 삼항연산자를 사용할 수 있다!
+*****************************************************/
+const x=100000
+let txt='enough'
+if (x<1000) {
+    txt='No!!!!!!!!!!!!!!!!!!!'
+}
+const myl8=(
+    <div>
+        <h1>I have {x}</h1>
+        <h1>{txt}</h1>
+    </div>
+)
+ReactDOM.render(myl8,document.querySelectorAll('#root>div')[7])
