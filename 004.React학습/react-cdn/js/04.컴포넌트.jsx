@@ -39,7 +39,22 @@ class Gogh extends React.Component{
             <React.Fragment>
                 <h2>hi, Gogh</h2>
                 <img src="./images/01.png" alt="gogh" />
+                <img src="./images/02.png" alt="gogh" />
+                <img src="./images/03.png" alt="gogh" />
+                <img src="./images/04.png" alt="gogh" />
             </React.Fragment>
         )
     }
 }
+ReactDOM.render(<Gogh/>,document.querySelector('#root1'))
+// component return code=><name/>
+// functional component
+function Iron() {
+    return(
+        <div>
+            <h2>hi, ironman</h2>
+            <img src="./images/ab1.jpg" alt="ironman" />
+        </div>
+    )
+}
+ReactDOM.render(<Iron/>,document.querySelector('#root2'))
