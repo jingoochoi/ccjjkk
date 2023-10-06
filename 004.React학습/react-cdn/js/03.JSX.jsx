@@ -104,7 +104,7 @@ ReactDOM.render(myl7,document.querySelectorAll('#root>div')[6])
     JSX 외부에서 if문을 사용하거나
     아니면 내부에서 삼항연산자를 사용할 수 있다!
 *****************************************************/
-const x=100000
+const x=100
 let txt='enough'
 if (x<1000) {
     txt='No!!!!!!!!!!!!!!!!!!!'
@@ -116,3 +116,11 @@ const myl8=(
     </div>
 )
 ReactDOM.render(myl8,document.querySelectorAll('#root>div')[7])
+let time=10
+const myl9=(
+    <React.Fragment>
+        <h1>it is {time}o'clock</h1>
+        <h1>{time>9?'come home!':'fine'}</h1>
+    </React.Fragment>
+)
+ReactDOM.render(myl9,document.querySelectorAll('#root>div')[8])
