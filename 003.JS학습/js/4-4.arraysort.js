@@ -62,6 +62,8 @@ import aespa from './dom.js'
             x.localeCompare(y)
  */
 console.log("%c🚢🚢🚢🚢🚢🚢🚢🚢🚢🚢","font-size:50px")
+console.log("%c👊🍓🍓🍓","font-size:30px;background-image:linear-gradient(to bottom,white,white,goldenrod,white,white);")
+console.log("%c万韩元一个糖葫芦","font-size:30px;color:red")
 // 숫자값 배열
 const raynum = [4, 5, 8, 10, 2, 1, 9, 3, 7, 6];
 // 문자값 배열
@@ -104,3 +106,62 @@ aespa.addEvt(value2,'change',function () {
         shownum2.innerHTML=raystr.map(m=>`<span>${m}</span>`).join('👨‍🏫')
     }
 })
+const list1 = [
+    {
+        idx: 8,
+        tit: "나는 구누?",
+        cont: "공동구매) 슬로건 공구 (계좌와 네이버폼)",
+    },
+    {
+        idx: 4,
+        tit: "여기는 어디?",
+        cont: "총공 공지] 오늘부터 일 2회, 총공 진행합니다",
+    },
+    {
+        idx: 1,
+        tit: "나야나",
+        cont: "연합 갈라 서포트 계좌오픈",
+    },
+    {
+        idx: 15,
+        tit: "이제 얼마나 남은거니?",
+        cont: "음악프로그램에 출연 요청글도 써볼까요?",
+    },
+]; /////////////// list1 /////////////
+const showlist3=aespa.qs('.showList3')
+const upcode=function () {
+    let hcode=list1.map(m=>`<tr>
+        <td>${m.idx}</td>
+        <td>${m.tit}</td>
+        <td>${m.cont}</td>
+    </tr>`)
+    showlist3.innerHTML=`
+        <table>
+            <thead>
+                <tr>
+                    <th>number</th>
+                    <th>title</th>
+                    <th>content</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${hcode.join('📜')}
+            </tbody>
+        </table>
+    `
+}
+upcode()
+const sel3=aespa.qs('.sel3')
+const cta3=aespa.qs('.cta3')
+aespa.addEvt(sel3,'change',winter)
+function winter() {
+    if (this.value==1) {
+        list1.sort((m,n)=>m.idx==n.idx?0:m.idx>n.idx?1:-1)
+        upcode()
+    }
+    else if(this.value==2){
+        list1.sort((m,n)=>m.idx==n.idx?0:m.idx>n.idx?-1:1)
+        upcode()
+
+    }
+}
