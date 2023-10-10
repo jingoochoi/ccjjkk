@@ -1,5 +1,5 @@
 // JS 페이지간 데이터 전달하기 : 메인페이지 JS - main.js
-
+console.log("%c👗👚👒","font-size:30px")
 /********************************************************* 
 [ 웹 페이지간 데이터 전달방식 ]
 - 원래 html의 기본특성은 "비연결성"이다.
@@ -32,7 +32,8 @@ gnb.forEach(a=>{
 function ive() {
     let atxt=this.innerHTML
     location.href='Get02.html?shop='+encodeURIComponent(atxt)
-}
+}//encodeURI() and decodeURI() are used for whole URI
+// encodeURIComponent() became automatic in recent browser, but use it originally
 
 
 
