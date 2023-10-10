@@ -199,7 +199,7 @@ body {
     background: url(../images/spAni02.png) no-repeat;
 
     /* 애니메이션: 이시이지반방마 */
-    animation: spani3X 1s steps(6)  infinite  ;
+    animation: spani3X 1s steps(6)  infinite,spani3Y 3s steps(3) infinite  ;
 }
 
 /* 몬스터 키프레임 X축 */
@@ -212,7 +212,7 @@ body {
 /* 몬스터 키프레임 Y축 */
 @keyframes spani3Y {
     to{
-        
+        background-position-y: -355px;
     }
     /* y축은 세로크기를 마이너스로 씀 */
 }
@@ -232,20 +232,20 @@ body {
     transform: scale(.5);
 
     /* 애니메이션: 이시이지반방마 */
-    
+    animation: spani4X 1s steps(5)  infinite  ,spani4Y 3s steps(3) infinite;
 
 
 }
 /* 웃는여자 키프레임 X축 */
 @keyframes spani4X {
     to{
-       
+       background-position-x: -1280px;
     }
 }
 /* 웃는여자 키프레임 Y축 */
 @keyframes spani4Y {
     to{
-        
+        background-position-y: -1222px;
     }
 }
 
