@@ -41,4 +41,4 @@ let main=document.querySelector('#main')
 // let pmm=Object.keys(sdata)
 title.style.backgroundColor=`${sdata[pm].배경색}`
 title.innerHTML=pm
-main.style.background=`url(images/${sdata[pm].이미지})`
+main.style.background=`url(images/${sdata[pm].이미지}) no-repeat center/cover`
