@@ -28,7 +28,34 @@ body.on::after {
 /**************** 1.상단영역 ****************/
 .header{height: 80px;background: url(../images/curtain.jpg)repeat-x;position: relative;z-index: 333;}
 .btnmap{width: 120px;height: 80px;outline: 2px dashed yellow;position: absolute;top: 0;left: 0;overflow: hidden;cursor: pointer;}
-.btnmap::after{content: '';position: absolute;width: 200%;background: url(../images/street.jpg)repeat-x 0/50% 100%;height: 100%;animation: bg 2s linear  infinite  ;left: 0;}
+.spani1{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    z-index: 333;
+    width: 25px;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 0px;
+
+    background: url(../images/spAni03.png) no-repeat;
+    background-size: auto 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: spani1 1s steps(8)  infinite  ;
+    /* outline: 5px solid red; */
+}
+
+/* 걷는존 키프레임 */
+@keyframes spani1 {
+    to{
+       background-position-x: -200px;
+    }
+    /* 배경이미지 x축 이동일 경우
+    줄였을때 이미지 전체 가로크기를
+    마이너스 값으로 써주면된다! */
+}
+.btnmap::after{content: '';position: absolute;width: 200%;background: url(../images/street.jpg)repeat-x 0/50% 100%;height: 100%;animation: bg 4s linear  infinite  ;left: 0;}
 @keyframes bg {
     to{left: -100%;}
 }
