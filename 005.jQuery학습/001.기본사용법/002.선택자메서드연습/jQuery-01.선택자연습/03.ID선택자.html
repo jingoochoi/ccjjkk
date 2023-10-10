@@ -15,9 +15,9 @@ $(document).ready(function(e) {
 // 3. 아이디가 total인 요소의 글자를 "싸랑해요~!"라고 쓰고 배경색은 검은색, 글자색은 빨간색, 테두리는 2px 보라색, 글자크기는 152px로 변경하시오.
 // 위의 세가지 아이디를 1초간격으로 애니메이션 설정하시오(transition) - 기본은 "all .8s 지연시간"
 $('h2').click(function () {
-  $('#sub').text('lee').css({border:'1px solid green'}).animate({backgroundColor:'yellow',color:'blue',fontSize:'42px'},800)
-  $('#main').text('kong').css({border:'3px solid yellow'}).delay(1800).animate({backgroundColor:'blue',color:'white',fontSize:'52px'},800)
-  $('#total').text('love').css({border:'20px solid purple'}).delay(3600).animate({backgroundColor:'black',color:'red',fontSize:'152px'},800)
+  $('#sub').text('lee').css({border:'1px solid green'}).animate({backgroundColor:'yellow',color:'blue',fontSize:'42px'},800,'easeOutBounce')
+  $('#main').text('kong').css({border:'3px solid yellow'}).delay(1800).animate({backgroundColor:'blue',color:'white',fontSize:'52px'},800,'easeOutBounce')
+  $('#total').text('love').css({border:'20px solid purple'}).delay(3600).animate({backgroundColor:'black',color:'red',fontSize:'152px'},800,'easeOutBounce')
 })
 })
   /******************************************************* 
