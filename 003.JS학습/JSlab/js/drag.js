@@ -38,10 +38,19 @@ function drug(m) {
     let rx,ry
     const trua=()=>{drag=true}
     const fals=()=>{drag=false}
-    const move=()=>{
+    const move=(o)=>{
         if (drag) {
-            mx=event.pageX
-            my=event.pageY
+            mx=o.pageX
+            my=o.pageY
+            rx=mx-fx
+            ry=my-fy
+            m.style.top=ry+ly+'px'
+            m.style.left=rx+lx+'px'
+            dtg.forEach(p=>p.style.zIndex=0)
+            m.style.zIndex=333
+            if (!drag) {
+                m.style.zIndex=3
+            }
         }
     }
     const fp=()=>{
