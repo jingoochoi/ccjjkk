@@ -44,7 +44,7 @@ function Event() {
     }
     const getLamp= function () {
         let lamp=document.querySelector('.lamp')
-        ReactDOM.render(<Images src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/3168457870/B.png" alt="lamp"/>,lamp)
+        ReactDOM.render(<Images src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/3168457870/B.png" alt="lamp" info="false"/>,lamp)
         lamp.querySelector('img').style.cssText=`
         position: absolute;
         top: 0;
@@ -69,8 +69,8 @@ function Event() {
         }, 3000);
     }
     const getFerrari=function () {
-        ReactDOM.render(<Images src="https://www.pngplay.com/wp-content/uploads/13/Ferrari-458-Transparent-PNG.png" alt="ferrari"/>,document.querySelector('#ferrari'))
-        document.querySelector('#ferrari img').style.title='drive'
+        ReactDOM.render(<Images src="https://www.pngplay.com/wp-content/uploads/13/Ferrari-458-Transparent-PNG.png" alt="ferrari" info="true" id="carcar" title="drive"/>,document.querySelector('#ferrari'))
+        
     }
     return(
         <React.Fragment>
@@ -85,7 +85,12 @@ function Event() {
 }
 function Images(p) {
     return(
-        <img src={p.src} alt={p.alt} />
+        p.info?<img src={p.src} alt={p.alt} id={p.id} title={p.title} onClick={cars}/>:<img src={p.src} alt={p.alt} />
     )
+}
+function cars() {
+    setTimeout(() => {
+        document.querySelector('#carcar').style.transform='translateX(100px)'
+    }, 1000);
 }
 ReactDOM.render(<Event/>,document.querySelector('#root'))
