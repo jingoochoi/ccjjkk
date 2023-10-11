@@ -26,7 +26,7 @@ console.log("%c👩🔁👩‍🦰","font-size:30px")
                 (4) mouseup 이벤트에서는 다음 이동을 위한 마지막위치 저장
                 (5) mousemove 이벤트에서 마지막위치로 부터의 이동을 계산함
 
-
+                in mobile, mouse->touch(start,end,move)
             ***************************************/
 const dtg=aespa.qsa('.dtg')
 dtg.forEach(m=>drug(m))
@@ -40,13 +40,14 @@ function drug(m) {
     const fals=()=>{drag=false}
     const move=(o)=>{
         if (drag) {
-            mx=o.pageX
-            my=o.pageY
+            mx=o.pageX||o.touches[0].screenX
+            my=o.pageY||o.touches[0].screenY
             rx=mx-fx
             ry=my-fy
             m.style.top=ry+ly+'px'
             m.style.left=rx+lx+'px'
-            dtg.forEach(p=>p.style.zIndex=0)
+            dtg.forEach(p=>{p.style.zIndex=0;})
+            m.style.cursor='grabbing'
             m.style.zIndex=333
             if (!drag) {
                 m.style.zIndex=3
@@ -54,8 +55,8 @@ function drug(m) {
         }
     }
     const fp=()=>{
-        fx=event.pageX
-        fy=event.pageY
+        fx=event.pageX||event.touches[0].screenX
+        fy=event.pageY||event.touches[0].screenY
     }
     const lp=()=>{
         lx+=rx
@@ -69,6 +70,18 @@ function drug(m) {
     aespa.addEvt(m,'mouseup',()=>{
         fals()
         lp()
+        m.style.cursor='grab'
     })
     aespa.addEvt(m,'mouseleave',fals)
+
+    aespa.addEvt(m,'touchstart',()=>{
+        trua()
+        fp()
+    })
+    aespa.addEvt(m,'touchmove',move)
+    aespa.addEvt(m,'touchend',()=>{
+        fals()
+        lp()
+    })
+    
 }

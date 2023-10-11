@@ -16,12 +16,17 @@
             height: 300px;
             border-radius: 50%;
             background-color: #f00;
+            cursor: grab;
         }
         .dtg1{
             background: url(https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202107/08/JTBC/20210708153002482ktbd.jpg) no-repeat center top/cover;
         }
         .dtg2{
             background: url(https://newsimg.hankookilbo.com/cms/articlerelease/2021/03/22/cdf0fd2f-64a6-4e22-b8e6-865da21c7ba8.jpg) no-repeat center center/cover;
+        }
+        @media screen and (max-width:500px) {
+            body{overflow: hidden;}
+            .dtg{width: 100px;height: 100px;}
         }
     </style>
     <script type="module" src="./js/drag.js"></script>
