@@ -10,3 +10,9 @@ const top=stayc.qs('.toparea')
 top.innerHTML=aespa.toparea
 const foot=stayc.qs('.footarea')
 foot.innerHTML=aespa.footarea
+const hide=stayc.qsa('.mainarea section')
+hide.forEach((m,n)=>{
+    if (n!=0) {
+        m.classList.add('scAct')
+    }
+})
