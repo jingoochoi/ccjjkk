@@ -88,9 +88,10 @@ function Images(p) {
         p.info?<img src={p.src} alt={p.alt} id={p.id} title={p.title} onClick={cars}/>:<img src={p.src} alt={p.alt} />
     )
 }
+let mc=1
 function cars() {
-    setTimeout(() => {
-        document.querySelector('#carcar').style.transform='translateX(100px)'
-    }, 1000);
+    document.querySelector('#carcar').style.transform=mc==1?'translate(-100%,-100%) scale(.3)':'translate(0) scale(1)'
+    document.querySelector('#carcar').style.transition='1s ease-in-out'
+    mc==1?mc=0:mc=1
 }
 ReactDOM.render(<Event/>,document.querySelector('#root'))
