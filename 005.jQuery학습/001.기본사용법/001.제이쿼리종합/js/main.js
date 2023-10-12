@@ -87,7 +87,7 @@
         }).next().click(function () {
             let zonc=$('.mz').eq(1)
             let f=()=>{
-                zonc.animate({bottom:room.eq(6).offset().bottom+'px',right:room.eq(6).offset().right+'px'},1000,'easeOutSine')
+                zonc.animate({bottom:room.eq(6).offset().bottom,right:room.eq(6).offset().right},1000,'easeOutSine')
                 text.html('no!!!').delay(1000).fadeIn(0)
                 $(this).next().delay(1000).fadeIn(1000)
             }
