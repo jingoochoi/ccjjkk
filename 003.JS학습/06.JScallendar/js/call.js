@@ -29,17 +29,18 @@ function call() {
                 // console.log(data)
             }
         }
-        for (let j = 0; j <= last.getDate(); j++) {
+        for (let j = 1; j <= last.getDate(); j++) {
             data.push(j)
             
         }
         // console.log(data)
         // <span style="color:#ccc" class="am">8</span>
-        for (let m = 0; m <= 14; m++) {
+        for (let m = 1; m <= 9; m++) {
             data.push(`<span style="color:#ccc" class="am">${m}</span>`)
             
         }
-        console.log(data)
+        // console.log(data)
+        dates.innerHTML=data.map(u=>`<div class="date">${u}</div>`).join('')
     }
     tial()
 }
