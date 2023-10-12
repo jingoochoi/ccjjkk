@@ -56,12 +56,14 @@
         const gomi=(a,b,c)=>{}
         btns.first().click(function () {
             text.fadeOut(0)
+            $(this).slideUp(30)
             let myroom=room.eq(8)
             let pos=[]
             pos[0]=myroom.offset().top
-            pos[1]=myroom.offset().left
+            pos[1]=myroom.offset().left+myroom.width()/2-mini.width()/2
             mini.animate({top:pos[0]+'px',left:pos[1]+'px'},1000,'easeOutSine',()=>{
                 text.html('와~! 아늑하다! 옆방으로 가보자!').delay(1000).fadeIn(0)
+                $(this).next().slideDown(1000)
             })
         })
    })
