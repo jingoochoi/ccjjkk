@@ -53,17 +53,44 @@
         })
         $('.mz').hide()
         btns.hide().first().show()
-        const gomi=(a,b,c)=>{}
-        btns.first().click(function () {
+        const gomi=(a,b,c)=>{
             text.fadeOut(0)
-            $(this).slideUp(30)
-            let myroom=room.eq(8)
+            $(a).slideUp(30)
+            let myroom=room.eq(b)
             let pos=[]
             pos[0]=myroom.offset().top
-            pos[1]=myroom.offset().left+myroom.width()/2-mini.width()/2
-            mini.animate({top:pos[0]+'px',left:pos[1]+'px'},1000,'easeOutSine',()=>{
+            pos[1]=myroom.offset().left
+            mini.animate({top:pos[0]+'px',left:pos[1]+'px'},1000,'easeOutSine',c)
+        }
+        btns.first().click(function () {
+            let f=()=>{
                 text.html('와~! 아늑하다! 옆방으로 가보자!').delay(1000).fadeIn(0)
-                $(this).next().slideDown(1000)
-            })
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,8,f)
+        }).next().click(function () {
+            let zonb=$('.mz').last()
+            let f=()=>{
+                zonb.show()
+                text.html('no!!!').delay(1000).fadeIn(0)
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,9,f)
+        }).next().click(function () {
+            let zonc=$('.mz').eq(1)
+            let f=()=>{
+                zonc.show()
+                text.html('no!!!').delay(1000).fadeIn(0)
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,7,f)
+        }).next().click(function () {
+            let zonc=$('.mz').eq(1)
+            let f=()=>{
+                zonc.animate({bottom:room.eq(6).offset().bottom+'px',right:room.eq(6).offset().right+'px'},1000,'easeOutSine')
+                text.html('no!!!').delay(1000).fadeIn(0)
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,6,f)
         })
    })
