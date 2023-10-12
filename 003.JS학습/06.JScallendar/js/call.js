@@ -35,12 +35,12 @@ function call() {
         }
         // console.log(data)
         // <span style="color:#ccc" class="am">8</span>
-        for (let m = 1; m <= 9; m++) {
+        for (let m = 1; m <= 19; m++) {
             data.push(`<span style="color:#ccc" class="am">${m}</span>`)
             
         }
         // console.log(data)
-        dates.innerHTML=data.map(u=>`<div class="date">${u}</div>`).join('')
+        dates.innerHTML=data.map((u,v)=>v<42?`<div class="date">${u}</div>`:'').join('')
     }
     tial()
 }
