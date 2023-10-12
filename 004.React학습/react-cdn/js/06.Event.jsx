@@ -69,7 +69,7 @@ function Event() {
         }, 3000);
     }
     const getFerrari=function () {
-        ReactDOM.render(<Images src="https://www.pngplay.com/wp-content/uploads/13/Ferrari-458-Transparent-PNG.png" alt="ferrari" info="true" id="carcar" title="drive"/>,document.querySelector('#ferrari'))
+        ReactDOM.render(<Images src="./images/f.png" alt="ferrari" info="true" id="carcar" title="drive"/>,document.querySelector('#ferrari'))
         
     }
     return(
