@@ -80,6 +80,9 @@
                 return this.수용
             }
             set pple(num){
+                if (isNaN(num)) {
+                    num=300
+                }
                 this.수용=num
             }
        }
@@ -94,8 +97,9 @@
         })
         hcode+=`<li>CGV message:${info.showcgv('CGV 좋습니다')}</li>`
         hcode+=`<li>2022 capacity:${info.수용}</li>`
-        n=1000
-        hcode+=`<li>2023 capacity:${n*2}</li>`
+        info.pple='1000'//문자형 숫자 -> 숫자형으로 바뀜***
+        info.pple=200
+        hcode+=`<li>2023 capacity:${info.pple*2}</li>`
         hcode+=`</ol></h2></div>`
         document.body.innerHTML=hcode
     })
