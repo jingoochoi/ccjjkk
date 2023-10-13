@@ -87,6 +87,7 @@
     padding: 5px 0 5px 0;
     box-sizing: border-box;
     cursor: pointer;
+    /* background-color: cornflowerblue; */
 }
 .date:nth-child(7n),
 .day:nth-child(7n) {
@@ -102,6 +103,7 @@
 }
 .today {
       /*오늘 날짜에 테두리를 줍니다. !important로 border의 우선순위를 1순위로 만들 수 있습니다.*/
-    outline: 2px solid var(--today-color);
-    border-radius: 50%;
+    border: 2px solid var(--today-color);
+    background-color: var(--today-color);
+    /* border-radius: 50%; */
 }

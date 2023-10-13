@@ -6,8 +6,6 @@ call()
 
 function call() {
     const cdate=new Date()
-    let year=cdate.getFullYear()
-    let mnth=cdate.getMonth()
     const today=new Date()
     const yearTit=aespa.qs('.yearTit')
     const monthTit=aespa.qs('.monthTit')
@@ -15,12 +13,16 @@ function call() {
     const data=[]
     let ccode=''
     const tial=()=>{
+        data.splice(0)
+        ccode=''
+        let year=cdate.getFullYear()
+        let mnth=cdate.getMonth()
         const prev=new Date(year,mnth,0)
-        console.log(isos(prev))
+        // console.log(isos(prev))
         const htis=new Date(year,mnth,1)
-        console.log(isos(htis))
+        // console.log(isos(htis))
         const last=new Date(year,mnth+1,0)
-        console.log(isos(last))
+        // console.log(isos(last))
         yearTit.innerHTML=year
         monthTit.innerHTML=mnth+1
         // console.log(htis.getDay())
@@ -55,6 +57,8 @@ function call() {
             
         }
         dates.innerHTML=ccode
+        // console.log(data)
+        // console.log(ccode)
     }
     tial()
     const prem=()=>{
