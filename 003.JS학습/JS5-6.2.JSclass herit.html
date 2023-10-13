@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS5-5.1. JS클래스</title>
+        <script>
+            console.log("%c  　👨‍🏫\n👧🧑👧🧑\n🧑👧🧑👧","font-size:30px")
+            console.log("%c👨‍🦳▶🏠💎💰▶👨‍🦰","font-size:30px")
+            /********************************************** 
+           [class inheritance]
+           1. using keyword 'extends'
+           2. child class inherit everything from parent class
+           3. code reusing
+
+           [super()]
+           1. refer to parent class
+           2. call the method of parent
+           3. accessible to every thing of parent
+           4. can use partially
+           super.parent method()
+            ___________________________________________________
+
+            [ 상속 모델 시나리오 ]
+            1. 영화진흥위원회에서 전체 영화정보에 대한
+            기준을 마련하여 클래스로 공개를 했다.
+            2. 각 영화상영관 사이트에서 이 기준을 따르기로 하고
+            클래스를 상속한다!
+            3. 각 상영관은 자신에 맞는 별도의 속성과
+            메서드를 구현하여 사용한다!
+        **********************************************/
+       class MovieInfo {
+            constructor(pos, tit, sum, dir, act, des){
+                // 속성 6가지 셋팅
+                this.포스터 = pos;
+                this.제목 = tit;
+                this.개요 = sum;
+                this.감독 = dir;
+                this.출연 = act;
+                this.문구 = des;
+            }
+            myWay(txt){
+                return`
+                    movie ${this.제목}'s director is ${this.감독}, and my comment is ${txt}
+                `
+            }
+       }
+    //    console.log(typeof MovieInfo)//is function but hoisting was banned
+       class CGV extends MovieInfo{//CGV inherit everything from parent
+            constructor(pos, tit, sum, dir, act, des, msg, num){
+                super(pos, tit, sum, dir, act, des)
+                this.안내=msg
+                this.수용=num
+            }
+            showcgv(txt){
+                return super.myWay(txt)+',CGVinfo:'+this.안내
+            }
+       }
+       class Megabox extends MovieInfo{//inherit everything from parent
+            // 
+       }
+    const info=new CGV("https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2","조제","멜로/로맨스, 드라마","김종관","한지민, 남주혁","조제 보러 오세요-약국",'저희는 항상 여러분의 편입니다용용',300)
+    window.addEventListener('DOMContentLoaded',()=>{
+        let hcode='<div class="cgv"><ol>'
+        Object.keys(info).forEach(a=>{
+            hcode+=`<li>${a}</li>`
+        })
+        hcode+=`</ol></div>`
+        document.body.innerHTML=hcode
+    })
+               
+       
+</script>
+
+    </head>
+    <body>
+        
+    </body>
+</html>
