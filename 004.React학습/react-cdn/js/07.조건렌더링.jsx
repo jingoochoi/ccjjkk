@@ -36,3 +36,40 @@ const devImg = [
 ];
 ReactDOM.render(<Dvlp dvlm={true} src={devImg[0]} alt="kong" title="developer"/>,document.querySelector('#root1'))
 ReactDOM.render(<Dvlp dvlm={false} src={devImg[1]} alt="ma" title="baby"/>,document.querySelector('#root2'))
+/********************************************** 
+    2. if문이 아닌 조건 표현하기
+    -> 조건식 && JSX표현식
+    조건이 true일때만 && 뒤의 JSX표현식이 출력됨!
+**********************************************/
+function Tits(p) {
+    return(
+        <h1>👨‍🔧개발자👩‍🔧가 좋아하는 {p.title}</h1>
+    )
+}
+// 음식리스트
+const foods = ["스파게티🍝","짜파게티🍜","냉면🥶","라면😝","마라샹궈🦞"]
+// const foods = []
+function Food(p) {
+    return(
+        <li>개발자는 {p.name} 좋아해</li>
+    )
+}
+function Wish(p) {
+    const food=p.list
+    return(
+        <React.Fragment>
+            <Tits title='음식'/>
+            {food.length>0&&
+            <div>
+                <h2>개발자가 좋아하는 음식은 {food.length}가지</h2>
+                <ul>
+                    {food.map(a=><Food name={a}/>)}
+                </ul>
+            </div>}
+            {food.length==0&&
+            <h2>업데이트 안 됐어요😥</h2>
+            }
+        </React.Fragment>
+    )
+}
+ReactDOM.render(<Wish list={foods}/>,document.querySelector('#root3'))
