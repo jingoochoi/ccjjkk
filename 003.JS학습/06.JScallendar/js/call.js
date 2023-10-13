@@ -23,8 +23,8 @@ function call() {
         // console.log(isos(htis))
         const last=new Date(year,mnth+1,0)
         // console.log(isos(last))
-        yearTit.innerHTML=year
-        monthTit.innerHTML=mnth+1
+        yearTit.innerHTML='이런 '+year+'년'
+        monthTit.innerHTML=mnth+1+'월월🐶'
         // console.log(htis.getDay())
         if (htis.getDay()!=0) {
             for (let i = 0; i < htis.getDay(); i++) {
@@ -59,6 +59,29 @@ function call() {
         dates.innerHTML=ccode
         // console.log(data)
         // console.log(ccode)
+        let date=aespa.qsa('.date')
+        date.forEach(o=>{
+            aespa.addEvt(o,'click',()=>{
+                let naps=aespa.qsEl(o,'span')
+                if (naps) {
+                    // 
+                    if (naps.classList.contains('bm')) {
+                        prem()
+                    }
+                    if (naps.classList.contains('am')) {
+                        nxtm()
+                    }
+                }
+                else  {
+                    // 
+                    if (o.classList.contains('today')) {
+                        console.log(`${year}-${mnth+1}-${o.innerText}.oh it is today🎉✨`)
+                        // 
+                    }else
+                    console.log(`${year}-${mnth+1}-${o.innerText}`)
+                }
+            })
+        })
     }
     tial()
     const prem=()=>{
