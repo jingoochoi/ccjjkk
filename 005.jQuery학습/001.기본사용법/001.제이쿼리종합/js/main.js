@@ -87,10 +87,18 @@
         }).next().click(function () {
             let zonc=$('.mz').eq(1)
             let f=()=>{
-                zonc.animate({bottom:room.eq(6).offset().bottom,right:room.eq(6).offset().right},1000,'easeOutSine')
+                zonc.animate({bottom:room.eq(6).top,right:room.eq(6).offset().left/2},1000,'easeOutSine')
                 text.html('no!!!').delay(1000).fadeIn(0)
                 $(this).next().delay(1000).fadeIn(1000)
             }
             gomi(this,6,f)
+        }).next().click(function () {
+            let zonc=$('.mz').eq(1)
+            let f=()=>{
+                zonc.animate({bottom:room.eq(4).top,right:room.eq(4).offset().left/2},1000,'easeOutSine')
+                text.html('no!!!').delay(1000).fadeIn(0)
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,4,f)
         })
    })
