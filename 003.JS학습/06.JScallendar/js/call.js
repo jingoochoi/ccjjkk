@@ -104,6 +104,4 @@ function call() {
     }
     aespa.addEvt(aespa.qs('.btnL'),'click',prem)
     aespa.addEvt(aespa.qs('.btnR'),'click',nxtm)
-    
-    
 }
