@@ -94,11 +94,26 @@
         }).next().click(function () {
             let zonc=$('.mz').eq(1)
             let f=()=>{
-                zonc.animate({bottom:room.eq(7).height()+'px'},1000,'easeOutSine').delay(1000).animate({right:room.eq(4).width() + zonc.width()},1000,'easeOutSine')
-                mini.css({filter:''})
-                text.html('uh,oh,doctor!!!').delay(3000).fadeIn(0)
-                $(this).next().delay(1000).fadeIn(1000)
+                zonc.animate({bottom:room.eq(7).height()+'px'},1000,'easeOutSine').delay(1000).animate({right:room.eq(4).width() + zonc.width()},1000,'easeOutSine',()=>{
+                    setTimeout(() => {
+                        // 
+                        mini.css({filter:'grayscale(100%)'})
+                    }, 300);
+                })
+                text.html('uh,oh,doctor!!!').delay(4000).fadeIn(0)
+                $(this).next().delay(4000).fadeIn(1000)
             }
             gomi(this,4,f)
+        }).next().click(function () {
+            // let ijtn=$('.inj')
+            let f=()=>{
+                room.eq(2).find('.inj').css({transform:'rotate(-135deg)'}).animate({right:30+'px'},1000,'easeOutSine',()=>{
+                    // 
+                    mini.css({filter:'grayscale(0)'})
+                })
+                text.html('thank you').delay(3000).fadeIn(0)
+                $(this).next().delay(3000).fadeIn(1000)
+            }
+            gomi(this,2,f)
         })
    })
