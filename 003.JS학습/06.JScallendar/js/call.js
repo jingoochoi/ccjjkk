@@ -74,11 +74,21 @@ function call() {
                 }
                 else  {
                     // 
+                    let cldr=aespa.qs('.calender')
                     if (o.classList.contains('today')) {
-                        console.log(`${year}-${mnth+1}-${o.innerText}.oh it is today🎉✨`)
+                        console.log(`oh it is today🎉✨`)
+                        cldr.style.opacity=1
+                        cldr.style.filter='grayscale(0%)'
                         // 
-                    }else
-                    console.log(`${year}-${mnth+1}-${o.innerText}`)
+                    }if (mnth+1==2&&o.innerText==6) {
+                        console.log(`${year}-${mnth+1}-${o.innerText} and happy birthday`)
+                        cldr.style.opacity=.3
+                        cldr.style.filter='grayscale(100%)'
+                        window.open('https://www.youtube.com/embed/_z-1fTlSDF0','',`width=${window.innerWidth/2},height=${window.innerHeight/2},top=${window.innerHeight/4},left=${window.innerWidth/4}`)
+                    }
+                    else{cldr.style.opacity=1;
+                        cldr.style.filter='grayscale(0%)'
+                    console.log(`${year}-${mnth+1}-${o.innerText}`)}
                 }
             })
         })
