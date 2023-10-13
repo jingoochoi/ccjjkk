@@ -13,15 +13,16 @@ function call() {
     const monthTit=aespa.qs('.monthTit')
     const dates=aespa.qs('.dates')
     const data=[]
+    let ccode=''
     const tial=()=>{
-        const prev=new Date(year,mnth+1,0)
+        const prev=new Date(year,mnth,0)
         console.log(isos(prev))
-        const htis=new Date(year,mnth+1,1)
+        const htis=new Date(year,mnth,1)
         console.log(isos(htis))
-        const last=new Date(year,mnth+2,0)
+        const last=new Date(year,mnth+1,0)
         console.log(isos(last))
         yearTit.innerHTML=year
-        monthTit.innerHTML=mnth+2
+        monthTit.innerHTML=mnth+1
         // console.log(htis.getDay())
         if (htis.getDay()!=0) {
             for (let i = 0; i < htis.getDay(); i++) {
@@ -40,7 +41,29 @@ function call() {
             
         }
         // console.log(data)
-        dates.innerHTML=data.map((u,v)=>v<42?`<div class="date">${u}</div>`:'').join('')
+        // dates.innerHTML=data.map((u,v)=>v<42?`<div class="date">${u}</div>`:'').join('')
+        for (let n = 0; n < 42; n++) {
+           if (data[n]==today.getDate()&&cdate.getMonth()==today.getMonth()&&cdate.getFullYear()==today.getFullYear()) {
+                // 
+               ccode+=`
+                <div class="date today">${data[n]}</div>
+                `
+           }else{
+            // 
+            ccode+=`<div class="date">${data[n]}</div>`
+           }
+            
+        }
+        dates.innerHTML=ccode
     }
     tial()
+    const prem=()=>{
+        cdate.setMonth(cdate.getMonth()-1)
+        tial()
+    }
+    const nxtm=()=>{}
+    aespa.addEvt(aespa.qs('.btnL'),'click',prem)
+    aespa.addEvt(aespa.qs('.btnR'),'click',nxtm)
+    
+    
 }
