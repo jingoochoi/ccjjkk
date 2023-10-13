@@ -61,7 +61,10 @@ function call() {
         cdate.setMonth(cdate.getMonth()-1)
         tial()
     }
-    const nxtm=()=>{}
+    const nxtm=()=>{
+        cdate.setMonth(cdate.getMonth()+1)
+        tial()
+    }
     aespa.addEvt(aespa.qs('.btnL'),'click',prem)
     aespa.addEvt(aespa.qs('.btnR'),'click',nxtm)
     
