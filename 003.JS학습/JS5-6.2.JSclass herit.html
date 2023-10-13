@@ -19,6 +19,27 @@
            3. accessible to every thing of parent
            4. can use partially
            super.parent method()
+           ___________________________________________________
+
+            [ 겟터와 셋터 ]
+            1. 클래스의 특정속성에 대하여 겟터와 셋터를 설정할 수 있다.
+            2. 겟터(Getter) : 값을 리턴함
+                get 겟터명(){
+                    return this.속성변수
+                }
+            3. 셋터(Setter) : 값을 셋팅함
+                set 셋터명(전달변수){
+                    this.속성변수 = 전달변수
+                }
+            4. 값의 호출 : 겟터명을 변수호출함
+            5. 값의 셋팅 : 셋터변수에 할당함
+
+            (주의사항)
+            -> 겟터명과 셋터명은 동일함
+            -> 사용시 변수처럼 사용함(소괄호없음)
+            -> 호출시엔 본래 클래스 맴버 속성을 사용할 수 있음
+            -> 값셋팅은 셋터를 사용함(원본에 할당도 가능함)
+            -> 겟터,셋터 사용목적은 값에 대한 유효성 검사임!
             ___________________________________________________
 
             [ 상속 모델 시나리오 ]
@@ -55,17 +76,27 @@
             showcgv(txt){
                 return super.myWay(txt)+',CGVinfo:'+this.안내
             }
+            get pple(){
+                return this.수용
+            }
+            set pple(num){
+                this.수용=num
+            }
        }
        class Megabox extends MovieInfo{//inherit everything from parent
             // 
        }
     const info=new CGV("https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2","조제","멜로/로맨스, 드라마","김종관","한지민, 남주혁","조제 보러 오세요-약국",'저희는 항상 여러분의 편입니다용용',300)
     window.addEventListener('DOMContentLoaded',()=>{
-        let hcode='<div class="cgv"><ol>'
+        let hcode='<div class="cgv"><h1>CGV</h1><h2><ol>'
         Object.keys(info).forEach(a=>{
-            hcode+=`<li>${a}</li>`
+            hcode+=`<li>${a}${a=='포스터'?`:<img src="${info[a]}">`:''}</li>`
         })
-        hcode+=`</ol></div>`
+        hcode+=`<li>CGV message:${info.showcgv('CGV 좋습니다')}</li>`
+        hcode+=`<li>2022 capacity:${info.수용}</li>`
+        n=1000
+        hcode+=`<li>2023 capacity:${n*2}</li>`
+        hcode+=`</ol></h2></div>`
         document.body.innerHTML=hcode
     })
                
