@@ -5,7 +5,7 @@ function Make() {
 }
 function Lost() {
     return(
-        <h1>what is dev.</h1>
+        <h1>what is dev?</h1>
     )
 }
 function Poto(p) {
