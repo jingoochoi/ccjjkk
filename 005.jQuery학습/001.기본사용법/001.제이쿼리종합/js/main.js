@@ -142,6 +142,8 @@
                         $('.heli').attr('src','images/heli3.png').delay(1000).animate({left:120+'%'},1000,'easeOutSine',()=>{
                             $('.tit').addClass('on')
                             $('.building').addClass('on')
+                            $('.tit').removeClass('on')
+                            $('.tit').addClass('on2')
                         })
                     })
                 })
