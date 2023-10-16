@@ -135,7 +135,13 @@
             // let ijtn=$('.inj')
             let f=()=>{
                 room.eq(1).find('.mz').show()
-                $('.heli').animate({left:room.eq(0).offset().left/2},1000,'easeOutSine')
+                $('.heli').animate({left:room.eq(0).offset().left/2},1000,'easeOutSine',()=>{
+                    room.eq(1).find('.mz').animate({right:room.eq(0).width()},1000,'easeOutSine')
+                    mini.hide()
+                    $('.heli').attr('src','images/heli2.png').delay(2000).animate({left:1000+'px'},1000,'easeOutSine',()=>{
+                        $('.heli').attr('src','images/heli3.png').delay(1000).animate({left:120+'%'},1000,'easeOutSine')
+                    })
+                })
                 $(this).next().delay(1000).fadeIn(1000)
             }
             gomi(this,0,f)
