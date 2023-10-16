@@ -151,8 +151,21 @@
                                 $('body').css('background','url(https://static.vecteezy.com/system/resources/previews/027/254/519/non_2x/illustration-of-a-zombie-king-generative-ai-free-png.png)')
                                 $('.tit').removeClass('on')
                                 $('.tit').removeClass('on2')
-                                $('.tit').html('zombie 세계에 온 것을 환영한다!흐겔겔.').css({color:'red'})
                             }, 4000*2);
+                            setTimeout(() => {
+                                $('.tit').html('zombie 세계에 온 것을 환영한다!흐겔겔.').css({color:'red'})
+                                $('body').append('<h1 class="ends">see you in your dream</h1>')
+                                $('.ends').css({
+                                    position:'fixed',
+                                    top:'50%',
+                                    left:'50%',
+                                    transform:'translate(-50%,-50%)',
+                                    color:'red',
+                                    fontFamily:'Vladimir script',
+                                    fontSize:'20vh',
+                                    margin:'0'
+                                })
+                            }, 11000);
                         })
                     })
                 })
