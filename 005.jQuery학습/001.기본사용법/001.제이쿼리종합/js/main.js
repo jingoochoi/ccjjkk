@@ -110,6 +110,7 @@
                 room.eq(2).find('.inj').css({transform:'rotate(-135deg)'}).animate({right:120+'px'},1000,'easeOutSine',()=>{
                     // 
                     mini.css({filter:'grayscale(0)'})
+                    room.eq(2).find('.inj').hide()
                 })
                 text.html('thank you').delay(1000).fadeIn(0)
                 $(this).next().delay(1000).fadeIn(1000)
