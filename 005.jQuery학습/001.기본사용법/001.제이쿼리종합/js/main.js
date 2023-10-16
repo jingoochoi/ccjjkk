@@ -146,8 +146,13 @@
                             setTimeout(() => {
                                 // 
                                 $('.tit').addClass('on2')
-                                $('body').css('background','url(https://static.vecteezy.com/system/resources/previews/027/254/519/non_2x/illustration-of-a-zombie-king-generative-ai-free-png.png)')
                             }, 3000);
+                            setTimeout(() => {
+                                $('body').css('background','url(https://static.vecteezy.com/system/resources/previews/027/254/519/non_2x/illustration-of-a-zombie-king-generative-ai-free-png.png)')
+                                $('.tit').removeClass('on')
+                                $('.tit').removeClass('on2')
+                                $('.tit').html('zombie 세계에 오신것을 환영합니다!').css({color:'red'})
+                            }, 4000*2);
                         })
                     })
                 })
