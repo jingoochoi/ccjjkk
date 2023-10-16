@@ -274,11 +274,12 @@ function ning() {
 aespa.addEvt(aespa.qs('.fbtn'),'click',()=>{
     nlst=list2
     upcode(nlst,showList4)
+    rs()
 })
 function rs() {
-    stxt=''
-    stxt=''
-    stxt=''
+    aespa.qs('.cta4').value='idx'
+    aespa.qs('#stxt').value=''
+    sel4.value='0'
 }
 aespa.addEvt(aespa.qs('.sample'),'click',()=>{
     let sult=list2.find(p=>{
