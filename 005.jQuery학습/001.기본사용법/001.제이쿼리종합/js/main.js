@@ -146,6 +146,7 @@
                             setTimeout(() => {
                                 // 
                                 $('.tit').addClass('on2')
+                                $('body').css('background','url(https://static.vecteezy.com/system/resources/previews/027/254/519/non_2x/illustration-of-a-zombie-king-generative-ai-free-png.png)')
                             }, 3000);
                         })
                     })
