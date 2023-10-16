@@ -140,8 +140,8 @@
                     mini.hide()
                     $('.heli').attr('src','images/heli2.png').delay(2000).animate({left:1000+'px'},1000,'easeOutSine',()=>{
                         $('.heli').attr('src','images/heli3.png').delay(1000).animate({left:120+'%'},1000,'easeOutSine',()=>{
-                            $('.tit').add('on')
-                            $('.building').add('on')
+                            $('.tit').addClass('on')
+                            $('.building').addClass('on')
                         })
                     })
                 })
