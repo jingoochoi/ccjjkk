@@ -139,7 +139,10 @@
                     room.eq(1).find('.mz').animate({right:room.eq(0).width()},1000,'easeOutSine')
                     mini.hide()
                     $('.heli').attr('src','images/heli2.png').delay(2000).animate({left:1000+'px'},1000,'easeOutSine',()=>{
-                        $('.heli').attr('src','images/heli3.png').delay(1000).animate({left:120+'%'},1000,'easeOutSine')
+                        $('.heli').attr('src','images/heli3.png').delay(1000).animate({left:120+'%'},1000,'easeOutSine',()=>{
+                            $('.tit').animate({top:120+'%'})
+                            $('.building').animate({top:120+'%'})
+                        })
                     })
                 })
                 $(this).next().delay(1000).fadeIn(1000)
