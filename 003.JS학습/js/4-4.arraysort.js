@@ -129,13 +129,13 @@ const list1 = [
     },
 ]; /////////////// list1 /////////////
 const showlist3=aespa.qs('.showList3')
-const upcode=function () {
-    let hcode=list1.map(m=>`<tr>
+const upcode=function (q,w) {
+    let hcode=q.map(m=>`<tr>
         <td>${m.idx}</td>
         <td>${m.tit}</td>
         <td>${m.cont}</td>
     </tr>`)
-    showlist3.innerHTML=`
+    w.innerHTML=`
         <table>
             <thead>
                 <tr>
@@ -150,20 +150,44 @@ const upcode=function () {
         </table>
     `
 }
-upcode()
+upcode(list1,showlist3)
 const sel3=aespa.qs('.sel3')
 const cta3=aespa.qs('.cta3')
 aespa.addEvt(sel3,'change',winter)
 function winter() {
-
+    
     if (this.value==1) {
-        list1.sort((m,n)=>m[cta3.value]==n[cta3.value]?0:m[cta3.value]>n[cta3.value]?1:-1)
-        upcode()
+        list1.sort((m,n)=>m[this.previousElementSibling.value]==n[this.previousElementSibling.value]?0:m[this.previousElementSibling.value]>n[this.previousElementSibling.value]?1:-1)
+        upcode(list1,showlist3)
     }
     else if(this.value==2){
-        list1.sort((m,n)=>m[cta3.value]==n[cta3.value]?0:m[cta3.value]>n[cta3.value]?-1:1)
-        upcode()
+        list1.sort((m,n)=>m[this.previousElementSibling.value]==n[this.previousElementSibling.value]?0:m[this.previousElementSibling.value]>n[this.previousElementSibling.value]?-1:1)
+        upcode(list1,showlist3)
 
     }
 }
 // console.log(list1)
+const list2 = [
+    {
+        idx: 15,
+        tit: "당근마켓에 가자",
+        cont: "당근마켓이 정말로 싸고 좋다구~!",
+    },
+    {
+        idx: 74,
+        tit: "점심에 뭐먹지?",
+        cont: "오스틴님 생일 서포트 안내",
+    },
+    {
+        idx: 18,
+        tit: "직돌이는 쉬고싶다~!",
+        cont: "활동정지에 대한 파생글 무통보 삭제 및 경고",
+    },
+    {
+        idx: 104,
+        tit: "올해는 다른 회사로 이직한다!",
+        cont: "⚜️갈라콘 서포트에 많은 참여 부탁드립니다!",
+    },
+]; /////////////// list2 /////////////  
+const showList4=aespa.qs('.showList4')
+upcode(list2,showList4)
