@@ -94,7 +94,7 @@
         }).next().click(function () {
             let zonc=$('.mz').eq(1)
             let f=()=>{
-                zonc.animate({bottom:room.eq(7).height()+'px'},1000,'easeOutSine').delay(1000).animate({right:room.eq(4).width() + zonc.width()},1000,'easeOutSine',()=>{
+                zonc.animate({bottom:room.eq(7).height()+'px'},1000,'easeOutSine').delay(1000).animate({right:room.eq(4).width() + zonc.width()*1.3},1000,'easeOutSine',()=>{
                     setTimeout(() => {
                         // 
                         mini.css({filter:'grayscale(100%)'})
@@ -107,12 +107,12 @@
         }).next().click(function () {
             // let ijtn=$('.inj')
             let f=()=>{
-                room.eq(2).find('.inj').css({transform:'rotate(-135deg)'}).animate({right:30+'px'},1000,'easeOutSine',()=>{
+                room.eq(2).find('.inj').css({transform:'rotate(-135deg)'}).animate({right:120+'px'},1000,'easeOutSine',()=>{
                     // 
                     mini.css({filter:'grayscale(0)'})
                 })
-                text.html('thank you').delay(3000).fadeIn(0)
-                $(this).next().delay(3000).fadeIn(1000)
+                text.html('thank you').delay(1000).fadeIn(0)
+                $(this).next().delay(1000).fadeIn(1000)
             }
             gomi(this,2,f)
         })
