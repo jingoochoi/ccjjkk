@@ -181,7 +181,7 @@
                                 $('.ends').hide()
                                 $('.zong').hide()
                                 $('body').css('background','black')
-                                $('body').append('<span class="cred">credit<br><br><br><br><br><br><br><br><br><br>기획:최진구<br>제작:최진구<br>출연:미니언즈, 좀비들, 헬리기사님<br><br>special thanks to Arthur the great king of zombie</span>')
+                                $('body').append('<span class="cred">credit<br><br>기획:최진구<br>제작:최진구<br>출연:미니언즈, 좀비들, 헬리기사님<br><br>special thanks to Arthur the great king of zombie</span>')
                                 $('.cred').css({
                                     position:'fixed',
                                     top:'50%',
@@ -189,7 +189,8 @@
                                     transform:'translate(-50%,-50%)',
                                     margin:'0',
                                     color:'white',
-                                    textAlign:'center'
+                                    textAlign:'center',
+                                    fontSize:'5vh'
                                 })
                             }, 13300);
                         })
