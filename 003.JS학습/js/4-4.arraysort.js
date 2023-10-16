@@ -244,25 +244,41 @@ const list2 = [
     },
 ]; /////////////// list2 /////////////  
 const showList4=aespa.qs('.showList4')
+let nlst=list2
 upcode(list2,showList4)
 const sel4=aespa.qs('.sel4')
-const cta4=aespa.qs('.cta4').value
-tgdt=list2
-tgbx=showList4
+
 aespa.addEvt(sel4,'change',()=>{
     // 
-    tgdt=list2
+    tgdt=nlst
     tgbx=showList4
 })
 aespa.addEvt(sel4,'change',winter)
 const sbtn=aespa.qs('.sbtn')
 aespa.addEvt(sbtn,'click',ning)
 function ning() {
+    let cta4=aespa.qs('.cta4').value
     let stxt=aespa.qs('#stxt').value
     // console.log(stxt)
-    if (list2.indexOf(stxt)!==-1) {
-        // 
-    }
+    let goal=list2.filter(h=>{
+        if (String(h[cta4]).indexOf(stxt)!=-1) {
+            return true
+        }
+        
+    })
+    // console.log(goal)
+    upcode(goal,showList4)
+    // list2=goal
+    nlst=goal
+}
+aespa.addEvt(aespa.qs('.fbtn'),'click',()=>{
+    nlst=list2
+    upcode(nlst,showList4)
+})
+function rs() {
+    stxt=''
+    stxt=''
+    stxt=''
 }
 aespa.addEvt(aespa.qs('.sample'),'click',()=>{
     let sult=list2.find(p=>{
@@ -276,5 +292,11 @@ aespa.addEvt(aespa.qs('.sample'),'click',()=>{
             return true
         }
     })
-    console.log(rst2)
+    // console.log(rst2)
+    let rst3=list2.filter(p=>{
+        if (p.tit.indexOf('에')!=-1) {
+            return true
+        }
+    })
+    // console.log(rst3)
 })
