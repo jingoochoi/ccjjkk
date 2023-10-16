@@ -155,13 +155,13 @@ const sel3=aespa.qs('.sel3')
 const cta3=aespa.qs('.cta3')
 aespa.addEvt(sel3,'change',winter)
 function winter() {
-    
+    let val=this.previousElementSibling.value
     if (this.value==1) {
-        list1.sort((m,n)=>m[this.previousElementSibling.value]==n[this.previousElementSibling.value]?0:m[this.previousElementSibling.value]>n[this.previousElementSibling.value]?1:-1)
+        list1.sort((m,n)=>m[val]==n[val]?0:m[val]>n[val]?1:-1)
         upcode(list1,showlist3)
     }
     else if(this.value==2){
-        list1.sort((m,n)=>m[this.previousElementSibling.value]==n[this.previousElementSibling.value]?0:m[this.previousElementSibling.value]>n[this.previousElementSibling.value]?-1:1)
+        list1.sort((m,n)=>m[val]==n[val]?0:m[val]>n[val]?-1:1)
         upcode(list1,showlist3)
 
     }
@@ -191,3 +191,6 @@ const list2 = [
 ]; /////////////// list2 /////////////  
 const showList4=aespa.qs('.showList4')
 upcode(list2,showList4)
+const sel4=aespa.qs('.sel4')
+const cta4=aespa.qs('.cta4')
+aespa.addEvt(sel4,'change',winter)
