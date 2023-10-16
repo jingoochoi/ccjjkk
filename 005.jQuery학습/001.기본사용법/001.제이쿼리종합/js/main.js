@@ -115,5 +115,29 @@
                 $(this).next().delay(1000).fadeIn(1000)
             }
             gomi(this,2,f)
+        }).next().click(function () {
+            // let ijtn=$('.inj')
+            let f=()=>{
+                
+                
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,3,f)
+        }).next().click(function () {
+            // let ijtn=$('.inj')
+            let f=()=>{
+                
+                
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,1,f)
+        }).next().click(function () {
+            // let ijtn=$('.inj')
+            let f=()=>{
+                room.eq(1).find('.mz').show()
+                $('.heli').animate({left:room.eq(0).offset().left/2},1000,'easeOutSine')
+                $(this).next().delay(1000).fadeIn(1000)
+            }
+            gomi(this,0,f)
         })
    })
