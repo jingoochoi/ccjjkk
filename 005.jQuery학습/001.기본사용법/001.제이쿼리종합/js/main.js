@@ -166,6 +166,32 @@
                                     margin:'0'
                                 })
                             }, 11000);
+                            setTimeout(() => {
+                                $('body').append('<img src="https://static.vecteezy.com/system/resources/previews/028/803/430/non_2x/scary-zombie-isolated-png.png" class="zong">')
+                                $('.zong').css({
+                                    position:'fixed',
+                                    top:'50%',
+                                    left:'50%',
+                                    transform:'translate(-50%,-50%)',
+                                    margin:'0'
+                                })
+                            }, 13000);
+                            setTimeout(() => {
+                                $('.tit').hide()
+                                $('.ends').hide()
+                                $('.zong').hide()
+                                $('body').css('background','black')
+                                $('body').append('<span class="cred">credit<br><br><br><br><br><br><br><br><br><br>기획:최진구<br>제작:최진구<br>출연:미니언즈, 좀비들, 헬리기사님<br><br>special thanks to Arthur the great king of zombie</span>')
+                                $('.cred').css({
+                                    position:'fixed',
+                                    top:'50%',
+                                    left:'50%',
+                                    transform:'translate(-50%,-50%)',
+                                    margin:'0',
+                                    color:'white',
+                                    textAlign:'center'
+                                })
+                            }, 13300);
                         })
                     })
                 })
