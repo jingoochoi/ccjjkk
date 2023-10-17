@@ -73,3 +73,30 @@ function Wish(p) {
     )
 }
 ReactDOM.render(<Wish list={foods}/>,document.querySelector('#root3'))
+const movs = [
+    {year:"2021",mtit:"모기어딨슈?그럼안돼유~🦟"},
+    {year:"2022",mtit:"범죄도시2👮‍♂️"},
+    {year:"2023",mtit:"가디언즈 오브 갤럭시3🦝"},
+];
+// const movs=[]
+function Mvif(p) {
+    return(
+        <li>{p.year}년 {p.name}</li>
+    )
+}
+function Mvcl(p) {
+    const mvmv=p.list
+    return(
+        <React.Fragment>
+            <Tits title="영화"/>
+            {mvmv.length>0&&
+            <div>
+                <h2>개발자가 좋아하는 영화는 최근 {mvmv.length}년간 아래와 같습니다!</h2>
+                <ul>{mvmv.map(h=><Mvif year={h.year} name={h.mtit}/>)}</ul>
+            </div>}
+            {mvmv.length==0&&
+            <h2>업데이트 안 됐어요😥</h2>}
+        </React.Fragment>
+    )
+}
+ReactDOM.render(<Mvcl list={movs}/>,document.querySelector('#root4'))
