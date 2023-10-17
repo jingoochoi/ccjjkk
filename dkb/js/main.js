@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('b')
     startSS()
-    setpos
+    setpos()
     let dcbx=document.querySelectorAll('.descbox')
     dcbx.forEach(e=>{
         e.onwheel=e=>e.stopPropagation()
