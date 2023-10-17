@@ -363,3 +363,15 @@ aespa.addEvt(aespa.qs('.sample'),'click',()=>{
 const showList5=aespa.qs('.showList5')
 const list4=Object.keys(list3).map(p=>list3[p])
 upcode(list4,showList5)
+const sel5=aespa.qs('.sel5')
+const cta5=aespa.qs('.cta5')
+aespa.addEvt(sel5,'change',()=>{
+    // 
+    tgdt=list4
+    tgbx=showList5
+})
+aespa.addEvt(sel5,'change',winter)
+
+aespa.addEvt(aespa.qs('.cta5'),'change',()=>{
+    sel5.value='0'
+})
