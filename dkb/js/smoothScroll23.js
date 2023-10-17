@@ -14,7 +14,9 @@ function startSS() {
 // 전역변수 스크롤 위치값
 let pos;
 // 다른 코딩으로 스크롤 이동시 이 변수에 일치필요!!!
-
+function setpos(p) {
+    pos=p
+}
 function SmoothScroll(target, speed, smooth) {
     // target - 대상요소, speed - 스크롤애니속도, smooth - 부드러운정도
     if (target === document)
@@ -92,4 +94,4 @@ function SmoothScroll(target, speed, smooth) {
         );
     }()
 }
-export default startSS
+export  {startSS,setpos}

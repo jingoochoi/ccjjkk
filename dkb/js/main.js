@@ -1,6 +1,6 @@
 // dkb js
 import {menudt,griddt,previewData,clipData,linkData} from "./data.js"
-import startSS from "./smoothScroll23.js"
+import  {startSS, setpos } from "./smoothScroll23.js"
 const domft={
     // 요소선택함수 ////////
      qs : (x) => document.querySelector(x),
@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('b')
     startSS()
+    setpos
     let dcbx=document.querySelectorAll('.descbox')
     dcbx.forEach(e=>{
         e.onwheel=e=>e.stopPropagation()
