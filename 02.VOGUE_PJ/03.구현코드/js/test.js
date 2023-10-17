@@ -23,9 +23,14 @@ hide.each((m,n)=>{
     // }
 })
 $(window).scroll(()=>{
+    let tp=$(window).scrollTop()
     hide.each((p,l)=>{
         if (stayc.getBCR(l)<window.innerHeight*3/4) {
             l.classList.add('on')
         }
     })
+    if (tp>100) {
+        // 
+        $('#toparea').addClass('on')
+    }else $('#toparea').removeClass('on')
 })
