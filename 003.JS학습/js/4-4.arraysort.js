@@ -361,4 +361,5 @@ aespa.addEvt(aespa.qs('.sample'),'click',()=>{
                     },
                 }; /////////////// list3 /////////////  
 const showList5=aespa.qs('.showList5')
-upcode(Object.keys(list3),showList5)
+const list4=Object.keys(list3).map(p=>list3[p])
+upcode(list4,showList5)
