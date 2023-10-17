@@ -220,6 +220,9 @@ function winter() {
 
     }
 }
+aespa.addEvt(aespa.qs('.cta3'),'change',()=>{
+    sel3.value='0'
+})
 // console.log(list1)
 const list2 = [
     {
@@ -281,6 +284,9 @@ function rs() {
     aespa.qs('#stxt').value=''
     sel4.value='0'
 }
+aespa.addEvt(aespa.qs('.cta4'),'change',()=>{
+    sel4.value='0'
+})
 aespa.addEvt(aespa.qs('.sample'),'click',()=>{
     let sult=list2.find(p=>{
         if (p.tit=='당근마켓에 가자') {
