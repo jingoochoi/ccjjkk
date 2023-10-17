@@ -5,9 +5,10 @@ console.log("%cd","font-size:100px;background-image:linear-gradient(to bottom,bl
 import aespa from './com.js'
 import stayc from './dom.js'
 // 부드러운 스크롤 모듈
-import startSS from "./smoothScroll23.js";
+import  {startSS, setpos } from "./smoothScroll23.js";
 // 부드러운 스크롤 적용 //////////
 startSS();
+
 const top=stayc.qs('.toparea')
 top.innerHTML=aespa.toparea
 const foot=stayc.qs('.footarea')
@@ -33,4 +34,12 @@ $(window).scroll(()=>{
         // 
         $('#toparea').addClass('on')
     }else $('#toparea').removeClass('on')
+    if (tp>300) {
+        // 
+        $('.tbtn').addClass('on')
+    }else $('.tbtn').removeClass('on')
+})
+$('.tbtn').click((p)=>{
+    p.preventDefault()
+    setpos(0)
 })

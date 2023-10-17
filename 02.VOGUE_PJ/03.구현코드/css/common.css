@@ -281,7 +281,7 @@ https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor */
     height: 35px;
     text-align: center;
     line-height: 35px;
-    background-color: #333;
+    background-color: #aaa;
     border-radius: 4px 4px 0 0;
     color: #fff;
     z-index: 9999;
@@ -299,7 +299,7 @@ https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor */
 
 /* 위로가기 버튼 오버시 */
 .tbtn:hover {
-    background-color: red;
+    background-color: pink;
 }
 
 
