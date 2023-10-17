@@ -190,24 +190,27 @@ pdata.forEach(a=>{
     </optgroup>
     `
 })
-const subcon=$('.subbox .partbox,.subbox li')
-const subsub=$('.subcon')
-// console.log(subsub)
-console.log(subcon)
-subcon.click(function () {
-    // 
-    let subt=$(this).parents('.subbox').prev().text()
-    console.log(subt)
-    subsub.html(`<button class="clsb">X</button>
-    <div class="inbx inbox">
-    <h1>${subt}</h1>
-    <div class="subtem">
-    ${$(this).text()}
-    </div>
-    </div>`)
-    $('.clsb').click(()=>{subsub.hide()})
+$(()=>{
+
+    const subcon=$('.subbox .partbox,.subbox li')
+    const subsub=$('.subcon')
+    // console.log(subsub)
+    console.log(subcon)
     subcon.click(function () {
-        // console.log(this)
-        subsub.show()
+        // 
+        let subt=$(this).parents('.subbox').prev().text()
+        console.log(subt)
+        subsub.html(`<button class="clsb">X</button>
+        <div class="inbx inbox">
+        <h1>${subt}</h1>
+        <div class="subtem">
+        ${$(this).text()}
+        </div>
+        </div>`)
+        $('.clsb').click(()=>{subsub.hide()})
+        subcon.click(function () {
+            // console.log(this)
+            subsub.show()
+        })
     })
 })
