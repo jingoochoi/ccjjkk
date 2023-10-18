@@ -20,7 +20,13 @@ atbt.one('click',function () {
         const prgr=function () {
             nb++
             ltxt.html(nb)
-            // 
+            lbar.css({width:nb+'%'})
+            if (nb==100) {
+                // console.log('😀')
+                // $('#myaud').get(0).play()//jq
+                // document.querySelector('#myaud').play()//js
+                $('#myaud')[0].play()
+            }
             setTimeout(() => {
                 if (nb<100) {
                     prgr()
