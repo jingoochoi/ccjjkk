@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script>
+        const mydate=new Date()
+        const temp=new Date()
+        const week=['日','月','火','水','木','金','土']
+        const isos=k=>`${k.getFullYear()}.${k.getMonth()+1}.${k.getDate()} yoil=${week[k.getDay()]}`
+        // console.log(new Date(2023,2,0))
+        // new Date(year,month,0(last date)/1(first date of next month))
+        let test=new Date(2023,2,0)
+        test=new Date(temp.getFullYear(),temp.getMonth(),0)
+        // console.log(test)
+        // console.log(test)
+        test=new Date(temp.getFullYear(),temp.getMonth(),1)
+        console.log(isos(test))
+    </script>
+</head>
+<body>
+    <!--  -->
+</body>
+</html>
