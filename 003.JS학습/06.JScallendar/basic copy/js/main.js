@@ -17,3 +17,7 @@ ccdd.mouseenter(function () {
         $(this).parent().hide()
     })
 })
+if ($('input').first().val()&&$('input').last().val()) {
+    // 
+    $('h2 span').html('0')
+}
