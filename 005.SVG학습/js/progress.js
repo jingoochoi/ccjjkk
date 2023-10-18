@@ -24,6 +24,7 @@ atbt.one('click',function () {
             if (nb==100) {
                 // console.log('😀')
                 // $('#myaud').get(0).play()//jq
+                // $('#myaud').get(0).pause()//jq
                 // document.querySelector('#myaud').play()//js
                 $('#myaud')[0].play()
             }
