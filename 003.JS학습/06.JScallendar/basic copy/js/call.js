@@ -1,15 +1,16 @@
 import aespa from './dom.js'
 const week=['日','月','火','水','木','金','土']
 const isos=k=>`${k.getFullYear()}.${k.getMonth()+1}.${k.getDate()} ${week[k.getDay()]}`//current month and next
-console.log("%c📆🌸☔🍁⛄📆","font-size:30px")
-call()
+console.log("%c📆🌸☔🍁⛄📆","font-size:30px;background-image:linear-gradient(to top,yellow,red);line-height:100px")
+// call()
 
 function call(p) {
+    aespa.qs(p).innerHTML=istc()
     const cdate=new Date()
     const today=new Date()
-    const yearTit=aespa.qs('.yearTit')
-    const monthTit=aespa.qs('.monthTit')
-    const dates=aespa.qs('.dates')
+    const yearTit=aespa.qs(p+' .yearTit')
+    const monthTit=aespa.qs(p+' .monthTit')
+    const dates=aespa.qs(p+' .dates')
     const data=[]
     let ccode=''
     const tial=()=>{
@@ -59,7 +60,7 @@ function call(p) {
         dates.innerHTML=ccode
         // console.log(data)
         // console.log(ccode)
-        let date=aespa.qsa('.date')
+        let date=aespa.qsa(p+' .date')
         date.forEach(o=>{
             aespa.addEvt(o,'click',()=>{
                 let naps=aespa.qsEl(o,'span')
@@ -74,7 +75,7 @@ function call(p) {
                 }
                 else  {
                     // 
-                    let cldr=aespa.qs('.calender')
+                    let cldr=aespa.qs(p+' .calender')
                     if (o.classList.contains('today')) {
                         console.log(`oh it is today🎉✨`)
                         cldr.style.opacity=1
@@ -102,8 +103,8 @@ function call(p) {
         cdate.setMonth(cdate.getMonth()+1)
         tial()
     }
-    aespa.addEvt(aespa.qs('.btnL'),'click',prem)
-    aespa.addEvt(aespa.qs('.btnR'),'click',nxtm)
+    aespa.addEvt(aespa.qs(p+' .btnL'),'click',prem)
+    aespa.addEvt(aespa.qs(p+' .btnR'),'click',nxtm)
 }
 function istc() {
     return`
@@ -138,3 +139,4 @@ function istc() {
   </div>
     `
 }
+export default call
