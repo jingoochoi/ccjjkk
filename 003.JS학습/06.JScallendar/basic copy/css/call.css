@@ -40,7 +40,7 @@
     font-family: var(--font);
 
     /* 처음에 안보임! */
-    /* display: none; */
+    display: none;
 }
 
 
