@@ -1,4 +1,5 @@
-import call from "./call.js";
+import Call from "./call.js";
 import aespa from './dom.js'
-call('.dccf1')
-call('.dccf2')
+new Call('.dccf1')
+const c2= new Call('.dccf2')
+c2.nxtm()

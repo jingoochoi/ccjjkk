@@ -4,7 +4,7 @@ const isos=k=>`${k.getFullYear()}.${k.getMonth()+1}.${k.getDate()} ${week[k.getD
 console.log("%c📆🌸☔🍁⛄📆","font-size:30px;background-image:linear-gradient(to top,yellow,red);line-height:100px")
 // call()
 
-function call(p) {
+function Call(p) {
     aespa.qs(p).innerHTML=istc()
     const cdate=new Date()
     const today=new Date()
@@ -13,6 +13,7 @@ function call(p) {
     const dates=aespa.qs(p+' .dates')
     const data=[]
     let ccode=''
+    const dateinfo=aespa.qs(p+' .dateinfo')
     const tial=()=>{
         data.splice(0)
         ccode=''
@@ -67,10 +68,10 @@ function call(p) {
                 if (naps) {
                     // 
                     if (naps.classList.contains('bm')) {
-                        prem()
+                        this.prem()
                     }
                     if (naps.classList.contains('am')) {
-                        nxtm()
+                        this.nxtm()
                     }
                 }
                 else  {
@@ -91,20 +92,21 @@ function call(p) {
                         cldr.style.filter='grayscale(0%)'
                     console.log(`${year}-${mnth+1}-${o.innerText}`)}
                 }
+                dateinfo.value=`${year}-${mnth+1}-${o.innerText}`
             })
         })
     }
     tial()
-    const prem=()=>{
+    this.prem=()=>{
         cdate.setMonth(cdate.getMonth()-1)
         tial()
     }
-    const nxtm=()=>{
+    this.nxtm=()=>{
         cdate.setMonth(cdate.getMonth()+1)
         tial()
     }
-    aespa.addEvt(aespa.qs(p+' .btnL'),'click',prem)
-    aespa.addEvt(aespa.qs(p+' .btnR'),'click',nxtm)
+    aespa.addEvt(aespa.qs(p+' .btnL'),'click',this.prem)
+    aespa.addEvt(aespa.qs(p+' .btnR'),'click',this.nxtm)
 }
 function istc() {
     return`
@@ -136,7 +138,9 @@ function istc() {
       <div class="dates">
         </div>
     </section>
+    <!--hidden field for saving-->
+    <input type="hidden" class="dateinfo">
   </div>
     `
 }
-export default call
+export default Call
