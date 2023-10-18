@@ -19,5 +19,5 @@ ccdd.mouseenter(function () {
 })
 if ($('input').first().val()&&$('input').last().val()) {
     // 
-    $('h2 span').html('0')
+    $('h2 span').html('300')
 }
