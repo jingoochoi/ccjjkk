@@ -15,9 +15,9 @@ ccdd.mouseenter(function () {
         preval=preval[0]+'년 '+preval[1]+'월 '+preval[2]+'일'
         $(this).parents().prev().val(preval)
         $(this).parent().hide()
+        if ($('input').first().val()&&$('input').last().val()) {
+            // 
+            $('h2 span').html(300*(30))
+        }
     })
 })
-if ($('input').first().val()&&$('input').last().val()) {
-    // 
-    $('h2 span').html('300')
-}
