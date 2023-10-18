@@ -4,7 +4,7 @@ const isos=k=>`${k.getFullYear()}.${k.getMonth()+1}.${k.getDate()} ${week[k.getD
 console.log("%c📆🌸☔🍁⛄📆","font-size:30px")
 call()
 
-function call() {
+function call(p) {
     const cdate=new Date()
     const today=new Date()
     const yearTit=aespa.qs('.yearTit')
@@ -104,4 +104,37 @@ function call() {
     }
     aespa.addEvt(aespa.qs('.btnL'),'click',prem)
     aespa.addEvt(aespa.qs('.btnR'),'click',nxtm)
+}
+function istc() {
+    return`
+    <div class="calender">
+    <!-- 달력상단:해당년/월표시 -->
+    <header class="header">      
+      <!-- 달력이동버튼:이전 -->
+      <button class="mbtn btnL">〈</button>
+      <div class="title">
+        <div class="yearTit"></div>
+        <div class="monthTit"></div>
+      </div>
+      <!-- 달력이동버튼:다음 -->
+      <button class="mbtn btnR">〉</button>
+    </header>
+    <!-- 달력날짜표시박스 -->
+    <section class="main">
+      <!-- 주단위 구분박스 -->
+      <div class="week">
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+      </div>
+      <!-- 해당월의 달력날짜 구성박스 -->
+      <div class="dates">
+        </div>
+    </section>
+  </div>
+    `
 }
