@@ -1,4 +1,8 @@
 import aespa from './dom.js'
+/* 생성자 함수로 바꾼다
+1.첫글자->대문자
+2.수입하는 곳에서 new 키워드 써서 인스턴스 생성
+3.속성 및 메서드를 this 키워드 등록하면 호출이 가능(내부 호출에도 this를 사용해야) */
 const week=['日','月','火','水','木','金','土']
 const isos=k=>`${k.getFullYear()}.${k.getMonth()+1}.${k.getDate()} ${week[k.getDay()]}`//current month and next
 console.log("%c📆🌸☔🍁⛄📆","font-size:30px;background-image:linear-gradient(to top,yellow,red);line-height:100px")
