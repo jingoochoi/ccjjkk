@@ -7,9 +7,9 @@ for(let x=0;x<19;x++){
 bb += `
 {
     "idx":${x+1},
-    "gname":${gname[rand[4]]},
-    "category":${category[rand[3]]},
-    "gprice":${gprice[rand[5]]}
+    "gname":${gname[rand(4)]},
+    "category":${category[rand(3)]},
+    "gprice":${gprice[rand(5)]}
 },
 `;
 }
