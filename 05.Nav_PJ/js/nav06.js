@@ -56,7 +56,7 @@ li.forEach(a=>{
         aespa.qsEl(this,'.smenu').style.height=0
     }
 })
-console.log("%c🐭💨","font-size:100px")
+// console.log("%c🐭💨","font-size:100px")
 console.log("%c🌆","font-size:100px;background-image:linear-gradient(to bottom,red,yellow);line-height:200px;padding-left:50px;padding-right:50px")
 const banbx= aespa.qsa('.banbx')
 banbx.forEach((a,p)=>{
