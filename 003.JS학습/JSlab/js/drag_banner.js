@@ -86,6 +86,7 @@ function slideft(a) {
             setTimeout(() => {
                 slide.style.left='-220%'
                 slide.style.transition=TIME+'ms ease-in-out'
+                rx=0
             }, 0);
         }
         chgid(isr)
