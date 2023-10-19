@@ -245,3 +245,4 @@ function lctn(p) {
         p.style.transition='left .2s ease-out'
     }
 }
+aespa.addEvt(window,'resize',()=>{location.reload()})

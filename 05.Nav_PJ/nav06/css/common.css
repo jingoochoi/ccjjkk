@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
 /* font-family: 'Noto Sans KR', sans-serif; */
 body{background-image: linear-gradient(to bottom,lightcoral,lightgreen);height: 100vh;font-family: 'Noto Sans KR', sans-serif;}
-.ibx{margin: 0 auto;max-width: 1200px;outline: 2px dashed yellow;padding: 0 13px;}
+.ibx{margin: 0 auto;max-width: 1200px;padding: 0 13px;}
 #toparea{background-color: black;}
 /* .toparea{position: relative;} */
 .topmenu{padding-top: 28px;}
@@ -11,7 +11,7 @@ body{background-image: linear-gradient(to bottom,lightcoral,lightgreen);height: 
 .gnb{display: flex;gap: 0 13px;line-height: 50px;}
 /* .gnb >ul>li::before{content: '';position: absolute;width: 100%;height: 300px;background-color: white;left: 0;margin-top: 50px;border-bottom: 1px solid #ccc;} */
 .gnb>ul>li> a{color: white;}
-.smenu{position: absolute;outline: 2px dashed orangered;left: 0%;width: 100%;background-color: #fff;height: 0;overflow: hidden;transition:  .3s ease-in-out;}
+.smenu{position: absolute;left: 0%;width: 100%;background-color: #fff;height: 0;overflow: hidden;transition:  .3s ease-in-out;z-index: 10000;}
 /* .gnb>ul>li:hover .smenu{height: 300px;} */
 /* .gnb>ul:first-child .smenu{display: block;} */
 .stit{font-size: 20px;}

@@ -152,7 +152,7 @@ function slideft(a) {
             slide.style.transition='none'
             setTimeout(() => {
                 slide.style.left='-220%'
-                slide.style.transition=TIME+'ms ease-in-out'
+                slide.style.transition=TIME+'ms ease-out'
                 rx=0
             }, 0);
         }
@@ -176,7 +176,7 @@ function slideft(a) {
         slide.style.transition='none'
         setTimeout(() => {
             slide.style.left='-220%'
-            slide.style.transition=TIME+'ms ease-in-out'
+            slide.style.transition=TIME+'ms ease-out'
             rx=0
         }, 0);
     }
@@ -192,7 +192,7 @@ function slideft(a) {
         }, 300);
         if (event.key=='ArrowRight') {
             slide.style.left='-330%'
-            slide.style.transition='.3s ease-in-out'
+            slide.style.transition='.3s ease-out'
             setTimeout(() => {
                 slide.appendChild(slide.querySelectorAll('li')[0])
                 slide.style.left='-220%'
@@ -205,7 +205,7 @@ function slideft(a) {
             slide.style.transition='none'
             setTimeout(() => {
                 slide.style.left='-220%'
-                slide.style.transition='.3s ease-in-out'
+                slide.style.transition='.3s ease-out'
             }, 0);
         }
         let nowsq=slide.querySelectorAll('li')[event.key=='ArrowRight'?1:0].getAttribute('data-seq')
@@ -309,6 +309,7 @@ function lctn(p) {
     }
     else{
         p.style.left='-220%'
-        p.style.transition='left .2s ease-in-out'
+        p.style.transition='left .2s ease-out'
     }
 }
+aespa.addEvt(window,'resize',()=>{location.reload()})

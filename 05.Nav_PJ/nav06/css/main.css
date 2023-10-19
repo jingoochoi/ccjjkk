@@ -2,13 +2,15 @@
 
 @import url(./reset.css);
 @import url(./common.css);
+.cont{overflow: hidden;}
 /* 배너전체박스 */
 .banbx {
     /*슬라이드부모*/
-    position: absolute;
+    position: relative;
+    margin-top: calc(30px*2);
     /* 부모는? .page */
-    top: 50%;
-    transform: translateY(-50%);
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
     /* 세로중앙! */
     left: 25vw;
     width: 50vw;
@@ -16,7 +18,7 @@
     /* border: 2px solid red; */
     box-sizing: border-box;
     
-    outline: 5px dotted blue;
+    /* outline: 5px dotted blue; */
 }
 
 .slide {
@@ -52,7 +54,7 @@
     /* 가로크기를 부모박스 크기에 맞춤! */
     /* height 값은 flex박스 자식요소에서
     등분할시 자동 100%임! */
-    outline: 2px dashed red;
+    /* outline: 2px dashed red; */
 
     /* 필터로 밝기조절(어둡게) */
     filter: brightness(70%);
