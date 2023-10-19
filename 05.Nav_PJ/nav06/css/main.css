@@ -2,7 +2,7 @@
 
 @import url(./reset.css);
 @import url(./common.css);
-.cont{overflow: hidden;}
+body{overflow: hidden;}
 /* 배너전체박스 */
 .banbx {
     /*슬라이드부모*/
