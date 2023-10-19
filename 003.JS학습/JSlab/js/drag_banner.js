@@ -94,7 +94,7 @@ function slideft(a) {
     }
     
     function chgid(isr) {
-        let nowsq=slide.querySelectorAll('li')[isr?1:0].getAttribute('data-seq')
+        let nowsq=slide.querySelectorAll('li')[0].getAttribute('data-seq')
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
