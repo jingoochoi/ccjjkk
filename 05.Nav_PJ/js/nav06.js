@@ -128,8 +128,7 @@ function slideft(a) {
     }
     indic=aespa.qsaEl(sdprt,'.indic li')
     // data-=user setting attribute
-    slide.querySelectorAll('li').forEach((a,idx)=>{a.setAttribute('data-seq',idx)
-    console.log(a)})
+    slide.querySelectorAll('li').forEach((a,idx)=>{a.setAttribute('data-seq',idx)})
     abtn.forEach(a=>{aespa.addEvt(a,'click',gs)})
 
     function gs() {
@@ -163,7 +162,7 @@ function slideft(a) {
     
     function chgid(isr) {
         let nowsq=slide.querySelectorAll('li')[0].getAttribute('data-seq')
-        console.log(slide)
+        // console.log(slide)
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
