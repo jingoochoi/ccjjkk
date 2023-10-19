@@ -103,13 +103,15 @@ function slideft(a) {
     }
     function rightsl() {
         // console.log(TIME);
-        slide.style.left='-330%'
-        slide.style.transition=TIME+'ms ease-in-out'
+        slide.appendChild(slide.querySelectorAll('li')[0])
+        slide.style.left='-110%'
+        slide.style.left=-(slide.parentElement.clientWidth*1.1-rx)+'px'
+        slide.style.transition='none'
         setTimeout(() => {
-            slide.appendChild(slide.querySelectorAll('li')[0])
             slide.style.left='-220%'
-            slide.style.transition='none'
-        }, TIME);
+            slide.style.transition=TIME+'ms ease-in-out'
+            rx=0
+        }, 0);
     }
     aespa.addEvt(document,'keydown',kdft)
     function kdft() {
