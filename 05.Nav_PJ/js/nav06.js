@@ -128,7 +128,8 @@ function slideft(a) {
     }
     indic=aespa.qsaEl(sdprt,'.indic li')
     // data-=user setting attribute
-    slide.querySelectorAll('li').forEach((a,idx)=>a.setAttribute('data-seq',idx))
+    slide.querySelectorAll('li').forEach((a,idx)=>{a.setAttribute('data-seq',idx)
+    console.log(a)})
     abtn.forEach(a=>{aespa.addEvt(a,'click',gs)})
 
     function gs() {
@@ -146,7 +147,7 @@ function slideft(a) {
             rightsl()
         }
         if (this.classList.contains('ab1')) {            
-            slide.insertBefore(slide.querySelectorAll('li')[4],slide.querySelectorAll('li')[0])
+            slide.insertBefore(slide.querySelectorAll('li')[slide.querySelectorAll('li').length-1],slide.querySelectorAll('li')[0])
             // slide.style.left='-330%'
             slide.style.left=-(slide.parentElement.clientWidth*3.3-rx)+'px'
             slide.style.transition='none'
@@ -162,6 +163,7 @@ function slideft(a) {
     
     function chgid(isr) {
         let nowsq=slide.querySelectorAll('li')[0].getAttribute('data-seq')
+        console.log(slide)
         indic.forEach(function (a,idx) {
             if (idx==nowsq) {
                 a.classList.add('on')
