@@ -10,13 +10,22 @@ function Main() {
                 <img src="images/vans/gongyoo.jpg" alt="멋진 공지철" />
             </section>
             <div className="gwrap">
-                <ol class="glist">
-                    <li><img src="./images/vans/vans_1.jpg" alt="신발"/></li>
-                    <li>반스명:Shine1</li>
-                    <li>가격: 32,400원</li>
-                </ol>
+                <Good/>
             </div>
         </React.Fragment>
+    )
+}
+// console.log(myData)
+function Good() {
+    return(myData.map(q=>(
+        // 
+            <ol class="glist">
+                <li><img src={"./images/vans/vans_"+q.idx+".jpg"} alt="신발"/></li>
+                <li>{q.gname}</li>
+                <li>가격: {q.gprice}원</li>
+            </ol>
+    ))
+        
     )
 }
 ReactDOM.render(<Main/>,document.querySelector('#root'))
