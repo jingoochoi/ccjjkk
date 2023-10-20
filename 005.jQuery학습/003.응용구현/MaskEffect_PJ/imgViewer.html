@@ -62,6 +62,12 @@
                 let imgx=mx*ilmx/mlmx
                 imgbox.css({top:imgy+'px',left:imgx+'px'})
                 $('.cat').css({top:e.pageY+'px',left:e.pageX+'px'})
+                if (e.pageX<mlmx/2) {
+                    $('.cat').css({transform:'rotateY(180deg) translate(0%,-50%)'})
+                }
+                else if (e.pageX>mlmx/2) {
+                    $('.cat').css({transform:'rotateY(0) translate(-50%,-50%)'})
+                }
             })
         })
     </script>
