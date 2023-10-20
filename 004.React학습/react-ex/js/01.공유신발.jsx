@@ -5,13 +5,17 @@ import aespa from './data2.js'
 const tdt1=[myData,aespa]
 console.log("%c👞👞","font-size:30px")
 function Main() {
-    const ft=()=>{}
+    const [dtnb,setDtnb]=React.useState(0)
+    const ft=()=>{
+        setDtnb(dtnb?0:1)
+        // console.log(dtnb)
+    }
     return(
         <React.Fragment>
-            <h1 className="tit">공유가 신고 다닌다는 신발</h1>
+            <h1 className="tit">{dtnb?'효진이 입고':'공유가 신고'} 다닌다는 {dtnb?'의류':'신발'}</h1>
             <section>
-                <h2>공유는 오늘도 멋져브로</h2>
-                <img src="images/vans/gongyoo.jpg" alt="멋진 공지철" />
+                <h2>{dtnb?'효진이는':'공유는'} 오늘도 {dtnb?'이뽀요':'멋져브로'}</h2>
+                <img src={dtnb?"https://www.sisanews.kr/news/photo/201601/16647_13007_488.jpg":"images/vans/gongyoo.jpg"} alt="멋진 공지철" />
             </section>
             <button onClick={ft} className="bt">효진choice</button>
             <div className="gwrap">
