@@ -21,7 +21,7 @@
     width: 80%;
     border-radius: 20px;
 }
-button{cursor: pointer;}
+button{cursor: pointer;height: calc(30px*2);}
 /* 상품리스트박스 */
 .gwrap {
     display: flex;
