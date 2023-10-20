@@ -15,9 +15,9 @@ function Main() {
             <h1 className="tit">{dtnb?'효진이 입고':'공유가 신고'} 다닌다는 {dtnb?'의류':'신발'}</h1>
             <section>
                 <h2>{dtnb?'효진이는':'공유는'} 오늘도 {dtnb?'이뽀요':'멋져브로'}</h2>
-                <img src={dtnb?"https://www.sisanews.kr/news/photo/201601/16647_13007_488.jpg":"images/vans/gongyoo.jpg"} alt="멋진 공지철" />
+                <img src={dtnb?"https://www.sisanews.kr/news/photo/201601/16647_13007_488.jpg":"images/vans/gongyoo.jpg"} alt={dtnb?"이쁜 공효진":"멋진 공지철"} />
             </section>
-            <button onClick={ft} className="bt">효진choice</button>
+            <button onClick={ft} className="bt">{dtnb?'공유choice':'효진choice'}</button>
             <div className="gwrap">
                 <Good/>
             </div>
