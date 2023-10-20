@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* 대상박스 */
+body{overflow-y: scroll;}
 #root {
     width: 700px;
     padding: 20px;
