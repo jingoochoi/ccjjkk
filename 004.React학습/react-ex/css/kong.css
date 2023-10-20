@@ -15,6 +15,7 @@
 /* 내용박스 */
 #root section {
     border: 4px double gray;
+    height: 500px;
 }
 /* 내용박스 이미지 */
 #root section img {
