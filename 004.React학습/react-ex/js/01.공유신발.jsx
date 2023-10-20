@@ -1,5 +1,6 @@
 // 01.공유신발 JSX
 import myData from './data.js';
+import aespa from './data2.js'
 console.log("%c👞👞","font-size:30px")
 function Main() {
     return(
