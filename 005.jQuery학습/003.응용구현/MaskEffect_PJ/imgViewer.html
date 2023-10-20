@@ -38,7 +38,7 @@
             width: 100%;
             height: 100%;
         }
-        
+        .cat{position: absolute;width: 100px;height: 100px;font-size: 100px;top: 0;left: 0;transform: translate(-50%,-50%);cursor: none;}
     </style>
     <script src="js/jquery-1.8.1.min.js"></script>
     <script src="js/jquery-ui-1.10.4.min.js"></script>
@@ -47,6 +47,22 @@
         $(()=>{
             const imgbox=$('#imgbox')
             const cover=$('#cover')
+            let t1=($(window).height()-imgbox.height())/2
+            let lft1=($(window).width()-imgbox.width())/2
+            imgbox.css({top:t1+'px',left:lft1+'px'})
+            let itmx=$(window).height()-imgbox.height()
+            let ilmx=$(window).width()-imgbox.width()
+            let mtmx=$(window).height()
+            let mlmx=$(window).width()
+            let mx,my
+            cover.mousemove(e=>{
+                mx=e.pageX
+                my=e.pageY
+                let imgy=my*itmx/mtmx
+                let imgx=mx*ilmx/mlmx
+                imgbox.css({top:imgy+'px',left:imgx+'px'})
+                $('.cat').css({top:e.pageY+'px',left:e.pageX+'px'})
+            })
         })
     </script>
     
@@ -55,7 +71,9 @@
    <!--전체부모박스-->
     <div id="wrap">
         <div id="imgbox"></div>
-        <div id="cover"></div>
+        <div id="cover">
+            <div class="cat">🐱‍🏍</div>
+        </div>
     </div>
     
 </body>
