@@ -12,7 +12,8 @@ $(()=>{
     })
     dropshow.droppable({
         drop:function (a,b) {
-            draggable.hide()
+            $(this).css({backgroundImage:`url(${b.draggable.find('img').attr('src')})`}).html(`🎉${b.draggable.find('p').html()}🎉`)
+            b.draggable.hide()
         }
     })
 })
