@@ -25,6 +25,7 @@ $(()=>{
                     $(this).remove()
                 })
                 b.draggable.show().css({top:0,left:0})
+                dropshow.css({backgroundImage:'url(addimg/effect2.jpg)'}).html('여기에 드롭하세요~~!')
             })
         }
     })
