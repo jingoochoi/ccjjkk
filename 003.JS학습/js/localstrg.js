@@ -31,6 +31,7 @@ window.localStorage
                 (6) 개수 : length
 
             [ JS 세션 스토리지 : sessionStorage ]
+            -> methods are same as local storage
             -> 로컬스토리지와 차이점은?
             -> 브라우저가 닫히면 데이터가 사라진다!
             (로컬세션의 개념은 서버세션과 달리 하나의 브라우저탭을
@@ -51,14 +52,67 @@ const btlc=aespa.qsa('.lcbx button')
 btlc.forEach(p=>{
     aespa.addEvt(p,'click',lcft)
 })
+aespa.qsa('.local ol li').forEach((p,q)=>{
+    const kname=['lname','lrole','lcat']
+    p.onclick=function () {
+        
+            localStorage.removeItem(kname[q])
+        
+    }
+})
 function lcft() {
     //  console.log(this)
     let bttt=this.innerHTML
     if (bttt=='처음') {
         // console.log(localStorage.getItem('lname'))
         localStorage.setItem('lname','이정재')
+        localStorage.setItem('lrole','박평호')
+        localStorage.setItem('lcat','해외팀 안기부 팀장')
+    }
+    else if (bttt=='보여줘') {
+        aespa.qs('.local .nm').innerHTML=localStorage.getItem('lname')
+        aespa.qs('.local .role').innerHTML=localStorage.getItem('lrole')
+        aespa.qs('.local .cat').innerHTML=localStorage.getItem('lcat')
     }
     else if (bttt=='전체삭제') {
         localStorage.clear()
+    }
+    else if (bttt=='처리') {
+        let objt=[
+            {id:1,tit:'업경을 들라',cont:'저승법 1조 1항에 의거, 저승은 이승에서 용서를 받은 일은 더이상 묻지 않는다'}
+        ]
+        // JSON.stringify(objt)
+        localStorage.setItem('minfo',JSON.stringify(objt))
+    }
+}
+
+const btss=aespa.qsa('.ssbx button')
+btss.forEach(p=>{
+    aespa.addEvt(p,'click',ssft)
+})
+aespa.qsa('.session ol li').forEach((p,q)=>{
+    const kname=['sname','srole','scat']
+    p.onclick=function () {
+        
+            sessionStorage.removeItem(kname[q])
+        
+    }
+})
+function ssft() {
+    //  console.log(this)
+    let bttt=this.innerHTML
+    if (bttt=='처음') {
+        // console.log(sessionStorage.getItem('lname'))
+        sessionStorage.setItem('sname','정우성')
+        sessionStorage.setItem('srole','김정도')
+        sessionStorage.setItem('scat','국내팀 안기부 팀장')
+    }
+    else if (bttt=='보여줘') {
+        aespa.qs('.session .nm').innerHTML=sessionStorage.getItem('sname')
+        aespa.qs('.session .role').innerHTML=sessionStorage.getItem('srole')
+        aespa.qs('.session .cat').innerHTML=sessionStorage.getItem('scat')
+    }
+    else if (bttt=='전체삭제') {
+        sessionStorage.clear()
     }
 }
