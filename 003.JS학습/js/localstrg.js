@@ -78,12 +78,53 @@ function lcft() {
         localStorage.clear()
     }
     else if (bttt=='처리') {
-        let objt=[
-            {id:1,tit:'업경을 들라',cont:'저승법 1조 1항에 의거, 저승은 이승에서 용서를 받은 일은 더이상 묻지 않는다'}
-        ]
-        // JSON.stringify(objt)
-        localStorage.setItem('minfo',JSON.stringify(objt))
+        if (!localStorage.getItem('minfo')) {
+            make()
+        }
+        bind()
     }
+}
+bind()
+function make() {
+    let objt=[
+        {id:1,tit:'업경을 들라',cont:'저승법 1조 1항에 의거, 저승은 이승에서 용서를 받은 일은 더이상 묻지 않는다'}
+    ]
+    // JSON.stringify(objt)
+    localStorage.setItem('minfo',JSON.stringify(objt))
+    // 
+}
+function bind() {
+    let lcdt=localStorage.getItem('minfo')
+    let bcode=''
+    if (lcdt) {
+        lcdt=JSON.parse(lcdt)
+        bcode=lcdt.map((p,q)=>`
+            <tr>
+                <td>${p.id}</td>
+                <td>${p.tit}</td>
+                <td>${p.cont}</td>
+                <td><a href="#" onclick="dlt1(${q})">x</a></td>
+            </tr>
+        `).join('')
+    }
+    else{bcode=`<tr>
+        <td colspan="4" style="text-align:center">no data here</td>
+    </tr>`}
+    let hcode=`
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>삭제</th>
+            </tr>
+            ${bcode}
+        </table>
+    `
+    aespa.qs('.board').innerHTML=hcode
+}
+function dlt1(p) {
+    
 }
 
 const btss=aespa.qsa('.ssbx button')
