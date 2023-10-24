@@ -76,6 +76,7 @@ function lcft() {
     }
     else if (bttt=='전체삭제') {
         localStorage.clear()
+        bind()
     }
     else if (bttt=='처리') {
         if (!localStorage.getItem('minfo')) {
