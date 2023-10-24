@@ -137,6 +137,7 @@ function istd() {
     let orgn=localStorage.getItem('minfo')
     if (!orgn) {
         localStorage.setItem('minfo','[]')
+        orgn=localStorage.getItem('minfo')
     }
     orgn=JSON.parse(orgn)
     if (orgn.length!=0) {
