@@ -77,12 +77,14 @@ function lcft() {
     else if (bttt=='전체삭제') {
         localStorage.clear()
         bind()
+        bdmd()
     }
     else if (bttt=='처리') {
-        if (!localStorage.getItem('minfo')) {
+        if (!localStorage.getItem('minfo')||localStorage.getItem('minfo')=='[]') {
             make()
         }
         bind()
+        bdmd()
     }
 }
 bind()
@@ -148,6 +150,7 @@ function istd() {
     orgn.push({id:orgn.length==0?0:orgn[orgn.length-1].id+1,tit:tit,cont:cont})
     localStorage.setItem('minfo',JSON.stringify(orgn))
     bind()
+    bdmd()
 }
 function dlt1(p) {
     event.preventDefault()
@@ -158,6 +161,7 @@ function dlt1(p) {
         localStorage.setItem('minfo',JSON.stringify(orgn))
         bind()
     }
+    bdmd()
 }
 const slt1=aespa.qs('#slt1')
 function bdmd() {
