@@ -135,9 +135,15 @@ function istd() {
         return
     }
     let orgn=localStorage.getItem('minfo')
+    if (!orgn) {
+        localStorage.setItem('minfo','[]')
+    }
     orgn=JSON.parse(orgn)
-    orgn.sort((p,q)=>{return p.id-q.id})
-    orgn.push({id:orgn[orgn.length-1].id+1,tit:tit,cont:cont})
+    if (orgn.length!=0) {
+        // 
+        orgn.sort((p,q)=>{return p.id-q.id})
+    }
+    orgn.push({id:orgn.length==0?0:orgn[orgn.length-1].id+1,tit:tit,cont:cont})
     localStorage.setItem('minfo',JSON.stringify(orgn))
     bind()
 }
