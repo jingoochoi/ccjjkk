@@ -159,6 +159,20 @@ function dlt1(p) {
         bind()
     }
 }
+const slt1=aespa.qs('#slt1')
+function bdmd() {
+    let orgn=localStorage.getItem('minfo')
+    if (!orgn) {
+        localStorage.setItem('minfo','[]')
+        orgn=localStorage.getItem('minfo')
+    }
+    orgn=JSON.parse(orgn)
+    slt1.innerHTML=`<option value="show">항목선택</option>`
+    orgn.forEach(p=>{
+        slt1.innerHTML+=`<option value="${p.id}">${p.tit}</option>`
+    })
+}
+bdmd()
 
 const btss=aespa.qsa('.ssbx button')
 btss.forEach(p=>{
