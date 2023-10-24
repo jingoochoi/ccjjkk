@@ -182,6 +182,9 @@ function bdmd() {
 bdmd()
 aespa.addEvt(slt1,'change',smd1)
 function smd1() {
+    if (this.value=='show') {
+        return
+    }
     let orgn=localStorage.getItem('minfo')
     if (!orgn) {
         localStorage.setItem('minfo','[]')
@@ -197,6 +200,9 @@ function smd1() {
     cont2.value=sltr.cont
 }
 aespa.addEvt(sbtn2,'click',function () {
+    if (slt1.value=='show') {
+        return
+    }
     let orgn=localStorage.getItem('minfo')
     orgn.tit=tit2.value
     orgn.cont=cont2.value
