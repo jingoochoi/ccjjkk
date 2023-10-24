@@ -218,6 +218,7 @@ aespa.addEvt(sbtn2,'click',function () {
     })
     localStorage.setItem('minfo',JSON.stringify(orgn))
     bind()
+    bdmd()
 })
 
 const btss=aespa.qsa('.ssbx button')
