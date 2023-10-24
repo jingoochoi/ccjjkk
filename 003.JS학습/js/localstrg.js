@@ -87,7 +87,7 @@ function lcft() {
 bind()
 function make() {
     let objt=[
-        {id:1,tit:'업경을 들라',cont:'저승법 1조 1항에 의거, 저승은 이승에서 용서를 받은 일은 더이상 묻지 않는다'}
+        {id:1,tit:'업경을 들라',cont:'저승법 1조 1항에 의거, 저승은 이승에서 용서를 받은 일은 더이상 묻지 않는다'},
     ]
     // JSON.stringify(objt)
     localStorage.setItem('minfo',JSON.stringify(objt))
@@ -103,7 +103,7 @@ function bind() {
                 <td>${p.id}</td>
                 <td>${p.tit}</td>
                 <td>${p.cont}</td>
-                <td><a href="#" onclick="dlt1(${q})">x</a></td>
+                <td class="link"><a href="#" data-id="${q}">x</a></td>
             </tr>
         `).join('')
     }
@@ -122,9 +122,34 @@ function bind() {
         </table>
     `
     aespa.qs('.board').innerHTML=hcode
+    aespa.qsa('.link a').forEach(p=>{
+        aespa.addEvt(p,'click',()=>{dlt1(p.getAttribute('data-id'))})
+    })
+}
+aespa.addEvt(aespa.qs('#sbtn'),'click',istd)
+function istd() {
+    let tit=aespa.qs('#tit').value
+    let cont=aespa.qs('#cont').value
+    if (tit.trim()==''||cont.trim()=='') {
+        alert('insert data all')
+        return
+    }
+    let orgn=localStorage.getItem('minfo')
+    orgn=JSON.parse(orgn)
+    orgn.sort((p,q)=>{return p.id-q.id})
+    orgn.push({id:orgn[orgn.length-1].id+1,tit:tit,cont:cont})
+    localStorage.setItem('minfo',JSON.stringify(orgn))
+    bind()
 }
 function dlt1(p) {
-    
+    event.preventDefault()
+    let orgn=localStorage.getItem('minfo')
+    orgn=JSON.parse(orgn)
+    if (confirm('삭제하시겠습니까')) {
+        orgn.splice(p,1)
+        localStorage.setItem('minfo',JSON.stringify(orgn))
+        bind()
+    }
 }
 
 const btss=aespa.qsa('.ssbx button')
