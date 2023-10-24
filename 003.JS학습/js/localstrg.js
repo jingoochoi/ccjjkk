@@ -166,6 +166,7 @@ function dlt1(p) {
 const slt1=aespa.qs('#slt1')
 const tit2=aespa.qs('#tit2')
 const cont2=aespa.qs('#cont2')
+const sbtn2=aespa.qs('#sbtn2')
 function bdmd() {
     let orgn=localStorage.getItem('minfo')
     if (!orgn) {
@@ -181,10 +182,26 @@ function bdmd() {
 bdmd()
 aespa.addEvt(slt1,'change',smd1)
 function smd1() {
-    if (slt1.value) {
-        
+    let orgn=localStorage.getItem('minfo')
+    if (!orgn) {
+        localStorage.setItem('minfo','[]')
+        orgn=localStorage.getItem('minfo')
     }
+    orgn=JSON.parse(orgn)
+    let sltr=orgn.find((p)=>{
+        if (p.id==this.value) {
+            return true
+        }
+    })
+    tit2.value=sltr.tit
+    cont2.value=sltr.cont
 }
+aespa.addEvt(sbtn2,'click',function () {
+    let orgn=localStorage.getItem('minfo')
+    orgn.tit=tit2.value
+    orgn.cont=cont2.value
+    localStorage.setItem('minfo',JSON.stringify(orgn))
+})
 
 const btss=aespa.qsa('.ssbx button')
 btss.forEach(p=>{
