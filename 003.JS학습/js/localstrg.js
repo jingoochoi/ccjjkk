@@ -164,6 +164,8 @@ function dlt1(p) {
     bdmd()
 }
 const slt1=aespa.qs('#slt1')
+const tit2=aespa.qs('#tit2')
+const cont2=aespa.qs('#cont2')
 function bdmd() {
     let orgn=localStorage.getItem('minfo')
     if (!orgn) {
@@ -177,6 +179,12 @@ function bdmd() {
     })
 }
 bdmd()
+aespa.addEvt(slt1,'change',smd1)
+function smd1() {
+    if (slt1.value) {
+        
+    }
+}
 
 const btss=aespa.qsa('.ssbx button')
 btss.forEach(p=>{
