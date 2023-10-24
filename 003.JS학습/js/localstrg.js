@@ -204,9 +204,20 @@ aespa.addEvt(sbtn2,'click',function () {
         return
     }
     let orgn=localStorage.getItem('minfo')
-    orgn.tit=tit2.value
-    orgn.cont=cont2.value
+    if (!orgn) {
+        localStorage.setItem('minfo','[]')
+        orgn=localStorage.getItem('minfo')
+    }
+    orgn=JSON.parse(orgn)
+    orgn.find((p)=>{
+        if (p.id==slt1.value) {
+            // 
+            p.tit=tit2.value
+            p.cont=cont2.value
+        }
+    })
     localStorage.setItem('minfo',JSON.stringify(orgn))
+    bind()
 })
 
 const btss=aespa.qsa('.ssbx button')
