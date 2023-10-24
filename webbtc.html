@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>room escape</title>
+    <style>
+        html,body{margin: 0;padding: 0;overflow: hidden;}
+        .room{width: 400%;height: 100vh;display: flex;}
+        .each{position: relative;}
+        .each:nth-child(1){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
+        .door{font-size: calc(30vw*2);cursor: pointer;position: absolute;bottom: -27vh;}
+        .each:nth-child(2){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
+        .each:nth-child(3){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
+        .each:nth-child(4){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
+    </style>
+    <!-- 제이쿼리 라이브러리 CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- 제이쿼리 UI CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script>
+    $(()=>{
+        let post=0
+        $(document).keydown(function (e) {
+            if (e.key=='ArrowRight') {
+                // console.log('b')
+                post++
+                $(window).scrollLeft($(window).width()*post,0)
+            }
+            if (e.key=='ArrowLeft') {
+                // console.log('p')
+                post--
+                $(window).scrollLeft($(window).width()*post,0)
+            }
+        })
+    })
+</script>
+</head>
+<body>
+    <div class="room">
+        <div class="each">
+            <div class="door">🚪</div>
+        </div>
+        <div class="each"></div>
+        <div class="each"></div>
+        <div class="each"></div>
+    </div>
+</body>
+</html>
