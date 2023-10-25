@@ -35,6 +35,9 @@ button{cursor: pointer;height: calc(30px*2);}
     gap: 10px 20px; /* 상하 좌우 사이간격 */
 }
 a{color: #000;text-decoration: none;}
+.gwrap a:hover{
+    transform: scale(1.1);
+}
 /* 개별리스트박스 */
 .glist {
     margin: 0;
