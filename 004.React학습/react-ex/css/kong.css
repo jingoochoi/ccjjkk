@@ -39,8 +39,8 @@ button{cursor: pointer;height: calc(30px*2);}
     margin: 0;
     padding: 0;
     list-style: none;
+    cursor: pointer;
 }
-.glist ol{cursor: pointer;}
 /* 상품이미지 */
 .glist img {
     width: 120px;
