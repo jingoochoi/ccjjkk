@@ -37,6 +37,7 @@ button{cursor: pointer;height: calc(30px*2);}
 a{color: #000;text-decoration: none;}
 .gwrap a:hover{
     transform: scale(1.1);
+    transition:  .3s linear;
 }
 /* 개별리스트박스 */
 .glist {
