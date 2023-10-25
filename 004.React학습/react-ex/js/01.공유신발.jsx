@@ -9,6 +9,8 @@ function Main() {
     const [dtnb,setDtnb]=React.useState(0)
     const [test,setTest]=React.useState(0)
     const [view,setView]=React.useState(0)
+    const [item,selItem]=React.useState(0)
+    const [eft1,selEft1]=React.useState(0)
     React.useLayoutEffect(()=>{
         $('.imgb').hide().delay(1000).fadeIn(1000)
     })
