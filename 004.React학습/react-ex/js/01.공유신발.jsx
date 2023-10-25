@@ -13,11 +13,17 @@ function Main() {
         $('.imgb').hide().delay(1000).fadeIn(1000)
     })
     React.useEffect(()=>{
-        $('.tit').css({transform:'scale(1.2)',transition:'1s linear'})
+        $('.tit').css({transform:'scale(1.3)',transition:'1s linear'})
         setTimeout(() => {
             // 
             $('.tit').css({transform:'scale(1)'})
+            $('.tit').css({transform:'scale(.7)'})
         }, 1000);
+        setTimeout(() => {
+            $('.tit').css({transform:'scale(1)'})
+            // 
+        }, 2000);
+        
     },[])
     React.useEffect(winter,[])
     React.useEffect(()=>{
@@ -44,7 +50,7 @@ function Main() {
     const tst1=()=>{
         setTest(test?0:1)
     }
-    const cg=(nb)=>{
+    const cg=(nb,id)=>{
         setView(nb)
     }
     return(
@@ -71,7 +77,7 @@ function Good(p) {
     const sdt1=tdt1[p.idxn]
     return(sdt1.map(q=>(
         // 
-            <a href="#" onClick={()=>p.cg(1)}>
+            <a href="#" onClick={()=>p.cg(1,q.id)}>
                 <ol class="glist">
                     <li><img src={p.idxn?"./images/gallery/"+q.idx+".jpg":"./images/vans/vans_"+q.idx+".jpg"} alt="신발"/></li>
                     <li>{q.gname}</li>
@@ -87,7 +93,7 @@ function View(p) {
     return(
         // 
             <ol>
-                <button onClick={()=>p.cg(0)}>go to list</button>
+                <button onClick={()=>p.cg(0,0)}>go to list</button>
                 <li><img src={p.idxn?"./images/gallery/"+sdt1.idx+".jpg":"./images/vans/vans_"+sdt1.idx+".jpg"} alt="신발"/></li>
                 <li>상품명:{sdt1.gname}<br/>가격: {sdt1.gprice}원</li>
             </ol>
