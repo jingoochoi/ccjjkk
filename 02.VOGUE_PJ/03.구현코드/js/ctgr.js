@@ -40,4 +40,7 @@ function svl1(){
     }else $('.lnb').html(`<ul>
     ${sdt1.메뉴.map(p=>`<li><a href="#">${p}</a></li>`).join('👗')}
     </ul>`)
+    $('.catcon h2').each((p,q)=>{
+        $(q).html(sdt1.타이틀[p])
+    })
 }
