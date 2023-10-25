@@ -7,11 +7,11 @@ $(()=>{
     })
     gnb.click(e=>{location.href='ctgr.html?cat='+$(e.target).html().toLowerCase()})
     const sns1=$('.sns a:last')
-    sns1.before(`<a href="#" class="fi fi-desktop">
+    sns1.before(`<a href="#" class="fa-solid fa-key">
     <span class="ir">로그인</span>
 </a><a href="#" class="fi fi-locked">
 <span class="ir">회원가입</span>
-</a><a href="#" class="fi fi-camera">
+</a><a href="#" class="fa-solid fa-panorama">
 <span class="ir">갤러리</span>
 </a>`)
     $('.sns a').each((p,q)=>{
