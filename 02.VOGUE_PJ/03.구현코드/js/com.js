@@ -3,16 +3,16 @@ export default{
     <div class="tmenu">
     <!-- 1-1-1.sns박스 -->
     <div class="sns">
-        <a href="#" class="fi fi-instagram">
+        <a href="https://www.instagram.com/VOGUEKOREA/" class="fi fi-instagram">
             <span class="ir">인스타그램</span>
         </a>
-        <a href="#" class="fi fi-facebook">
+        <a href="https://www.facebook.com/VOGUEkr" class="fi fi-facebook">
             <span class="ir">페이스북</span>
         </a>
-        <a href="#" class="fi fi-twitter">
+        <a href="https://twitter.com/VogueKorea" class="fi fi-twitter">
             <span class="ir">트위터</span>
         </a>
-        <a href="#" class="fi fi-youtube-play">
+        <a href="https://www.youtube.com/user/VogueKorea" class="fi fi-youtube-play">
             <span class="ir">유튜브</span>
         </a>
         <a href="#" class="fi cas">
