@@ -8,38 +8,24 @@ import stayc from './dom.js'
 import  {startSS, setpos } from "./smoothScroll23.js";
 // 부드러운 스크롤 적용 //////////
 startSS();
-
 const top=stayc.qs('.toparea')
 top.innerHTML=aespa.toparea
 const foot=stayc.qs('.footarea')
 foot.innerHTML=aespa.footarea
-const hide=$('.mainarea section')
-// const hide=stayc.qsa('.mainarea section')
-hide.each((m,n)=>{
-    if (m!=0) {
-        n.classList.add('scAct')
+let key1=location.href
+svl1()
+function svl1(){
+    try {
+    if (key1.indexOf('?')==-1) {
+        throw 'error'
     }
-    // if (m.style.top==window.innerHeight/2) {
-    //     m.classList.add('on')
-    // }
-})
-$(window).scroll(()=>{
-    let tp=$(window).scrollTop()
-    hide.each((p,l)=>{
-        if (stayc.getBCR(l)<window.innerHeight*3/4) {
-            l.classList.add('on')
-        }
-    })
-    if (tp>100) {
-        // 
-        $('#toparea').addClass('on')
-    }else $('#toparea').removeClass('on')
-    if (tp>300) {
-        // 
-        $('.tbtn').addClass('on')
-    }else $('.tbtn').removeClass('on')
-})
-$('.tbtn').click((p)=>{
-    p.preventDefault()
-    setpos(0)
-})
+    if (key1.indexOf('=')==-1) {
+        throw 'error'
+    }
+    } catch (e) {
+        alert(e)
+        location.href='index.html'
+    }
+    key1=key1.split('?')[1].split('=')[1]
+    key1=decodeURIComponent(key1)
+}
