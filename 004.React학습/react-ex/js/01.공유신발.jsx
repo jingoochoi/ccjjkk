@@ -9,8 +9,9 @@ function Main() {
     const [dtnb,setDtnb]=React.useState(0)
     const [test,setTest]=React.useState(0)
     const [view,setView]=React.useState(0)
-    const [item,selItem]=React.useState(0)
-    const [eft1,selEft1]=React.useState(0)
+    const [item,setItem]=React.useState(0)
+    const [eft1,setEft1]=React.useState(0)
+    React.useLayoutEffect(()=>{if(eft1)int1()})
     React.useLayoutEffect(()=>{
         $('.imgb').hide().delay(1000).fadeIn(1000)
     })
@@ -48,12 +49,16 @@ function Main() {
         // console.log(dtnb)
         // setView(view?0:1)
         // setView(1)
+        setView(0)
     }
     const tst1=()=>{
         setTest(test?0:1)
     }
     const cg=(nb,id)=>{
+        event.preventDefault()
         setView(nb)
+        setItem(id)
+        setEft1(0)
     }
     return(
         <React.Fragment>
@@ -62,13 +67,13 @@ function Main() {
                 <h2>{dtnb?'효진이는':'공유는'} 오늘도 {dtnb?'이뽀요':'멋져브로'}</h2>
                 <div className="imgb"><img src={dtnb?"https://www.sisanews.kr/news/photo/201601/16647_13007_488.jpg":"images/vans/gongyoo.jpg"} alt={dtnb?"이쁜 공효진":"멋진 공지철"} /></div>
             </section>
-            <button onClick={ft} className="bt">{dtnb?'공유choice':'효진choice'}</button>
+            <button onClick={()=>{ft();setEft1(1)}} className="bt">{dtnb?'공유choice':'효진choice'}</button>
             <button onClick={tst1} className="bt">testo</button>
             <div className="gwrap">
                 {view==0&&
                 <Good idxn={dtnb} cg={cg}/>}
                 {view==1&&
-                <View idxn={dtnb} cg={cg}/>}
+                <View idxn={dtnb} cg={cg} itnb={item}/>}
                 
             </div>
         </React.Fragment>
@@ -77,9 +82,10 @@ function Main() {
 // console.log(myData)
 function Good(p) {
     const sdt1=tdt1[p.idxn]
+    const item=sdt1.find(q=>{if(q.idx==p.itnb)return true})
     return(sdt1.map(q=>(
         // 
-            <a href="#" onClick={()=>p.cg(1,q.id)}>
+            <a href="#" onClick={()=>p.cg(1,q.idx)}>
                 <ol class="glist">
                     <li><img src={p.idxn?"./images/gallery/"+q.idx+".jpg":"./images/vans/vans_"+q.idx+".jpg"} alt="신발"/></li>
                     <li>{q.gname}</li>
@@ -91,13 +97,13 @@ function Good(p) {
     )
 }
 function View(p) {
-    const sdt1=tdt1[p.idxn][0]
+    const sdt1=tdt1[p.idxn][Number(p.itnb)-1]
     return(
         // 
-            <ol>
+        <ol style={{listStyle:'none'}}>
                 <button onClick={()=>p.cg(0,0)}>go to list</button>
                 <li><img src={p.idxn?"./images/gallery/"+sdt1.idx+".jpg":"./images/vans/vans_"+sdt1.idx+".jpg"} alt="신발"/></li>
-                <li>상품명:{sdt1.gname}<br/>가격: {sdt1.gprice}원</li>
+                <li style={{lineHeight:'3'}}>상품명:{sdt1.gname}<br/>가격: {sdt1.gprice}원</li>
             </ol>
     
         
