@@ -9,7 +9,7 @@
         .room{width: 400%;height: 100vh;display: flex;}
         .each{position: relative;}
         .each:nth-child(1){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
-        .door{font-size: calc(30vw*2);cursor: pointer;position: absolute;bottom: -27vh;}
+        .door{font-size: calc(23vw*2);cursor: pointer;position: absolute;bottom: -26vh;}
         .each:nth-child(2){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
         .each:nth-child(3){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
         .each:nth-child(4){width: 100%;height: 100%;background: url(https://img.freepik.com/free-vector/empty-room-with-parquet-floor-yellow-wallpaper_1308-66209.jpg?t=st=1697650666~exp=1697651266~hmac=09255c1ec128cc4a555e03b1a4bcdcfa8480e8346ead5807d738dffe24afafe4) no-repeat top/100% 130%;}
@@ -26,7 +26,7 @@
             if (e.key=='ArrowRight') {
                 // console.log('b')
                 post++
-                window.scrollTo($(window).width()*post,0)
+                $(window).css({left:$(this).width()*post})
             }
             if (e.key=='ArrowLeft') {
                 // console.log('p')
