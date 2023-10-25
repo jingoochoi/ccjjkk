@@ -43,4 +43,5 @@ button{cursor: pointer;height: calc(30px*2);}
 /* 상품이미지 */
 .glist img {
     width: 120px;
+    cursor: pointer;
 }
