@@ -45,3 +45,5 @@ $('.tbtn').click((p)=>{
     p.preventDefault()
     setpos(0)
 })
+$('.hbtn').click(()=>{$('#mobx').slideToggle(300)})
+$('.sbtn').click(()=>{$('.mos').slideToggle(300)})
