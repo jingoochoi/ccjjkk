@@ -110,6 +110,9 @@ function View(p) {
     )
 }
 function int1() {
-    $('.imgb img').css({filter:'grayscale(100%)'})
+    setTimeout(() => {
+        // 
+        $('.imgb img').css({filter:'grayscale(100%)'})
+    }, 3000);
 }
 ReactDOM.render(<Main/>,document.querySelector('#root'))
