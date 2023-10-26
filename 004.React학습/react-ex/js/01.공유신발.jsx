@@ -85,7 +85,7 @@ function Main() {
 function int1() {
     setTimeout(() => {
         // 
-        $('.imgb img').css({filter:'grayscale(100%)'})
+        $('.imgb img').css({filter:'brightness(130%)'})
     }, 3000);
 }
 ReactDOM.render(<Main/>,document.querySelector('#root'))
