@@ -15,21 +15,10 @@ const foot=stayc.qs('.footarea')
 foot.innerHTML=aespa.footarea
 const hide=$('.mainarea section')
 // const hide=stayc.qsa('.mainarea section')
-hide.each((m,n)=>{
-    if (m!=0) {
-        n.classList.add('scAct')
-    }
-    // if (m.style.top==window.innerHeight/2) {
-    //     m.classList.add('on')
-    // }
-})
+
 $(window).scroll(()=>{
     let tp=$(window).scrollTop()
-    hide.each((p,l)=>{
-        if (stayc.getBCR(l)<window.innerHeight*3/4) {
-            l.classList.add('on')
-        }
-    })
+    // 
     if (tp>100) {
         // 
         $('#toparea').addClass('on')
