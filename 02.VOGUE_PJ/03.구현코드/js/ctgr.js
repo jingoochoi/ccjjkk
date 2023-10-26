@@ -63,3 +63,5 @@ function svl1(){
         $(q).html(sdt1.타이틀[p])
     })
 }
+// title change
+$('title').prepend(key1.toUpperCase()+' | ')
