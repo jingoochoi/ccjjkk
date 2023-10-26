@@ -1,9 +1,9 @@
 // 01.공유신발 JSX
-import myData from './data.js';
-import aespa from './data2.js'
+import { Good } from './cpnt1/good.jsx'
+import { View } from './cpnt1/view.jsx'
 import winter from './act.js'
 // console.log(aespa)
-const tdt1=[myData,aespa]
+
 console.log("%c👞👞","font-size:30px")
 function Main() {
     const [dtnb,setDtnb]=React.useState(0)
@@ -80,35 +80,8 @@ function Main() {
     )
 }
 // console.log(myData)
-function Good(p) {
-    const sdt1=tdt1[p.idxn]
-    const item=sdt1.find(q=>{if(q.idx==p.itnb)return true})
-    return(sdt1.map(q=>(
-        // 
-            <a href="#" onClick={()=>p.cg(1,q.idx)}>
-                <ol class="glist">
-                    <li><img src={p.idxn?"./images/gallery/"+q.idx+".jpg":"./images/vans/vans_"+q.idx+".jpg"} alt="신발"/></li>
-                    <li>{q.gname}</li>
-                    <li>가격: {q.gprice}원</li>
-                </ol>
-            </a>
-    ))
-        
-    )
-}
-function View(p) {
-    const sdt1=tdt1[p.idxn][Number(p.itnb)-1]
-    return(
-        // 
-        <ol style={{listStyle:'none'}}>
-                <button onClick={()=>p.cg(0,0)}>go to list</button>
-                <li><img src={p.idxn?"./images/gallery/"+sdt1.idx+".jpg":"./images/vans/vans_"+sdt1.idx+".jpg"} alt="신발"/></li>
-                <li style={{lineHeight:'3'}}>상품명:{sdt1.gname}<br/>가격: {sdt1.gprice}원</li>
-            </ol>
-    
-        
-    )
-}
+
+
 function int1() {
     setTimeout(() => {
         // 
