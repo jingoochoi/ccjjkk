@@ -22,6 +22,7 @@
     justify-content: center;
     /* 사이간격 */
     gap: 0 20px;
+    flex-wrap: wrap;
 }
 .lnb a{
     font-family: nbg;
@@ -35,7 +36,15 @@
 .lnb a:hover{
     color: red;
 }
-
+@media screen and (max-width: 650px) {
+    .cattit,.stit{
+        font-size: 30px;
+        padding: 25px 0 5px;
+      }
+      .lnb a{
+        font-size: 14px;
+      }
+}
 .fashion .bg1-1{background-image: url(../images/fashion/cont1-1a.jpg);}
 .fashion .bg1-2{background-image: url(../images/fashion/cont1-2a.jpg);}
 .fashion .bg1-3{background-image: url(../images/fashion/cont1-3a.jpg);}

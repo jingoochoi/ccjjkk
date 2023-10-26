@@ -1,12 +1,12 @@
 $(()=>{
     $('a').click(e=>e.preventDefault())
     const logo=$('.logo a')
-    const gnb=$('.gnb a')
+    const gnb=$('.gnb a,.mognb a')
     logo.click(()=>{
         location.href='index.html'
     })
     gnb.click(e=>{location.href='ctgr.html?cat='+$(e.target).html().toLowerCase()})
-    const sns1=$('.sns a:last')
+    const sns1=$('.sns a:last,.mosns a:last')
     sns1.before(`<a href="#" class="fa-solid fa-key">
     <span class="ir">로그인</span>
 </a><a href="#" class="fi fi-locked">
@@ -14,7 +14,7 @@ $(()=>{
 </a><a href="#" class="fa-solid fa-panorama">
 <span class="ir">갤러리</span>
 </a>`)
-    $('.sns a').each((p,q)=>{
+    $('.sns a,.mosns a').each((p,q)=>{
         $(q).attr('title',$(q).text())
     }).click(function () {
         let tit1=$(this).text().trim()
@@ -53,4 +53,5 @@ $(()=>{
         }
         open(url)
     })
+    $('.mosns a').eq(3).after('<br>')
 })
