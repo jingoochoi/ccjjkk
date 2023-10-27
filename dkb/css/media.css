@@ -36,6 +36,7 @@
         height: calc(100% - 59px);
         z-index: 9999999;
         width: 100%;
+        overflow: auto;
         background-color: #fff;
         transition: top .3s linear;
     }
