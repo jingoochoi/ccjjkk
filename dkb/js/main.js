@@ -11,13 +11,27 @@ const domft={
 }
 console.log("%c🏹🧡👰&🤴🧡👸","background-color:pink;line-height:2;padding:30px;font-size:30px")
 window.addEventListener('DOMContentLoaded',ldfn)
+let mcode=0
 function ldfn() {
     // console.log('b')
     startSS()
-    let mcode=0
-    const mbic=()=>{if($(window).width()<=1024)mcode=1;else mcode=0}
+    const mbic=()=>{if($(window).width()<=1024)mcode=1;else mcode=0;
+    if(mcode)$('.smenu').attr('style','')}
     mbic()
     $(window).resize(mbic)
+    $('.ham').click(()=>{
+        $('.header').toggleClass('on')
+        if($('.header').is('.on'))$('body').css({overflow:'hidden'})
+        else $('body').attr('style','')//is()=classList.contains()
+    })
+    $('.gnb li').click(function () {
+        if(!mcode)return
+        $(this).find('.smenu').slideToggle(1000).parent().siblings().find('.smenu').slideUp(1000)
+    })
+    $('#dokebimenu').find('ul').draggable({
+        axis:'x',
+        
+    })
     let dcbx=document.querySelectorAll('.descbox')
     dcbx.forEach(e=>{
         e.onwheel=e=>e.stopPropagation()
@@ -88,6 +102,7 @@ gnb.forEach(ele=>{
 
 // 3.함수만들기
 function overFn(){
+    if(mcode)return
   // console.log('오버',this);
   // 1.하위 .smbx 높이값 알아오기
   let hv = domft.qsel(this,'.smbx').clientHeight;
@@ -97,6 +112,7 @@ function overFn(){
 } //////////// overFn 함수 ////////////
 
 function outFn(){
+    if(mcode)return
   // console.log('아웃',this);
   // 서브메뉴 박스 높이값 0만들기!
   domft.qsel(this,'.smenu').style.height = '0px';
