@@ -42,7 +42,7 @@ img{cursor: pointer;}
     cursor: pointer;
 
     /* 처음에 숨기기 */
-    /* display: none; */
+    display: none;
 }
 /* 햄버거모양 가상요소넣기 */
 .ham::before{
