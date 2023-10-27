@@ -1,6 +1,7 @@
 @charset "utf-8";
 @media screen and (max-width:1024px) {
-    html,body{overflow-x: hidden;}
+    /* html,body{overflow-x: hidden;} */
+    body>*{overflow-x: hidden;}
     body{padding-top: 59px;}
     #header{position: fixed;width: 100%;top: 0;left: 0;background-color: #fff;z-index: 131313;}
     /* 전체메뉴박스 */
@@ -64,6 +65,7 @@
     .grouppart {
         padding-top: 3vw;
     }
+    #dokebimenu{top: 58px;}
     .intropt{flex-direction: column;}
     .main .intropt .partbox {
         height: auto;}
