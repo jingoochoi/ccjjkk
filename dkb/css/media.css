@@ -44,6 +44,11 @@
     }
     .gnb ul {
         flex-direction: column;
+        opacity: 0;
+    }
+    .header.on .gnb ul{
+        opacity: 1;
+        transition: opacity 1s linear 1s;
     }
     .gnb ul>li>a {
         font-size: 4vw;
