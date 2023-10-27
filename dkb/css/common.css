@@ -13,6 +13,7 @@ img{cursor: pointer;}
 .gnb >ul >li:hover >a{color: red;}
 .gnb >ul >li:nth-child(3)~li:nth-child(-n+6) >a::after{content: '▼';display: inline-block;transform: scale(.5);}
 .smenu{position: absolute;width: 100%;left: 0;background-color: #fff;overflow: hidden;height: 0;transition:  .3s ease-in-out;}
+.header.on .smenu{transition: none;}
 /* .gnb ul li:hover{} */
 .smbx{max-width: 1000px;margin: 0 auto;}
 .smbx ol{font-size: 1.3rem;display: flex;white-space: nowrap;line-height: 3;flex-wrap: wrap;}

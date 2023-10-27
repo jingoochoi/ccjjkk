@@ -55,6 +55,7 @@
         padding: 3vw 6vw;
     }
     .smenu{position: static;overflow: visible;height: auto;display: none;}
+    .smbx h2{display: none;}
     .smbx{text-indent: 30px;}
     .smbx ol{flex-direction: column;}
     .banner .partbox{height: auto;}
