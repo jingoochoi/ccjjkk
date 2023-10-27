@@ -195,11 +195,11 @@ $(()=>{
     const subcon=$('.subbox .partbox,.subbox li')
     const subsub=$('.subcon')
     // console.log(subsub)
-    console.log(subcon)
+    // console.log(subcon)
     subcon.click(function () {
         // 
         let subt=$(this).parents('.subbox').prev().text()
-        console.log(subt)
+        // console.log(subt)
         subsub.html(`<button class="clsb">X</button>
         <div class="inbx inbox">
         <h1>${subt}</h1>
