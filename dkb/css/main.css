@@ -39,12 +39,12 @@
 
 /* #main{background-color: pink;} */
 .banner .partbox{height: 530px;}
-.main .intropt .partbox{height: 455px;}
+.main .intropt .partbox{height: 455px;padding: 10px;}
 .intropt .stit{padding-bottom: 0;}
 .itrdesc{display: flex;font-size: 2rem;}
 .itrdesc h3{margin-right: 10px;}
 .itrdesc ul{display: flex;gap: 0 10px;}
-.itrdesc ul li{border: 1px solid #000;width: 30px;text-align: center;border-radius: 50%;cursor: pointer;}
+.itrdesc ul li{border: 1px solid #000;width: 30px;text-align: center;border-radius: 50%;cursor: pointer;height: 30px;}
 /* .itrdesc ul li i{margin: 0 auto;} */
 .intropt p{font-size: 2rem;margin-top: 30px;padding: 23px;color: #555;
 }

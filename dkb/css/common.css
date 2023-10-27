@@ -20,12 +20,13 @@ img{cursor: pointer;}
 .smbx ol li a{font-weight: bold;}
 .smbx h2{font-size: 3.2rem;}
 /* .footer .partbox{height: 100px;} */
-.infolink ul{display: flex;gap: 0 20px;}
+.infolink ul{display: flex;gap: 0 20px;flex-wrap: wrap;}
 .infolink ul li{font-size: 1.2rem;white-space: nowrap;line-height: 3;cursor: pointer;}
-.comboarea select{width: 120px;height: 30px;border-radius: 10px;border: none;background-color: pink;font-size: 1.3rem;}
+.comboarea{text-align: right;}
+.comboarea select{width: 120px;height: 30px;border-radius: 10px;border: none;background-color: pink;font-size: 1.3rem;margin: 3px;}
 .corpinfo{font-style: normal;font-size: 1.3rem;line-height: 2;}
 .snsbox{position: relative;}
-.sns{bottom: -70px;position: absolute;}
+.sns{position: absolute;}
 .sns ul{display: flex;gap: 0 20px;}
 .sns ul li{border: 1px solid #000;width: 30px;text-align: center;border-radius: 50%;cursor: pointer;font-size: 2rem;}
 /* 모바일 햄버거 버튼 */
