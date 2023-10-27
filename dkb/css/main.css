@@ -63,6 +63,7 @@
         box-sizing: border-box;
         border-radius: 5px;
         box-shadow: 0 0 10px cornflowerblue;
+        cursor: pointer;
     }
 .prvbx .partbox p{color: gray;}
 .prvbx .partbox:hover p{color: #000;}

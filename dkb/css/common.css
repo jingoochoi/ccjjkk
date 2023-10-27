@@ -1,6 +1,7 @@
 @charset "utf-8";
 #header{position: relative;z-index: 333;}
 #main{min-height: 800px;}
+img{cursor: pointer;}
 #footer{padding-bottom: 70px;margin-top: 30px;border-top: 1px solid #000;padding-top: 10px;background: url(https://web-cf-image.cjenm.com/public/share/systemmng/site/footermng/footer_bg_tvn-pc.png);}
 .header .partbox{height: 120px;}
 .headerlogo img{margin-top: 30px;width: 123px;}
