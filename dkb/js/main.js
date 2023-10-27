@@ -14,7 +14,10 @@ window.addEventListener('DOMContentLoaded',ldfn)
 function ldfn() {
     // console.log('b')
     startSS()
-    
+    let mcode=0
+    const mbic=()=>{if($(window).width()<=1024)mcode=1;else mcode=0}
+    mbic()
+    $(window).resize(mbic)
     let dcbx=document.querySelectorAll('.descbox')
     dcbx.forEach(e=>{
         e.onwheel=e=>e.stopPropagation()

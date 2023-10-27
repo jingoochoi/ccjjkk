@@ -1,6 +1,9 @@
 @charset "utf-8";
 @media screen and (max-width:1024px) {
     html,body{overflow-x: hidden;}
+    body{padding-top: 59px;}
+    #header{position: fixed;width: 100%;top: 0;left: 0;background-color: #fff;z-index: 131313;}
+    /* 전체메뉴박스 */
     .topmenu,.gnb{display: none;}
     .headerlogo img{
         width: auto;
@@ -19,12 +22,36 @@
     줄경우 x버튼으로 변경 */
     .header.on .ham {
         z-index: 9999;
-        color: #fff;
+        /* color: #fff; */
         transform: scale(1.5);
     }
     .header.on .ham::before {
         content: '×';
     }
+    .gnb {
+        display: block;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        height: calc(100% - 59px);
+        z-index: 9999999;
+        width: 100%;
+        background-color: #fff;
+        transition: top .3s linear;
+    }
+    .header.on .gnb{
+        top: 59px;
+    }
+    .gnb ul {
+        flex-direction: column;
+    }
+    .gnb ul>li>a {
+        font-size: 4vw;
+        padding: 3vw 6vw;
+    }
+    .smenu{position: static;overflow-y: scroll;height: auto;display: none;}
+    .smbx{text-indent: 30px;}
+    .smbx ol{flex-direction: column;}
     .banner .partbox{height: auto;}
     .dkb img{width: 30%;top: 0;}
     .grouppart {
@@ -71,28 +98,9 @@
 @media screen and (max-width:500px) {
     #header{position: fixed;width: 100%;top: 0;left: 0;background-color: #fff;z-index: 131313;}
     /* 전체메뉴박스 */
-.gnb {
-    display: block;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    height: calc(100% - 59px);
-    z-index: 9999999;
-    width: 100%;
-    background-color: #fff;
-    transition: top 3s linear;
-}
-.header.on .gnb{
-    top: 59px;
-}
-.gnb ul {
-    flex-direction: column;
-}
 
-.gnb ul>li>a {
-    font-size: 4vw;
-    padding: 3vw 6vw;
-}
+
+
     body{padding-top: 59px;}
     .stit{padding-bottom: 8vw;font-size: 8vw;}
     .itrdesc{flex-wrap: wrap;}
