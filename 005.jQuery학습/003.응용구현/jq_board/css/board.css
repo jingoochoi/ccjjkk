@@ -93,7 +93,7 @@
 /*짝수번째 배경색 넣기*/
 .dtbl tbody tr:nth-child(even) td {
     /*even 짝수, odd 홀수*/
-    background-color: #F3F3F3;
+    background-color: cornflowerblue;
 }
 
 /*하단 패딩*/
@@ -136,3 +136,4 @@
     background-color: #E0E0E0;
     text-align: center;
 }
+button{cursor: pointer;}
