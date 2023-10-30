@@ -23,8 +23,10 @@ blur()
  */
 const txtf=$('form.logF input[type=text][id!=email2],form.logF input[type=password]')
 txtf.blur(function () {
-    const gbjg=a=>a.replace(/\s/,'')
-    if (gbjg($(this).val())=='') {
+    const gbjg=a=>a.replace(/\s/g,'')
+    let gb=$(this).attr('id')=='mnm'?$(this).val().trim():gbjg($(this).val())
+    $(this).val(gb)
+    if (gb=='') {
         $(this).siblings('.msg').html('입력해라!!!')
         $(this).val('')
     }else{
