@@ -27,15 +27,33 @@ txtf.blur(function () {
     let gb=$(this).attr('id')=='mnm'?$(this).val().trim():gbjg($(this).val())
     $(this).val(gb)
     if (gb=='') {
-        $(this).siblings('.msg').html('입력해라!!!')
+        $(this).siblings('.msg').html('입력해라!!!').removeClass('on')
         $(this).val('')
     }
     else if ($(this).attr('id')=='mid') {
         if(vReg(gb,$(this).attr('id'))){
             // 
-            $(this).siblings('.msg').html('사용가능').css({color:'green'})
+            $(this).siblings('.msg').html('사용가능').addClass('on')
         }else{
-            $(this).siblings('.msg').html('영문자로 시작하는 6~20글자로 입력바람')
+            $(this).siblings('.msg').html('영문자로 시작하는 6~20글자로 입력바람').removeClass('on')
+            // 
+        }
+    }
+    else if ($(this).attr('id')=='mpw') {
+        if(vReg(gb,$(this).attr('id'))){
+            // 
+            $(this).siblings('.msg').html('사용가능').addClass('on')
+        }else{
+            $(this).siblings('.msg').html('특수문자,문자,숫자포함 형태의 5~15자리').removeClass('on')
+            // 
+        }
+    }
+    else if ($(this).attr('id')=='mpw2') {
+        if($(this).val()==$('#mpw').val()){
+            // 
+            $(this).siblings('.msg').html('일치^^').addClass('on')
+        }else{
+            $(this).siblings('.msg').html('해커냐!!!').removeClass('on')
             // 
         }
     }
@@ -44,6 +62,11 @@ txtf.blur(function () {
         // 
     }
     // $(this).attr('id').html('no')
+})
+let nn=1
+$('.noon').css({cursor:'pointer'}).click(function(){
+    $(this).prev().attr('type',nn?'text':'password')
+    nn=nn?0:1
 })
 /*////////////////////////////////////////////////////////
     함수명: vReg (validation with Regular Expression)
