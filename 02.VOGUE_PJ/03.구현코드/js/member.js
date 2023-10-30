@@ -64,8 +64,9 @@ txtf.blur(function () {
     // $(this).attr('id').html('no')
 })
 let nn=1
-$('.noon').css({cursor:'pointer'}).click(function(){
+$('.noon').css({cursor:'pointer',textDecoration:'line-through',opacity:1/2}).click(function(){
     $(this).prev().attr('type',nn?'text':'password')
+    $(this).css({textDecoration:nn?'none':'line-through',opacity:nn?1:1/2})
     nn=nn?0:1
 })
 /*////////////////////////////////////////////////////////
