@@ -17,3 +17,11 @@ top.innerHTML+=aespa.mobtn
 top.parentElement.innerHTML+=aespa.mobx
 $('.hbtn').click(()=>{$('#mobx').slideToggle(300)})
 $('.sbtn').click(()=>{$('.mos').slideToggle(300)})
+/* 
+user text form validation test
+blur()
+ */
+const txtf=$('form.logF input[type=text][id!=email2],form.logF input[type=password]')
+txtf.blur(function () {
+    $(this).attr('id').html('no')
+})
