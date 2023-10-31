@@ -70,12 +70,16 @@ txtf.blur(function () {
 $('#seleml').change(function () {
     if ($(this).val()=='init') {
         $('#email1').siblings('.msg').html('고르라고!!!').removeClass('on')
-        $('#email2').hide().val('').focus()
+        $('#email2').hide()
     }
     else if ($(this).val()=='free') {
         $('#email1').siblings('.msg').html('직접 쓰세요').removeClass('on')
-        $('#email2').show()
-    }else{$('#email2').hide().val('').focus();$('#email1').siblings('.msg').html('').removeClass('on')}
+        $('#email2').show().val('').focus()
+    }else{
+    $('#email2').hide();
+    $('#email1').siblings('.msg').html('').removeClass('on')
+    let cplt=$('#email1').val()+'@'+($('#seleml').val()=='free'?$('#email2').val():$('#seleml').val());
+    emic(cplt)}
 })
 const emic=function (a) {
     if (vReg(a,'eml')) {
