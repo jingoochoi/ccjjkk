@@ -111,6 +111,9 @@ $('#btnj').click((a)=>{
     a.preventDefault()
     pass=true
     $(`form.logF input[type=text][id!=email2],form.logF input[type=password]`).trigger('blur')
+    if (pass) {
+        //
+    }
 })
 /*////////////////////////////////////////////////////////
     함수명: vReg (validation with Regular Expression)
