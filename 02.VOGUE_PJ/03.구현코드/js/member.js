@@ -5,6 +5,7 @@ console.log("%cd","font-size:100px;background-image:linear-gradient(to bottom,bl
 import aespa from './com.js'
 import stayc from './dom.js'
 import cdt1 from './ctgr.json' assert{type:'json'}
+import mcode from './mem.js'
 // 부드러운 스크롤 모듈
 import  {startSS, setpos } from "./smoothScroll23.js";
 // 부드러운 스크롤 적용 //////////
@@ -17,6 +18,25 @@ top.innerHTML+=aespa.mobtn
 top.parentElement.innerHTML+=aespa.mobx
 $('.hbtn').click(()=>{$('#mobx').slideToggle(300)})
 $('.sbtn').click(()=>{$('.mos').slideToggle(300)})
+$('#conf').html(mcode.conf)
+$('#chk_all').change(function(){
+    let ckbx=$(this).prop('checked')
+    /*
+    attr()->normal attr
+    prop()->normal attr+checked true/false
+     */
+    // if (ckbx) {
+    //     // 
+    //     $('.chk').prop('checked',true)
+    // }else $('.chk').prop('checked',false)
+    $('.chk').prop('checked',ckbx)
+})
+$('.chk').change(function () {
+    let nb=$('.chk:checked').length
+    if (nb==3) {
+        $('#chk_all').prop('checked',true)
+    }else $('#chk_all').prop('checked',false)
+})
 /* 
 user text form validation test
 blur()
