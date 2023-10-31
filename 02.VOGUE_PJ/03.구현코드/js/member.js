@@ -53,7 +53,7 @@ txtf.blur(function () {
             // 
             $(this).siblings('.msg').html('일치^^').addClass('on')
         }else{
-            $(this).siblings('.msg').html('해커냐!!!').removeClass('on')
+            $(this).siblings('.msg').html('까먹었냐!!!').removeClass('on')
             // 
         }
     }
@@ -63,6 +63,7 @@ txtf.blur(function () {
     }
     // $(this).attr('id').html('no')
 })
+
 let nn=1
 $('.noon').css({cursor:'pointer',textDecoration:'line-through',opacity:1/2}).click(function(){
     $(this).prev().attr('type',nn?'text':'password')
