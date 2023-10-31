@@ -55,7 +55,7 @@ function svl1(){
     key1=key1.replace('%20&amp;%20',' & ')
     key1=decodeURIComponent(key1)
     const sdt1=cdt1[key1]
-    $('.mainarea').addClass(key1.replace(' & ','-'))
+    $('.mainarea').addClass(key1.replace(' & ','-')).addClass(key1.replace('#',''))
     $('.cattit').html(sdt1['제목'])
     // console.log(key1)
     if (sdt1.메뉴=='없음') {
