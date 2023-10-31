@@ -37,6 +37,10 @@ $('.chk').change(function () {
         $('#chk_all').prop('checked',true)
     }else $('#chk_all').prop('checked',false)
 })
+$('#btnN').click(function () {
+    alert('비동의하셨으므로 메인으로 돌아가🐲')
+    location.href='index.html'
+})
 $('#btnY').click(function () {
     if ($('.chk').first().prop('checked')&&$('.chk').eq(1).prop('checked')) {
         $('#conf').hide()
