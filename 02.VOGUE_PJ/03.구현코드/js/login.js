@@ -17,3 +17,15 @@ top.innerHTML+=aespa.mobtn
 top.parentElement.innerHTML+=aespa.mobx
 $('.hbtn').click(()=>{$('#mobx').slideToggle(300)})
 $('.sbtn').click(()=>{$('.mos').slideToggle(300)})
+$('#sbtn').click(function (a) {
+    a.preventDefault()
+    const spcs=a=>a.replace(/\s/g,'')
+    if (spcs($('#mid').val())=='') {
+        alert('입력해라!!!')
+        $('#mid').val('').focus()
+        $('#mpw').val('')
+    }else{
+        alert('로그인 성공😆')
+        location.replace('index.html')
+    }
+})
