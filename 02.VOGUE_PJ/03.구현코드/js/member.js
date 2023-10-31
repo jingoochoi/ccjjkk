@@ -68,7 +68,14 @@ txtf.blur(function () {
     // $(this).attr('id').html('no')
 })
 $('#seleml').change(function () {
-    
+    if ($(this).val()=='init') {
+        $('#email1').siblings('.msg').html('고르라고!!!').removeClass('on')
+        $('#email2').hide().val('').focus()
+    }
+    else if ($(this).val()=='free') {
+        $('#email1').siblings('.msg').html('직접 쓰세요').removeClass('on')
+        $('#email2').show()
+    }else{$('#email2').hide().val('').focus();$('#email1').siblings('.msg').html('').removeClass('on')}
 })
 const emic=function (a) {
     if (vReg(a,'eml')) {
