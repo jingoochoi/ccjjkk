@@ -81,6 +81,14 @@ $('#seleml').change(function () {
     let cplt=$('#email1').val()+'@'+($('#seleml').val()=='free'?$('#email2').val():$('#seleml').val());
     emic(cplt)}
 })
+$('#email1,#email2').on('keyup',function () {
+    let back=$(this).attr('id')=='email1'?$('#seleml').val():$('#email2').val()
+    if ($('#seleml').val()=='free') {
+        back=$('#email2').val()
+    }
+    let cplt=$('#email1').val()+'@'+back;
+    emic(cplt)
+})
 const emic=function (a) {
     if (vReg(a,'eml')) {
         $('#email1').siblings('.msg').html('메일형식이 맞습니다').addClass('on')
