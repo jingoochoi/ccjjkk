@@ -144,8 +144,8 @@ $('#btnj').click((a)=>{
     $(`form.logF input[type=text][id!=email2],form.logF input[type=password]`).trigger('blur')
     if (pass) {
         alert('🎊가입을 추콰드립니돠🎊')
-        location.replace='login.html'
-    }
+        location.replace('login.html')
+    }else alert('수정해라!!!')
 })
 /*////////////////////////////////////////////////////////
     함수명: vReg (validation with Regular Expression)
