@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS비동기 : 1. 콜백함수</title>
+        <script>
+            /*************************************************************** 
+               [콜백함수란?  "나중에 다시 호출할께!"]
+                콜백은 다른 함수에 인수로 전달되는 함수다.
+                이 방법을 사용하면 함수가 다른 함수를 호출할 수 있다.
+                다른 함수가 완료된 후 콜백 함수를 실행할 수 있다.
+
+                ______________________________________
+
+               [ 콜백은 언제 사용하나?]
+
+                콜백이 정말 빛을 발하는 곳은 하나의 함수가 
+                다른 함수를 기다려야 하는 비동기 함수다!(예: 파일 로드 대기).
+                비동기 함수는 2번 async.html에서 연습한다!
+            ***************************************************************/
+            console.log("%c👩‍🚀👨‍🚀🌊","font-size:30px")
+            function code(a) {
+                document.querySelector('#show').innerHTML+=a+'<br>'
+            }
+            function cheo() {
+                code('공유의 바다')
+            }
+            function next() {
+                code('배두 나와 공유 최진작')
+            }
+            function year(a,b) {
+                let plus=a+b
+                code(plus)
+            }
+            function psts(a,b,c) {
+                let tg=`<img src="${a}" alt="poster" style="width:${b}px">`
+                c(tg)
+            }
+            const gg=[78,134,245,789,990,287,790,887,45,231];
+            const clnb=rmvr(gg,(nb)=>nb>=1000/2)
+            function rmvr(a,b) {
+                const mary=[]
+                for (const x of a) {
+                    if (b(x)) {
+                        // 
+                        mary.push(x)
+                    }
+                }
+                return mary
+            }
+            window.addEventListener('DOMContentLoaded',()=>{
+                cheo()
+                next()
+                year(2000,21)
+                psts('https://image.ytn.co.kr/general/jpg/2021/1129/202111290942307028_d.jpg',1000/2,code)
+                code(clnb)
+            })
+        </script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+            body {
+                background-image: linear-gradient(to bottom, #494949, gray);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                text-align: center;
+            }
+            #show {
+                font-family: "Roboto Condensed", sans-serif;
+                font-size: 5vw;
+                background-image: linear-gradient(to bottom, orange, lime, lightblue, aqua);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-repeat: no-repeat;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="show"></div>
+    </body>
+</html>
