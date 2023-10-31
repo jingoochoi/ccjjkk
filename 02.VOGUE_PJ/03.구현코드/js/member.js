@@ -43,6 +43,7 @@ $('#btnN').click(function () {
 })
 $('#btnY').click(function () {
     if ($('.chk').first().prop('checked')&&$('.chk').eq(1).prop('checked')) {
+        alert('통과')
         $('#conf').hide()
         $('.scont').show()
     }
