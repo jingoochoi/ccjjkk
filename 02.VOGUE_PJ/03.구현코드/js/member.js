@@ -37,6 +37,12 @@ $('.chk').change(function () {
         $('#chk_all').prop('checked',true)
     }else $('#chk_all').prop('checked',false)
 })
+$('#btnY').click(function () {
+    if ($('.chk').first().prop('checked')&&$('.chk').eq(1).prop('checked')) {
+        $('#conf').hide()
+        $('.scont').show()
+    }
+})
 /* 
 user text form validation test
 blur()
