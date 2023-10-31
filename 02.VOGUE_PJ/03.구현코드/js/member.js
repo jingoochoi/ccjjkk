@@ -29,6 +29,7 @@ txtf.blur(function () {
     if (gb=='') {
         $(this).siblings('.msg').html('입력해라!!!').removeClass('on')
         $(this).val('')
+        pass=false
     }
     else if ($(this).attr('id')=='mid') {
         if(vReg(gb,$(this).attr('id'))){
@@ -36,7 +37,7 @@ txtf.blur(function () {
             $(this).siblings('.msg').html('사용가능').addClass('on')
         }else{
             $(this).siblings('.msg').html('영문자로 시작하는 6~20글자로 입력바람').removeClass('on')
-            // 
+            pass=false
         }
     }
     else if ($(this).attr('id')=='mpw') {
@@ -45,7 +46,7 @@ txtf.blur(function () {
             $(this).siblings('.msg').html('사용가능').addClass('on')
         }else{
             $(this).siblings('.msg').html('특수문자,문자,숫자포함 형태의 5~15자리').removeClass('on')
-            // 
+            pass=false
         }
     }
     else if ($(this).attr('id')=='mpw2') {
@@ -54,7 +55,7 @@ txtf.blur(function () {
             $(this).siblings('.msg').html('일치^^').addClass('on')
         }else{
             $(this).siblings('.msg').html('까먹었냐!!!').removeClass('on')
-            // 
+            pass=false
         }
     }
     else if ($(this).attr('id')=='email1') {
@@ -94,6 +95,7 @@ const emic=function (a) {
         $('#email1').siblings('.msg').html('메일형식이 맞습니다').addClass('on')
     }else{
         $('#email1').siblings('.msg').html('아니라고!!!').removeClass('on')
+        pass=false
     }
 }
 let nn=1
@@ -101,6 +103,14 @@ $('.noon').css({cursor:'pointer',textDecoration:'line-through',opacity:1/2}).cli
     $(this).prev().attr('type',nn?'text':'password')
     $(this).css({textDecoration:nn?'none':'line-through',opacity:nn?1:1/2})
     nn=nn?0:1
+})
+// submit button click->action page in form tag.
+// stop it for validation->event.preDft()
+let pass=true
+$('#btnj').click((a)=>{
+    a.preventDefault()
+    pass=true
+    $(`form.logF input[type=text][id!=email2],form.logF input[type=password]`).trigger('blur')
 })
 /*////////////////////////////////////////////////////////
     함수명: vReg (validation with Regular Expression)
