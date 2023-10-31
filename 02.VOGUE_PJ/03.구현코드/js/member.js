@@ -57,13 +57,26 @@ txtf.blur(function () {
             // 
         }
     }
+    else if ($(this).attr('id')=='email1') {
+        let cplt=$('#email1').val()+'@'+($('#seleml').val()=='free'?$('#email2').val():$('#seleml').val())
+        emic(cplt)
+    }
     else{
         $(this).siblings('.msg').empty()
         // 
     }
     // $(this).attr('id').html('no')
 })
-
+$('#seleml').change(function () {
+    
+})
+const emic=function (a) {
+    if (vReg(a,'eml')) {
+        $('#email1').siblings('.msg').html('메일형식이 맞습니다').addClass('on')
+    }else{
+        $('#email1').siblings('.msg').html('아니라고!!!').removeClass('on')
+    }
+}
 let nn=1
 $('.noon').css({cursor:'pointer',textDecoration:'line-through',opacity:1/2}).click(function(){
     $(this).prev().attr('type',nn?'text':'password')
