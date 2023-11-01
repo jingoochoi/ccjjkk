@@ -36,19 +36,39 @@ const ttct=sakura.length
 let pggg=Math.floor(ttct/pgbl)
 let adov=ttct%pgbl
 // console.log(adov)
-$('#board tbody').html('')
-lstn=(pgnb-1)*pgbl
-for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
-    if (i>=ttct) {
-        break
+const update=(a)=>{
+    pgnb=a
+    $('#board tbody').html('')
+    lstn=(pgnb-1)*pgbl
+    for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
+        if (i>=ttct) {
+            break
+        }
+        $('#board tbody').append(`
+        <tr>
+        <td>${addn(lstn)}</td>
+        <td>${sakura[i].tit}</td>
+        <td>${sakura[i].writer}</td>
+        <td>${sakura[i].date}</td>
+        <td>${sakura[i].cnt}</td>
+        </tr>`)
+        
     }
-    $('#board tbody').append(`
-    <tr>
-    <td>${addn(lstn)}</td>
-    <td>${sakura[i].tit}</td>
-    <td>${sakura[i].writer}</td>
-    <td>${sakura[i].date}</td>
-    <td>${sakura[i].cnt}</td>
-    </tr>`)
-    
+    let nn
+    $('.paging').html('')
+    if (adov!=0) {
+        nn=pggg+1
+    }
+    for (let x = 0; x < nn; x++) {
+        $('.paging').append(x+1==pgnb?`<b>${x+1}</b>`:`<a href="#">${x+1}</a>`)
+        if (x<nn-1) {
+            $('.paging').append(' | ')
+        }
+    }
+    $('.paging a').click(function (b) {
+        b.preventDefault()
+        update($(this).html())
+    })
 }
+update(1)
+// $('.paging a').css({cursor:'pointer'})
