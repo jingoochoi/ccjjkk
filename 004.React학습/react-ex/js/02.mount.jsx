@@ -16,7 +16,7 @@ ReactDOM.render(<Home/>,document.querySelector('#root1'))
 
 function Huge() {
     return(
-        <whom.Provider value={}>
+        <whom.Provider value={{}}>
             <Habj></Habj>
         </whom.Provider>
     )
