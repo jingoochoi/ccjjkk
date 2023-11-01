@@ -20,6 +20,7 @@ function Huge() {
     const [val,setVal]=React.useState('백두산')
     const cg=(a)=>{
         setVal(a)
+        // console.log(a)
     }
     return(
         <whom.Provider value={{val,cg,data}}>

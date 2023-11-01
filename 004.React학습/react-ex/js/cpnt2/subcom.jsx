@@ -22,8 +22,8 @@ function Yagi() {
         <img src={seld.이미지} alt={maum.val} style={{width:'100%'}} />
         <div style={{position:'absolute',
         width:'50%',
-        bottom: 'calc(3%*3)',
-        left:'1.7%',
+        bottom: 'calc(2.2vh*4)',
+        left:'1vw',
         padding:'15px',
         fontSize:'16px',
         color:'#fff',
@@ -42,7 +42,7 @@ function Yagi() {
             </ul>
         </div>
         <div>
-            {btdt.map(a=><button onClick={()=>{maum.cg()}} style={{cursor:'pointer',height:'calc(30px*2)'}}>{a.이름}mount</button>)}
+            {btdt.map(a=><button onClick={()=>{maum.cg()}} style={{cursor:'pointer',height:'calc(30px*2)'}}>{a.이름}</button>)}
         </div>
     </div>)
 }
