@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>JS비동기 : 4. Async / Await 사용법</title>
         <script>
+            console.log("%c👧🚪","font-size:100px")
          /******************************************************************* 
               [Async/Await란? "약속을 좀 더 쉽게!"]
 
@@ -67,7 +68,38 @@
                 * asynchronous 동시에 존재하지 않는
                 * await 기다리다
          *******************************************************************/
-
+            function code(a) {
+                document.querySelector('#show').innerHTML+=a+'<br>'
+            }
+            async function show() {
+                const wait=new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve('manage the door')
+                    }, 3000);
+                })
+                code(await wait)//Promise obj use await returning resolve first and then next things are valid
+                code(`<img src="https://cdn.hankooki.com/news/photo/202304/67837_90529_1680302888.jpg" style="height:70vh" alt="스즈메의 문단속">`)//await was already used so don't need to use it here
+            }
+            show()
+            async function file() {
+                const file=new Promise((resolve) => {
+                const ajas=new XMLHttpRequest()
+                ajas.open('get','https://koreascience.kr/article/JAKO201812055796720.pdf')
+                ajas.onload=function(){
+                    // console.log(ajas.status,this)
+                    if (ajas.status==200) {
+                        resolve(ajas.responseURL)
+                    }
+                }
+                ajas.send()
+            })
+            const text=(a)=>{
+                // console.log(a)
+                document.querySelector('#doc').innerHTML=`<iframe src="${a}" style="width:100%;border:none;height:100%"></iframe>`
+            }
+            text(await file)
+            }
+            file()
         </script>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
