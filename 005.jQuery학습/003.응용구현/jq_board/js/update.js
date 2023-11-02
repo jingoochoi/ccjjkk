@@ -1,5 +1,11 @@
 import sakura from './data.json' assert{type:'json'}
 sakura.sort((a,b)=>b.idx-a.idx)
+
+if (!localStorage.getItem('bddt')) {
+    localStorage.setItem('bddt',JSON.stringify(sakura))
+}
+
+let usdt=JSON.parse(localStorage.getItem('bddt'))
 let lstn=0
 const addn=a=>lstn=++a
 // $('#board tbody').html(sakura.map(a=>`
