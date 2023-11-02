@@ -136,6 +136,13 @@
                 }
                 ajas.send()
             })
+            file.then(function (a) {
+                // console.log(a)
+                code('load complete')
+                document.querySelector('#doc').innerHTML=`<iframe src="${a}" style="width:100%;border:none;height:100%"></iframe>`
+            },function (a) {
+                // console.log(a)
+            })
         })
             
         </script>
