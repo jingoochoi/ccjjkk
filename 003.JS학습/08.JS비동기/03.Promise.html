@@ -101,8 +101,42 @@
                     해결방법은 같은 도메인의 파일을 요청하는 것이다! (외부도메인 파일을 같은 서버에 저장하여 사용하는 경우가 많다!)
 
          *******************************************************************/
-
-        
+        function code(a) {
+            document.querySelector('#show').innerHTML+=a+'<br>'
+        }
+        window.addEventListener('DOMContentLoaded',()=>{
+            const prms=new Promise(function (a,b) {
+                let pass=1
+                if (pass) {
+                    a('success')
+                }else b('error')
+            })
+            prms.then(function (a) {
+                code(a)
+            },function (a) {
+                code(a)
+            })
+            const wait=new Promise(function (a) {
+                setTimeout(function () {
+                    a('oh my 神')
+                },3000)
+            })
+            wait.then(function (a) {
+                code('와우'+a)
+                code(`<img src="https://ojsfile.ohmynews.com/STD_IMG_FILE/2014/0103/IE001663873_STD.jpg" style="height:70vh" alt="약속">`)
+            })
+            const file=new Promise((resolve, reject) => {
+                const ajas=new XMLHttpRequest()
+                ajas.open('get','react-beginners-handbook.pdf')
+                ajas.onload=function(){
+                    // console.log(ajas.status,this)
+                    if (ajas.status==200) {
+                        resolve(ajas.responseURL)
+                    }else reject(ajas.statusText)
+                }
+                ajas.send()
+            })
+        })
             
         </script>
         <style>
