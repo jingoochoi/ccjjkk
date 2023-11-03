@@ -1,0 +1,19 @@
+0.definition
+    1.constructure-element
+    2.object-data
+    3.function-module
+1.main component-combine the components,useState,method
+    module
+    (1)constructure
+    (2)object
+    (3)function
+2.gnb menu component(Tara)-gnb menu and logo
+    module
+    (1)constructure
+    (2)object
+    (3)function
+3.list component-item page data(->list),item title lnb
+    module
+    (1)constructure
+    (2)object
+    (3)function

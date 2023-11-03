@@ -1,0 +1,21 @@
+[react partially]
+1.by cdn
+2.checking
+    (1)standard:related to data update
+    item menu and content box
+    (2)to component
+    html->component(react)
+    departing
+    html data->array and object data
+3.page key
+useState(Hook)
+key of data(?=)
+4.event method
+setting event then connecting the method
+5.process
+    (1)remove component element
+    (2)add react library
+    (3)make component and render
+    (4)select the key and register to useState
+    (5)connecting the method to component
+    (6)checking the render and setting the order
