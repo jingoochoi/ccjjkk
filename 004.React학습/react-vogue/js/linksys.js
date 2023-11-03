@@ -5,7 +5,7 @@ $(()=>{
     logo.click(()=>{
         location.href='index.html'
     })
-    gnb.click(e=>{location.href='ctgr.html?cat='+encodeURIComponent($(e.target).html().toLowerCase())})
+    gnb.click(e=>{location.href='ctgr.html?cat='+encodeURIComponent($(e.target).text().toLowerCase())})
     const sns1=$('.sns a:last,.mosns a:last')
     sns1.before(`<a href="#" class="fa-solid fa-key">
     <span class="ir">로그인</span>
