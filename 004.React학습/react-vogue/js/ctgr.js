@@ -18,7 +18,15 @@ import sakura from './ctgrdt.js'
 // foot.innerHTML=aespa.footarea
 // top.innerHTML+=aespa.mobtn
 // top.parentElement.innerHTML+=aespa.mobx
-
+function Root() {
+    return(
+        <React.Fragment>
+            <Tara></Tara>
+            <Main></Main>
+            <Foot></Foot>
+        </React.Fragment>
+    )
+}
 function Tara() {
     React.useLayoutEffect(link)
     const gnbt=['FASHION','BEAUTY','LIVING','PEOPLE','VIDEO','RUNWAY','TIME & GEM','SHOPPING']
@@ -164,17 +172,17 @@ function List(p) {
 function Foot() {
     return(
         <React.Fragment>
-            <div class="blogo">
+            <div className="blogo">
                 <img src="./images/footer_logo.png" alt="하단로고"/>
             </div>
 {/* <!-- 3-2.회사주소 --> */}
-            <address class="addr">
+            <address className="addr">
                 WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. 
                 ALL RIGHTS RESERVED. VOGUE.COM KOREA IS OPERATED 
                 BY DOOSAN MAGAZINE.
             </address>
 {/* <!-- 3-3.하단링크 --> */}
-            <ul class="blink">
+            <ul className="blink">
                 <li>
                     <a href="#">정기구독</a>
                 </li>
