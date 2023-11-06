@@ -145,29 +145,29 @@ function Sbtt(p) {
 }
 ReactDOM.render(<Main/>,document.querySelector('.mainarea'))
 function List(p) {
-
+    //dangerous~HTML=해킹 우려로 데이터 안의 태그를 불편하게 적용함.->태그를 빼고 배열 데이터로 나눠 태그 안에 삽입
     return(
         <div className={"catcon "+p.clsn}>
             <section className="pt2">
                 <div className="cbx bgi bg1-1">
-                    <h2>{p.tit[0]}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html:p.tit[0]}}>{}</h2>
                 </div>
                 <div className="cbx bgi bg1-2">
-                    <h2>{p.tit[1]}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html:p.tit[1]}}>{}</h2>
                 </div>
                 <div className="cbx bgi bg1-3">
-                    <h2>{p.tit[2]}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html:p.tit[2]}}>{}</h2>
                 </div>
             </section>
             <section className="pt2">
                 <div className="cbx bgi bg2-1">
-                    <h2>{p.tit[3]}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html:p.tit[3]}}>{}</h2>
                 </div>
                 <div className="cbx bgi bg2-2">
-                    <h2>{p.tit[4]}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html:p.tit[4]}}>{}</h2>
                 </div>
                 <div className="cbx bgi bg2-3">
-                    <h2>{p.tit[5]}</h2>
+                    <h2 dangerouslySetInnerHTML={{__html:p.tit[5]}}>{}</h2>
                 </div>
             </section>
         </div>
