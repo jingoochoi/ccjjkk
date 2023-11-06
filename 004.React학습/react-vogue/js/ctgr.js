@@ -11,6 +11,8 @@ import  {startSS, setpos } from "./smoothScroll23.js";
 import Tara from './cpnt/mymy.jsx'
 import Foot from './cpnt/foot.jsx'
 import Main from "./cpnt/mani.jsx";
+$('.hbtn').click(()=>{$('#mobx').slideToggle(300)})
+$('.sbtn').click(()=>{$('.mos').slideToggle(300)})
 // 부드러운 스크롤 적용 //////////
 // startSS();
 // const top=stayc.qs('.toparea')

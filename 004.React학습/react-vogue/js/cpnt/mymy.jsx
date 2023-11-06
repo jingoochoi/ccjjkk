@@ -104,17 +104,19 @@ export default function Tara(p) {
       </header>
       <Mbib></Mbib>
         </div>
-  );
+  );y
 }
 function Mbis() {
+  const sld1=()=>{$('#mobx').slideToggle(300)}
+  const sld2=()=>{$('.mos').slideToggle(300)}
   return(
       <React.Fragment>
           {/* <!-- 모바일용 햄버거버튼 --> */}
-      <a href="#" className="mobtn hbtn fi fi-nav-icon">
+      <a href="#" className="mobtn hbtn fi fi-nav-icon" onClick={sld1}>
           <span className="ir">GNB button</span>
       </a>
       {/* <!-- 모바일용 검색버튼 --> */}
-      <a href="#" className="mobtn sbtn fi fi-search">
+      <a href="#" className="mobtn sbtn fi fi-search" onClick={sld2}>
           <span className="ir">search</span>
       </a>
       </React.Fragment>
