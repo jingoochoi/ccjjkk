@@ -8,7 +8,7 @@
 // import cdt1 from './ctgr.json' assert{type:'json'}
 // 부드러운 스크롤 모듈
 import  {startSS, setpos } from "./smoothScroll23.js";
-import Tara from './cpnt/top.jsx'
+import Tara from './cpnt/mymy.jsx'
 import Foot from './cpnt/foot.jsx'
 import sakura from './ctgrdt.js'
 // 부드러운 스크롤 적용 //////////
