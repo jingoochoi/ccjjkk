@@ -1,6 +1,10 @@
 export default function Foot() {
     return(
         <React.Fragment>
+            <div id="footarea">
+            <footer class="footarea ibx comarea">
+
+            
             <div className="blogo">
                 <img src="./images/footer_logo.png" alt="하단로고"/>
             </div>
@@ -25,6 +29,11 @@ export default function Foot() {
                     <a href="#">개인정보 처리방침</a>
                 </li>
             </ul>
+            </footer>
+        </div>
+        <a href="#" class="tbtn fi fi-angle-up">
+        <span class="ir">위로가기버튼</span>
+    </a>
         </React.Fragment>
     )
 }
