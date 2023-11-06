@@ -21,6 +21,8 @@ import sakura from './ctgrdt.js'
 
 function Tara() {
     React.useLayoutEffect(link)
+    const gnbt=['FASHION','BEAUTY','LIVING','PEOPLE','VIDEO','RUNWAY','TIME & GEM','SHOPPING']
+    const mncl=(f)=>{}
     return(
         <React.Fragment>
             <div className="tmenu">
@@ -75,30 +77,10 @@ function Tara() {
 {/* <!-- 1-3.GNB박스 --> */}
 <nav className="gnb">
     <ul>
-        <li>
-            <a href="#">FASHION</a>
-        </li>
-        <li>
-            <a href="#">BEAUTY</a>
-        </li>
-        <li>
-            <a href="#">LIVING</a>
-        </li>
-        <li>
-            <a href="#">PEOPLE</a>
-        </li>
-        <li>
-            <a href="#">VIDEO</a>
-        </li>
-        <li>
-            <a href="#">RUNWAY</a>
-        </li>
-        <li>
-            <a href="#">TIME &amp; GEM</a>
-        </li>
-        <li>
-            <a href="#">SHOPPING</a>
-        </li>
+        {gnbt.map(p=><li>
+            <a href="#" onClick={()=>{mncl(p)}}>{p}</a>
+        </li>)}
+        
         <li>
             {/* <!-- 돋보기 검색버튼 --> */}
             <i href="#" className="fi fi-search">
@@ -116,11 +98,14 @@ function Main() {
     const name=decodeURIComponent(prmt.get('cat'))
     // name=name.replace('&amp;','&')
     // console.log(name)
-    const sdt1=sakura[name]
+    const [now,setNow]=React.useState(name)
+    const sdt1=sakura[now]
     // console.log(sdt1)
+    const chgs=()=>{sets('living')}
     return(
         <React.Fragment>
-            <Sbtt tit={sdt1['제목']} menu={sdt1['메뉴']}/>
+            <Sbtt tit={sdt1['제목']} menu={sdt1['메뉴']} />
+            <button onClick={chgs}>go</button>
             <List clsn={sdt1['경로']} tit={sdt1['타이틀']}/>
         </React.Fragment>
     )
