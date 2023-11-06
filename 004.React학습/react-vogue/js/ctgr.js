@@ -20,10 +20,21 @@ import Main from "./cpnt/mani.jsx";
 // top.innerHTML+=aespa.mobtn
 // top.parentElement.innerHTML+=aespa.mobx
 function Root() {
+    const prmt=new URLSearchParams(location.search)//searching parameter obj
+    const name=decodeURIComponent(prmt.get('cat'))
+    // name=name.replace('&amp;','&')
+    // console.log(name)
+    // if (!name) {
+    //     location.href='index.html'
+    // }
+    const [now,setNow]=React.useState(name)
+    const cats=(v)=>{
+        setNow(v)
+    }
     return(
         <React.Fragment>
-            <Tara></Tara>
-            <Main></Main>
+            <Tara item={cats}></Tara>
+            <Main ctgr={now}></Main>
             <Foot></Foot>
         </React.Fragment>
     )

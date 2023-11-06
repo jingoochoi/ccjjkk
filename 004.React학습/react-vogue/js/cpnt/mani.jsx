@@ -1,19 +1,15 @@
 import sakura from '../ctgrdt.js'
 // console.log(sakura)
-export default function Main() {
-    const prmt=new URLSearchParams(location.search)//searching parameter obj
-    const name=decodeURIComponent(prmt.get('cat'))
-    // name=name.replace('&amp;','&')
-    // console.log(name)
-    const [now,setNow]=React.useState(name)
-    const sdt1=sakura[now]
+export default function Main(p) {
+    
+    const sdt1=sakura[p.ctgr]
     // console.log(sdt1)
-    const chgs=()=>{sets('living')}
+    // const chgs=()=>{sets('living')}
     return(
         <div id="mainarea">
             <main class="mainarea ibx">
             <Sbtt tit={sdt1['제목']} menu={sdt1['메뉴']} />
-            <button onClick={chgs}>go</button>
+            
             <List clsn={sdt1['경로']} tit={sdt1['타이틀']}/>
             </main>
         </div>

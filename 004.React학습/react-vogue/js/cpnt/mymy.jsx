@@ -1,6 +1,6 @@
 import { link } from "../linksys2.js";
 // console.log(link)
-export default function Tara() {
+export default function Tara(p) {
   React.useLayoutEffect(link);
   const gnbt = [
     "FASHION",
@@ -12,7 +12,9 @@ export default function Tara() {
     "TIME & GEM",
     "SHOPPING",
   ];
-  const mncl = (f) => {};
+  const mncl = (f) => {
+    p.item(f.toLowerCase())
+  };
   return (
     
       <div id="toparea">
