@@ -1,7 +1,7 @@
 // 테스트 JS
-// console.log("%c　👩\n  👗\n","font-size:100px;text-align:center")
+console.log("%c　👩\n  👗\n","font-size:100px;text-align:center")
 // console.log("%cd","font-size:100px;background-image:linear-gradient(to bottom,blue,blue 50%,yellow 51%,yellow);padding-left:100px;padding-right:100px;line-height:1.5;color:transparent",'\npray for Ukraine')
-// console.log("%c거품이 %cVogueVogue","font-size:30px","color:red;font-size:30px")
+console.log("%c거품이 %cVogueVogue","font-size:30px","color:red;font-size:30px")
 // console.log("%c●","font-size:130px;color:red;padding-left:100px;padding-right:100px;border:1px solid black;line-height:1.5;")
 // import aespa from './com.js'
 // import stayc from './dom.js'
