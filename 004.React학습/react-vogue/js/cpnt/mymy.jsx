@@ -1,7 +1,7 @@
 import { link } from "../linksys2.js";
 // console.log(link)
 export default function Tara(p) {
-  React.useLayoutEffect(link);
+  React.useEffect(link,[]);//when click gnb,no-repeat sns
   const gnbt = [
     "FASHION",
     "BEAUTY",
