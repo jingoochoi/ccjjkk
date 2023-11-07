@@ -2,7 +2,7 @@ import { link } from "../linksys2.js";
 // console.log(link)
 export default function Tara(p) {
   React.useEffect(link,[]);//when click gnb,no-repeat sns
-  
+  const gogo=(k)=>p.item(k)
   
   return (
     
@@ -66,14 +66,14 @@ export default function Tara(p) {
         </a>
       </h1>
       {/* <!-- 1-3.GNB박스 --> */}
-      <Menu></Menu>
+      <Menu memo={gogo}></Menu>
       <Mbis></Mbis>
       </header>
       <Mbib></Mbib>
         </div>
   );
 }
-function Menu() {
+function Menu(p) {
   const gnbt = [
     "FASHION",
     "BEAUTY",
@@ -85,7 +85,7 @@ function Menu() {
     "SHOPPING",
   ];
   const mncl = (f) => {
-    p.item(f.toLowerCase())
+    p.memo(f.toLowerCase())
   };
   return(
     <nav className="gnb">
