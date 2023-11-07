@@ -2,19 +2,8 @@ import { link } from "../linksys2.js";
 // console.log(link)
 export default function Tara(p) {
   React.useEffect(link,[]);//when click gnb,no-repeat sns
-  const gnbt = [
-    "FASHION",
-    "BEAUTY",
-    "LIVING",
-    "PEOPLE",
-    "VIDEO",
-    "RUNWAY",
-    "TIME & GEM",
-    "SHOPPING",
-  ];
-  const mncl = (f) => {
-    p.item(f.toLowerCase())
-  };
+  
+  
   return (
     
       <div id="toparea">
@@ -77,7 +66,29 @@ export default function Tara(p) {
         </a>
       </h1>
       {/* <!-- 1-3.GNB박스 --> */}
-      <nav className="gnb">
+      <Menu></Menu>
+      <Mbis></Mbis>
+      </header>
+      <Mbib></Mbib>
+        </div>
+  );
+}
+function Menu() {
+  const gnbt = [
+    "FASHION",
+    "BEAUTY",
+    "LIVING",
+    "PEOPLE",
+    "VIDEO",
+    "RUNWAY",
+    "TIME & GEM",
+    "SHOPPING",
+  ];
+  const mncl = (f) => {
+    p.item(f.toLowerCase())
+  };
+  return(
+    <nav className="gnb">
         <ul>
           {gnbt.map((p) => (
             <li>
@@ -100,11 +111,7 @@ export default function Tara(p) {
           </li>
         </ul>
       </nav>
-      <Mbis></Mbis>
-      </header>
-      <Mbib></Mbib>
-        </div>
-  );y
+  )
 }
 function Mbis() {
   const sld1=()=>{$('#mobx').slideToggle(300)}
