@@ -1,8 +1,9 @@
+import { ctxt } from "./ctxt.jsx";
 import { link } from "../linksys2.js";
 // console.log(link)
 export default function Tara(p) {
   React.useEffect(link,[]);//when click gnb,no-repeat sns
-  const gogo=(k)=>p.item(k)
+  // const gogo=(k)=>p.item(k)
   
   return (
     
@@ -66,7 +67,7 @@ export default function Tara(p) {
         </a>
       </h1>
       {/* <!-- 1-3.GNB박스 --> */}
-      <Menu memo={gogo}></Menu>
+      <Menu></Menu>
       <Mbis></Mbis>
       </header>
       <Mbib></Mbib>
@@ -74,6 +75,7 @@ export default function Tara(p) {
   );
 }
 function Menu(p) {
+  const gnbc=React.useContext(ctxt)
   const gnbt = [
     "FASHION",
     "BEAUTY",
@@ -85,7 +87,8 @@ function Menu(p) {
     "SHOPPING",
   ];
   const mncl = (f) => {
-    p.memo(f.toLowerCase())
+    // p.memo(f.toLowerCase())
+    gnbc.cats(f.toLowerCase())
   };
   return(
     <nav className="gnb">

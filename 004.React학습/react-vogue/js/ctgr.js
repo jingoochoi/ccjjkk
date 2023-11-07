@@ -8,6 +8,7 @@ console.log("%c거품이 %cVogueVogue","font-size:30px","color:red;font-size:30p
 // import cdt1 from './ctgr.json' assert{type:'json'}
 // 부드러운 스크롤 모듈
 import  {startSS, setpos } from "./smoothScroll23.js";
+import { ctxt } from "./cpnt/ctxt.jsx";
 import Tara from './cpnt/mymy.jsx'
 import Foot from './cpnt/foot.jsx'
 import Main from "./cpnt/mani.jsx";
@@ -34,11 +35,11 @@ function Root() {
         setNow(v)
     }
     return(
-        <React.Fragment>
-            <Tara item={cats}></Tara>
+        <ctxt.Provider value={{cats}}>
+            <Tara></Tara>
             <Main ctgr={now}></Main>
             <Foot></Foot>
-        </React.Fragment>
+        </ctxt.Provider>
     )
 }
 ReactDOM.render(<Root></Root>,document.querySelector('#root'))
