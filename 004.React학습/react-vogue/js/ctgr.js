@@ -33,6 +33,7 @@ function Root() {
     const [now,setNow]=React.useState(name)
     const cats=(v)=>{
         setNow(v)
+        history.pushState(null,null,'?cat='+encodeURIComponent(v))
     }
     return(
         <ctxt.Provider value={{cats}}>
