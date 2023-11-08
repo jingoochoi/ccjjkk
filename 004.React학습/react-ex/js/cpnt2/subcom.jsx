@@ -42,7 +42,7 @@ function Yagi() {
             </ul>
         </div>
         <div>
-            {btdt.map(a=><button onClick={()=>{maum.cg()}} style={{cursor:'pointer',height:'calc(30px*2)'}}>{a.이름}</button>)}
+            {btdt.map(a=><button onClick={()=>{maum.cg()}} style={{cursor:'pointer',height:'calc(30px*2)'}}>{a.이름}mount</button>)}
         </div>
     </div>)
 }
