@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          🎨
+          🌍지구는 둥그니까🌍
         </a>
       </header>
     </div>
