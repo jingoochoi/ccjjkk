@@ -1,6 +1,14 @@
+// import React from "react";
+
 export default function Foot() {
+    const[cgft,setCgft]=React.useState(0)
     return(
-        <Ftmm></Ftmm>
+        <React.Fragment>
+            <div style={{textAlign:'center'}}>
+                <button onClick={()=>{setCgft(cgft?0:1)}}>logo</button>
+            </div>
+            <Ftmm st={cgft}></Ftmm>
+        </React.Fragment>
     )
 }
 const Ftmm = React.memo((p) => {
@@ -10,11 +18,11 @@ const Ftmm = React.memo((p) => {
 
         
         <div className="blogo">
-            <img src="./images/footer_logo.png" alt="하단로고"/>
+            <img src={p.st==0?"./images/footer_logo.png":'https://media.tenor.com/roL8BtIs724AAAAd/vogue-celine-vogue.gif'} alt="하단로고"/>
         </div>
 {/* <!-- 3-2.회사주소 --> */}
         <address className="addr">
-            WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. 
+            {p.st}WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. 
             ALL RIGHTS RESERVED. VOGUE.COM KOREA IS OPERATED 
             BY DOOSAN MAGAZINE.
         </address>
