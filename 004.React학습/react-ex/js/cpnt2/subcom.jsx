@@ -18,7 +18,8 @@ function Yagi() {
     width:'60%',
     margin:'20px auto',
     textAlign:'center'}}>
-        <h1>{maum.val}</h1>
+        <h1>{maum.val}{(maum.val=='백두산'||maum.val=='후지산')&&
+            <Mage></Mage>}</h1>
         <img src={seld.이미지} alt={maum.val} style={{width:'100%'}} />
         <div style={{position:'absolute',
         width:'50%',
@@ -42,8 +43,13 @@ function Yagi() {
             </ul>
         </div>
         <div>
-            {btdt.map(a=><button onClick={()=>{maum.cg()}} style={{cursor:'pointer',height:'calc(30px*2)'}}>{a.이름}mount</button>)}
+            {btdt.map(a=><button onClick={()=>{maum.cg(a.이름)}} style={{cursor:'pointer',height:'calc(30px*2)'}}>{a.이름}mount</button>)}
         </div>
     </div>)
+}
+function Mage() {
+    return(
+        <img src={'https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L2hpcHBvdW5pY29ybl9tb3VudGFpbl9pY29uX3NpbGhvdWV0dGVfbW9ub3RvbmVfc2ltcGxlX2Flc3RoZXRpY184MDFlMzliNy00MmMwLTQzZjYtYWQyNS04N2IyNjkxYTM3NTgucG5n.png'} alt="image" style={{width:'100px'}}></img>
+    )
 }
 export default Yagi
