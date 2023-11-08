@@ -1,3 +1,4 @@
+
 import { whom } from "./prvd.jsx";
 function Yagi() {
     const maum=React.useContext(whom)
@@ -48,6 +49,12 @@ function Yagi() {
     </div>)
 }
 function Mage() {
+    React.useEffect(()=>{
+        // console.log('b')
+        return(()=>{
+            alert('the most high')
+        })
+    },[])
     return(
         <img src={'https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L2hpcHBvdW5pY29ybl9tb3VudGFpbl9pY29uX3NpbGhvdWV0dGVfbW9ub3RvbmVfc2ltcGxlX2Flc3RoZXRpY184MDFlMzliNy00MmMwLTQzZjYtYWQyNS04N2IyNjkxYTM3NTgucG5n.png'} alt="image" style={{width:'100px'}}></img>
     )
