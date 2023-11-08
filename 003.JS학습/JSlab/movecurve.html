@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curve move</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+        .bx{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40vw;
+            aspect-ratio: 1;
+            /* height: 40vw; */
+            border: 2px solid pink;
+            border-radius: 50%;
+            transition: 1s ease-in-out;
+        }
+        .tg{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            background-image: url(https://img.freepik.com/free-vector/planet-earth_1308-82523.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699315200&semt=sph);
+            background-position: center center;
+            background-size: cover;
+            transition: 1s linear;
+
+        }
+        .sun{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: url(https://media.istockphoto.com/id/1354219060/ko/%EB%B2%A1%ED%84%B0/%ED%83%9C%EC%96%91-%EB%B2%A1%ED%84%B0-%EB%A7%8C%ED%99%94-%EC%9B%B9-%EB%94%94%EC%9E%90%EC%9D%B8%EC%9A%A9-%EB%B2%A1%ED%84%B0-%EB%A1%9C%EA%B3%A0%EC%9E%85%EB%8B%88%EB%8B%A4-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98.jpg?s=612x612&w=0&k=20&c=jX3mRRc9AuwDTOSDSc1NMU-ltbDOd69-y-oN7Onwe3Y=);
+            background-position: center center;
+            background-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <div class="bx">
+        <div class="sun"></div>
+        <div class="tg"></div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+             /****************************************************** 
+                [ CSS로 곡선이동하기 ] 
+                1. 우선 이동 위치값 top, left를 지정한다
+                2. 이동시에 top과 left의 이징값을 반대로 설정한다
+                조합의 예)
+                    top -> ease-in / left -> ease-out
+                    top -> ease-out / left -> ease-in
+                3. 곡선의 원리:
+                    -> 직선이동시 top/left방향으로 처음에 느리게/빠르게
+                    혹은 나중에 느리게/빠르게 설정하면 이동시 곡선경로를
+                    그리게 된다!
+                
+                ******************************************************/
+            const tg=document.querySelector('.tg')
+            rtt1()
+            function rtt1(){
+                setTimeout(() => {
+                    tg.style.top=0
+                    tg.style.left='50%'
+                    tg.style.transition='top 1s ease-out,left 1s ease-in'
+                }, 0);
+                setTimeout(() => {
+                    tg.style.top='50%'
+                    tg.style.left='100%'
+                    tg.style.transition='top 1s ease-in,left 1s ease-out'
+                }, 1000);
+                setTimeout(() => {
+                    tg.style.top='100%'
+                    tg.style.left='50%'
+                    tg.style.transition='top 1s ease-out,left 1s ease-in'
+                }, 2000);
+                setTimeout(() => {
+                    tg.style.top='50%'
+                    tg.style.left=0
+                    tg.style.transition='top 1s ease-in,left 1s ease-out'
+                }, 3000);
+                setTimeout(() => {
+                    rtt1()
+                }, 2000*2);
+            };
+            const size=[10,30,20,20*2,20,30]
+            const bx=document.querySelector('.bx')
+            let nb=0
+            setInterval(() => {
+                bx.style.width=size[nb]+'vw'
+                nb++
+                if (nb>size.length-1) {
+                    nb=0
+                }
+            }, 1000);
+        })
+    </script>
+</body>
+</html>
