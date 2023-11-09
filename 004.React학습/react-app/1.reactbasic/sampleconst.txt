@@ -32,6 +32,7 @@ index.html 이 포함된 메인 페이지 폴더
 3. src : 
 public 에서 사용하는 모듈 저장 폴더
 -> components files and js
+-> css used in components
 
 4. package.json
 개발환경에 설치된 파일을 등록(관리)
