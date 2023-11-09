@@ -6,7 +6,7 @@ export const isrc = {
     movies:"./images/dcm25.jpg",
     news:"./images/dcm29.jfif",
     video:"https://www.youtube-nocookie.com/embed/fXEOXVZIQVM?wmode=opaque&controls=&modestbranding=1&rel=0&showinfo=0&color=white&autohide=1&enablejsapi=1&origin=https%3A%2F%2Fwww.dc.com",
-    ost:'https://www.youtube.com/watch?v=-0HH-DH9YA0',
+    ost:"https://www.youtube.com/embed/-0HH-DH9YA0",
     // 로고
     logo: "./images/svg/dc-logo.svg",
     // 에러페이지
