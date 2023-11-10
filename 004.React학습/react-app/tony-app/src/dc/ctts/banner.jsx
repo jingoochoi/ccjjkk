@@ -45,7 +45,7 @@ function sld1() {
             cl=0
         }, 1000);
         if (e.key==='ArrowRight') {
-            console.log('b')
+            // console.log('b')
             $('.slider').animate({left:'-100%'},300,'linear',()=>{
                 $('.slider').append($('.slider').find('li').first()).css({left:0})
             })
