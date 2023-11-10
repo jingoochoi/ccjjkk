@@ -7,7 +7,7 @@ import { Move } from "../ctts/move";
 import { News } from "../ctts/news";
 import { Osts } from "../ctts/osts";
 import { Vdos } from "../ctts/vdos";
-
+import { Swps } from "../plugin/swps";
 export function Main(p) {
     return(
         <main className="cont">
@@ -38,6 +38,10 @@ export function Main(p) {
             {
                 p.meno=='VIDEO'&&
                 <Vdos ctgr={p.meno}/>
+            }
+            {
+                p.meno=='SWIPER'&&
+                <Swps ctgr={p.meno}/>
             }
             {
                 p.meno=='OST'&&
