@@ -36,6 +36,37 @@ function sld1() {
             $('.indic').find('li').eq(nb).addClass('on').siblings().removeClass('on')
         }
     })
+    $(document).keydown(function (e) {
+        if (cl) {
+            return
+        }
+        cl=1
+        setTimeout(() => {
+            cl=0
+        }, 1000);
+        if (e.key==='ArrowRight') {
+            console.log('b')
+            $('.slider').animate({left:'-100%'},300,'linear',()=>{
+                $('.slider').append($('.slider').find('li').first()).css({left:0})
+            })
+            nb++
+            if (nb>$('.indic li').length-1) {
+                nb=0
+                $('.indic').find('li').first().addClass('on')
+            }
+            $('.indic').find('li').eq(nb).addClass('on').siblings().removeClass('on')
+        }
+        if (e.key=='ArrowLeft') {
+            $('.slider').prepend($('.slider').find('li').last()).css({left:'-100%'}).animate({left:0},300,'linear')
+            $('.indic').find('li.on').removeClass('on').prev().addClass('on')
+            nb--
+            if (nb<0) {
+                nb=$('.indic li').length-1
+                $('.indic').find('li').last().addClass('on')
+            }
+            $('.indic').find('li').eq(nb).addClass('on').siblings().removeClass('on')
+        }
+    })
 } 
 export function Bann(p) {
     useEffect(()=>{
