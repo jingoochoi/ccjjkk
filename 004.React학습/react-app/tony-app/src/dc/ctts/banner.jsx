@@ -41,7 +41,11 @@ export function Bann(p) {
     useEffect(()=>{
         sld1()
     })
-    const make=(d)=>d.map((a,b)=><li key={b}><img src={a.src} alt="img" /></li>)
+    const make=(d)=>d.map((a,b)=>
+    <li key={b}>
+        <img src={a.src} alt="img" />
+        <section className="bantit"><h3>{a.tit1}</h3><h2>{a.tit2}</h2><p>{a.cont}</p><button>{a.btn}</button></section>
+    </li>)
     return(
         <div className="banner">
             <ul className="slider">
