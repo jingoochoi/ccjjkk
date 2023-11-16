@@ -21,6 +21,6 @@ function App() {
     </div>
   );
 }
-// import {useNavigate} from 'react-dom-route'
+// import {useNavigate} from 'react-router-dom'
 // useNavigate(sth)->const에 담아야 한다.->const 안에 링크 주소를 삽입
 export default App;
