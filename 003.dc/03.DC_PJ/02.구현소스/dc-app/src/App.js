@@ -21,5 +21,5 @@ function App() {
     </div>
   );
 }
-
+// useNavigate(sth)
 export default App;
