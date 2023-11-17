@@ -55,7 +55,16 @@ var swiper = new Swiper(".mySwiper", {
 // https://swiperjs.com/swiper-api#initialize-swiper
 $('.stit').click(()=>{swiper.slidePrev();})
 // $('.stit').click(()=>{swiper.slideNext();})
-$('.stop').css({cursor:'pointer'}).click(()=>{})
+$('.stop').css({cursor:'pointer'}).click((e)=>{
+  let icon=$(e.target).text()
+  if (icon=='o') {
+    swiper.autoplay.pause()
+    $(e.target).text('oo')
+  }else{
+    swiper.autoplay.start()
+    $(e.target).text('o')
+  }
+})
 /* 
 swiper api method
 1.swiper.slideNext()
