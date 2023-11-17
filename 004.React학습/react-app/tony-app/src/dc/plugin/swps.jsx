@@ -12,8 +12,16 @@ export function Swps() {
     const next=()=>{
         mymy.current.swiper.slideNext()
     }
+    let mygo='swiper'
+    let mydo=useRef('gallery')
+    const ft=()=>{
+        mygo='스와이퍼'
+        mydo.current='갤러리'
+        // console.log(mygo,mydo)
+    }
     return(
         <>
+            <h1>{mygo+mydo}</h1>
             <Swiper
             ref={mymy}
                 slidesPerView={3}
@@ -40,6 +48,7 @@ export function Swps() {
                 <SwiperSlide><img src="https://static.dc.com/2023-02/Char_WhosWho_Flash_20190116_5c3fcadbc6a963.74676553.jpg?w=160" alt="flash" /><span style={{position:'absolute',top:'50%',left:'50%',zIndex:333,transform:'translate(-50%,-50%)',fontSize:'100px'}}>🤝</span><img src="https://static.dc.com/2023-02/Char_WhosWho_Cyborg_20190116_5c3fcd9048a1a2.67778180.jpg?w=160" alt="cyborg"  /></SwiperSlide>
             </Swiper>
             <button className='stop' style={{cursor:'pointer'}} onClick={next}>o</button>
+            <button onClick={ft}>testo</button>
         </>
     )
 }
