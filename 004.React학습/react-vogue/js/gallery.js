@@ -52,3 +52,14 @@ var swiper = new Swiper(".mySwiper", {
         }
       }
   });
+// https://swiperjs.com/swiper-api#initialize-swiper
+$('.stit').click(()=>{swiper.slidePrev();})
+// $('.stit').click(()=>{swiper.slideNext();})
+$('.stop').css({cursor:'pointer'}).click(()=>{})
+/* 
+swiper api method
+1.swiper.slideNext()
+2.swiper.slidePrev()
+3.swiper.autoplay.pause()
+4.swiper.autoplay.start()
+ */
