@@ -21,5 +21,6 @@ function App() {
     </div>
   );
 }
-
+// user-select:none;
+// 드래그 시 셀렉트 금지
 export default App;
