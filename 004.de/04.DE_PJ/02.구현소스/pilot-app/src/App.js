@@ -23,4 +23,6 @@ function App() {
 }
 // user-select:none;
 // 드래그 시 셀렉트 금지
+// get(0)-jquery video collection($('...').get(0).play())
+// pause()-pause the playing video||paused()-check the pause state
 export default App;
