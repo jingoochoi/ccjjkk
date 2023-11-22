@@ -30,4 +30,5 @@ function App() {
 // import {useLocation} from 'react-router-dom'
 // useLocation()-라우터 전달값 받기->const에 담기
 // const 속성이름=이름.state.속성
+// ^ 문단화->split('^')->코딩구역에서 map((a,b)=><p key={b}>{a}</p>)
 export default App;
