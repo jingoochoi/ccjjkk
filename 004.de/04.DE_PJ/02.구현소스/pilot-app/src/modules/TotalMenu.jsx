@@ -5,7 +5,7 @@ export function TotalMenu() {
     const mycon=useContext(pcon)
     const gopage=(txt)=>{
       mycon.chgPgName(txt)
-      document.querySelector('.ham').style.display='none'
+      document.querySelector('.mbox').style.display='none'
     }
     return (
       <>

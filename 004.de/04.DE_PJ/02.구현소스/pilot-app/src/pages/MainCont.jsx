@@ -20,6 +20,7 @@ export function MainCont() {
 
     //드래그배너 호출
     dragBanner();
+    return(()=>{})
   }, []); /////// useEffect ///////////
 
   return (
