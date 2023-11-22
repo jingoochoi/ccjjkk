@@ -1,6 +1,12 @@
 // Pilot PJ 전체메뉴 컴포넌트
-
+import { useContext } from "react";
+import { pcon } from "./pilotContext";
 export function TotalMenu() {
+    const mycon=useContext(pcon)
+    const gopage=(txt)=>{
+      mycon.chgPgName(txt)
+      document.querySelector('.ham').style.display='none'
+    }
     return (
       <>
         <div className="mbox">
@@ -13,7 +19,7 @@ export function TotalMenu() {
           <nav className="mlist">
             <dl>
               <dt>
-                <a href="#">MEN</a>
+                <a href="#" onClick={()=>gopage('men')}>MEN</a>
               </dt>
               <dd>
                 <a href="#">T-SHIRT</a>
@@ -30,7 +36,7 @@ export function TotalMenu() {
             </dl>
             <dl>
               <dt>
-                <a href="#">WOMEN</a>
+                <a href="#" onClick={()=>gopage('women')}>WOMEN</a>
               </dt>
               <dd>
                 <a href="#">T-SHIRT</a>
@@ -47,7 +53,7 @@ export function TotalMenu() {
             </dl>
             <dl>
               <dt>
-                <a href="#">STYLE</a>
+                <a href="#" onClick={()=>gopage('style')}>STYLE</a>
               </dt>
               <dd>
                 <a href="#">COLLECTION</a>

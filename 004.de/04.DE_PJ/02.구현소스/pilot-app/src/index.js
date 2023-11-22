@@ -1,6 +1,7 @@
 // 메인 페이지 JS - index.js
 import React, { useEffect, useState } from 'react';
 import ReactDOM, { createRoot } from 'react-dom/client';
+import { pcon } from './modules/pilotContext';
 import { TopArea } from './layout/TopArea';
 import { MainArea } from './layout/MainArea';
 import { FooterArea } from './layout/FooterArea';
@@ -52,11 +53,11 @@ function App(){
 
   // 리턴코드 //////////////////////////
   return(
-      <>
+      <pcon.Provider value={{chgPgName}}>
         <TopArea cat={pgName} />        
         <MainArea page={pgName} />
         <FooterArea />
-      </>
+      </pcon.Provider>
   )
 
 } ///////////// App 컴포넌트 /////////////

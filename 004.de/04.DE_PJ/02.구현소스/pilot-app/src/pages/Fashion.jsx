@@ -1,10 +1,10 @@
 // 남성패션 서브페이지 컨텐츠 컴포넌트
 
-export function MenSub(){
+export function Fashion(p){
 
     return(
         <>
-            <h2>남성패션 컨텐츠야~!</h2>
+            <h2>{p.cat}</h2>
         </>
     )
 
