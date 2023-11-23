@@ -16,9 +16,9 @@ export function Fashion(p){
             <section id="ban" className="page">
                 <Swps cat={mycon.pgName}></Swps>
             </section>
-            <section id="c1" className="cont c1 men"></section>
+            <section id="c1" className={"cont c1 "+mycon.pgName+""}></section>
             <div className="bgbx"></div>
-            <section id="c2" className="cont c2 men"></section>
+            <section id="c2" className={"cont c2 "+mycon.pgName+""}></section>
             <section id="c3" className="cont c3"></section>
             <section id="c4" className="cont c4"></section>
         </>
