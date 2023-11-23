@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination,Navigation,Keyboard } from 'swiper/modules';
+import { Pagination,Navigation,Keyboard,Autoplay } from 'swiper/modules';
 import './css/swps.css';
-export function Swps() {
+export function Swps(p) {
     const mymy=useRef(null)
     const next=()=>{
         mymy.current.swiper.slideNext()
@@ -21,31 +21,31 @@ export function Swps() {
     }
     return(
         <>
-            <h1>{mygo+mydo}</h1>
+            
             <Swiper
             ref={mymy}
-                slidesPerView={3}
-                spaceBetween={30}
+                slidesPerView={1}
+                spaceBetween={0}
                 pagination={{
                     clickable: true,
                 }}
                 navigation={{clickable:true}}
                 keyboard={true}
                 loop={true}
-                modules={[Pagination,Navigation,Keyboard]}
+                autoplay={{
+                    delay:3000,
+                    disableOnInteraction:false
+                }}
+                modules={[Pagination,Navigation,Keyboard,Autoplay]}
                 className="mySwiper"
             >
                 
-                {/* super */}
-                <SwiperSlide></SwiperSlide>
-                {/* bat */}
-                <SwiperSlide></SwiperSlide>
-                {/* wonder */}
-                <SwiperSlide></SwiperSlide>
-                {/* aqua */}
-                <SwiperSlide></SwiperSlide>
-                {/* nmj */}
-                <SwiperSlide></SwiperSlide>
+                
+                <SwiperSlide><img src={"./images/sub/"+p.cat+"/banner/ban1.png"} alt="men banner" /></SwiperSlide>
+                <SwiperSlide><img src={"./images/sub/"+p.cat+"/banner/ban2.png"} alt="men banner" /></SwiperSlide>
+                <SwiperSlide><img src={"./images/sub/"+p.cat+"/banner/ban3.png"} alt="men banner" /></SwiperSlide>
+                
+                
             </Swiper>
             <button className='stop' style={{cursor:'pointer'}} onClick={next}>o</button>
             <button onClick={ft}>testo</button>
