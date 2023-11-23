@@ -4,23 +4,34 @@ import { useEffect } from "react";
 import { Banner } from "../modules/Banner";
 
 // 자동스크롤 JS 불러오기
-// import { autoScroll } from "../func/jquery-autoScroll";
+import { wheelFn,evt,initSet,zero,pos } from "../func/jquery-autoScroll";
 // 드래그배너 JS 불러오기
 import { dragBanner } from "../func/drag_banner";
 import { FashionIntro } from "../modules/FashionIntro";
+import $ from 'jquery'
 
 export function MainCont() {
   // 메인 페이지일때만 자동스크롤 기능 적용함!
   useEffect(() => {
     // 랜더링 후 한번만 적용!
     // console.log("랜더링OK!");
-
+    $('html,body').css({overflow:'hidden'})
     //자동스크롤 호출
     // autoScroll();
+    window.addEventListener('wheel',wheelFn)
+    evt()
+    initSet()
+    zero()
+    pos()
 
     //드래그배너 호출
     dragBanner();
-    return(()=>{})
+    return(()=>{
+      window.removeEventListener('wheel',wheelFn)
+      $('#logo a').off('click')
+      $(document).off('keydown')
+      $('.gnb li, .indic li').off('click').removeClass('on')
+    })
   }, []); /////// useEffect ///////////
 
   return (

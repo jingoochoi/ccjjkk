@@ -15,6 +15,7 @@ require('jquery-ui-touch-punch/jquery.ui.touch-punch');
   ******************************************/
   // 전체 페이지번호
   let pno = 0;
+  const zero=()=>{pno=0}
   // 페이지 요소
   let pg 
   // 전체 페이지개수
@@ -24,20 +25,12 @@ require('jquery-ui-touch-punch/jquery.ui.touch-punch');
   let prot = [];
   // 광스크롤금지
   prot[0] = 0;
-  // GNB 메뉴 li
-  let gnb
-  // indic 메뉴 li
-  let indic 
-  // 각 페이지별 등장요소
-  let minfo
+  
   $(()=>{
      pg = $(".page");
  pgcnt = pg.length;
- gnb = $(".gnb li");
-  // indic 메뉴 li
-   indic = $(".indic li");
-  // 각 페이지별 등장요소
-   minfo = $(".minfo");
+ 
+   
   })
   /****************************************** 
     이벤트 등록하기
@@ -78,7 +71,9 @@ require('jquery-ui-touch-punch/jquery.ui.touch-punch');
   }); ///////////// keydown ////////////////
 
   // 새로고침시 스크롤위치 캐싱 변경하기(맨위로!)
-  $("html,body").animate({ scrollTop: "0px" });
+  function pos() {
+    $("html,body").animate({ scrollTop: "0px" });
+  }
 
   /**************************************** 
     함수명: wheelFn
@@ -167,10 +162,10 @@ require('jquery-ui-touch-punch/jquery.ui.touch-punch');
   // 메뉴클릭시 + 마우스휠 이동시에도 모두 이 함수 호출!
   const addOn = () => {
     // 클릭된 메뉴에 class 'on' 넣기
-    gnb.eq(pno).addClass('on')
+    $('.gnb li').eq(pno).addClass('on')
     .siblings().removeClass('on');
     
-    indic.eq(pno).addClass('on')
+    $('.indic li').eq(pno).addClass('on')
     .siblings().removeClass('on');
   }; //////////// addOn함수 ////////////
 
@@ -220,7 +215,7 @@ require('jquery-ui-touch-punch/jquery.ui.touch-punch');
  } /////////// initSet 함수 ///////////////
 
  // 최초호출!
- initSet();
+ 
 
  /***************************************** 
   함수명: actPage
@@ -285,7 +280,7 @@ function evt() {
 }
 
 
-export {wheelFn,evt}
+export {wheelFn,evt,initSet,zero,pos}
 
 
 

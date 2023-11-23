@@ -1,12 +1,15 @@
 // 남성패션 서브페이지 컨텐츠 컴포넌트
 
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import '../css/fashion.css'
 import { Swps } from "../plugin/swps"
+import $ from 'jquery'
+import { pcon } from "../modules/pilotContext"
 export function Fashion(p){
+    const mycon=useContext(pcon)
     useEffect(()=>{
-        document.querySelector('html').style.overflow='visible'
-        document.querySelector('body').style.overflow='visible'
+        $('html,body').css({overflow:'visible'})
+        $('#logo a').click(()=>mycon.chgPgName('main'))
     },[])
     return(
         <>

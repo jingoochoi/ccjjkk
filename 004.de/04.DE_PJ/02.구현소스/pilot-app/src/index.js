@@ -50,15 +50,15 @@ function App(){
 
     }); //////// click ////////
   },[]); ////////// useEffect //////////////
-  useEffect(()=>{
-    // in case of removing some event,that setting must be summoned in react function. in that case, removeEventListener is valid.
-    if (pgName=='main') {
-      window.addEventListener('wheel',wheelFn)
-      evt()
-    }else{
-      window.removeEventListener('wheel',wheelFn)
-    }
-  })
+  // useEffect(()=>{
+  //   // in case of removing some event,that setting must be summoned in react function. in that case, removeEventListener is valid.
+  //   if (pgName=='main') {
+  //     // window.addEventListener('wheel',wheelFn)
+  //     // evt()
+  //   }else{
+  //     // window.removeEventListener('wheel',wheelFn)
+  //   }
+  // })
   // 리턴코드 //////////////////////////
   return(
       <pcon.Provider value={{chgPgName}}>
