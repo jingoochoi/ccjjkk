@@ -1,5 +1,5 @@
 // 메인 페이지 JS - index.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import ReactDOM, { createRoot } from 'react-dom/client';
 import { pcon } from './modules/pilotContext';
 import {wheelFn,evt} from './func/jquery-autoScroll'
@@ -50,6 +50,9 @@ function App(){
 
     }); //////// click ////////
   },[]); ////////// useEffect //////////////
+  useLayoutEffect(()=>{
+    window.scrollTo(0,0)
+  })
   // useEffect(()=>{
   //   // in case of removing some event,that setting must be summoned in react function. in that case, removeEventListener is valid.
   //   if (pgName=='main') {
