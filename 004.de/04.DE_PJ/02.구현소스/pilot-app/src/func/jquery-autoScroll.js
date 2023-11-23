@@ -16,21 +16,29 @@ require('jquery-ui-touch-punch/jquery.ui.touch-punch');
   // 전체 페이지번호
   let pno = 0;
   // 페이지 요소
-  const pg = $(".page");
+  let pg 
   // 전체 페이지개수
-  const pgcnt = pg.length;
+  let pgcnt 
   // console.log("페이지개수:", pgcnt, pg);
   // 광실행금지변수
   let prot = [];
   // 광스크롤금지
   prot[0] = 0;
   // GNB 메뉴 li
-  const gnb = $(".gnb li");
+  let gnb
   // indic 메뉴 li
-  const indic = $(".indic li");
+  let indic 
   // 각 페이지별 등장요소
-  const minfo = $(".minfo");
-
+  let minfo
+  $(()=>{
+     pg = $(".page");
+ pgcnt = pg.length;
+ gnb = $(".gnb li");
+  // indic 메뉴 li
+   indic = $(".indic li");
+  // 각 페이지별 등장요소
+   minfo = $(".minfo");
+  })
   /****************************************** 
     이벤트 등록하기
     ->>> 리액트에서 제이쿼리로 이벤트설정시
@@ -237,14 +245,43 @@ function actPage(){
 } ///////// actPage 함수 //////////////////
 
 // 메인 페이지 상단로고 클릭시 맨위로 이동하기!
-$('#logo a').click(e=>{
-  e.preventDefault();
-  pno = 0;
-  movePg();
-}); //////// click ////////
 
 function evt() {
-  // 
+  $(document).keydown((e) => {
+    // 광휠금지
+    if (prot[0]) return;
+    chkCrazy(0);
+
+    // 이전페이지이동
+    if (e.keyCode === 33 || e.keyCode === 38) {
+      pno--;
+      if (pno === -1) pno = 0;
+      movePg();
+    }
+    // 다음페이지이동
+    else if (e.keyCode === 34 || e.keyCode === 40) {
+      pno++;
+      if (pno === pgcnt) pno = pgcnt - 1;
+      movePg();
+    }
+  }); ///////////// keydown ////////////////
+  $('.gnb li, .indic li').click(function(){
+    // 1. 순번변수
+    let idx = $(this).index();
+    // console.log('나야나~!',idx);
+
+    // 2. 순번을 페이지번호에 할당(일치시킴!)
+    pno = idx;
+
+    // 3. 페이지 이동
+    movePg();
+
+  }); ///// click //////////
+  $('#logo a').click(e=>{
+    e.preventDefault();
+    pno = 0;
+    movePg();
+  }); //////// click ////////
 }
 
 
