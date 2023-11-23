@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM, { createRoot } from 'react-dom/client';
 import { pcon } from './modules/pilotContext';
-import {wheelFn} from './func/jquery-autoScroll'
+import {wheelFn,evt} from './func/jquery-autoScroll'
 import { TopArea } from './layout/TopArea';
 import { MainArea } from './layout/MainArea';
 import { FooterArea } from './layout/FooterArea';
@@ -51,8 +51,10 @@ function App(){
     }); //////// click ////////
   },[]); ////////// useEffect //////////////
   useEffect(()=>{
+    // in case of removing some event,that setting must be summoned in react function. in that case, removeEventListener is valid.
     if (pgName=='main') {
       window.addEventListener('wheel',wheelFn)
+      evt()
     }else{
       window.removeEventListener('wheel',wheelFn)
     }
