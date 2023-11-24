@@ -50,8 +50,11 @@ export function TopArea() {
   }; //////////// goSearch 함수 /////////////
 
   useEffect(()=>{
-    $('audio').get[0].play()
+    $('audio').get(0).play()
   },[])
+  function play() {
+    $('audio').get(0).pause()
+  }
   // 리턴코드 ///////////////////////////
   return (
     <>
@@ -124,7 +127,7 @@ export function TopArea() {
               <Link to="/login">LOGIN</Link>
             </li>
             <li>
-              <audio src="./images/aqua.mp3">OST</audio>
+              <audio src="./images/aqua.mp3" onClick={play}>OST</audio>
             </li>
           </ul>
           {/* 모바일용 햄버거 버튼 */}
