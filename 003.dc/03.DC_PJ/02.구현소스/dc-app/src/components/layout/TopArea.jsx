@@ -49,9 +49,9 @@ export function TopArea() {
     goNav('/schpage',{state:{keyword:''}})
   }; //////////// goSearch 함수 /////////////
 
-  useEffect(()=>{
-    $('audio').get(0).play()
-  },[])
+  // useEffect(()=>{
+  //   $('audio').get(0).play()
+  // },[])
   function play() {
     $('audio').get(0).pause()
   }
@@ -127,7 +127,7 @@ export function TopArea() {
               <Link to="/login">LOGIN</Link>
             </li>
             <li>
-              <audio src="./images/aqua.mp3" onClick={play}>OST</audio>
+              <audio src="./images/aqua.mp3" onClick={play} autoPlay>OST</audio>
             </li>
           </ul>
           {/* 모바일용 햄버거 버튼 */}
