@@ -39,7 +39,10 @@ export function TopArea() {
   const enterKey = e => {
     // console.log(e.key);
     // 엔터키는 'Enter'문자열을 리턴함!
-    if(e.key === 'Enter') goSearch();
+    if(e.key === 'Enter') {
+      let txt=$(e.target).text().trim()
+      if(txt!='') goSearch(txt);
+    }
   }; ////////// enterKey 함수 ////////////
 
   // 3. 검색 페이지로 검색어와 함께 이동하기

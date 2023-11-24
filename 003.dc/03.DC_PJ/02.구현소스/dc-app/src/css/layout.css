@@ -87,8 +87,8 @@ h1{
 .searchingGnb{    
     position: absolute;
     left: -230px;
-    top: 9px;
-    line-height: 41px;
+    top: -5px;
+    line-height: 30px;
 
     width: 250px;
     height: 40px;
