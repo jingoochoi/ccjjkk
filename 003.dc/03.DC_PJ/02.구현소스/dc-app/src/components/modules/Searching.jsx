@@ -26,6 +26,7 @@ export function Searching(p){
                   type="text"
                   placeholder="Filter by Keyword"
                   onKeyUp={enterKey}
+                  value={p.kword}
                 />
                     </div>
                     <div className="chkbx">
@@ -52,7 +53,7 @@ export function Searching(p){
                             <option value="1">Z-A</option>
                         </select>
                     </aside>
-                    <Searchcat></Searchcat>
+                    <Searchcat word={p.kword}></Searchcat>
                 </div>
             </section>
         </>

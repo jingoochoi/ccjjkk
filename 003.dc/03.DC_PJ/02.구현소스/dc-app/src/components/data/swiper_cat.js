@@ -242,7 +242,7 @@ export const catListData = [
           ^
           Base of Operations:        
           Kahndaq`,
-      alignment: "villain",
+      alignment: "vill",
       type: "indiv",
     },
     {
@@ -264,7 +264,7 @@ export const catListData = [
           ^
           Alias/Alter Ego:        
           Jade Nguyen`,
-      alignment: "villain",
+      alignment: "vill",
       type: "indiv",
     },
   ];

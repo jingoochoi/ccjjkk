@@ -2,8 +2,12 @@ import { Link } from "react-router-dom"
 import { catListData } from "../data/swiper_cat"
 import '../../css/search_cat_list.css'
 
-export function Searchcat() {
-    const selData=catListData
+export function Searchcat(p) {
+    const selData=catListData.filter(a=>{
+        if (a.cname.toLowerCase().indexOf(p.word)!=-1) {
+            return true
+        }
+    })
     return(
         <>
         <ul className="clist">
