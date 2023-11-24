@@ -127,7 +127,7 @@ export function TopArea() {
               <Link to="/login">LOGIN</Link>
             </li>
             <li>
-              <audio src="./images/aqua.mp3" onClick={play} autoPlay>OST</audio>
+              <audio src="./images/aqua.mp3" onClick={play} autoPlay controls>OST</audio>
             </li>
           </ul>
           {/* 모바일용 햄버거 버튼 */}
