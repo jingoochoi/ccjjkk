@@ -10,6 +10,7 @@ import $ from 'jquery';
 // 폰트어썸 불러오기
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 
 /******************************************************* 
   [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -48,7 +49,9 @@ export function TopArea() {
     goNav('/schpage',{state:{keyword:''}})
   }; //////////// goSearch 함수 /////////////
 
-
+  useEffect(()=>{
+    $('audio').get[0].play()
+  },[])
   // 리턴코드 ///////////////////////////
   return (
     <>
@@ -119,6 +122,9 @@ export function TopArea() {
             </li>
             <li>
               <Link to="/login">LOGIN</Link>
+            </li>
+            <li>
+              <audio src="./images/aqua.mp3">OST</audio>
             </li>
           </ul>
           {/* 모바일용 햄버거 버튼 */}
