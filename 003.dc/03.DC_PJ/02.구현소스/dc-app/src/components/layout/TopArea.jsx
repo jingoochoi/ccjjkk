@@ -41,7 +41,10 @@ export function TopArea() {
     // 엔터키는 'Enter'문자열을 리턴함!
     if(e.key === 'Enter') {
       let txt=$(e.currentTarget).val().trim()
-      if(txt!='') goSearch(txt);
+      if(txt!='') {
+        $(e.currentTarget).val('').parent().hide()
+        goSearch(txt);
+      }
     }
   }; ////////// enterKey 함수 ////////////
 

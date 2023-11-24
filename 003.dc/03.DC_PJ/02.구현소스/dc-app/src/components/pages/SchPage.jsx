@@ -5,11 +5,15 @@ import { Searching } from "../modules/Searching";
 
 export function SchPage(){
     const loca=useLocation()
-    const word=loca.state.keyword
+    let keyword
+    if (loca.state) {
+        keyword=loca.state.keyword
+    }
+    // const word=loca.state.keyword
     return(
         <>
             <h1 className="tit">Search Result</h1>
-            <Searching kword={word}/>
+            <Searching kword={keyword}/>
         </>
     )
 

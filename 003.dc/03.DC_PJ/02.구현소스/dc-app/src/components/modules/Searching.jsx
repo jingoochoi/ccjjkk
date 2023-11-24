@@ -2,12 +2,13 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
-
+import { Searchcat } from "./Searchcat";
+import '../../css/searching.css'
 export function Searching(p){
     const schlist=()=>{}
     const enterKey=()=>{}
     const check=()=>{}
+    const sort=()=>{}
     return(
         <>
             <section className="schbx">
@@ -30,7 +31,7 @@ export function Searching(p){
                     <div className="chkbx">
                         <ul>
                             <li>
-                                <h2>ALIGNMENT<span>+</span></h2>
+                                <h2>ALIGNMENT<span className="spbtn">➕</span></h2>
                                 <ol>
                                     <li>Heroes<input type="checkbox" id="hero" className="chkhdn" onChange={check}></input>
                                     <label htmlFor="hero" className="chklb"></label></li>
@@ -43,7 +44,16 @@ export function Searching(p){
                         </ul>
                     </div>
                 </div>
-                <div className="listbx"></div>
+                <div className="listbx">
+                    <h2 className="restit">BROWSE CHARACTERS (ttnb)</h2>
+                    <aside className="sortby">
+                        <select name="sel" id="sel" className="sel" onChange={sort}>
+                            <option value="0">A-Z</option>
+                            <option value="1">Z-A</option>
+                        </select>
+                    </aside>
+                    <Searchcat></Searchcat>
+                </div>
             </section>
         </>
     )
