@@ -40,16 +40,16 @@ export function TopArea() {
     // console.log(e.key);
     // 엔터키는 'Enter'문자열을 리턴함!
     if(e.key === 'Enter') {
-      let txt=$(e.target).text().trim()
+      let txt=$(e.currentTarget).val().trim()
       if(txt!='') goSearch(txt);
     }
   }; ////////// enterKey 함수 ////////////
 
   // 3. 검색 페이지로 검색어와 함께 이동하기
-  const goSearch = () => {
+  const goSearch = (txt) => {
     console.log('나는 검색하러 간다규~!!!');
     // 라우터 이동함수로 이동하기
-    mycon.chgPage('/schpage',{state:{keyword:''}})
+    mycon.chgPage('/schpage',{state:{keyword:txt}})
   }; //////////// goSearch 함수 /////////////
 
   // useEffect(()=>{
