@@ -7,7 +7,7 @@ import { TopArea } from "./TopArea";
 // Context API 불러오기
 import { dcCon } from "../modules/dcContext";
 import { useNavigate } from "react-router-dom";
-import { useLayoutEffect } from "react";
+import { useCallback, useLayoutEffect } from "react";
 
 export function Layout() {
 
@@ -21,7 +21,7 @@ export function Layout() {
   const goNav = useNavigate();
 
   // 라우터 이동함수
-  const chgPage = (pgnm,prmt) => goNav(pgnm,prmt);
+  const chgPage = useCallback((pgnm,prmt) => goNav(pgnm,prmt),[]);
 
   /********************************** 
    [컨텍스트 API 공유값 설정]
@@ -30,7 +30,7 @@ export function Layout() {
   // 리턴코드 ////////////////////////
   return (
     <dcCon.Provider value={{ chgPage }}>
-      <TopArea />
+      <TopArea ft={chgPage} />
       <MainArea />
       <FooterArea />
     </dcCon.Provider>

@@ -1,9 +1,10 @@
 // 하단영역 컴포넌트
 
+import { memo } from "react";
 import { bmenuData } from "../data/bmenu";
 import { Logo } from "../modules/Logo";
 
-export function FooterArea(){
+export const FooterArea=memo(()=>{
     return(
         <footer className="info">
            <ul>
@@ -20,4 +21,4 @@ export function FooterArea(){
         </footer>
     )
 
-} ///////// FooterArea 컴포넌트 /////////
+}) ///////// FooterArea 컴포넌트 /////////

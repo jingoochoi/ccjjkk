@@ -3,15 +3,18 @@ import { catListData } from "../data/swiper_cat"
 import '../../css/search_cat_list.css'
 
 export function Searchcat(p) {
+    let work=p.word.toLowerCase()
     const selData=catListData.filter(a=>{
-        if (a.cname.toLowerCase().indexOf(p.word)!=-1) {
+        if (a.cname.toLowerCase().indexOf(work)!=-1) {
             return true
         }
     })
+    const ttnb=selData.length
+    p.moon(ttnb)
     return(
         <>
         <ul className="clist">
-            {selData.map((a,b)=>(
+            {ttnb>0&&selData.map((a,b)=>(
                 <li key={b}>
                     <Link 
                 to="/detail"
@@ -36,6 +39,10 @@ export function Searchcat(p) {
               </Link>
                 </li>
             ))}
+            {ttnb==0&&
+            <>
+            <img src="https://freepngimg.com/save/15560-red-cross-mark-png-file/640x640" alt="no" style={{margin:'0 auto',width:'300px'}} />
+            <h2 style={{textAlign:'center',fontSize:'20px'}}>Sorry, we don't have any matches for that. But there's plenty more to see on DC!</h2></>}
         </ul>
         </>
     )

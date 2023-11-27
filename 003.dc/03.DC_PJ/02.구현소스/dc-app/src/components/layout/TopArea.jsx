@@ -5,12 +5,12 @@ import { Logo } from "../modules/Logo";
 import { menu } from "../data/gnb";
 import { dcCon } from "../modules/dcContext";
 // 제이쿼리
-import $ from 'jquery';
+import $, { event } from 'jquery';
 
 // 폰트어썸 불러오기
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useEffect } from "react";
+import { memo, useContext, useEffect } from "react";
 
 /******************************************************* 
   [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -21,14 +21,17 @@ import { useContext, useEffect } from "react";
   -> 라우터 연결 컴포넌트 출력자리 컴포넌트
   -> 여기서는 MainArea 컴포넌트에 출력!
 *******************************************************/
-export function TopArea() {
-  const mycon=useContext(dcCon)
+// context api sends function and vars, so memoization is not effective
+// sent function must be used with useCallback
+export const TopArea=memo(({ft})=>{//using {} can makes use attribute
+  // const mycon=useContext(dcCon)
   // 라우터 이동메서드 함수
   // const goNav = useNavigate();
 
   // 검색 관련 함수들 ////////////
   // 1. 검색창 보이기함수
-  const showSearch = () => {
+  const showSearch = (e) => {
+    e.preventDefault()
     // 1. 검색창 보이기
     $('.searchingGnb').show();
     // 2. 입력창에 포커스 보내기
@@ -52,7 +55,7 @@ export function TopArea() {
   const goSearch = (txt) => {
     console.log('나는 검색하러 간다규~!!!');
     // 라우터 이동함수로 이동하기
-    mycon.chgPage('/schpage',{state:{keyword:txt}})
+    ft('/schpage',{state:{keyword:txt}})
   }; //////////// goSearch 함수 /////////////
 
   // useEffect(()=>{
@@ -133,7 +136,7 @@ export function TopArea() {
               <Link to="/login">LOGIN</Link>
             </li>
             <li>
-              <audio src="./images/aqua.mp3" onClick={play} autoPlay controls>OST</audio>
+              <audio src="./images/aqua.mp3" onClick={play} controls>OST</audio>
             </li>
           </ul>
           {/* 모바일용 햄버거 버튼 */}
@@ -142,7 +145,7 @@ export function TopArea() {
       </header>
     </>
   );
-}
+})
 
 /* 
   map()을 사용하여 태그를 생성할때

@@ -3,10 +3,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Searchcat } from "./Searchcat";
+import $, { event } from 'jquery'
 import '../../css/searching.css'
+import { useState } from "react";
 export function Searching(p){
-    const schlist=()=>{}
-    const enterKey=()=>{}
+    const [kkword,setKkword]=useState(p.kword)
+    const [nm,setNm]=useState(0)
+    const sword=a=>{
+        setKkword(a)
+    }
+    // if (p.kword!=kkword) {
+    //     sword(p.kword)
+    // }
+    const shownb=n=>{
+        // $('.cntnum').text(n)
+        setNm(n)
+    }
+    const schlist=()=>{
+        let txt=$('#schin').val()
+        sword(txt)
+    }
+    const enterKey=(e)=>{
+        if (e.key=='Enter') {
+            let txt=$(e.target).val()
+            sword(txt)
+            // console.log(txt)
+        }
+    }
     const check=()=>{}
     const sort=()=>{}
     return(
@@ -26,7 +49,8 @@ export function Searching(p){
                   type="text"
                   placeholder="Filter by Keyword"
                   onKeyUp={enterKey}
-                  value={p.kword}
+                  defaultValue={kkword}
+                //   react input value=>defaultValue
                 />
                     </div>
                     <div className="chkbx">
@@ -46,14 +70,14 @@ export function Searching(p){
                     </div>
                 </div>
                 <div className="listbx">
-                    <h2 className="restit">BROWSE CHARACTERS (ttnb)</h2>
+                    <h2 className="restit">BROWSE CHARACTERS ({nm})</h2>
                     <aside className="sortby">
                         <select name="sel" id="sel" className="sel" onChange={sort}>
                             <option value="0">A-Z</option>
                             <option value="1">Z-A</option>
                         </select>
                     </aside>
-                    <Searchcat word={p.kword}></Searchcat>
+                    <Searchcat word={kkword} moon={shownb}></Searchcat>
                 </div>
             </section>
         </>
