@@ -3,6 +3,7 @@
 
 import { Banner } from "../modules/Banner";
 import { useLocation } from "react-router-dom";
+import $ from 'jquery'
 
 // 캐릭터 상세 페이지 CSS불러오기
 import "../../css/cat_detail.css";
@@ -16,6 +17,7 @@ export function CatDetail() {
   // 구체적으로 state속성 하위 전달된 객체속성명으로 받는다!
   // 1. 캐릭터 이름
   const cname = loc.state.cname;
+  $('title').html(cname)
   // 2. 캐릭터 설명 : "^"로 문단데이터 구분함
   let cdesc = loc.state.cdesc;
   cdesc = cdesc.split("^");
