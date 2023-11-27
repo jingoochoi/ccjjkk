@@ -14,7 +14,7 @@ import "./css/swiper.css";
 // import required modules
 // 사용할 스와이퍼 모듈을 불러온다
 // (여기서는 페이지네이션,네비게이션,자동넘김)
-import { Pagination,Navigation,Autoplay } from "swiper/modules";
+import { Pagination,Navigation,Autoplay,Keyboard } from "swiper/modules";
 
 export function SwiperApp() {
   // 불러올 이미지 리스트
@@ -43,8 +43,9 @@ export function SwiperApp() {
         }}      
         loop={true}
         navigation={true}
+        keyboard={true}
         /* 사용할 모듈을 여기에 적용시킨다 */
-        modules={[Pagination,Navigation,Autoplay]}
+        modules={[Pagination,Navigation,Autoplay,Keyboard]}
         className="mySwiper"
       >
         {
