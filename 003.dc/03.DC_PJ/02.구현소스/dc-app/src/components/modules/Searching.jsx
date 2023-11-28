@@ -12,11 +12,14 @@ export function Searching(p){
     const [kkword,setKkword]=useState(p.kword)
     const [nm,setNm]=useState(0)
     const alis=useRef(1)
+    const xx=useRef(null)
+    useEffect(()=>{
+        // console.log(xx)
+        xx.current.style.color='cornflowerblue'
+    })
     const sword=a=>{
         setKkword(a)
     }
-    // useEffect(()=>{
-    // },[])
     const chog=()=>{
         if (p.kword!=kkword) {
             sword(p.kword)
@@ -31,6 +34,10 @@ export function Searching(p){
         setNm(n)
     }
     const schlist=()=>{
+        alis.current=0
+        setTimeout(() => {
+            alis.current=1
+        }, 100);
         let txt=$('#schin').val()
         sword(txt)
     }
@@ -57,6 +64,7 @@ export function Searching(p){
                   className="schbtn"
                   title="Open search"
                   onClick={schlist}
+                  ref={xx}
                 />
                 {/* 입력창 */}
                 <input
