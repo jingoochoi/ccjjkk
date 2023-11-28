@@ -6,15 +6,19 @@ import { Searchcat } from "./Searchcat";
 import $, { event } from 'jquery'
 import '../../css/searching.css'
 import { useState } from "react";
+import { useEffect } from "react";
 export function Searching(p){
     const [kkword,setKkword]=useState(p.kword)
     const [nm,setNm]=useState(0)
     const sword=a=>{
         setKkword(a)
     }
-    // if (p.kword!=kkword) {
-    //     sword(p.kword)
-    // }
+    useEffect(()=>{
+        if (p.kword!=kkword) {
+            sword(p.kword)
+            $('#schin').val(p.kword)
+        }
+    },[])
     const shownb=n=>{
         // $('.cntnum').text(n)
         setNm(n)
@@ -51,6 +55,7 @@ export function Searching(p){
                   onKeyUp={enterKey}
                   defaultValue={kkword}
                 //   react input value=>defaultValue
+                // ->for readOnly setting to input value
                 />
                     </div>
                     <div className="chkbx">
