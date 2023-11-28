@@ -7,18 +7,25 @@ import $, { event } from 'jquery'
 import '../../css/searching.css'
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRef } from "react";
 export function Searching(p){
     const [kkword,setKkword]=useState(p.kword)
     const [nm,setNm]=useState(0)
+    const alis=useRef(1)
     const sword=a=>{
         setKkword(a)
     }
-    useEffect(()=>{
+    // useEffect(()=>{
+    // },[])
+    const chog=()=>{
         if (p.kword!=kkword) {
             sword(p.kword)
             $('#schin').val(p.kword)
         }
-    },[])
+    }
+    if (alis.current) {
+        chog()
+    }
     const shownb=n=>{
         // $('.cntnum').text(n)
         setNm(n)
@@ -28,6 +35,10 @@ export function Searching(p){
         sword(txt)
     }
     const enterKey=(e)=>{
+        alis.current=0
+        setTimeout(() => {
+            alis.current=1
+        }, 100);
         if (e.key=='Enter') {
             let txt=$(e.target).val()
             sword(txt)
