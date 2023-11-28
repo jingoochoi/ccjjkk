@@ -91,7 +91,7 @@ body {
 .ibox {
     position: absolute;
     /* 부모는? 싸고있는 li */
-    top: 60%;
+    top: 100%;
     /* 105%로 내려올 것임 */
     width: 100%;
     text-align: center;

@@ -13,7 +13,7 @@ export function Swps(p) {
         let temp=[]
         for (let x = 0; x < nb; x++) {
             temp[x]=
-            <SwiperSlide><img src={"./images/sub/"+p.cat+"/banner/ban"+(x+1)+".png"} alt="men banner" /></SwiperSlide>
+            <SwiperSlide key={x}><img src={"./images/sub/"+p.cat+"/banner/ban"+(x+1)+".png"} alt="men banner" /></SwiperSlide>
         }
         return temp
     }

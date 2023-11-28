@@ -9,7 +9,7 @@ import { Newlist } from "../modules/Newlist"
 export function Fashion(p){
     const mycon=useContext(pcon)
     useEffect(()=>{
-        $('html,body').css({overflow:'visible'})
+        $('html,body').css({overflow:'visible',overflowX:'hidden'})
         $('#logo a').click(()=>mycon.chgPgName('main'))
     },[])
     return(
