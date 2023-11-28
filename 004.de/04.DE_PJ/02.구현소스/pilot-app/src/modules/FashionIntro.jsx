@@ -5,6 +5,9 @@ import { fsData } from "../data/fashion_intro";
 
 // 패션 인트로 CSS 불러오기
 import "../css/fashion_intro.css";
+import { useContext } from "react";
+import { pcon } from "./pilotContext";
+import { event } from "jquery";
 
 export function FashionIntro(props) {
   // props.cat - 카테고리 분류명
@@ -16,7 +19,8 @@ export function FashionIntro(props) {
   const newStyle = {};
   // 'women'일 경우 값을 셋팅
   if (props.cat == "women") newStyle.flexDirection = "row-reverse";
-
+  const mymy=useContext(pcon)
+  
   return (
     <div id={props.cat} className="fs-page">
       <ul
@@ -39,7 +43,7 @@ export function FashionIntro(props) {
         <li className="txtc">
           {props.cat != "style" && (
             <h2>
-              <a href="#">
+              <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
                 {selData.tit[0]} <br />
                 {selData.tit[1]}
               </a>
@@ -48,13 +52,13 @@ export function FashionIntro(props) {
           {props.cat == "style" && (
             <>
               <h2 className="tm">
-                <a href="#">
+                <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
                   {selData.tit[0][0]} <br />
                   {selData.tit[0][1]}
                 </a>
               </h2>
               <h2 className="tw">
-                <a href="#">
+                <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
                   {selData.tit[1][0]} <br />
                   {selData.tit[1][1]}
                 </a>
