@@ -1,16 +1,11 @@
 import { Link } from "react-router-dom"
-import { catListData } from "../data/swiper_cat"
+
 import '../../css/search_cat_list.css'
 
-export function Searchcat(p) {
-    let work=p.word.toLowerCase()
-    const selData=catListData.filter(a=>{
-        if (a.cname.toLowerCase().indexOf(work)!=-1) {
-            return true
-        }
-    })
-    const ttnb=selData.length
-    p.moon(ttnb)
+export function Searchcat({dt,cnt}) {
+    const selData=dt
+    const ttnb=cnt
+    // p.moon(ttnb)
     return(
         <>
         <ul className="clist">
