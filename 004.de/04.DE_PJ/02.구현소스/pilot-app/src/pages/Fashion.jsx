@@ -6,6 +6,7 @@ import { Swps } from "../plugin/swps"
 import $ from 'jquery'
 import { pcon } from "../modules/pilotContext"
 import { Newlist } from "../modules/Newlist"
+import { Item } from "../modules/Item"
 export function Fashion(p){
     const mycon=useContext(pcon)
     useEffect(()=>{
@@ -20,7 +21,7 @@ export function Fashion(p){
             <section id="c1" className={"cont c1 "+mycon.pgName+""}>
                 <Newlist cat={mycon.pgName}></Newlist>
             </section>
-            <div className="bgbx"></div>
+            <div className="bgbx"><Item></Item></div>
             <section id="c2" className={"cont c2 "+mycon.pgName+""}></section>
             <section id="c3" className="cont c3"></section>
             <section id="c4" className="cont c4"></section>
