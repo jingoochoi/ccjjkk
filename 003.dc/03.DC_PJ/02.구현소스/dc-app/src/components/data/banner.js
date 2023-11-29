@@ -201,6 +201,13 @@ export const banData = {
             "cont":``,
             "btn":"",
         },
+        {
+            "src":"https://tn.tv.nate.com/unsafe/1280x720/http://img.kbsmedia.co.kr/smrapi/img_data/T2000-0096/kjSsK8WX3Fvy.png",
+            "tit1":"",
+            "tit2":"",
+            "cont":``,
+            "btn":"",
+        },
     ],
     "WONDER WOMAN":[
         {
