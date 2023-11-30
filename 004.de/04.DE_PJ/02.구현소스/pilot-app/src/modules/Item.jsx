@@ -1,13 +1,40 @@
-export function Item() {
+import { useEffect } from "react"
+import { newprdt } from "../data/newlist"
+import $ from 'jquery'
+
+export function Item({cat,good}) {
+  const seld=newprdt[cat][good].split('^')
+  // console.log(seld)
+  //became array([name,code,price])
+  const btbx=(e)=>{
+    e.preventDefault()
+    $('#bgbx').slideUp(300)
+  }
+  useEffect(()=>{
+    const sum=$('#sum')
+    const img=$('.chg_num img')
+    sum.val('1')
+    img.click(e=>{
+      let nb=$(e.currentTarget).index()
+      let vnum=Number(sum.val())
+      nb?vnum--:vnum++
+      if (vnum<1) {
+        vnum=1
+      }
+      sum.val(vnum)
+      $('#total').html(seld[2]*sum.val())
+    })
+  },[])
+useEffect(()=>{$('#sum').val(1)})
     return(
         <>
-            <a href="#" className="cbtn">
+            <a href="#" className="cbtn" onClick={btbx}>
         <span className="ir">닫기버튼</span>
       </a>
       <div id="imbx">
         <div className="inx">
           <section className="gimg">
-            <img src="./images/goods/men/m3.png" alt="큰 이미지" />
+            <img src={"./images/goods/"+cat+"/"+good+".png"} alt="큰 이미지" />
             <div className="small">
               <a href="#">
                 <img src="./images/goods/men/m1.png" alt="썸네일 이미지" />
@@ -26,7 +53,7 @@ export function Item() {
                 <li>
                   <img src="./images/dx_ico_new-28143800.gif" alt="new버튼" />
                 </li>
-                <li id="gtit">상품명: [남성]빅로고 컬러 블럭 PQ 티셔츠</li>
+                <li id="gtit">상품명: {seld[0]}</li>
                 <li>
                   <img src="./images/icon_type02_social01.gif" alt="페이스북" />
                   <img src="./images/icon_type02_social02.gif" alt="트위터" />
@@ -35,7 +62,7 @@ export function Item() {
                 </li>
                 <li>
                   <span>판매가</span>
-                  <span id="gprice">89,000원</span>
+                  <span id="gprice">{seld[2]}</span>
                 </li>
                 <li>
                   <span>적립금</span>
@@ -55,7 +82,7 @@ export function Item() {
                   </span>
                 </li>
                 <li>
-                  <span>상품코드</span> <span id="gcode">DMTS7G731-WH</span>
+                  <span>상품코드</span> <span id="gcode">{seld[1]}</span>
                 </li>
                 <li>
                   <span>사이즈</span> <span>95 100 105 110</span>
@@ -63,7 +90,7 @@ export function Item() {
                 <li>
                   <span>구매수량</span>
                   <span>
-                    <input type="text" id="sum" value="1" />
+                    <input type="text" id="sum" defaultValue="1" />
                     <b className="chg_num">
                       <img src="./images/cnt_up.png" alt="증가" />
                       <img src="./images/cnt_down.png" alt="감소" />
@@ -77,7 +104,7 @@ export function Item() {
                   <span>권장계절</span> <span>여름</span>
                 </li>
                 <li className="tot">
-                  <span>총합계</span> <span id="total">13,000</span>
+                  <span>총합계</span> <span id="total">{seld[2]}</span>
                 </li>
               </ol>
             </div>

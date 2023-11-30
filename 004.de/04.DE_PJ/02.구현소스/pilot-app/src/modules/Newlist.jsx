@@ -3,11 +3,12 @@ import $ from 'jquery'
 import { newprdt } from "../data/newlist"
 
 export function Newlist(p) {
+  // const ctem=p.ft
   const seld=newprdt[p.cat]
     const mm=()=>{let temp=[]
     for (let x = 0; x < 9; x++) {
         temp[x]=<li className={"m"+(x+1)} key={x} onMouseEnter={info} onMouseLeave={move}>
-        <a href="#"><img src={"./images/goods/"+p.cat+"/m"+(x+1)+".png"} alt="신상품" /></a>
+        <a href="#" onClick={(e)=>{e.preventDefault();p.ft('m'+(x+1))}}><img src={"./images/goods/"+p.cat+"/m"+(x+1)+".png"} alt="신상품" /></a>
       </li>
         
     }
