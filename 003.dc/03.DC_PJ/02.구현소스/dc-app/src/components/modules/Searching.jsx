@@ -14,11 +14,12 @@ import { useRef } from "react";
 catListData.sort((a,b)=>a.cname==b.cname?0:a.cname>b.cname?1:-1)
 // console.log(temp)
 export function Searching(p){
-    const [kkword,setKkword]=useState(p.kword)
+    const [kkword,setKkword]=useState(null)
     const [nm,setNm]=useState(0)
-    const [selData,setSelData]=useState([catListData,2])
-    const [ttnb,setTtnb]=useState(catListData.length)
+    const [selData,setSelData]=useState([[],2])
+    const [ttnb,setTtnb]=useState(0)
     const alis=useRef(1)
+    const fsts=useRef(0)
     const xx=useRef(null)
     useEffect(()=>{
         // console.log(xx)
@@ -34,6 +35,29 @@ export function Searching(p){
             // schlist()
         }
     }
+    function firstDo (){
+        console.log('처음한번만~!',p.kword);
+        const firstTemp = catListData.filter(v=>{
+          if(v.cname.toLowerCase().indexOf(p.kword.toLowerCase())!==-1) return true;
+        })
+        
+        firstTemp.sort((a,b)=>{
+          return a.cname==b.cname?0:a.cname>b.cname?1:-1;
+        })
+      
+        console.log('처음결과:',firstTemp);
+        setSelData([firstTemp,2]);
+        // 검색건수 상태관리변수 업데이트!
+        setTtnb(firstTemp.length);
+      
+        
+        sword(p.kword);
+      
+      } ///////////// firstDo 함수 ////////
+      if (!fsts.current) {
+        firstDo()
+        fsts.current=1
+      }
     if (alis.current) {
         chog()
     }
@@ -41,7 +65,7 @@ export function Searching(p){
         // $('.cntnum').text(n)
         setNm(n)
     }
-    const schlist=(e)=>{
+    function schlist(e){
         let kyword=$('#schin').val()
         const news=catListData.filter(a=>
             {if (a.cname.toLowerCase().indexOf(kyword)!=-1) {
