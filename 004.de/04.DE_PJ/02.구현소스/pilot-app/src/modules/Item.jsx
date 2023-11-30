@@ -22,10 +22,14 @@ export function Item({cat,good}) {
         vnum=1
       }
       sum.val(vnum)
-      $('#total').html(seld[2]*sum.val())
+      $('#total').html(numberWithCommas(seld[2]*sum.val())+'원')
     })
   },[])
-useEffect(()=>{$('#sum').val(1)})
+useEffect(()=>{$('#sum').val(1);$('#total').html(numberWithCommas(seld[2]*$('#sum').val())+'원')})
+//정규식함수(숫자 세자리마다 콤마해주는 기능)
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
     return(
         <>
             <a href="#" className="cbtn" onClick={btbx}>
@@ -62,7 +66,7 @@ useEffect(()=>{$('#sum').val(1)})
                 </li>
                 <li>
                   <span>판매가</span>
-                  <span id="gprice">{seld[2]}</span>
+                  <span id="gprice">{numberWithCommas(seld[2])}원</span>
                 </li>
                 <li>
                   <span>적립금</span>
@@ -104,7 +108,7 @@ useEffect(()=>{$('#sum').val(1)})
                   <span>권장계절</span> <span>여름</span>
                 </li>
                 <li className="tot">
-                  <span>총합계</span> <span id="total">{seld[2]}</span>
+                  <span>총합계</span> <span id="total">{numberWithCommas(seld[2])}원</span>
                 </li>
               </ol>
             </div>

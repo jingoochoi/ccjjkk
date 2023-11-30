@@ -14,12 +14,16 @@ export function Newlist(p) {
     }
     return temp
     }
+    //정규식함수(숫자 세자리마다 콤마해주는 기능)
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
     const info=(e)=>{
       const tg=$(e.currentTarget)
       let kiss=tg.attr('class')
       tg.append(`<div class="ibox"></div>`)
       tg.find('.ibox').html(
-        seld[kiss].split('^').map((a)=>`<div>${a}</div>`)
+        seld[kiss].split('^').map((a,b)=>`<div>${b==2?numberWithCommas(a)+'원':a}</div>`)
       ).animate({opacity:1,top:'110%'},300,'linear')
     }
     const move=(e)=>{$(e.currentTarget).find('.ibox').remove()}
