@@ -49,6 +49,24 @@ export function Member() {
         }
         setCfpw(e.target.value)
     }
+    const chgnm=e=>{
+        
+        if (e.target.value!=='') {
+            setNmer(false)
+        }else{
+            setNmer(true)
+        }
+        setName(e.target.value)
+    }
+    const chgem=e=>{
+        const valid =/^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;//do not use ''
+        if (valid.test(e.target.value)) {
+            setEmer(false)
+        }else{
+            setEmer(true)
+        }
+        setMail(e.target.value)
+    }
     return(
         <>
             <div className="outbx">
@@ -85,8 +103,22 @@ export function Member() {
                                 </div>
                             }
                             </li>
-                            <li><label>User Name:</label><input type="text" maxLength={20} placeholder='Please enter your name' /></li>
-                            <li><label>Email:</label><input type="text" maxLength={50} placeholder='Please enter your email address' /></li>
+                            <li><label>User Name:</label><input type="text" maxLength={20} placeholder='Please enter your name' value={name} onChange={chgnm} />
+                            {
+                                nmer&&
+                                <div className="msg">
+                                    <small style={{color:'red',fontSize:'10px'}}>{msge.necc}</small>
+                                </div>
+                            }
+                            </li>
+                            <li><label>Email:</label><input type="text" maxLength={50} placeholder='Please enter your email address' value={mail} onChange={chgem} />
+                            {
+                                emer&&
+                                <div className="msg">
+                                    <small style={{color:'red',fontSize:'10px'}}>{msge.emal}</small>
+                                </div>
+                            }
+                            </li>
                             <li style={{overflow:'hidden'}}><button className='sbtn'>SUBMIT</button></li>
                             <li>Are You Already A Member? <Link to="/login">LOG IN</Link></li>
                         </ul>
