@@ -72,6 +72,8 @@ export default function App() {
           <Route path="board" element={<SwiperApp />} />
           <Route path="detail" element={<CatDetail />} />
           <Route path="schpage" element={<SchPage />} />
+          <Route path="member" element={<SchPage />} />
+          <Route path="login" element={<SchPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
