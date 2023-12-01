@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import '../../css/member.css'
 import { useState } from 'react'
+import { clearData, initData } from '../function/localft'
+import $ from 'jquery'
 export function Member() {
     const[idfc,setIdfc]=useState('')
     const[pswd,setPswd]=useState('')
@@ -25,7 +27,21 @@ export function Member() {
     const chgid=e=>{
         const valid = /^[A-Za-z0-9+]{5,}$/;//do not use ''
         if (valid.test(e.target.value)) {
-            setIder(false)
+            initData()
+            let data=localStorage.getItem('mem-data')
+            data=JSON.parse(data)
+            let cool=true
+            data.forEach(a=>{
+                if (a.uid===e.target.value) {
+                    setItxt(msgi[1])
+                    setIder(true)
+                    cool=false
+                }
+            })
+            if (cool) {
+                setItxt(msgi[0])
+                setIder(false)
+            }
         }else{
             setIder(true)
         }
@@ -73,11 +89,29 @@ export function Member() {
         if (!cfpw)setCfer(true)
         if (!name)setNmer(true)
         if (!mail)setEmer(true)
+        if (idfc&&pswd&&cfpw&&name&&mail&&!ider&&!pwer&&!cfer&&!nmer&&!emer) {
+            return true
+        }else return false
     }
     const smit=e=>{
         e.preventDefault()
-        if (ttcc) {
-            // 
+        if (ttcc()) {
+            // alert('WELCOME MY HERO')
+            initData()
+            let data=localStorage.getItem('mem-data')
+            data=JSON.parse(data)
+            let newd={
+                "idx": data.length+1,
+                "uid": idfc,
+                "pwd": pswd,
+                "unm": name,
+                "eml": mail
+            }
+            data.push(newd)
+            localStorage.setItem('mem-data',JSON.stringify(data))
+            $('.sbtn').text('WELCOME MY HERO')
+        }else{
+            alert(`ARE YOU VILLAIN?\nIF YOU ARE HERO, PLEASE FILL THE FORMS`)
         }
     }
     return(
