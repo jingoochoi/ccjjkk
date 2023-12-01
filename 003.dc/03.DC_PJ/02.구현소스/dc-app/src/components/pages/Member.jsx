@@ -67,6 +67,19 @@ export function Member() {
         }
         setMail(e.target.value)
     }
+    const ttcc=()=>{
+        if (!idfc)setIder(true)
+        if (!pswd)setPwer(true)
+        if (!cfpw)setCfer(true)
+        if (!name)setNmer(true)
+        if (!mail)setEmer(true)
+    }
+    const smit=e=>{
+        e.preventDefault()
+        if (ttcc) {
+            // 
+        }
+    }
     return(
         <>
             <div className="outbx">
@@ -119,7 +132,7 @@ export function Member() {
                                 </div>
                             }
                             </li>
-                            <li style={{overflow:'hidden'}}><button className='sbtn'>SUBMIT</button></li>
+                            <li style={{overflow:'hidden'}}><button className='sbtn' onClick={smit}>SUBMIT</button></li>
                             <li>Are You Already A Member? <Link to="/login">LOG IN</Link></li>
                         </ul>
                     </form>
