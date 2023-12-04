@@ -43,7 +43,7 @@ h3::before{
 h3::after{
     content: '📌';
 }
-ul{display: grid;grid-template-columns: repeat(3,1fr);list-style: none;grid-row-gap: 30px;}
+ul{display: grid;grid-template-columns: repeat(5,1fr);list-style: none;grid-row-gap: 30px;}
 br{display: none;}
 li{
     line-height: 1;
