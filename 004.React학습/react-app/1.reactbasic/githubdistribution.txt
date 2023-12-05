@@ -1,5 +1,8 @@
 [ 리액트 배포용소스 깃허브에 호스팅하기 ]
 
+must add homepage in package.json(remove in development mode)
+use HashRouter when use router
+
 1. 리액트 SPA 개발환경 소스를 빌드한다
 -> 빌드 명령어 : npm run build
 -> 빌드후 build 폴더 생성됨(다시빌드시 매번갱신)
