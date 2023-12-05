@@ -1,0 +1,7 @@
+#cartlist{position: fixed;top: 0;right: 0;width: 60vw;height: 100vh;background-color: #ffffff77;z-index: 9999;}
+#cartlist .cbtn{position: absolute;top: 5%;right: 5%;width: 40px;height: 40px;}
+#cartlist table{}
+#cartlist caption{}
+#cartlist th{}
+#cartlist td{}
+#cartlist td img{}
