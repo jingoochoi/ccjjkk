@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { newprdt } from "../data/newlist"
 import $ from 'jquery'
+import { Cartlist } from "./Cartlist"
 
 export function Item({cat,good}) {
   const seld=newprdt[cat][good].split('^')
@@ -120,6 +121,7 @@ function numberWithCommas(x) {
           </section>
         </div>
       </div>
+      <Cartlist></Cartlist>
         </>
     )
 }
