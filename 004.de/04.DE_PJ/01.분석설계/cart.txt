@@ -1,0 +1,16 @@
+[constructure and function]
+
+1.definition:saving the products for purchasing
+2.data:separating products by code
+3.order:
+    1.button click
+    2.sending the message
+    3.list button click->show the list
+    4.offer products and total price
+        -remove button
+        -same products adding or removing
+        -purchasing button
+4.login connection
+    1.without login,saving temporarily
+    2.if login,saving in login account db
+    3.without->login,temporarily->login db
