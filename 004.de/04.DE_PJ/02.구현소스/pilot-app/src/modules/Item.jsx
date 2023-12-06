@@ -1,12 +1,34 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { newprdt } from "../data/newlist"
 import $ from 'jquery'
 import { Cartlist } from "./Cartlist"
+import gdata from "../data/glist"
 
 export function Item({cat,good}) {
+  const [cars,setCars]=useState(0)
+  const usct=()=>{
+    sel.num=$('#sum').val()
+    if (!localStorage.getItem('cute')) {
+      let lclc=[]
+      lclc.push(sel)
+      localStorage.setItem('cute',JSON.stringify(lclc))
+    }else{
+      let lcdb=localStorage.getItem('cute')
+      lcdb=JSON.parse(lcdb)
+      lcdb.push(sel)
+      localStorage.setItem('cute',JSON.stringify(lcdb))
+    }
+    setCars(1)
+  }
   const seld=newprdt[cat][good].split('^')
   // console.log(seld)
   //became array([name,code,price])
+  const sel=gdata.find(a=>{
+    if (a.cat===cat&&a.ginfo[0]===good) {
+      return true
+    }
+  })
+  const info=sel.ginfo
   const btbx=(e)=>{
     e.preventDefault()
     $('#bgbx').slideUp(300)
@@ -23,10 +45,10 @@ export function Item({cat,good}) {
         vnum=1
       }
       sum.val(vnum)
-      $('#total').html(numberWithCommas(seld[2]*sum.val())+'원')
+      $('#total').html(numberWithCommas(info[3]*sum.val())+'원')
     })
   },[])
-useEffect(()=>{$('#sum').val(1);$('#total').html(numberWithCommas(seld[2]*$('#sum').val())+'원')})
+useEffect(()=>{$('#sum').val(1);$('#total').html(numberWithCommas(info[3]*$('#sum').val())+'원')})
 //정규식함수(숫자 세자리마다 콤마해주는 기능)
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -58,7 +80,7 @@ function numberWithCommas(x) {
                 <li>
                   <img src="./images/dx_ico_new-28143800.gif" alt="new버튼" />
                 </li>
-                <li id="gtit">상품명: {seld[0]}</li>
+                <li id="gtit">상품명: {info[1]}</li>
                 <li>
                   <img src="./images/icon_type02_social01.gif" alt="페이스북" />
                   <img src="./images/icon_type02_social02.gif" alt="트위터" />
@@ -67,7 +89,7 @@ function numberWithCommas(x) {
                 </li>
                 <li>
                   <span>판매가</span>
-                  <span id="gprice">{numberWithCommas(seld[2])}원</span>
+                  <span id="gprice">{numberWithCommas(info[3])}원</span>
                 </li>
                 <li>
                   <span>적립금</span>
@@ -87,7 +109,7 @@ function numberWithCommas(x) {
                   </span>
                 </li>
                 <li>
-                  <span>상품코드</span> <span id="gcode">{seld[1]}</span>
+                  <span>상품코드</span> <span id="gcode">{info[2]}</span>
                 </li>
                 <li>
                   <span>사이즈</span> <span>95 100 105 110</span>
@@ -109,19 +131,22 @@ function numberWithCommas(x) {
                   <span>권장계절</span> <span>여름</span>
                 </li>
                 <li className="tot">
-                  <span>총합계</span> <span id="total">{numberWithCommas(seld[2])}원</span>
+                  <span>총합계</span> <span id="total">{numberWithCommas(info[3])}원</span>
                 </li>
               </ol>
             </div>
             <div>
               <button className="btn btn1">BUY NOW</button>
-              <button className="btn">SHOPPING CART</button>
+              <button className="btn" onClick={usct}>SHOPPING CART</button>
               <button className="btn">WISH LIST</button>
             </div>
           </section>
         </div>
       </div>
+      {
+        cars&&
       <Cartlist></Cartlist>
+      }
         </>
     )
 }

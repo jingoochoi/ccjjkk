@@ -1,9 +1,15 @@
 import '../css/cart.css'
+import $ from 'jquery'
 export function Cartlist() {
+    const wash=JSON.parse(localStorage.getItem('cute'))
+    // console.log(wash)
+    function addComma(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     return(
         <>
             <section id="cartlist">
-        <a href="#" className="cbtn cbtn2">
+        <a href="#" className="cbtn cbtn2"onClick={(e)=>{e.preventDefault();$('#cartlist').css({right:'-60vw'})}}>
           <span>닫기버튼</span>
         </a>
         <table>
@@ -21,74 +27,37 @@ export function Cartlist() {
               <th>합계</th>
               <th>삭제</th>
             </tr>
+            {wash.map((v, i) => (
+              <tr key={i}>
+                {/* 상품이미지 */}
+                <td>
+                  <img
+                    src={"images/goods/" + v.cat + "/" + v.ginfo[0] + ".png"}
+                    alt="item"
+                  />
+                </td>
+                {/* 리스트순번 */}
+                <td>{i + 1}</td>
+                {/* 상품명 */}
+                <td>{v.ginfo[1]}</td>
+                {/* 상품코드 */}
+                <td>{v.ginfo[2]}</td>
+                {/* 상품가격 */}
+                <td>{addComma(v.ginfo[3])}원</td>
+                {/* 상품수량 */}
+                <td>{v.num}</td>
+                {/* 상품가격 총합계 */}
+                <td>{addComma(v.ginfo[3] * v.num)}원</td>
+                <td>
+                  <button className="cfn" data-idx={v.idx}>
+                    ×
+                  </button>
+                </td>
+              </tr>
+            ))}
 
             <tr>
-              <td>
-                <img src="images/goods/women/m2.png" alt="item" />
-              </td>
-              <td>1</td>
-              <td>[여성]빅로고 컬러 블럭 PQ 티셔츠</td>
-              <td>DMTS7G731-BK </td>
-              <td>89,000원</td>
-              <td>1</td>
-              <td>89,000원</td>
-              <td>
-                <button className="cfn" data-idx="5">
-                  ×
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="images/goods/women/m2.png" alt="item" />
-              </td>
-              <td>1</td>
-              <td>[여성]빅로고 컬러 블럭 PQ 티셔츠</td>
-              <td>DMTS7G731-BK </td>
-              <td>89,000원</td>
-              <td>1</td>
-              <td>89,000원</td>
-              <td>
-                <button className="cfn" data-idx="5">
-                  ×
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="images/goods/women/m2.png" alt="item" />
-              </td>
-              <td>1</td>
-              <td>[여성]빅로고 컬러 블럭 PQ 티셔츠</td>
-              <td>DMTS7G731-BK </td>
-              <td>89,000원</td>
-              <td>1</td>
-              <td>89,000원</td>
-              <td>
-                <button className="cfn" data-idx="5">
-                  ×
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="images/goods/women/m2.png" alt="item" />
-              </td>
-              <td>1</td>
-              <td>[여성]빅로고 컬러 블럭 PQ 티셔츠</td>
-              <td>DMTS7G731-BK </td>
-              <td>89,000원</td>
-              <td>1</td>
-              <td>89,000원</td>
-              <td>
-                <button className="cfn" data-idx="5">
-                  ×
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td colspan="6">총합계 :</td>
+              <td colSpan="6">총합계 :</td>
               <td>999,000원</td>
               <td></td>
             </tr>
