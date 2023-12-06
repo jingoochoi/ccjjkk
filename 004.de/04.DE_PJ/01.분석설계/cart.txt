@@ -14,3 +14,10 @@
     1.without login,saving temporarily
     2.if login,saving in login account db
     3.without->login,temporarily->login db
+5.point
+    1.find db data->temporarily local storage
+    2.if saving,submit db first
+    3.data transforming
+        -convert to obj
+        -modify the obj data
+        -obj->string data->saving
