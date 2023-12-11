@@ -1,10 +1,23 @@
+import { memo, useEffect } from 'react';
 import '../css/cart.css'
 import $ from 'jquery'
-export function Cartlist() {
-    const wash=JSON.parse(localStorage.getItem('cute'))
-    // console.log(wash)
+export const Cartlist=memo(({sell})=>{
+    // const wash=JSON.parse(localStorage.getItem('cute'))
+    console.log(sell)
+    const ct=sell.length
     function addComma(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    useEffect(()=>{
+      $('#mycart').removeClass('on').fadeIn(300,function () {
+        $(this).addClass('on')
+      })
+      setTimeout(() => {
+        $('.cntBx').show()
+      }, 2000*2);
+    },[])
+    const showshow=()=>{
+      $('#cartlist').css({right:'0vw'})
     }
     return(
         <>
@@ -27,7 +40,7 @@ export function Cartlist() {
               <th>합계</th>
               <th>삭제</th>
             </tr>
-            {wash.map((v, i) => (
+            {sell.map((v, i) => (
               <tr key={i}>
                 {/* 상품이미지 */}
                 <td>
@@ -64,6 +77,10 @@ export function Cartlist() {
           </tbody>
         </table>
       </section>
+      <div id='mycart' onClick={showshow}>
+        <img src="./images/mycart.gif" title="product"></img>
+        <div className="cntBx">{ct}</div>
+      </div>
         </>
     )
-}
+})

@@ -6,20 +6,24 @@ import gdata from "../data/glist"
 
 export function Item({cat,good}) {
   const [cars,setCars]=useState(0)
+  const [tran,setTran]=useState(null)
   const usct=()=>{
     sel.num=$('#sum').val()
     if (!localStorage.getItem('cute')) {
       let lclc=[]
       lclc.push(sel)
       localStorage.setItem('cute',JSON.stringify(lclc))
+      setTran(lclc)
     }else{
       let lcdb=localStorage.getItem('cute')
       lcdb=JSON.parse(lcdb)
       lcdb.push(sel)
       localStorage.setItem('cute',JSON.stringify(lcdb))
+      setTran(lcdb)
     }
     setCars(1)
   }
+  // console.log(tran)
   const seld=newprdt[cat][good].split('^')
   // console.log(seld)
   //became array([name,code,price])
@@ -145,7 +149,7 @@ function numberWithCommas(x) {
       </div>
       {
         cars&&
-      <Cartlist></Cartlist>
+      <Cartlist sell={tran}></Cartlist>
       }
         </>
     )

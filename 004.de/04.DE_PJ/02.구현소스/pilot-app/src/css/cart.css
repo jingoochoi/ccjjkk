@@ -1,4 +1,4 @@
-#cartlist{position: fixed;top: 0;right: 0;width: 60vw;height: 100vh;background-color: #ffffff77;z-index: 9999;}
+#cartlist{position: fixed;top: 0;right: -61vw;width: 60vw;height: 100vh;background-color: #ffffff77;z-index: 9999;}
 #cartlist .cbtn{position: absolute;top: 5%;right: 5%;width: 40px;height: 40px;background: url(../../public/images/mv_btns.png) no-repeat;background-position: -129px -342px;transition: transform .3s;}
 #cartlist .cbtn span {
     display: none;
@@ -23,3 +23,9 @@
     border-top: 1px solid rgb(85, 85, 85);
     text-align: center;}
 #cartlist td img{width: 50px;}
+#mycart{position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 999;display: none;cursor: pointer;}
+#mycart img{width: 370px;}
+.cntBx{display: none;}
+#mycart.on{position: fixed;top: 50%;left: calc(100% - 70px);transform: translate(0,-50%);z-index: 999;display: none;cursor: pointer;transition: .3s ease-in 3s;background-color: aquamarine;border-radius: 10px 0 0 10px;padding: 10px;}
+#mycart.on img{width: 50px;transition: .3s ease-in 3s;}
+#mycart.on .cntBx{width: 13px;height: 13px;border-radius: 50%;background-color: red;color: white;text-align: center;}
