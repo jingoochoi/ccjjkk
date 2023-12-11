@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import '../../css/member.css'
 import $ from 'jquery'
+import { initData } from '../function/localft'
 export function Login() {
     const[idfc,setIdfc]=useState('')
     const[pswd,setPswd]=useState('')
     const[ider,setIder]=useState(false)
     const[pwer,setPwer]=useState(false)
-    const msgi=["User ID must contain a minimum of 5 characters",
-    "This ID is already in use!",
-    "That's a great ID!",]
+    const msgi=["This is a required entry",//필수입력
+    "ID does not exist",//아이디가 존재하지 않습니다
+    "Password doesn't match",//비밀번호가 일치하지 않습니다
+    ]
     const msge={
-        pass:'5 to 15 digits in the form of special characters, characters, and numbers',
+        pass:'This is a required entry',
         same:'Password verification does not match',
         necc:'This is a required entry',
         emal:'Please enter a valid email format',
@@ -43,10 +45,38 @@ export function Login() {
     }
     const smit=e=>{
         e.preventDefault()
-        if (totalval) {
-            console.log('good')
+        if (totalval()) {
+            // console.log('good')
+            // db(now localstorage) data comparing
+            if (!localStorage.getItem('mem-data')) {
+                initData()
+            }
+            let dtdt=localStorage.getItem('mem-data')
+            dtdt=JSON.parse(dtdt)
+            // console.log(dtdt)
+            let nope=true
+            dtdt.forEach(a=>{
+                if (a['uid']===idfc) {
+                    // console.log('pass')
+                    setIder(false)
+                    nope=false
+                    if (a['pwd']===pswd) {
+                        // console.log('pswd')
+                        setPwer(false)
+                    }else{
+                        // console.log('kk')
+                        setItxt(msgi[2])
+                        setPwer(true)
+                    }
+                }
+            })
+            if (nope) {
+                // console.log('dig')
+                setItxt(msgi[1])
+                setIder(true)
+            }
         }else{
-            console.log('oooh')
+            // console.log('oooh')
         }
     }
     return(
@@ -63,17 +93,12 @@ export function Login() {
                                     <small style={{color:'red',fontSize:'10px'}}>{itxt}</small>
                                 </div>
                             }
-                            {
-                                !ider&&idfc&&
-                                <div className="msg">
-                                    <small style={{color:'green',fontSize:'10px'}}>{msgi[2]}</small>
-                                </div>
-                            }</li>
+                            </li>
                             <li><label>Password:</label><input type="password" maxLength={20} placeholder='Please enter your password' value={pswd} onChange={chgpw} />
                             {
                                 pwer&&
                                 <div className="msg">
-                                    <small style={{color:'red',fontSize:'10px'}}>{msge.pass}</small>
+                                    <small style={{color:'red',fontSize:'10px'}}>{itxt}</small>
                                 </div>
                             }
                             </li>
