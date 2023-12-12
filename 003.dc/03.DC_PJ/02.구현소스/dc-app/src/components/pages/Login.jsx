@@ -1,8 +1,14 @@
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import '../../css/member.css'
 import $ from 'jquery'
 import { initData } from '../function/localft'
+// 컨텍스트 API를 사용하는 컴포넌트 파일에서 불러옴!
+import { dcCon } from "../modules/dcContext";
+// import {  } from "react";
 export function Login() {
+    // 컨텍스트 API 사용하기
+        const myCon = useContext(dcCon);
+    
     const[idfc,setIdfc]=useState('')
     const[pswd,setPswd]=useState('')
     const[ider,setIder]=useState(false)
@@ -54,29 +60,59 @@ export function Login() {
             let dtdt=localStorage.getItem('mem-data')
             dtdt=JSON.parse(dtdt)
             // console.log(dtdt)
-            let nope=true
-            dtdt.forEach(a=>{
+            // let nope=true
+            let same=dtdt.find(a=>{
                 if (a['uid']===idfc) {
-                    // console.log('pass')
+                    return true
+                }
+            })
+            // console.log(same)
+            if (same) {
                     setIder(false)
-                    nope=false
-                    if (a['pwd']===pswd) {
+                    // nope=false
+                    if (same['pwd']===pswd) {
                         // console.log('pswd')
                         setPwer(false)
+                        localStorage.setItem('info',JSON.stringify(same))
+                        myCon.setLogg(localStorage.getItem('info'))
+                        myCon.setMsgs('LUCIDUS HEROS, '+same.unm)
+                        $('.sbtn').text('Heros ante portas')
+                        setTimeout(() => {
+                            // 컨텍스트 API 함수호출!
+                        myCon.chgPage('/',{})
+                        }, 1000);
                     }else{
                         // console.log('kk')
                         setItxt(msgi[2])
                         setPwer(true)
                     }
-                }
-            })
-            if (nope) {
-                // console.log('dig')
+            }else{
                 setItxt(msgi[1])
                 setIder(true)
             }
+            // dtdt.forEach(a=>{
+            //     if (a['uid']===idfc) {
+            //         // console.log('pass')
+            //         setIder(false)
+            //         nope=false
+            //         if (a['pwd']===pswd) {
+            //             // console.log('pswd')
+            //             setPwer(false)
+            //         }else{
+            //             // console.log('kk')
+            //             setItxt(msgi[2])
+            //             setPwer(true)
+            //         }
+            //     }
+            // })
+            // if (nope) {
+            //     // console.log('dig')
+            //     setItxt(msgi[1])
+            //     setIder(true)
+            // }
         }else{
             // console.log('oooh')
+            alert('DIABOLI NON GRATA')
         }
     }
     return(

@@ -10,7 +10,7 @@ import $, { event } from 'jquery';
 // 폰트어썸 불러오기
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { memo, useContext, useEffect } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 
 /******************************************************* 
   [ 리액트 라우터와 연결하여 사용되는 라우터 컴포넌트 ]
@@ -23,13 +23,14 @@ import { memo, useContext, useEffect } from "react";
 *******************************************************/
 // context api sends function and vars, so memoization is not effective
 // sent function must be used with useCallback
-export const TopArea=memo(({ft})=>{//using {} can makes use attribute
+export const TopArea=memo(({ft,logg,msgs,lout})=>{//using {} can makes use attribute
   // const mycon=useContext(dcCon)
   // 라우터 이동메서드 함수
   // const goNav = useNavigate();
 
   // 검색 관련 함수들 ////////////
   // 1. 검색창 보이기함수
+  // const [logg,setLogg]=useState(localStorage.getItem('info'))
   const showSearch = (e) => {
     e.preventDefault()
     // 1. 검색창 보이기
@@ -69,6 +70,7 @@ export const TopArea=memo(({ft})=>{//using {} can makes use attribute
     <>
       {/* 1.상단영역 */}
       <header className="top-area">
+        <div className="logmsg">{msgs}</div>
         {/* 네비게이션 GNB파트 */}
         <nav className="gnb">
           <ul>
@@ -129,12 +131,19 @@ export const TopArea=memo(({ft})=>{//using {} can makes use attribute
               </a>
             </li>
             {/* 회원가입, 로그인은 로그인 아닌 상태일때 나옴 */}
+            {logg===null&&<>
             <li>
               <Link to="/member">JOIN US</Link>
             </li>
             <li>
               <Link to="/login">LOGIN</Link>
             </li>
+            </>}
+            {logg!==null&&<>
+            <li>
+              <a href="#" onClick={lout}>LOGOUT</a>
+            </li>
+            </>}
             <li>
               <audio src="./images/aqua.mp3" onClick={play} controls>OST</audio>
             </li>

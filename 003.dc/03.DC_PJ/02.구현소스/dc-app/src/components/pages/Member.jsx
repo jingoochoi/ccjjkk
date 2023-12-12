@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import '../../css/member.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { clearData, initData } from '../function/localft'
 import $ from 'jquery'
+import { dcCon } from '../modules/dcContext'
 export function Member() {
+    const mymy=useContext(dcCon)
     const[idfc,setIdfc]=useState('')
     const[pswd,setPswd]=useState('')
     const[cfpw,setCfpw]=useState('')
@@ -110,6 +112,9 @@ export function Member() {
             data.push(newd)
             localStorage.setItem('mem-data',JSON.stringify(data))
             $('.sbtn').text('WELCOME MY HERO')
+            setTimeout(() => {
+                mymy.chgPage('login',{})
+            }, 1000);
         }else{
             alert(`ARE YOU VILLAIN?\nIF YOU ARE HERO, PLEASE FILL THE FORMS`)
         }

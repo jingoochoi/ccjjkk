@@ -16,6 +16,11 @@ main.cont{
     background-color: #fff;    
     font-family: 'Ubuntu Condensed', sans-serif;
 }
+.logmsg{position: absolute;
+    left: 55%;
+    top: 40%;
+    font-weight: bold;
+    transform: translateX(-50%);}
 .gnb{
     max-width: 1320px;
     margin: 0 auto;
