@@ -3,7 +3,7 @@ import '../css/cart.css'
 import $ from 'jquery'
 export const Cartlist=memo(({sell})=>{
     // const wash=JSON.parse(localStorage.getItem('cute'))
-    console.log(sell)
+    // console.log(sell)
     const ct=sell.length
     function addComma(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -17,12 +17,12 @@ export const Cartlist=memo(({sell})=>{
       }, 2000*2);
     },[])
     const showshow=()=>{
-      $('#cartlist').css({right:'0vw'})
+      $('#cartlist').animate({right:'0vw'},300)
     }
     return(
         <>
             <section id="cartlist">
-        <a href="#" className="cbtn cbtn2"onClick={(e)=>{e.preventDefault();$('#cartlist').css({right:'-60vw'})}}>
+        <a href="#" className="cbtn cbtn2"onClick={(e)=>{e.preventDefault();$('#cartlist').animate({right:'-60vw'},300)}}>
           <span>닫기버튼</span>
         </a>
         <table>
