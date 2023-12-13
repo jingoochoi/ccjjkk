@@ -7,11 +7,13 @@ import gdata from "../data/glist"
 export function Item({cat,good}) {
   const [cars,setCars]=useState(0)
   const [tran,setTran]=useState(null)
+  let temp
   const usct=()=>{
     sel.num=$('#sum').val()
     if (!localStorage.getItem('cute')) {
       let lclc=[]
       lclc.push(sel)
+      temp=sel
       localStorage.setItem('cute',JSON.stringify(lclc))
       setTran(lclc)
       // setTran(lcdb)
@@ -26,18 +28,17 @@ export function Item({cat,good}) {
     }else{
       let lcdb=localStorage.getItem('cute')
       lcdb=JSON.parse(lcdb)
-      let temp=lcdb.find(a=>{
-        if (a.idx===lcdb.idx) {
+      temp=lcdb.find(a=>{
+        if (a.idx===sel.idx) {
           return true
         }
       })
+      console.log(temp)
       if (temp) {
         alert('😣이미 이쒀염😣')
       }else{
       lcdb.push(sel)
       localStorage.setItem('cute',JSON.stringify(lcdb))
-      setTran(lcdb)
-      setCars(1)
       $('#mycart').removeClass('on').delay(300).fadeIn(300,function () {
         $(this).addClass('on')
       })
@@ -45,6 +46,8 @@ export function Item({cat,good}) {
       setTimeout(() => {
         $('.cntBx').show()
       }, 2000*2);
+      setTran(lcdb)
+      setCars(1)
       }
     }
   }

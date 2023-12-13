@@ -5,6 +5,21 @@ export const Cartlist=memo(({sell})=>{
     // const wash=JSON.parse(localStorage.getItem('cute'))
     // console.log(sell)
     const ct=sell.length
+    let tt=0
+    // const plus=()=>{
+      sell.forEach(a=>{
+        tt+=a.ginfo[3]*a.num
+      })
+    // }
+    const dels=(e)=>{
+      alert('지워야만 속이 후련했냐!🌻')
+      const sidx=$(e.target).attr('data-idx')
+      const newd=sell.find((a)=>{
+        if (a.idx!==sidx) {
+          return true
+        }
+      })
+    }
     function addComma(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
@@ -62,7 +77,7 @@ export const Cartlist=memo(({sell})=>{
                 {/* 상품가격 총합계 */}
                 <td>{addComma(v.ginfo[3] * v.num)}원</td>
                 <td>
-                  <button className="cfn" data-idx={v.idx}>
+                  <button className="cfn" data-idx={v.idx} onClick={dels}>
                     ×
                   </button>
                 </td>
@@ -71,7 +86,7 @@ export const Cartlist=memo(({sell})=>{
 
             <tr>
               <td colSpan="6">총합계 :</td>
-              <td>999,000원</td>
+              <td>{addComma(tt)}원</td>
               <td></td>
             </tr>
           </tbody>
