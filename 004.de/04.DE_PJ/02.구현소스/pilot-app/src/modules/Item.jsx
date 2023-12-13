@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { newprdt } from "../data/newlist"
 import $ from 'jquery'
 import { Cartlist } from "./Cartlist"
@@ -6,9 +6,12 @@ import gdata from "../data/glist"
 
 export function Item({cat,good}) {
   const [cars,setCars]=useState(0)
+  const flag=useRef(true)//true=update  
+                        // false=cart component function operating
   const [tran,setTran]=useState(null)
   let temp
   const usct=()=>{
+    flag.current=true
     sel.num=$('#sum').val()
     if (!localStorage.getItem('cute')) {
       let lclc=[]
@@ -33,7 +36,7 @@ export function Item({cat,good}) {
           return true
         }
       })
-      console.log(temp)
+      // console.log(temp)
       if (temp) {
         alert('😣이미 이쒀염😣')
       }else{
@@ -177,7 +180,7 @@ function numberWithCommas(x) {
       </div>
       {
         cars&&
-      <Cartlist sell={tran}></Cartlist>
+      <Cartlist sell={tran} flag={flag}></Cartlist>
       }
         </>
     )

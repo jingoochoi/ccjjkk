@@ -1,24 +1,37 @@
-import { memo, useEffect } from 'react';
+import { memo, useEffect, useState } from 'react';
 import '../css/cart.css'
 import $ from 'jquery'
-export const Cartlist=memo(({sell})=>{
+// let nn=0
+export const Cartlist=memo(({sell,flag})=>{
+    // nn++
+    console.log(flag.current)
+    const[bage,setBage]=useState(sell)
+    if (bage!==sell&&flag.current) {
+      // console.log(bage!==sell)
+      setBage(sell)
+    }
     // const wash=JSON.parse(localStorage.getItem('cute'))
     // console.log(sell)
-    const ct=sell.length
+    const ct=bage.length
+    console.log(ct)
     let tt=0
     // const plus=()=>{
-      sell.forEach(a=>{
+      console.log(Array.isArray(bage))
+      bage.forEach(a=>{
         tt+=a.ginfo[3]*a.num
       })
     // }
     const dels=(e)=>{
-      alert('지워야만 속이 후련했냐!🌻')
+      flag.current=false
+      alert('꼭 그렇게 지워야만 속이 후련했냐!🌻')
       const sidx=$(e.target).attr('data-idx')
-      const newd=sell.find((a)=>{
+      const newd=bage.filter((a)=>{
         if (a.idx!==sidx) {
           return true
         }
       })
+      console.log(newd)
+      setBage(newd)
     }
     function addComma(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -55,7 +68,7 @@ export const Cartlist=memo(({sell})=>{
               <th>합계</th>
               <th>삭제</th>
             </tr>
-            {sell.map((v, i) => (
+            {bage.map((v, i) => (
               <tr key={i}>
                 {/* 상품이미지 */}
                 <td>
@@ -77,7 +90,7 @@ export const Cartlist=memo(({sell})=>{
                 {/* 상품가격 총합계 */}
                 <td>{addComma(v.ginfo[3] * v.num)}원</td>
                 <td>
-                  <button className="cfn" data-idx={v.idx} onClick={dels}>
+                  <button className="cfn" data-idx={v.idx} onClick={(e)=>{dels(e)}}>
                     ×
                   </button>
                 </td>
