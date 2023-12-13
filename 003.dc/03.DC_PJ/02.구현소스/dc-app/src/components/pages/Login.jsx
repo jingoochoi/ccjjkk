@@ -75,11 +75,11 @@ export function Login() {
                         setPwer(false)
                         localStorage.setItem('info',JSON.stringify(same))
                         myCon.setLogg(localStorage.getItem('info'))
-                        myCon.setMsgs('LUCIDUS HEROS, '+same.unm)
                         $('.sbtn').text('Heros ante portas')
                         setTimeout(() => {
+                            myCon.setMsgs('🦸‍♂️LUCIDUS HEROS, '+same.unm+'🦸‍♀️')
                             // 컨텍스트 API 함수호출!
-                        myCon.chgPage('/',{})
+                            myCon.chgPage('/',{})
                         }, 1000);
                     }else{
                         // console.log('kk')

@@ -180,10 +180,12 @@ input:focus{
 
 /* 1320px이하 미디어쿼리 */
 @media screen and (max-width:1320px) {
-    body{
-        padding-top: 58px;
+    html,body{
         /* 첫번째 컨텐츠 가려짐방지 패딩 */
         overflow-x: hidden;
+    }
+    body{
+        padding-top: 58px;
     }
     .top-area{
         /* 보이는 화면고정 */
@@ -194,7 +196,7 @@ input:focus{
         padding: 0 20px;
         box-sizing: border-box;
         z-index: 9999;
-        overflow: hidden;
+        
         transition: .4s ease-out;
     }
     .top-area.on{
@@ -205,6 +207,7 @@ input:focus{
 
 /* 1024px 이하 미디어쿼리 */
 @media screen and (max-width:1024px) {
+    .top-area{overflow: hidden;}
     .gnb{
         background-color: #fff;
     }
@@ -278,12 +281,13 @@ input:focus{
         vertical-align: 2px;
         margin-left: 5px;
     }
+    .logmsg{font-size: 13px;top: 20px;}
     /* 검색박스 */
     .searchingGnb{
         left: 80px;
         width: 80%;
     }
-
+    audio{display: none;}
     /* 햄버거버튼 */
     .hambtn{
         display: block;
@@ -294,6 +298,7 @@ input:focus{
         left: 5%;
         transform: none;
         z-index: 1;
+        text-indent: 0;
     }
     
     

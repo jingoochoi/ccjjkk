@@ -49,6 +49,7 @@ export const TopArea=memo(({ft,logg,msgs,lout})=>{//using {} can makes use attri
         $(e.currentTarget).val('').parent().hide()
         goSearch(txt);
       }
+      $('.top-area').removeClass('on')
     }
   }; ////////// enterKey 함수 ////////////
 
@@ -57,6 +58,7 @@ export const TopArea=memo(({ft,logg,msgs,lout})=>{//using {} can makes use attri
     console.log('나는 검색하러 간다규~!!!');
     // 라우터 이동함수로 이동하기
     ft('/schpage',{state:{keyword:txt}})
+    $('.top-area').removeClass('on')
   }; //////////// goSearch 함수 /////////////
 
   // useEffect(()=>{
@@ -65,6 +67,12 @@ export const TopArea=memo(({ft,logg,msgs,lout})=>{//using {} can makes use attri
   function play() {
     $('audio').get(0).pause()
   }
+  const men0=()=>{$('.top-area').toggleClass('on')}
+  useEffect(()=>{
+    $('.gnb a[href!="#"]').on('click',()=>{
+      $('.top-area').removeClass('on')
+    })
+  })
   // 리턴코드 ///////////////////////////
   return (
     <>
@@ -107,7 +115,7 @@ export const TopArea=memo(({ft,logg,msgs,lout})=>{//using {} can makes use attri
               </li>
             ))}
             {/* 3. 검색,회원가입,로그인 링크 */}
-            <li style={{ marginLeft: "auto" }}>
+            <li style={{ marginLeft: "auto",marginRight:'3px' }}>
               {/* 검색입력박스 */}
               <div className="searchingGnb">
                 {/* 검색버튼 돋보기 아이콘 */}
@@ -149,8 +157,8 @@ export const TopArea=memo(({ft,logg,msgs,lout})=>{//using {} can makes use attri
             </li>
           </ul>
           {/* 모바일용 햄버거 버튼 */}
-          <button className="hambtn"></button>
         </nav>
+          <button className="hambtn" onClick={men0}></button>
       </header>
     </>
   );
