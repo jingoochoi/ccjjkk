@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import '../../css/board.css'
 import christmas from '../data/tbdata.json'
+christmas.sort((a,b)=>b.idx-a.idx)
 let merry
 if (localStorage.getItem('bdata')) {
     merry=JSON.parse(localStorage.getItem('bdata'))
@@ -8,23 +9,62 @@ if (localStorage.getItem('bdata')) {
     merry=christmas
 }
 export function Board() {
-    const[gift,setGift]=useState(merry)
-    const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update,d=delete(+u))+l
+    const pgbl=11
+    const spur=christmas.length
+    // let init=0
+    const[pgnb,setPgnb]=useState(1) 
+    const[gift,setGift]=useState(null)
+    const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
     const chgMode=(e)=>{
         // console.log()
         let tg=e.target.innerHTML
-        if (tg==='Write') {
-            setMode('c')
-            window.location.reload()
+        switch (tg) {
+            case 'Write':
+                setMode('c')
+                break;
+            case 'List':
+                setMode('l')
+                break;
         }
-        if (tg==='List') {
-            setMode('l')
-            window.location.reload()
+    }
+    const bind=()=>{
+        // <tr>
+        //     <td colSpan="5">There is no data.</td>
+        // </tr>
+        const temp=[]
+        for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
+            if (i>=spur) {
+                break
+            }
+            temp.push(merry[i])
         }
-        if (tg==='Write') {
-            setMode('c')
-            window.location.reload()
+        // console.log(temp)
+        return(
+            temp.map((a,b)=>
+            <tr key={b}>
+                <td>{(b+1)+((pgnb-1)*pgbl)}</td>
+                <td><a href="#" datatype={a.idx}>{a.tit}</a></td>
+                <td>{a.writer}</td>
+                <td>{a.date}</td>
+                <td>{a.cnt}</td>
+            </tr>
+            )
+        )
+    }
+    const link=()=>{
+        let blct=Math.floor(spur/pgbl)
+        let blpd=spur%pgbl
+        const lim=blct+(blpd===0?0:1)
+        let pgcd=[]
+        for (let k = 0; k < lim; k++) {
+            pgcd[k]=<Fragment key={k}><a href='#' onClick={list}>{k+1}</a>{k<lim-1?' 👨‍🎤 ':''}</Fragment>
+            
         }
+        return(pgcd)
+    }
+    const list=(e)=>{
+        setPgnb(e.target.innerHTML)
+        // bind()
     }
     return(
         <>
@@ -44,15 +84,14 @@ export function Board() {
                     </thead>
                     {/* 중앙 레코드 표시부분 */}
                     <tbody>
-                        <tr>
-                            <td colSpan="5">There is no data.</td>
-                        </tr>
+                        {bind()}
                     </tbody>
                     {/* 하단 페이징 표시부분 */}
                     <tfoot>
                         <tr>
                             <td colSpan="5" className="paging">
                                 {/* 페이징번호 위치  */}
+                                {link()}
                             </td>
                         </tr>
                     </tfoot>
