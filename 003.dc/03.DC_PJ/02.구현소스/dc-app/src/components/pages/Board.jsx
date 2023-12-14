@@ -28,9 +28,6 @@ export function Board() {
         }
     }
     const bind=()=>{
-        // <tr>
-        //     <td colSpan="5">There is no data.</td>
-        // </tr>
         const temp=[]
         for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
             if (i>=spur) {
@@ -39,6 +36,13 @@ export function Board() {
             temp.push(merry[i])
         }
         // console.log(temp)
+        if (temp.length===0) {
+            return(
+                <tr>
+                    <td colSpan="5">There is no data.</td>
+                </tr>
+            )
+        }
         return(
             temp.map((a,b)=>
             <tr key={b}>
