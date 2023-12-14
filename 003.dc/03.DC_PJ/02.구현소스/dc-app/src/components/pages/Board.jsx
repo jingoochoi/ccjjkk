@@ -57,7 +57,7 @@ export function Board() {
         const lim=blct+(blpd===0?0:1)
         let pgcd=[]
         for (let k = 0; k < lim; k++) {
-            pgcd[k]=<Fragment key={k}><a href='#' onClick={list}>{k+1}</a>{k<lim-1?' 👨‍🎤 ':''}</Fragment>
+            pgcd[k]=<Fragment key={k}>{pgnb-1===k?<b>{k+1}</b>:<a href='#' onClick={list}>{k+1}</a>}{k<lim-1?' 👨‍🎤 ':''}</Fragment>
             
         }
         return(pgcd)
