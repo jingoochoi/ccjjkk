@@ -7,10 +7,11 @@ if (localStorage.getItem('bdata')) {
     merry=JSON.parse(localStorage.getItem('bdata'))
 }else{
     merry=christmas
+    // merry=[]
 }
 export function Board() {
     const pgbl=11
-    const spur=christmas.length
+    const spur=merry.length
     // let init=0
     const[pgnb,setPgnb]=useState(1) 
     const[gift,setGift]=useState(null)
