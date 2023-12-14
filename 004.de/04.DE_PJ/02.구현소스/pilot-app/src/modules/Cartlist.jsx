@@ -23,15 +23,18 @@ export const Cartlist=memo(({sell,flag})=>{
     // }
     const dels=(e)=>{
       flag.current=false
-      alert('꼭 그렇게 지워야만 속이 후련했냐!🌻')
-      const sidx=$(e.target).attr('data-idx')
-      const newd=bage.filter((a)=>{
-        if (a.idx!==sidx) {
-          return true
-        }
-      })
-      console.log(newd)
-      setBage(newd)
+      if (confirm('지우면 배신 안 지우면 으리 아입니까?🤬')) {//window.confirm()=window basic function of checking-alert
+        alert('꼭 그렇게 지워야만 속이 후련했냐!🌻')
+        const sidx=$(e.target).attr('data-idx')
+        const newd=bage.filter((a)=>{
+          if (a.idx!==sidx) {
+            return true
+          }
+        })
+        // console.log(newd)
+        localStorage.setItem('cute',JSON.stringify(newd))
+        setBage(newd)
+      }else alert('감사합니데이~😊')
     }
     function addComma(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -47,6 +50,19 @@ export const Cartlist=memo(({sell,flag})=>{
     const showshow=()=>{
       $('#cartlist').animate({right:'0vw'},300)
     }
+    const plma=(e)=>{
+      let cnum=Number($(e.currentTarget).parent().siblings('.item-cnt').val())
+      $('#item-cnt').focus()
+      $(e.currentTarget).parent().siblings('.item-cnt').focus()
+      if ($(e.currentTarget).attr('alt')==='증가') {
+        cnum++
+      }else cnum--
+      if (cnum<1) {
+        cnum=1
+      }
+      $(e.currentTarget).parent().siblings('.item-cnt').val(cnum)
+    }
+    const sult=()=>{}
     return(
         <>
             <section id="cartlist">
@@ -86,7 +102,19 @@ export const Cartlist=memo(({sell,flag})=>{
                 {/* 상품가격 */}
                 <td>{addComma(v.ginfo[3])}원</td>
                 {/* 상품수량 */}
-                <td>{v.num}</td>
+                <td className='cnt-part'>
+                  <div>
+                  <span>
+                    <input type="text" className="item-cnt" defaultValue={v.num} />
+                    <button className='btn-insert' onClick={sult}>반영</button>
+                    <b className="btn-cnt">
+                      <img src="./images/cnt_up.png" alt="증가" onClick={plma} />
+                      <img src="./images/cnt_down.png" alt="감소" onClick={plma} />
+                    </b>
+                  </span>
+                  
+                  </div>
+                </td>
                 {/* 상품가격 총합계 */}
                 <td>{addComma(v.ginfo[3] * v.num)}원</td>
                 <td>

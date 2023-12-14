@@ -23,9 +23,17 @@
     border-top: 1px solid rgb(85, 85, 85);
     text-align: center;}
 #cartlist td img{width: 50px;}
+.cbn{width: 23px;}
 #mycart{position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 999;display: none;cursor: pointer;}
 #mycart img{width: 370px;}
 .cntBx{display: none;}
 #mycart.on{position: fixed;top: 50%;left: calc(100% - 70px);transform: translate(0,-50%);z-index: 999;display: none;cursor: pointer;transition: .3s ease-in 3s;background-color: aquamarine;border-radius: 10px 0 0 10px;padding: 10px;}
 #mycart.on img{width: 50px;transition: .3s ease-in 3s;}
 #mycart.on .cntBx{width: 13px;height: 13px;border-radius: 50%;background-color: red;color: white;text-align: center;font-weight: bold;}
+.cnt-part span,.cnt-part>div{display: flex;}
+.cnt-part>div{justify-content: center;}
+.item-cnt{width: 20px;}
+/* .btn-cnt{} */
+#cartlist .btn-cnt img{width: 18px;display: block;}
+.btn-insert{width: 30px;white-space: nowrap;padding: 0;display: none;}
+input:focus+.btn-insert{display: block;position: absolute;margin-left: 43px;}
