@@ -4,7 +4,7 @@ import $ from 'jquery'
 // let nn=0
 export const Cartlist=memo(({sell,flag})=>{
     // nn++
-    console.log(flag.current)
+    // console.log(flag.current)
     const[bage,setBage]=useState(sell)
     if (bage!==sell&&flag.current) {
       // console.log(bage!==sell)
@@ -52,7 +52,7 @@ export const Cartlist=memo(({sell,flag})=>{
     }
     const plma=(e)=>{
       let cnum=Number($(e.currentTarget).parent().siblings('.item-cnt').val())
-      $('#item-cnt').focus()
+      // $('#item-cnt').focus()
       $(e.currentTarget).parent().siblings('.item-cnt').focus()
       if ($(e.currentTarget).attr('alt')==='증가') {
         cnum++
@@ -62,7 +62,18 @@ export const Cartlist=memo(({sell,flag})=>{
       }
       $(e.currentTarget).parent().siblings('.item-cnt').val(cnum)
     }
-    const sult=()=>{}
+    const sult=(e)=>{
+      flag.current=false
+      bage.some((a,b)=>{
+        if (a.idx==$(e.currentTarget).attr('data-idx')) {
+          bage[b].num=$(e.currentTarget).val()
+          return true
+        }
+      })//array some method=true(걔만 픽),false(계만 빼고 다들 픽)
+        // console.log(newd)
+      localStorage.setItem('cute',JSON.stringify(bage))
+      setBage(bage)
+    }
     return(
         <>
             <section id="cartlist">
@@ -106,13 +117,12 @@ export const Cartlist=memo(({sell,flag})=>{
                   <div>
                   <span>
                     <input type="text" className="item-cnt" defaultValue={v.num} />
-                    <button className='btn-insert' onClick={sult}>반영</button>
+                    <button className='btn-insert' onClick={sult} data-idx={v.idx}>반영</button>
                     <b className="btn-cnt">
                       <img src="./images/cnt_up.png" alt="증가" onClick={plma} />
                       <img src="./images/cnt_down.png" alt="감소" onClick={plma} />
                     </b>
                   </span>
-                  
                   </div>
                 </td>
                 {/* 상품가격 총합계 */}
