@@ -17,7 +17,7 @@ export function Board() {
     const[pgnb,setPgnb]=useState(1) 
     const[gift,setGift]=useState(null)
     const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
-    const cdt=useRef(null)
+    const cdt=useRef(null)//<-react type
     const chgMode=(e)=>{
         // console.log()
         let txt=$(e.currentTarget).find('a').text()
@@ -55,7 +55,7 @@ export function Board() {
             //     $('.readone .name').val(cdt.writer)
             //     $('.readone .subject').val(cdt.tit)
             //     $('.readone .content').val(cdt.cont)
-            // })
+            // })<-javascript style
             setMode(md)
         }
         else if (md==='l') {
