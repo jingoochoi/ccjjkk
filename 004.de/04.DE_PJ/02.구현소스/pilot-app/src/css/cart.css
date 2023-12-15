@@ -35,5 +35,5 @@
 .item-cnt{width: 20px;}
 /* .btn-cnt{} */
 #cartlist .btn-cnt img{width: 18px;display: block;}
-.btn-insert{position: absolute;margin-left: 43px;width: 0px;white-space: nowrap;padding: 0;overflow: hidden;transition: width 1s linear;}
+.btn-insert{position: absolute;margin-left: 43px;width: 0px;white-space: nowrap;padding: 0;overflow: hidden;transition: width 1s linear .3s;}
 input:focus+.btn-insert{position: absolute;margin-left: 43px;width: 30px;transition: none;}
