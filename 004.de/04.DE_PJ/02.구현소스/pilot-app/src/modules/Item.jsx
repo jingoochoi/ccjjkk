@@ -5,10 +5,17 @@ import { Cartlist } from "./Cartlist"
 import gdata from "../data/glist"
 
 export function Item({cat,good}) {
-  const [cars,setCars]=useState(0)
   const flag=useRef(true)//true=update  
-                        // false=cart component function operating
-  const [tran,setTran]=useState(null)
+  // false=cart component function operating
+  let cval=0
+  let tval=null
+  if(localStorage.getItem('cute')){
+    cval=1
+    tval=JSON.parse(localStorage.getItem('cute'))
+    $('#mycart').show()
+  }
+  const [tran,setTran]=useState(tval)
+  const [cars,setCars]=useState(cval)
   let temp
   const usct=()=>{
     flag.current=true

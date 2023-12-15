@@ -6,6 +6,7 @@ export const Cartlist=memo(({sell,flag})=>{
     // nn++
     // console.log(flag.current)
     const[bage,setBage]=useState(sell)
+    const[fall,setFall]=useState(null)
     if (bage!==sell&&flag.current) {
       // console.log(bage!==sell)
       setBage(sell)
@@ -66,13 +67,14 @@ export const Cartlist=memo(({sell,flag})=>{
       flag.current=false
       bage.some((a,b)=>{
         if (a.idx==$(e.currentTarget).attr('data-idx')) {
-          bage[b].num=$(e.currentTarget).val()
+          bage[b].num=$(e.currentTarget).prev().val()
           return true
         }
       })//array some method=true(걔만 픽),false(계만 빼고 다들 픽)
-        // console.log(newd)
+        // console.log(bage)
       localStorage.setItem('cute',JSON.stringify(bage))
-      setBage(bage)
+      setBage(bage)//기존 배열 자체가 추가 및 삭제되지 않는 한 배열 데이터가 업데이트된 것으로 인식하지 않는다. 따라서, 강제로 설정하여 리렌더링 필수
+      setFall(Math.random())
     }
     return(
         <>
