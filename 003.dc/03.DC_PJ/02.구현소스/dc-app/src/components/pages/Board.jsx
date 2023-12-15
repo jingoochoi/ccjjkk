@@ -1,4 +1,5 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useCallback, useRef, useState } from 'react'
+import $ from 'jquery'
 import '../../css/board.css'
 import christmas from '../data/tbdata.json'
 christmas.sort((a,b)=>b.idx-a.idx)
@@ -16,17 +17,70 @@ export function Board() {
     const[pgnb,setPgnb]=useState(1) 
     const[gift,setGift]=useState(null)
     const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
+    const cdt=useRef(null)
     const chgMode=(e)=>{
         // console.log()
-        let tg=e.target.innerHTML
-        switch (tg) {
-            case 'Write':
-                setMode('c')
-                break;
+        let txt=$(e.currentTarget).find('a').text()
+        let md
+        switch (txt) {
             case 'List':
-                setMode('l')
+                md='l'
                 break;
+            case 'Write':
+                md='c'
+                break;
+            case 'Modify':
+                md='u'
+                break;
+            case 'Submit':
+                md='s'
+                break;
+            case 'Delete':
+                md='d'
+                break;
+        
+            default:
+                md='r'
+                // break;
         }
+        if (md==='r'&&txt!=='Submit') {
+            // console.log('read',o,k)
+            let cc=$(e.currentTarget).attr('data-idx')
+            cdt.current=merry.find(a=>{
+                if (a.idx===cc) {
+                    return true
+                }
+            })
+            // $(()=>{
+            //     $('.readone .name').val(cdt.writer)
+            //     $('.readone .subject').val(cdt.tit)
+            //     $('.readone .content').val(cdt.cont)
+            // })
+            setMode(md)
+        }
+        else if (md==='l') {
+            setMode(md)
+        }
+        else if (md==='u') {
+            setMode(md)
+        }
+        else if (md==='c') {
+            setMode(md)
+            // console.log('write',o,k)
+            $(()=>{
+                $('.writeone .name').val('tomtom')
+                $('.writeone .email').val('tom@gmail.com')
+            })
+        }
+        else if (md==='s'&&mode==='c') {
+            // console.log('submit',o,k)
+            $('.writeone .name').val('tomtom')
+            $('.writeone .email').val('tom@gmail.com')
+        }
+        // else if (md==='l'&&txt==='Delete') {
+        //     // console.log('delete',o,k)
+        // }
+        
     }
     const bind=()=>{
         const temp=[]
@@ -48,7 +102,7 @@ export function Board() {
             temp.map((a,b)=>
             <tr key={b}>
                 <td>{(b+1)+((pgnb-1)*pgbl)}</td>
-                <td><a href="#" datatype={a.idx}>{a.tit}</a></td>
+                <td><a href="#" data-idx={a.idx} onClick={(e)=>{chgMode(e)}}>{a.tit}</a></td>
                 <td>{a.writer}</td>
                 <td>{a.date}</td>
                 <td>{a.cnt}</td>
@@ -56,6 +110,7 @@ export function Board() {
             )
         )
     }
+
     const link=()=>{
         let blct=Math.floor(spur/pgbl)
         let blpd=spur%pgbl
@@ -145,13 +200,13 @@ export function Board() {
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input type="text" className="name" size="20" readOnly />
+                                <input type="text" className="name" size="20" readOnly value={cdt.current.writer}/>
                             </td>
                         </tr>
                         <tr>
                             <td>Title</td>
                             <td>
-                                <input type="text" className="subject" size="60" readOnly />
+                                <input type="text" className="subject" size="60" readOnly value={cdt.current.tit}/>
                             </td>
                         </tr>
                         <tr>
@@ -161,7 +216,8 @@ export function Board() {
                                     className="content"
                                     cols="60"
                                     rows="10"
-                                    readOnly></textarea>
+                                    readOnly
+                                    value={cdt.current.cont}></textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -177,19 +233,19 @@ export function Board() {
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input type="text" className="name" size="20" readOnly />
+                                <input type="text" className="name" size="20" readOnly value={cdt.current.writer}/>
                             </td>
                         </tr>
                         <tr>
                             <td>Title</td>
                             <td>
-                                <input type="text" className="subject" size="60" />
+                                <input type="text" className="subject" size="60" defaultValue={cdt.current.tit}/>
                             </td>
                         </tr>
                         <tr>
                             <td>Content</td>
                             <td>
-                                <textarea className="content" cols="60" rows="10"></textarea>
+                                <textarea className="content" cols="60" rows="10" defaultValue={cdt.current.cont}></textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -203,40 +259,41 @@ export function Board() {
                         <td>
                             {
                                 mode==='l'&&
-                            <button onClick={chgMode}>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Write</a>
                             </button>
                             }
                             {
                                 mode==='c'&&<>
-                            <button onClick={chgMode}>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Submit</a>
                             </button>
-                            <button onClick={chgMode}>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">List</a>
                             </button></>
                             }
                             {
-                                mode==='r'&&
-                            <button onClick={chgMode}>
+                                mode==='r'&&<>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">List</a>
                             </button>
+                            <button onClick={(e)=>chgMode(e)}>
+                                <a href="#">Modify</a>
+                            </button></>
                             }
                             {
                                 mode==='u'&&<>
-                            <button onClick={chgMode}>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Submit</a>
                             </button>
-                            <button onClick={chgMode}>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Delete</a>
                             </button>
-                            <button onClick={chgMode}>
+                            <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">List</a>
                             </button></>
                             }
-                            {/* <button onClick={chgMode}>
-                                <a href="#">Modify</a>
-                            </button> */}
+                            
                         </td>
                     </tr>
                 </tbody>
