@@ -27,6 +27,9 @@ export function Board() {
         if (mymy.logg===null) {
             setBttn(false)
         }
+        if (mymy.logg===null&&mode==='c') {
+            setMode('l')
+        }
     },[mymy.logg])//re-render preventing
     const cdt=useRef(null)//<-react type
     const lata=useRef(null)
@@ -59,7 +62,7 @@ export function Board() {
             // console.log('read',o,k)
             let cc=$(e.currentTarget).attr('data-idx')
             cdt.current=merry.find(a=>{
-                if (a.idx===cc) {
+                if (a.idx==cc) {
                     return true
                 }
             })
@@ -88,15 +91,38 @@ export function Board() {
         }
         else if (md==='s'&&mode==='c') {
             // console.log('submit',o,k)
-            $('.writeone .name').val('tomtom')
-            $('.writeone .email').val('tom@gmail.com')
+            if ($('.writeone .subject').val().trim()===''||$('.writeone .content').val().trim()==='') {
+                alert('PLEASE FILL OUT THIS FORM')
+            }else{
+                const zero=x=>x<10?'0'+x:x
+                let tday=new Date()
+                let yy=tday.getFullYear()
+                let mm=tday.getMonth()+1
+                let dd=tday.getDate()
+                let tenp=merry
+                let aryi=tenp.map(m=>parseInt(m.idx))
+                let temq={
+                    "idx" : Math.max(...aryi)+1,//Math.max.apply(null,aryi)-... 이전에 쓴 방법
+                    "tit" : $('.writeone .subject').val().trim(),
+                    "cont" : $('.writeone .content').val().trim(),
+                    "att" : "",
+                    "date" : `${yy}-${zero(mm)}-${zero(dd)}`,
+                    "uid" : lata.current.uid,
+                    "unm" : lata.current.unm,
+                    "cnt" : "0"
+                }
+                tenp.push(temq)
+                localStorage.setItem('bdata',JSON.stringify(tenp))
+                setMode('l')
+            }
         }
-        // else if (md==='l'&&txt==='Delete') {
+        // else if (md==='l'&&txt==='d') {
         //     // console.log('delete',o,k)
         // }
         
     }
     const bind=()=>{
+        merry.sort((a,b)=>b.idx-a.idx)
         const temp=[]
         for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
             if (i>=spur) {
