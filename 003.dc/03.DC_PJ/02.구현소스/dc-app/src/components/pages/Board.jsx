@@ -1,7 +1,9 @@
-import { Fragment, useCallback, useRef, useState } from 'react'
+import { Fragment, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import $ from 'jquery'
 import '../../css/board.css'
+import { dcCon } from '../modules/dcContext'
 import christmas from '../data/tbdata.json'
+import { initData } from '../function/localft'
 christmas.sort((a,b)=>b.idx-a.idx)
 let merry
 if (localStorage.getItem('bdata')) {
@@ -11,13 +13,23 @@ if (localStorage.getItem('bdata')) {
     // merry=[]
 }
 export function Board() {
+    initData()
+    const mymy=useContext(dcCon)
+    // console.log(mymy.logg)
     const pgbl=11
     const spur=merry.length
     // let init=0
     const[pgnb,setPgnb]=useState(1) 
     const[gift,setGift]=useState(null)
     const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
+    const[bttn,setBttn]=useState(false)
+    useEffect(()=>{
+        if (mymy.logg===null) {
+            setBttn(false)
+        }
+    },[mymy.logg])//re-render preventing
     const cdt=useRef(null)//<-react type
+    const lata=useRef(null)
     const chgMode=(e)=>{
         // console.log()
         let txt=$(e.currentTarget).find('a').text()
@@ -56,6 +68,7 @@ export function Board() {
             //     $('.readone .subject').val(cdt.tit)
             //     $('.readone .content').val(cdt.cont)
             // })<-javascript style
+            comp(cdt.current.uid)
             setMode(md)
         }
         else if (md==='l') {
@@ -65,12 +78,13 @@ export function Board() {
             setMode(md)
         }
         else if (md==='c') {
+            lata.current=JSON.parse(mymy.logg)
             setMode(md)
             // console.log('write',o,k)
-            $(()=>{
-                $('.writeone .name').val('tomtom')
-                $('.writeone .email').val('tom@gmail.com')
-            })
+            // $(()=>{
+            //     $('.writeone .name').val('tomtom')
+            //     $('.writeone .email').val('tom@gmail.com')
+            // })<-javascript style
         }
         else if (md==='s'&&mode==='c') {
             // console.log('submit',o,k)
@@ -103,7 +117,7 @@ export function Board() {
             <tr key={b}>
                 <td>{(b+1)+((pgnb-1)*pgbl)}</td>
                 <td><a href="#" data-idx={a.idx} onClick={(e)=>{chgMode(e)}}>{a.tit}</a></td>
-                <td>{a.writer}</td>
+                <td>{a.unm}</td>
                 <td>{a.date}</td>
                 <td>{a.cnt}</td>
             </tr>
@@ -125,6 +139,23 @@ export function Board() {
     const list=(e)=>{
         setPgnb(e.target.innerHTML)
         // bind()
+    }
+    const comp=(k)=>{
+        if (mymy.logg!==null) {
+            const fofo=JSON.parse(localStorage.getItem('mem-data'))
+            const cu=fofo.find(p=>{
+                if (p.uid===k) {
+                    return true
+                }
+            })
+            const cusr=JSON.parse(mymy.logg)
+            if (cusr.uid===cu.uid) {
+                setBttn(true)
+            }else setBttn(false)
+        }else{
+            setBttn(false)
+        }
+        // return cu[c]
     }
     return(
         <>
@@ -166,13 +197,13 @@ export function Board() {
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input type="text" className="name" size="20" readOnly />
+                                <input type="text" className="name" size="20" readOnly value={lata.current.unm}/>
                             </td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>
-                                <input type="text" className="email" size="40" readOnly />
+                                <input type="text" className="email" size="40" readOnly value={lata.current.eml}/>
                             </td>
                         </tr>
                         <tr>
@@ -200,7 +231,7 @@ export function Board() {
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input type="text" className="name" size="20" readOnly value={cdt.current.writer}/>
+                                <input type="text" className="name" size="20" readOnly value={cdt.current.unm}/>
                             </td>
                         </tr>
                         <tr>
@@ -233,7 +264,7 @@ export function Board() {
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input type="text" className="name" size="20" readOnly value={cdt.current.writer}/>
+                                <input type="text" className="name" size="20" readOnly value={cdt.current.uid}/>
                             </td>
                         </tr>
                         <tr>
@@ -258,13 +289,14 @@ export function Board() {
                     <tr>
                         <td>
                             {
-                                mode==='l'&&
+                                mode==='l'&&mymy.logg!==null&&
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Write</a>
                             </button>
                             }
                             {
-                                mode==='c'&&<>
+                                mode==='c'&&
+                                <>
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Submit</a>
                             </button>
@@ -273,16 +305,22 @@ export function Board() {
                             </button></>
                             }
                             {
-                                mode==='r'&&<>
+                                mode==='r'&&
+                                <>
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">List</a>
                             </button>
+                            {
+                                bttn&&
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Modify</a>
-                            </button></>
+                            </button>
+                            }
+                            </>
                             }
                             {
-                                mode==='u'&&<>
+                                mode==='u'&&
+                                <>
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Submit</a>
                             </button>

@@ -16,7 +16,8 @@ export function Layout() {
     localStorage.removeItem('info')
     setLogg(null)
     setMsgs(null)
-    chgPage('/',{})
+    // chgPage('/',{})
+    alert('Pax intrantibus, salus exeuntibus')//들어오는 자에게는 평화를, 나가는 자에게는 안녕을
   },[])
   // 랜더링 후(화면보이기전) 실행구역 //////////
   useLayoutEffect(()=>{
@@ -36,7 +37,7 @@ export function Layout() {
    **********************************/
   // 리턴코드 ////////////////////////
   return (
-    <dcCon.Provider value={{ chgPage,setLogg,setMsgs }}>
+    <dcCon.Provider value={{ chgPage,setLogg,setMsgs,logg }}>
       <TopArea ft={chgPage} logg={logg} msgs={msgs} lout={lout}/>
       <MainArea />
       <FooterArea />
