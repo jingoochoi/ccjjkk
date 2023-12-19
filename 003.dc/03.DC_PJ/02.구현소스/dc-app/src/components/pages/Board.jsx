@@ -116,9 +116,47 @@ export function Board() {
                 setMode('l')
             }
         }
-        // else if (md==='l'&&txt==='d') {
-        //     // console.log('delete',o,k)
-        // }
+        else if (md==='s'&&mode==='u') {
+            if ($('.updateone .subject').val().trim()===''||$('.updateone .content').val().trim()==='') {
+                alert('PLEASE FILL OUT THIS FORM')
+            }else{
+                let tenp=merry
+                tenp.some(a=>{
+                    if (cdt.current.idx==a.idx) {
+                        a.tit=$('.updateone .subject').val()
+                        a.cont=$('.updateone .content').val()
+                        return true
+                    }
+                })
+                let aryi=tenp.map(m=>parseInt(m.idx))
+                // let temq={
+                //     "idx" : Math.max(...aryi)+1,//Math.max.apply(null,aryi)-... 이전에 쓴 방법
+                //     "tit" : $('.writeone .subject').val().trim(),
+                //     "cont" : $('.writeone .content').val().trim(),
+                //     "att" : "",
+                //     "date" : `${yy}-${zero(mm)}-${zero(dd)}`,
+                //     "uid" : lata.current.uid,
+                //     "unm" : lata.current.unm,
+                //     "cnt" : "0"
+                // }
+                // tenp.push(temq)
+                localStorage.setItem('bdata',JSON.stringify(tenp))
+                setMode('l')
+            }
+        }
+        else if (md==='d'&&mode==='u') {
+            console.log('delete')
+            if (window.confirm('WOULD YOU REMOVE IT?')) {
+                merry.some((a,b)=>{
+                    if (cdt.current.idx==a.idx) {
+                        merry.splice(b,1)
+                        return true
+                    }
+                })
+                localStorage.setItem('bdata',JSON.stringify(merry))
+                setMode('l')
+            }
+        }
         
     }
     const bind=()=>{
@@ -174,9 +212,11 @@ export function Board() {
                     return true
                 }
             })
-            const cusr=JSON.parse(mymy.logg)
-            if (cusr.uid===cu.uid) {
-                setBttn(true)
+            if (cu) {
+                const cusr=JSON.parse(mymy.logg)
+                if (cusr.uid===cu.uid) {
+                    setBttn(true)
+                }else setBttn(false)
             }else setBttn(false)
         }else{
             setBttn(false)
@@ -290,7 +330,7 @@ export function Board() {
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input type="text" className="name" size="20" readOnly value={cdt.current.uid}/>
+                                <input type="text" className="name" size="20" readOnly value={cdt.current.unm}/>
                             </td>
                         </tr>
                         <tr>

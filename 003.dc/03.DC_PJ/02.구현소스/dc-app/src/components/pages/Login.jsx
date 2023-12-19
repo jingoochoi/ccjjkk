@@ -77,7 +77,7 @@ export function Login() {
                         myCon.setLogg(localStorage.getItem('info'))
                         $('.sbtn').text('Heros ante portas')
                         setTimeout(() => {
-                            myCon.setMsgs('🦸‍♂️LUCIDUS HEROS, '+same.unm+'🦸‍♀️')
+                            
                             // 컨텍스트 API 함수호출!
                             myCon.chgPage('/',{})
                         }, 1000);

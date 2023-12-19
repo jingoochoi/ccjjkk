@@ -8,6 +8,7 @@ import { TopArea } from "./TopArea";
 import { dcCon } from "../modules/dcContext";
 import { useNavigate } from "react-router-dom";
 import { useCallback, useLayoutEffect,useState } from "react";
+import { useEffect } from "react";
 
 export function Layout() {
   const [logg,setLogg]=useState(localStorage.getItem('info'))
@@ -21,10 +22,16 @@ export function Layout() {
   },[])
   // 랜더링 후(화면보이기전) 실행구역 //////////
   useLayoutEffect(()=>{
+    if (localStorage.getItem('info')) {
+      const mofo=JSON.parse(localStorage.getItem('info'))
+      setTimeout(() => {
+        setMsgs('🦸‍♂️LUCIDUS HEROS, '+mofo.unm+'🦸‍♀️')
+      }, 1000);
+    }
     // 페이지 이동시 스크롤위치 상단이동
     window.scrollTo(0,0);
   }); /////////// useEffect ///////////
-
+  
   // 라우터 이동객체설정
   const goNav = useNavigate();
 
