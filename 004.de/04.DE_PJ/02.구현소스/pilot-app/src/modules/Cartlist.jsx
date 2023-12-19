@@ -1,10 +1,13 @@
-import { memo, useEffect, useState } from 'react';
+import { Fragment, memo, useEffect, useState } from 'react';
 import '../css/cart.css'
-import $ from 'jquery'
+import $, { event } from 'jquery'
 // let nn=0
 export const Cartlist=memo(({sell,flag})=>{
     // nn++
     // console.log(flag.current)
+    const pgbl=4
+    // const spur=sell.length
+    const[pgnb,setPgnb]=useState(1)
     const[bage,setBage]=useState(sell)
     const[fall,setFall]=useState(null)
     if (bage!==sell&&flag.current) {
@@ -14,7 +17,7 @@ export const Cartlist=memo(({sell,flag})=>{
     // const wash=JSON.parse(localStorage.getItem('cute'))
     // console.log(sell)
     const ct=bage.length
-    console.log(ct)
+    // console.log(ct)
     let tt=0
     // const plus=()=>{
       console.log(Array.isArray(bage))
@@ -76,6 +79,80 @@ export const Cartlist=memo(({sell,flag})=>{
       setBage(bage)//기존 배열 자체가 추가 및 삭제되지 않는 한 배열 데이터가 업데이트된 것으로 인식하지 않는다. 따라서, 강제로 설정하여 리렌더링 필수
       setFall(Math.random())
     }
+    const bind=()=>{
+      const temp=[]
+      for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
+        if (i>=ct) {
+            break
+        }
+        temp.push(bage[i])
+    }
+    // console.log(temp)
+    if (bage.length===0) {
+        return(
+            <tr>
+                <td colSpan="8">There is no data.</td>
+            </tr>
+        )
+    }
+      return(
+        temp.map((v, i) => (
+          <tr key={i}>
+            {/* 상품이미지 */}
+            <td>
+              <img
+                src={"images/goods/" + v.cat + "/" + v.ginfo[0] + ".png"}
+                alt="item"
+              />
+            </td>
+            {/* 리스트순번 */}
+            <td>{(i + 1)+(pgnb-1)*pgbl}</td>
+            {/* 상품명 */}
+            <td>{v.ginfo[1]}</td>
+            {/* 상품코드 */}
+            <td>{v.ginfo[2]}</td>
+            {/* 상품가격 */}
+            <td>{addComma(v.ginfo[3])}원</td>
+            {/* 상품수량 */}
+            <td className='cnt-part'>
+              <div>
+              <span>
+                <input type="text" className="item-cnt" value={v.num} readOnly />
+                <button className='btn-insert' onClick={sult} data-idx={v.idx}>반영</button>
+                <b className="btn-cnt">
+                  <img src="./images/cnt_up.png" alt="증가" onClick={plma} />
+                  <img src="./images/cnt_down.png" alt="감소" onClick={plma} />
+                </b>
+              </span>
+              </div>
+            </td>
+            {/* 상품가격 총합계 */}
+            <td>{addComma(v.ginfo[3] * v.num)}원</td>
+            <td>
+              <button className="cfn" data-idx={v.idx} onClick={(e)=>{dels(e)}}>
+                ×
+              </button>
+            </td>
+          </tr>
+        ))
+      )
+    }
+    const link=()=>{
+      let blct=Math.floor(ct/pgbl)
+      let blpd=ct%pgbl
+      const lim=blct+(blpd===0?0:1)
+      let pgcd=[]
+      for (let k = 0; k < lim; k++) {
+          pgcd[k]=<Fragment key={k}>{pgnb-1===k?<b>{k+1}</b>:<a href='#' onClick={list}>{k+1}</a>}{k<lim-1?' 👖 ':''}</Fragment>
+          
+      }
+      return(pgcd)
+  }
+  const list=(e)=>{
+    e.preventDefault()
+    setPgnb(e.target.innerHTML)
+    // bind()
+  }
     return(
         <>
             <section id="cartlist">
@@ -97,45 +174,7 @@ export const Cartlist=memo(({sell,flag})=>{
               <th>합계</th>
               <th>삭제</th>
             </tr>
-            {bage.map((v, i) => (
-              <tr key={i}>
-                {/* 상품이미지 */}
-                <td>
-                  <img
-                    src={"images/goods/" + v.cat + "/" + v.ginfo[0] + ".png"}
-                    alt="item"
-                  />
-                </td>
-                {/* 리스트순번 */}
-                <td>{i + 1}</td>
-                {/* 상품명 */}
-                <td>{v.ginfo[1]}</td>
-                {/* 상품코드 */}
-                <td>{v.ginfo[2]}</td>
-                {/* 상품가격 */}
-                <td>{addComma(v.ginfo[3])}원</td>
-                {/* 상품수량 */}
-                <td className='cnt-part'>
-                  <div>
-                  <span>
-                    <input type="text" className="item-cnt" defaultValue={v.num} />
-                    <button className='btn-insert' onClick={sult} data-idx={v.idx}>반영</button>
-                    <b className="btn-cnt">
-                      <img src="./images/cnt_up.png" alt="증가" onClick={plma} />
-                      <img src="./images/cnt_down.png" alt="감소" onClick={plma} />
-                    </b>
-                  </span>
-                  </div>
-                </td>
-                {/* 상품가격 총합계 */}
-                <td>{addComma(v.ginfo[3] * v.num)}원</td>
-                <td>
-                  <button className="cfn" data-idx={v.idx} onClick={(e)=>{dels(e)}}>
-                    ×
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {bind()}
 
             <tr>
               <td colSpan="6">총합계 :</td>
@@ -143,10 +182,18 @@ export const Cartlist=memo(({sell,flag})=>{
               <td></td>
             </tr>
           </tbody>
+          <tfoot>
+              <tr>
+                  <td colSpan="8" className="paging">
+                      {/* 페이징번호 위치  */}
+                      {link()}
+                  </td>
+              </tr>
+          </tfoot>
         </table>
       </section>
       <div id='mycart' onClick={showshow}>
-        <img src="./images/mycart.gif" title="product"></img>
+        <img src="./images/mycart.gif" title={ct>1?ct+" products":ct+" product"}></img>
         <div className="cntBx">{ct}</div>
       </div>
         </>

@@ -10,9 +10,10 @@ export function Item({cat,good}) {
   let cval=0
   let tval=null
   if(localStorage.getItem('cute')){
-    cval=1
     tval=JSON.parse(localStorage.getItem('cute'))
-    $('#mycart').show()
+    if(tval.length!==0)cval=1
+    // $('#bgbx').show()
+    // $('#mycart').show()
   }
   const [tran,setTran]=useState(tval)
   const [cars,setCars]=useState(cval)
@@ -89,6 +90,10 @@ export function Item({cat,good}) {
       sum.val(vnum)
       $('#total').html(numberWithCommas(info[3]*sum.val())+'원')
     })
+    if (cars===1) {
+      $('#bgbx').show()
+      // $('#mycart').addClass('on')
+    }
   },[])
 useEffect(()=>{$('#sum').val(1);$('#total').html(numberWithCommas(info[3]*$('#sum').val())+'원')})
 //정규식함수(숫자 세자리마다 콤마해주는 기능)
