@@ -73,6 +73,7 @@ export function Board() {
             // })<-javascript style
             comp(cdt.current.uid)
             setMode(md)
+            cunt()
         }
         else if (md==='l') {
             setMode(md)
@@ -222,6 +223,40 @@ export function Board() {
             setBttn(false)
         }
         // return cu[c]
+    }
+    const cunt=()=>{
+        let okok=true
+        // console.log(cdt.current.idx)
+        if (!sessionStorage.getItem('cnt-idx')) {
+            sessionStorage.setItem('cnt-idx','[]')
+        }
+        let cdcx=JSON.parse(sessionStorage.getItem('cnt-idx'))
+        cdcx.some(a=>{
+            if (a==Number(cdt.current.idx)) {//숫자배열임ㅋㅋㅋ
+                // console.log(a,cdt.current.idx,a==Number(cdt.current.idx))
+                okok=false
+                return true
+            }
+        })
+        if (localStorage.getItem('info')) {
+            let mono=JSON.parse(localStorage.getItem('info')).uid
+            if (mono==cdt.current.uid) {
+                okok=false
+            }
+        }
+        if (okok) {
+            let dbdb=JSON.parse(localStorage.getItem('bdata'))
+            dbdb.some(b=>{
+                if (b.idx==cdt.current.idx) {
+                    b.cnt=Number(b.cnt)+1
+                    return true
+                }
+            })
+            merry=dbdb
+            localStorage.setItem('bdata',JSON.stringify(dbdb))
+            cdcx.push(Number(cdt.current.idx))
+            sessionStorage.setItem('cnt-idx',JSON.stringify(cdcx))
+        }
     }
     return(
         <>
