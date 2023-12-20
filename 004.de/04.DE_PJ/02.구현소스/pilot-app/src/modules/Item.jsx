@@ -1,34 +1,24 @@
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { newprdt } from "../data/newlist"
-import $ from 'jquery'
+import $, { event } from 'jquery'
 import { Cartlist } from "./Cartlist"
 import gdata from "../data/glist"
+import { pcon } from "./pilotContext"
 
 export function Item({cat,good}) {
-  const flag=useRef(true)//true=update  
-  // false=cart component function operating
-  let cval=0
-  let tval=null
-  if(localStorage.getItem('cute')){
-    tval=JSON.parse(localStorage.getItem('cute'))
-    if(tval.length!==0)cval=1
-    // $('#bgbx').show()
-    // $('#mycart').show()
-  }
-  const [tran,setTran]=useState(tval)
-  const [cars,setCars]=useState(cval)
+  const mymy=useContext(pcon)
   let temp
   const usct=()=>{
-    flag.current=true
+    mymy.flag.current=true
     sel.num=$('#sum').val()
     if (!localStorage.getItem('cute')) {
       let lclc=[]
       lclc.push(sel)
       temp=sel
       localStorage.setItem('cute',JSON.stringify(lclc))
-      setTran(lclc)
+      mymy.setTran(lclc)
       // setTran(lcdb)
-      setCars(1)
+      mymy.setCars(1)
       $('#mycart').removeClass('on').delay(300).fadeIn(300,function () {
         $(this).addClass('on')
       })
@@ -57,8 +47,8 @@ export function Item({cat,good}) {
       setTimeout(() => {
         $('.cntBx').show()
       }, 2000*2);
-      setTran(lcdb)
-      setCars(1)
+      mymy.setTran(lcdb)
+      mymy.setCars(1)
       }
     }
   }
@@ -90,10 +80,7 @@ export function Item({cat,good}) {
       sum.val(vnum)
       $('#total').html(numberWithCommas(info[3]*sum.val())+'원')
     })
-    if (cars===1) {
-      $('#bgbx').show()
-      // $('#mycart').addClass('on')
-    }
+    
   },[])
 useEffect(()=>{$('#sum').val(1);$('#total').html(numberWithCommas(info[3]*$('#sum').val())+'원')})
 //정규식함수(숫자 세자리마다 콤마해주는 기능)
@@ -190,10 +177,7 @@ function numberWithCommas(x) {
           </section>
         </div>
       </div>
-      {
-        cars&&
-      <Cartlist sell={tran} flag={flag}></Cartlist>
-      }
+      
         </>
     )
 }

@@ -1,5 +1,5 @@
 // 메인 페이지 JS - index.js
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import ReactDOM, { createRoot } from 'react-dom/client';
 import { pcon } from './modules/pilotContext';
 import {wheelFn,evt} from './func/jquery-autoScroll'
@@ -14,6 +14,7 @@ import 'jquery-ui-dist/jquery-ui';
 
 // 페이지 공통 CSS
 import './css/common.css';
+import { Cartlist } from './modules/Cartlist';
 
 // 최상위 Root 컴포넌트 ///////
 function App(){
@@ -25,7 +26,18 @@ function App(){
   const chgPgName = (txt) => {
     setPgName(txt);
   }; ///////// chgPgName 함수 //////
-
+  const flag=useRef(true)//true=update  
+  // false=cart component function operating
+  let cval=0
+  let tval=null
+  if(localStorage.getItem('cute')){
+    tval=JSON.parse(localStorage.getItem('cute'))
+    if(tval.length!==0)cval=1
+    // $('#bgbx').show()
+    // $('#mycart').show()
+  }
+  const [tran,setTran]=useState(tval)
+  const [cars,setCars]=useState(cval)
   // 랜더링 후 실행구역 ////////////
   useEffect(()=>{
     // 햄버거 버튼 클릭시 전체 메뉴 보이기/숨기기
@@ -49,10 +61,16 @@ function App(){
       // pause() 메서드 : 동영상 정지 메서드
 
     }); //////// click ////////
+    if (cars===1) {
+      $(()=>{
+        $('#bgbx').show()
+        $('#mycart').addClass('on')
+      })
+    }
   },[]); ////////// useEffect //////////////
   useLayoutEffect(()=>{
     window.scrollTo(0,0)
-  })
+  },[])
   // useEffect(()=>{
   //   // in case of removing some event,that setting must be summoned in react function. in that case, removeEventListener is valid.
   //   if (pgName=='main') {
@@ -64,10 +82,14 @@ function App(){
   // })
   // 리턴코드 //////////////////////////
   return(
-      <pcon.Provider value={{chgPgName,pgName}}>
+      <pcon.Provider value={{chgPgName,pgName,flag,setTran,setCars,tran}}>
         <TopArea cat={pgName} />        
         <MainArea page={pgName} />
         <FooterArea />
+        {
+          cars&&
+          <Cartlist sell={tran} flag={flag}></Cartlist>
+        }
       </pcon.Provider>
   )
 
