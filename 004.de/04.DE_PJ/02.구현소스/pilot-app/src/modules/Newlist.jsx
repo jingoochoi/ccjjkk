@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react"
+import { useContext, useEffect, useRef } from "react"
 import $ from 'jquery'
 import { newprdt } from "../data/newlist"
+import { pcon } from "./pilotContext"
 
 export function Newlist(p) {
+  const mymy=useContext(pcon)
   // const ctem=p.ft
   const seld=newprdt[p.cat]
     const mm=()=>{let temp=[]
@@ -51,7 +53,7 @@ function numberWithCommas(x) {
         <>      
   <h2 className="c1tit js-reveal">
     NEW {p.cat.toUpperCase()}'S ARRIVAL
-    <button>
+    <button onClick={()=>{mymy.chgPgName('glist')}}>
         전체리스트
     </button>
   </h2>
