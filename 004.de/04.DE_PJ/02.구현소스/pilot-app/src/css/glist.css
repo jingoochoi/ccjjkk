@@ -1,8 +1,14 @@
 /* 타이틀 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Ubuntu&display=swap');
+#cont{
+    font-family: 'Ubuntu','Nanum Gothic';
+}
 .tit {
     text-align: center;
     /* 글자 최소크기 지정 */
     font-size: max(3vw, 25px);
+    position: relative;
+    top: 8vw;
 }
 .wrap{
     overflow: hidden;

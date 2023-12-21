@@ -20,6 +20,7 @@ export function Glist() {
   return (
     <>
       <main id="cont">
+        <h1 className='tit'>ALL ITEMS LIST</h1>
         <section>
           <div id="optbx">
             <label htmlFor="men">남성</label>
