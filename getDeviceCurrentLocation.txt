@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현재 위치 가져오기</title>
+</head>
+<body>
+
+<button onclick="getLocation()">현재 위치 가져오기</button>
+
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);//html function to get current location of device
+    } else {
+      alert("브라우저가 Geolocation을 지원하지 않습니다.");
+    }
+  }
+
+  function showPosition(position) {
+    alert("현재 위치:\n위도: " + position.coords.latitude + "\n경도: " + position.coords.longitude);
+  }
+</script>
+
+</body>
+</html>
