@@ -13,6 +13,7 @@ if (localStorage.getItem('bdata')) {
     // merry=[]
 }
 export function Board() {
+    if (!localStorage.getItem('bdata'))localStorage.setItem('bdata',JSON.stringify(christmas))
     initData()
     const mymy=useContext(dcCon)
     // console.log(mymy.logg)
