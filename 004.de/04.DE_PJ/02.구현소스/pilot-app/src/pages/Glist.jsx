@@ -7,12 +7,13 @@ export function Glist() {
     const etem=useRef('m1')
     const cats=useRef('men')
     const[rand,setRand]=useState(0)
+    const[curr,setCurr]=useState(gdata)
     // const[tail,setTail]=useState(false)
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
     const make=()=>
-        gdata.map((a,b)=>
+        curr.map((a,b)=>
         <div key={b} onClick={()=>showtail(a.ginfo[0],a.cat)}>
         <a href="#" onClick={(e)=>e.preventDefault()}>
           [{b+1}]
@@ -29,6 +30,35 @@ export function Glist() {
         setRand(Math.random())
         $('#bgbx').slideDown(300)
     }
+    const chck=(e)=>{
+      // console.log(e.currentTarget.id)
+      const idid=e.target.id
+      const chkd=e.target.checked
+      let temp=curr
+      let last=[]
+      let nb=$('.ckck:checked').length
+      if(chkd){
+        const dddd=gdata.filter(a=>{
+          if (a.cat===idid) {
+            return true
+          }
+        })
+        if (nb>1) {
+          last=[...temp,...dddd]
+        }else{
+          last=dddd
+        }
+      }else{
+        for (let i = 0; i < temp.length; i++) {
+          if (temp[i].cat===idid) {
+              temp.splice(i,1)
+              i--
+          }
+          last=[...temp]
+        }
+      }
+      setCurr(last)
+    }
   return (
     <>
       <main id="cont">
@@ -36,11 +66,11 @@ export function Glist() {
         <section>
           <div id="optbx">
             <label htmlFor="men">남성</label>
-            <input type="checkbox" id="men" defaultChecked/>
+            <input type="checkbox" className='ckck' onChange={chck} id="men" />
             <label htmlFor="women">여성</label>
-            <input type="checkbox" id="women" defaultChecked/>
+            <input type="checkbox" className='ckck' onChange={chck} id="women" />
             <label htmlFor="style">스타일</label>
-            <input type="checkbox" id="style" defaultChecked/>
+            <input type="checkbox" className='ckck' onChange={chck} id="style" />
           </div>
           <div className="grid">
             {make()}
@@ -48,7 +78,7 @@ export function Glist() {
         </section>
         {
             
-        <div id="bgbx" style={{position:'fixed',top:0,paddingTop:'20vh',height:'80vh',backdropFilter:'blur(3px)',zIndex:333333}}><Item cat={cats.current} good={etem.current}></Item></div>
+        <div id="bgbx" style={{position:'fixed',top:0,left:'10vw',paddingTop:'20vh',width:'80vw',height:'100vh',backdropFilter:'blur(3px)',zIndex:333333}}><Item cat={cats.current} good={etem.current}></Item></div>
         }
       </main>
     </>
