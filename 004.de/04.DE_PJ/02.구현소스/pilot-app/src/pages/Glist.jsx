@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import '../css/glist.css'
 import gdata from '../data/glist';
 import { Item } from '../modules/Item';
@@ -30,6 +30,10 @@ export function Glist() {
         setRand(Math.random())
         $('#bgbx').slideDown(300)
     }
+    // useLayoutEffect(()=>{
+    //   $('.ckck').prop('checked',true)
+    //   console.log(gdata)
+    // },[])
     const chck=(e)=>{
       // console.log(e.currentTarget.id)
       const idid=e.target.id
