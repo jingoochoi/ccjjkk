@@ -71,6 +71,7 @@ function App(){
   useLayoutEffect(()=>{
     window.scrollTo(0,0)
   },[])
+  const [gmod,setGmod]=useState('F')
   // useEffect(()=>{
   //   // in case of removing some event,that setting must be summoned in react function. in that case, removeEventListener is valid.
   //   if (pgName=='main') {
@@ -82,7 +83,7 @@ function App(){
   // })
   // 리턴코드 //////////////////////////
   return(
-      <pcon.Provider value={{chgPgName,pgName,flag,setTran,setCars,tran}}>
+      <pcon.Provider value={{chgPgName,pgName,flag,setTran,setCars,tran,gmod,setGmod}}>
         <TopArea cat={pgName} />        
         <MainArea page={pgName} />
         <FooterArea />

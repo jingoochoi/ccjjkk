@@ -1,7 +1,10 @@
 /* 타이틀 */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Ubuntu&display=swap');
+/* html,body{overflow: scroll;} */
 #cont{
     font-family: 'Ubuntu','Nanum Gothic';
+    min-height: calc(100vh - 477px);
+    /* overflow-y: scroll; */
 }
 .inx{background-color: #fff;}
 .tit {
@@ -49,6 +52,7 @@
     padding: 10px;
     text-align: center;
     background-color: #fff;
+    cursor: pointer;
 }
 #more button{
     border: none;
@@ -108,7 +112,7 @@
 /* 계속 확대/축소 애니 키프레임 */
 @keyframes magAni {
     to {
-        transform: scale(1.5);
+        transform: scale(2);
     }
 } /* 키프레임 */
 

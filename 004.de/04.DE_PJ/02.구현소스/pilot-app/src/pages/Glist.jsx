@@ -1,9 +1,12 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import '../css/glist.css'
 import gdata from '../data/glist';
 import { Item } from '../modules/Item';
 import $ from 'jquery'
+import { pcon } from '../modules/pilotContext';
 export function Glist() {
+    const myde=useContext(pcon)
+    const tran=useRef(JSON.parse(JSON.stringify(gdata)))
     const etem=useRef('m1')
     const cats=useRef('men')
     const[rand,setRand]=useState(0)
@@ -30,16 +33,14 @@ export function Glist() {
         setRand(Math.random())
         $('#bgbx').slideDown(300)
     }
-    // useLayoutEffect(()=>{
-    //   $('.ckck').prop('checked',true)
-    //   console.log(gdata)
-    // },[])
+    useLayoutEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
     const chck=(e)=>{
       // console.log(e.currentTarget.id)
       const idid=e.target.id
       const chkd=e.target.checked
-      let temp=curr
-      let last=[]
+      
       let nb=$('.ckck:checked').length
       if(chkd){
         const dddd=gdata.filter(a=>{
@@ -48,38 +49,72 @@ export function Glist() {
           }
         })
         if (nb>1) {
-          last=[...temp,...dddd]
+          tran.current=[...tran.current,...dddd]
         }else{
-          last=dddd
+          tran.current=dddd
         }
       }else{
+        const temp=JSON.parse(JSON.stringify(tran.current))
         for (let i = 0; i < temp.length; i++) {
           if (temp[i].cat===idid) {
               temp.splice(i,1)
               i--
           }
-          last=[...temp]
+          tran.current=[...temp]
         }
       }
-      setCurr(last)
+      setCurr(tran.current)
     }
   return (
     <>
       <main id="cont">
         <h1 className='tit'>ALL ITEMS LIST</h1>
-        <section>
-          <div id="optbx">
-            <label htmlFor="men">남성</label>
-            <input type="checkbox" className='ckck' onChange={chck} id="men" />
-            <label htmlFor="women">여성</label>
-            <input type="checkbox" className='ckck' onChange={chck} id="women" />
-            <label htmlFor="style">스타일</label>
-            <input type="checkbox" className='ckck' onChange={chck} id="style" />
-          </div>
-          <div className="grid">
-            {make()}
-          </div>
-        </section>
+        {
+          myde.gmod==='F'&&
+          <section>
+            <div id="optbx">
+              <label htmlFor="men">남성</label>
+              <input type="checkbox" className='ckck' onChange={chck}   id="men" defaultChecked/>
+              <label htmlFor="women">여성</label>
+              <input type="checkbox" className='ckck' onChange={chck}   id="women" defaultChecked/>
+              <label htmlFor="style">스타일</label>
+              <input type="checkbox" className='ckck' onChange={chck}   id="style" defaultChecked/>
+            </div>
+            <div className="grid">
+              {make()}
+            </div>
+          </section>
+        }
+        {
+          myde.gmod==='P'&&
+          <section>
+            <div className="grid">
+              {make()}
+            </div>
+            <div id="paging"><a href="#">
+                1
+            </a>
+             | 
+            <a href="#">
+                2
+            </a>
+             | 
+            <a href="#">
+                3
+            </a></div>
+          </section>
+        }
+        {
+          myde.gmod==='M'&&
+          <section>
+            <div className="grid">
+              {make()}
+            </div>
+            <div id="more"><button class="more">
+                MORE
+            </button></div>
+          </section>
+        }
         {
             
         <div id="bgbx" style={{position:'fixed',top:0,left:'10vw',paddingTop:'20vh',width:'80vw',height:'100vh',backdropFilter:'blur(3px)',zIndex:333333}}><Item cat={cats.current} good={etem.current}></Item></div>
