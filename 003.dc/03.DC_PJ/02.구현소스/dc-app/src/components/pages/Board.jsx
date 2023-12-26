@@ -263,8 +263,23 @@ export function Board() {
         <>
             {
                 mode==='l'&&
-            <table className="dtbl" id="board">
-                    <caption>OPINION</caption>
+                <>
+                <h1>OPINION</h1>
+                <div className="selbx" style={{textAlign:'center'}}>
+                    <select name="cta" id="cta" className="cta">
+                      <option value="tit">title</option>
+                      <option value="cont">contents</option>
+                      <option value="unm">writer</option>
+                    </select>
+                    <input id="stxt" type="text" maxlength="50" />
+                    <button className="sbtn">Search</button>
+                    <select name="sel" id="sel" className="sel" style={{marginLeft:'auto'}}>
+                      <option value="0">sort option</option>
+                      <option value="1">ascending</option>
+                      <option value="2">descending</option>
+                    </select>
+                </div>
+                <table className="dtbl" id="board">
                     {/* 상단 컬럼명 표시영역 */}
                     <thead>
                         <tr>
@@ -289,6 +304,7 @@ export function Board() {
                         </tr>
                     </tfoot>
                 </table>
+                </>
             }
             {
                 mode==='c'&&
