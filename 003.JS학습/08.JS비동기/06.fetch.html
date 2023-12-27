@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+<body>
+    <h1 class="exp"></h1>
+    <script>
+        // 데이터를 다른 서버에서 가져올 경우 같은 서버에 위치한 파일보다 시간이 더 걸릴 수 있다. 이때 그 전송파일을 이용한 처리코드가 에러를 나타낼 확률이 높아진다. 이때 프라미스를 사용한다. 쉬운 버전은 fㅔ취다.https://www.w3schools.com/js/js_api_fetch.asp
+        // [fetch api]
+        // Fetch API 인터페이스를 사용하면 웹 브라우저가 웹 서버에 HTTP 요청을 할 수 있습니다.
+        // 😀 더 이상 XMLHttpRequest가 필요하지 않습니다.
+        // name=webfile address
+        // fetch(name)
+        // .then(a=>a.text())
+        // .then(b=>명령어(b))
+        let file="https://tombap8.github.io/FED-RF-2023-TOM/500.%ED%95%84%EA%B8%B0%EB%AA%A8%EC%9D%8C/013.DOM%EC%9D%B4%EB%9E%80.txt"
+        fetch(file).then(a=>a.text()).then(b=>document.querySelector('.exp').innerHTML=b)//파일의 실제 내용이 뿌려짐
+
+        // filename=webfile address
+        // async function name(filename){
+            // let aa=await fetch(filename)
+            // let bb=await aa.text()
+            // 명령어(bb)
+        // }
+        // name(filename)
+        let file2 = "https://tombap8.github.io/FED-PJ-2022-tom/004.JS%ED%95%99%EC%8A%B5/JS%EB%B9%84%EB%8F%99%EA%B8%B0/defaultSettings.json";
+        async function idol(file2) {
+            let aa=await fetch(file2)
+            let bb=await aa.text()
+            document.querySelector('.exp').innerHTML+=bb
+        }
+        idol(file2)
+    </script>
+</body>
+</html>
