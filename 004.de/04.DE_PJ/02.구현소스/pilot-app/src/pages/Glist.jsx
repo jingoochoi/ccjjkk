@@ -1,4 +1,4 @@
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Fragment, useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import '../css/glist.css'
 import gdata from '../data/glist';
 import { Item } from '../modules/Item';
@@ -11,12 +11,20 @@ export function Glist() {
     const cats=useRef('men')
     const[rand,setRand]=useState(0)
     const[curr,setCurr]=useState(gdata)
+    const pgbl=10
+    const spur=gdata.length
+    const[pgnb,setPgnb]=useState(1)
     // const[tail,setTail]=useState(false)
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
-    const make=()=>
-        curr.map((a,b)=>
+    const make=()=>{
+      let cval
+      if (myde.gmod==='F') {
+        if (curr!==gdata&&myde.gg.current) {
+          tran.current=JSON.parse(JSON.stringify(gdata))
+        }
+        cval=tran.current.map((a,b)=>
         <div key={b} onClick={()=>showtail(a.ginfo[0],a.cat)}>
         <a href="#" onClick={(e)=>e.preventDefault()}>
           [{b+1}]
@@ -27,6 +35,48 @@ export function Glist() {
         </a>
       </div>
         )
+      }
+      if (myde.gmod==='P') {
+        if (myde.gg.current&&pgnb!==1) {
+          setPgnb(1)
+        }
+        // spur=gdata.length
+        cval=[]
+        for (let i = pgbl*(pgnb-1); i < pgbl*pgnb; i++) {
+          if (i>=spur) {
+            break
+          }
+          cval.push(
+            <div key={i} onClick={()=>showtail(gdata[i].ginfo[0],gdata[i].cat)}>
+        <a href="#" onClick={(e)=>e.preventDefault()}>
+          [{i+1}]
+          <img src={"./images/goods/"+gdata[i].cat+"/"+gdata[i].ginfo[0]+".png"} alt="dress" />{" "}
+          <aside>
+            <h2>{gdata[i].ginfo[1]}</h2> <h3>{numberWithCommas(gdata[i].ginfo[3])}원</h3>
+          </aside>
+        </a>
+      </div>
+          )
+        }
+      }
+        return cval
+    }
+    const link=()=>{
+      let blct=Math.floor(spur/pgbl)
+      let blpd=spur%pgbl
+      const lim=blct+(blpd===0?0:1)
+      let pgcd=[]
+      for (let k = 0; k < lim; k++) {
+          pgcd[k]=<Fragment key={k}>{pgnb-1===k?<b>{k+1}</b>:<a href='#' onClick={list}>{k+1}</a>}{k<lim-1?' 👕 ':''}</Fragment>
+          
+      }
+      return(pgcd)
+    }
+    const list=(e)=>{
+      myde.gg.current=false
+      setPgnb(e.target.innerHTML)
+      // bind()
+    }
     const showtail=(a,b)=>{
         etem.current=a
         cats.current=b
@@ -37,6 +87,7 @@ export function Glist() {
       window.scrollTo(0,0)
     },[])
     const chck=(e)=>{
+      myde.gg.current=false
       // console.log(e.currentTarget.id)
       const idid=e.target.id
       const chkd=e.target.checked
@@ -91,17 +142,9 @@ export function Glist() {
             <div className="grid">
               {make()}
             </div>
-            <div id="paging"><a href="#">
-                1
-            </a>
-             | 
-            <a href="#">
-                2
-            </a>
-             | 
-            <a href="#">
-                3
-            </a></div>
+            <div id="paging">
+              {link()}
+            </div>
           </section>
         }
         {
@@ -110,7 +153,7 @@ export function Glist() {
             <div className="grid">
               {make()}
             </div>
-            <div id="more"><button class="more">
+            <div id="more"><button className="more">
                 MORE
             </button></div>
           </section>

@@ -11,10 +11,10 @@ export function TopArea(props) {
   const mymy=useContext(pcon)
   const chan=(e)=>{
     if (props.cat==='glist') {
+      mymy.gg.current=true
       mymy.setGmod($(e.currentTarget).text().substr(0,1))
       // console.log(mymy.gmod.current)
       $(e.currentTarget).addClass('on').siblings().removeClass('on')
-      
     }
   }
   /// GNB메뉴 리스트 만들기 함수
