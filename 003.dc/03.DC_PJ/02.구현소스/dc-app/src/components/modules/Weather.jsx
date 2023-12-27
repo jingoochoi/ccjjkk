@@ -44,6 +44,7 @@ class Weather extends Component{
                     <img src={icom} alt="icon" />
                     <p>{this.state.citi}</p>
                     <p>{(this.state.temp-273.15).toFixed(1)}℃</p>
+                    {/* toFixed=소수점 아래자리의 숫자 정하기 */}
                     <p>{this.state.desc}</p>
                 </div>
             )
