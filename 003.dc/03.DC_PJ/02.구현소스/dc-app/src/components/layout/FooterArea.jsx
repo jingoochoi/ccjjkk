@@ -3,6 +3,7 @@
 import { memo } from "react";
 import { bmenuData } from "../data/bmenu";
 import { Logo } from "../modules/Logo";
+import Weather from "../modules/Weather";
 
 export const FooterArea=memo(()=>{
     return(
@@ -18,6 +19,7 @@ export const FooterArea=memo(()=>{
             </li>
             <li>© & ™ DC. ALL RIGHTS RESERVED</li>
            </ul>
+           <Weather></Weather>
         </footer>
     )
 
