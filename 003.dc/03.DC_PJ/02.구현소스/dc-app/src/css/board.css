@@ -54,7 +54,7 @@
       padding: 모든방향;(1개)
    */
 }
-.dtbl tbody td a{display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+#board tbody td a{display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width: min(361px,40vw);}
 /*각 th별 가로크기지정 */
 .dtbl th:nth-child(1){
     width: 50px;
