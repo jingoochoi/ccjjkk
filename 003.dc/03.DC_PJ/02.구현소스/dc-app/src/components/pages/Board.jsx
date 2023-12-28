@@ -259,6 +259,22 @@ export function Board() {
             sessionStorage.setItem('cnt-idx',JSON.stringify(cdcx))
         }
     }
+    const sear=()=>{
+        let cta4=$('.cta').val()
+        let stxt=$('#stxt').val().toLowerCase().trim()
+        let stst=JSON.parse(localStorage.getItem('bdata'))
+        if (stxt==='') {
+            alert('FEEL THE KEYWORD')
+            return
+        }
+        let goal=stst.filter(h=>{
+            if ((h[cta4].toLowerCase()).indexOf(stxt)!==-1) {
+                return true
+            }
+        })
+        merry=goal
+        setGift(Math.random())
+    }
     return(
         <>
             {
@@ -272,7 +288,7 @@ export function Board() {
                       <option value="unm">writer</option>
                     </select>
                     <input id="stxt" type="text" maxLength="50" />
-                    <button className="sbtn">Search</button>
+                    <button className="sbtn" onClick={sear}>Search</button>
                     <select name="sel" id="sel" className="sel" style={{marginLeft:'auto'}}>
                       <option value="0">sort option</option>
                       <option value="1">ascending</option>
@@ -407,10 +423,14 @@ export function Board() {
                     <tr>
                         <td>
                             {
-                                mode==='l'&&mymy.logg!==null&&
+                                mode==='l'&&mymy.logg!==null&&<>
+                            <button onClick={()=>setGift(Math.random())}>
+                                <a href="#">List</a>
+                            </button>
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Write</a>
                             </button>
+                            </>
                             }
                             {
                                 mode==='c'&&
