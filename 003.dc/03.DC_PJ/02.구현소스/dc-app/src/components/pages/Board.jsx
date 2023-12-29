@@ -24,6 +24,7 @@ export function Board() {
     const[gift,setGift]=useState(null)
     const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
     const[bttn,setBttn]=useState(false)
+    const sstt=useRef(false)
     useEffect(()=>{
         if (mymy.logg===null) {
             setBttn(false)
@@ -36,6 +37,10 @@ export function Board() {
     const lata=useRef(null)
     const chgMode=(e)=>{
         // console.log()
+        if (sstt.current) {
+            sstt.current=false
+            init()
+        }
         let txt=$(e.currentTarget).find('a').text()
         let md
         switch (txt) {
@@ -161,8 +166,15 @@ export function Board() {
         }
         
     }
+    const sort=(a)=>{
+        return a.sort((a,b)=>b.idx-a.idx)
+    }
+    const init=()=>{
+        merry=sort(JSON.parse(localStorage.getItem('bdata')))
+    }
+    // const happy=new Year()
     const bind=()=>{
-        merry.sort((a,b)=>b.idx-a.idx)
+        sort(merry)
         const temp=[]
         for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
             if (i>=spur) {
@@ -267,6 +279,7 @@ export function Board() {
             alert('FEEL THE KEYWORD')
             return
         }
+        sstt.current=true
         let goal=stst.filter(h=>{
             if ((h[cta4].toLowerCase()).indexOf(stxt)!==-1) {
                 return true
@@ -274,6 +287,27 @@ export function Board() {
         })
         merry=goal
         setGift(Math.random())
+        $('#stxt').val('').focus()
+    }
+    const ento=(e)=>{
+        if (e.key==='Enter') {
+            let cta4=$('.cta').val()
+            let stxt=$('#stxt').val().toLowerCase().trim()
+            let stst=JSON.parse(localStorage.getItem('bdata'))
+            if (stxt==='') {
+                alert('FEEL THE KEYWORD')
+                return
+            }
+            sstt.current=true
+            let goal=stst.filter(h=>{
+                if ((h[cta4].toLowerCase()).indexOf(stxt)!==-1) {
+                    return true
+                }
+            })
+            merry=goal
+            setGift(Math.random())
+            $('#stxt').val('').focus()
+        }
     }
     return(
         <>
@@ -287,7 +321,7 @@ export function Board() {
                       <option value="cont">contents</option>
                       <option value="unm">writer</option>
                     </select>
-                    <input id="stxt" type="text" maxLength="50" />
+                    <input id="stxt" type="text" maxLength="50" onKeyUp={ento}/>
                     <button className="sbtn" onClick={sear}>Search</button>
                     <select name="sel" id="sel" className="sel" style={{marginLeft:'auto'}}>
                       <option value="0">sort option</option>
@@ -423,10 +457,14 @@ export function Board() {
                     <tr>
                         <td>
                             {
-                                mode==='l'&&mymy.logg!==null&&<>
-                            <button onClick={()=>setGift(Math.random())}>
+                                mode==='l'&&sstt.current&&<>
+                            <button onClick={()=>{init();setGift(Math.random())}}>
                                 <a href="#">List</a>
                             </button>
+                            </>
+                            }
+                            {
+                                mode==='l'&&mymy.logg!==null&&<>
                             <button onClick={(e)=>chgMode(e)}>
                                 <a href="#">Write</a>
                             </button>
