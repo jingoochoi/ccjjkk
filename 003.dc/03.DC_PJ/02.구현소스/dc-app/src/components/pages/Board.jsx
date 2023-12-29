@@ -334,9 +334,8 @@ export function Board() {
                     <input id="stxt" type="text" maxLength="50" onKeyUp={ento}/>
                     <button className="sbtn" onClick={sear}>Search</button>
                     <select name="sel" id="sel" className="sel" style={{marginLeft:'auto'}} onChange={()=>{sort(merry);setGift(Math.random())}}>
-                      <option value="0">sort option</option>
-                      <option value="1">ascending</option>
                       <option value="2">descending</option>
+                      <option value="1">ascending</option>
                     </select>
                 </div>
                 <table className="dtbl" id="board">
