@@ -167,7 +167,8 @@ export function Board() {
         
     }
     const sort=(a)=>{
-        return a.sort((a,b)=>b.idx-a.idx)
+        if($('#sel').val()==1) a.sort((a,b)=>a.idx-b.idx)
+        else if($('#sel').val()==0||$('#sel').val()==2) a.sort((a,b)=>b.idx-a.idx)
     }
     const init=()=>{
         merry=sort(JSON.parse(localStorage.getItem('bdata')))
@@ -286,7 +287,9 @@ export function Board() {
             }
         })
         merry=goal
-        setGift(Math.random())
+        if (pgnb===1) {
+            setGift(Math.random())
+        }else setPgnb(1)
         $('#stxt').val('').focus()
     }
     const ento=(e)=>{
@@ -305,10 +308,17 @@ export function Board() {
                 }
             })
             merry=goal
-            setGift(Math.random())
+            if (pgnb===1) {
+                setGift(Math.random())
+            }else setPgnb(1)
             $('#stxt').val('').focus()
         }
     }
+    useEffect(()=>{
+        return(()=>{
+            init()
+        })
+    },[])
     return(
         <>
             {
@@ -323,7 +333,7 @@ export function Board() {
                     </select>
                     <input id="stxt" type="text" maxLength="50" onKeyUp={ento}/>
                     <button className="sbtn" onClick={sear}>Search</button>
-                    <select name="sel" id="sel" className="sel" style={{marginLeft:'auto'}}>
+                    <select name="sel" id="sel" className="sel" style={{marginLeft:'auto'}} onChange={()=>{sort(merry);setGift(Math.random())}}>
                       <option value="0">sort option</option>
                       <option value="1">ascending</option>
                       <option value="2">descending</option>
@@ -458,7 +468,7 @@ export function Board() {
                         <td>
                             {
                                 mode==='l'&&sstt.current&&<>
-                            <button onClick={()=>{init();setGift(Math.random())}}>
+                            <button onClick={()=>{init();setGift(Math.random());$('#cta').val('tit')}}>
                                 <a href="#">List</a>
                             </button>
                             </>
