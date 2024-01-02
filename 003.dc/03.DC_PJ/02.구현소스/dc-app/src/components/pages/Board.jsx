@@ -168,10 +168,10 @@ export function Board() {
     }
     const sort=(a)=>{
         if($('#sel').val()==1) a.sort((a,b)=>a.idx-b.idx)
-        else if($('#sel').val()==0||$('#sel').val()==2) a.sort((a,b)=>b.idx-a.idx)
+        else if($('#sel').val()==2) a.sort((a,b)=>b.idx-a.idx)
     }
     const init=()=>{
-        merry=sort(JSON.parse(localStorage.getItem('bdata')))
+        merry=JSON.parse(localStorage.getItem('bdata'))
     }
     // const happy=new Year()
     const bind=()=>{
