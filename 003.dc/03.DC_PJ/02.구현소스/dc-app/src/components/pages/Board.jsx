@@ -25,6 +25,7 @@ export function Board() {
     const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
     const[bttn,setBttn]=useState(false)
     const sstt=useRef(false)
+    const fist=useRef(true)
     useEffect(()=>{
         if (mymy.logg===null) {
             setBttn(false)
@@ -172,10 +173,15 @@ export function Board() {
     }
     const init=()=>{
         merry=JSON.parse(localStorage.getItem('bdata'))
+        sort(merry)
     }
     // const happy=new Year()
-    const bind=()=>{
+    if (fist.current) {
         sort(merry)
+    }
+    const bind=()=>{
+        fist.current=false
+        // sort(merry)
         const temp=[]
         for (let i = (pgnb-1)*pgbl; i < pgbl*pgnb; i++) {
             if (i>=spur) {
@@ -315,6 +321,7 @@ export function Board() {
         }
     }
     useEffect(()=>{
+        // sort(merry)
         return(()=>{
             init()
         })
