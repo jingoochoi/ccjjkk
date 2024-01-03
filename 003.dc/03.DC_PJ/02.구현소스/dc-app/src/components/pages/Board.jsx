@@ -18,9 +18,11 @@ export function Board() {
     const mymy=useContext(dcCon)
     // console.log(mymy.logg)
     const pgbl=11
+    const pgpgbl=3
     const spur=merry.length
     // let init=0
-    const[pgnb,setPgnb]=useState(1) 
+    const[pgnb,setPgnb]=useState(1)
+    const pgpgnb=useRef(1)
     const[gift,setGift]=useState(null)
     const[mode,setMode]=useState('l')//crud(c=create,r=read,u=update(include d),d=delete(included in u))+l(list)
     const[bttn,setBttn]=useState(false)
@@ -119,8 +121,9 @@ export function Board() {
                     "unm" : lata.current.unm,
                     "cnt" : "0"
                 }
-                tenp.push(temq)
+                tenp.unshift(temq)
                 localStorage.setItem('bdata',JSON.stringify(tenp))
+                fist.current=true
                 setMode('l')
             }
         }
@@ -178,6 +181,7 @@ export function Board() {
     // const happy=new Year()
     if (fist.current) {
         sort(merry)
+        // $('#sel').val('1')
     }
     const bind=()=>{
         fist.current=false
@@ -214,12 +218,30 @@ export function Board() {
         let blct=Math.floor(spur/pgbl)
         let blpd=spur%pgbl
         const lim=blct+(blpd===0?0:1)
+        let pgblct=Math.floor(lim/pgpgbl)
+        let pgblpd=lim%pgpgbl
+        const pglim=pgblct+(pgblpd===0?0:1)
         let pgcd=[]
-        for (let k = 0; k < lim; k++) {
-            pgcd[k]=<Fragment key={k}>{pgnb-1===k?<b>{k+1}</b>:<a href='#' onClick={list}>{k+1}</a>}{k<lim-1?' 👨‍🎤 ':''}</Fragment>
-            
+        pgcd.unshift(pgpgnb.current!==1?<Fragment key={-1}><a href="#" style={{fontSize:'20px'}} onClick={(e)=>{e.preventDefault();arro(-1)}}>◀ </a></Fragment>:'')
+        for (let k = (pgpgnb.current-1)*pgpgbl; k < pgpgbl*pgpgnb.current; k++) {
+            if (k>=lim) {
+                break
+            }
+            pgcd[k]=<Fragment key={k}>
+            {/* {} */}
+            {pgnb-1===k?<b>{k+1}</b>:<a href='#' onClick={list}>{k+1}</a>}
+            {(k<pgpgnb.current*pgpgbl-1&&k<lim-1)?' 👨‍🎤 ':''}
+            </Fragment>
+            // console.log(k,blct)
         }
+        // console.log(lim,blct)
+        pgcd.push(pgpgnb.current!==pglim?<Fragment key={100}><a href="#" style={{fontSize:'20px'}} onClick={(e)=>{e.preventDefault();arro(1)}}> ▶</a></Fragment>:'')
         return(pgcd)
+    }
+    const arro=(a)=>{
+        const news=pgpgnb.current+a
+        pgpgnb.current=news
+        setPgnb(((pgpgnb.current-1)*pgpgbl)+1)
     }
     const list=(e)=>{
         setPgnb(e.target.innerHTML)
@@ -314,6 +336,7 @@ export function Board() {
                 }
             })
             merry=goal
+            fist.current=true
             if (pgnb===1) {
                 setGift(Math.random())
             }else setPgnb(1)
