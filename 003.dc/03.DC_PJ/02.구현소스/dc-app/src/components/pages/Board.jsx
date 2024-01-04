@@ -17,7 +17,7 @@ export function Board() {
     initData()
     const mymy=useContext(dcCon)
     // console.log(mymy.logg)
-    const pgbl=11
+    const pgbl=9
     const pgpgbl=3
     const spur=merry.length
     // let init=0
@@ -222,7 +222,10 @@ export function Board() {
         let pgblpd=lim%pgpgbl
         const pglim=pgblct+(pgblpd===0?0:1)
         let pgcd=[]
-        pgcd.unshift(pgpgnb.current!==1?<Fragment key={-1}><a href="#" style={{fontSize:'20px'}} onClick={(e)=>{e.preventDefault();arro(-1)}}>◀ </a></Fragment>:'')
+        pgcd.unshift(pgpgnb.current!==1?<Fragment key={-1}>
+            <a href="#" style={{marginRight:'10px',color:'black',textDecoration:'none'}} onClick={(e)=>{e. preventDefault();arro(1,false)}}>맨앞</a>
+            <a href="#" style={{fontSize:'20px'}} onClick={(e)=>{e. preventDefault();arro(-1,true)}}>◀ </a>
+        </Fragment>:'')
         for (let k = (pgpgnb.current-1)*pgpgbl; k < pgpgbl*pgpgnb.current; k++) {
             if (k>=lim) {
                 break
@@ -234,14 +237,28 @@ export function Board() {
             </Fragment>
             // console.log(k,blct)
         }
-        // console.log(lim,blct)
-        pgcd.push(pgpgnb.current!==pglim?<Fragment key={100}><a href="#" style={{fontSize:'20px'}} onClick={(e)=>{e.preventDefault();arro(1)}}> ▶</a></Fragment>:'')
+        // console.log(blct,blpd,lim,pgblct,pgblpd,pglim,pgnb,pgpgnb)
+        pgcd.push(pgpgnb.current!==pglim?<Fragment key={100}>
+            <a href="#" style={{fontSize:'20px'}} onClick={(e)=>{e.preventDefault();arro(1,true)}}> ▶</a>
+            <a href="#" style={{marginLeft:'10px',color:'black',textDecoration:'none'}} onClick={(e)=>{e. preventDefault();arro(pglim,false)}}>맨뒤</a>
+        </Fragment>:'')
         return(pgcd)
     }
-    const arro=(a)=>{
-        const news=pgpgnb.current+a
-        pgpgnb.current=news
-        setPgnb(((pgpgnb.current-1)*pgpgbl)+1)
+    const arro=(a,b)=>{
+        let news
+        if(b){
+            news=pgpgnb.current+a
+            pgpgnb.current=news
+            setPgnb(((pgpgnb.current-1)*pgpgbl)+1)
+        }
+        else {
+            news=a
+            pgpgnb.current=news
+            // console.log(pgpgnb.current,pgpgbl,pgnb,pgbl)
+            // console.log(currentTarget.innerHTML)
+            if(a===1)setPgnb(((pgpgnb.current-1)*pgpgbl)+1)
+            else setPgnb(pgpgnb.current+pgpgbl+1)
+        }
     }
     const list=(e)=>{
         setPgnb(e.target.innerHTML)
