@@ -14,6 +14,9 @@ export function Glist() {
     const pgbl=10
     const spur=gdata.length
     const[pgnb,setPgnb]=useState(1)
+    const mobl=5
+    const [monb,setMonb]=useState(1)
+    const moli=Math.floor(spur/mobl)+(spur%mobl!==0?1:0)
     // const[tail,setTail]=useState(false)
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -59,7 +62,35 @@ export function Glist() {
           )
         }
       }
+      if (myde.gmod==='M') {
+        if (monb!==1&&myde.gg.current) {
+          setMonb(1)
+        }
+        cval=[]
+        let lim=mobl*monb
+        if (lim>spur) {
+          (lim)=spur
+        }
+        for (let i = 0; i < lim; i++) {
+          cval.push(
+            <div key={i} onClick={()=>showtail(gdata[i].ginfo[0],gdata[i].cat)}>
+              <a href="#" onClick={(e)=>e.preventDefault()}>
+                [{i+1}]
+                <img src={"./images/goods/"+gdata[i].cat+"/"+gdata[i].ginfo[0]+".png"} alt="dress" />{" "}
+                <aside>
+                  <h2>{gdata[i].ginfo[1]}</h2> <h3>{numberWithCommas(gdata[i].ginfo[3])}원</h3>
+                </aside>
+              </a>
+            </div>
+          )
+        }
+      }
         return cval
+    }
+    const moro=()=>{
+      myde.gg.current=false
+      let momo=monb
+      setMonb(++momo)
     }
     const link=()=>{
       let blct=Math.floor(spur/pgbl)
@@ -153,9 +184,12 @@ export function Glist() {
             <div className="grid">
               {make()}
             </div>
-            <div id="more"><button className="more">
+            {
+              monb!==moli&&
+            <div id="more" onClick={moro}><button className="more">
                 MORE
             </button></div>
+            }
           </section>
         }
         {
