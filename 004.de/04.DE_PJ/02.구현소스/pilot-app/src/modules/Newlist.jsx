@@ -4,6 +4,14 @@ import { newprdt } from "../data/newlist"
 import { pcon } from "./pilotContext"
 
 export function Newlist(p) {
+  const acat=useRef(null)
+  let reft=useRef(0)
+  let call=useRef(1)
+  if (p.cat!==acat.current) {
+    reft.current=0
+    call.current=1
+  }
+  acat.current=p.cat
   const mymy=useContext(pcon)
   // const ctem=p.ft
   const seld=newprdt[p.cat]
@@ -30,8 +38,7 @@ function numberWithCommas(x) {
     }
     const move=(e)=>{$(e.currentTarget).find('.ibox').remove()}
     // console.log(mm)
-    let reft=useRef(0)
-    let call=useRef(1)
+    
     const flow=(a)=>{
       reft.current--
       if (reft.current<-300) {
