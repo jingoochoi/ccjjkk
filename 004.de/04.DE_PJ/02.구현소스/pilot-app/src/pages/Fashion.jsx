@@ -10,6 +10,7 @@ import { Item } from "../modules/Item"
 import { scrolled, setpos, startSS } from "../func/smoothScroll230"
 import { Parallax } from "react-parallax";
 import { gnbData } from "../data/gnb"
+import { FashionIntro } from "../modules/FashionIntro"
 // import { FashionIntro } from "../modules/FashionIntro";
 export function Fashion(p){
     const mycon=useContext(pcon)
@@ -65,8 +66,12 @@ export function Fashion(p){
             <h2 className="c2tit">2024 {gnbData[p.cat][1]}</h2>
             </Parallax>
             </section>
-            <section id="c3" className="cont c3"></section>
-            <section id="c4" className="cont c4"></section>
+            <section id="c3" className="cont c3">
+                <FashionIntro cat="women" />
+            </section>
+            <section id="c4" className="cont c4">
+                <FashionIntro cat="style" />
+            </section>
         </>
     )
 

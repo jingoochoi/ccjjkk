@@ -17,4 +17,53 @@ export const fsData = {
         ialt:["여자스타일","공유스타일"],
         tit:[["MEN'S","STYLE"],["WOMEN'S","STYLE"]]
     },
+    // 서브페이지용 데이터는 구성이 다름
+  sub: {
+    men: [
+      {
+        isrc: "./images/men02.png",
+        ialt: "공유다!",
+        tit: ["MEN'S", "ESSENTIALS"],
+      },
+      {
+        isrc: ["./images/style02.png", "./images/style03.png"],
+        ialt: ["여자스타일", "공유스타일"],
+        tit: [
+          ["MEN'S", "STYLE"],
+          ["WOMEN'S", "STYLE"],
+        ],
+      },
+    ],
+    women: [
+      {
+        isrc: "./images/women01.png",
+        ialt: "여자",
+        tit: ["WOMEN'S", "ESSENTIALS"],
+      },
+      {
+        isrc: ["./images/style02.png", "./images/style03.png"],
+        ialt: ["여자스타일", "공유스타일"],
+        tit: [
+          ["MEN'S", "STYLE"],
+          ["WOMEN'S", "STYLE"],
+        ],
+      },
+    ],
+    // 스타일 데이터는 배열로 2개를 사용함!
+    style: [
+      {
+        isrc: "./images/women01.png",
+        ialt: "여자",
+        tit: ["WOMEN'S", "ESSENTIALS"],
+      },
+      {
+        isrc: ["./images/style02.png", "./images/style03.png"],
+        ialt: ["여자스타일", "공유스타일"],
+        tit: [
+          ["MEN'S", "STYLE"],
+          ["WOMEN'S", "STYLE"],
+        ],
+      },
+    ],
+  },
 }; //////////// fsData ////////////
