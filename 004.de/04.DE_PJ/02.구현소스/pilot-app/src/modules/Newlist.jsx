@@ -7,10 +7,14 @@ export function Newlist(p) {
   const acat=useRef(null)
   let reft=useRef(0)
   let call=useRef(1)
-  if (p.cat!==acat.current) {
+  // if (p.cat!==acat.current) {
+  //   reft.current=0
+  //   call.current=1
+  // }
+  useEffect(()=>{
     reft.current=0
     call.current=1
-  }
+  },[p.cat])
   acat.current=p.cat
   const mymy=useContext(pcon)
   // const ctem=p.ft

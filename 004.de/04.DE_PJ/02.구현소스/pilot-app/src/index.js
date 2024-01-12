@@ -68,9 +68,7 @@ function App(){
       })
     }
   },[]); ////////// useEffect //////////////
-  useLayoutEffect(()=>{
-    window.scrollTo(0,0)
-  },[])
+  
   const [gmod,setGmod]=useState('F')
   const gg=useRef(false)
   // useEffect(()=>{
