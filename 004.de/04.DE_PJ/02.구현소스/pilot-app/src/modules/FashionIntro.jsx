@@ -74,6 +74,27 @@ export function FashionIntro(props) {
             />
           </li>
         )}
+        {
+          props.cat==='submen1'&&
+          <>
+            <h2>
+              <a href="#">
+                {selData.tit[0]} <br />
+                {selData.tit[1]}
+              </a>
+            </h2>
+            <li className="imgc">
+          <img
+            src={
+              selData.isrc
+            }
+            alt={
+              selData.ialt
+            }
+          />
+        </li>
+          </>
+        }
       </ul>
     </div>
   );
