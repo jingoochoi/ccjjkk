@@ -19,7 +19,7 @@ export function TotalMenu() {
           <nav className="mlist">
             <dl>
               <dt>
-                <a href="#" onClick={()=>gopage('men')}>MEN</a>
+                <a href="#" onClick={(e)=>{e.preventDefault();gopage('men')}}>MEN</a>
               </dt>
               <dd>
                 <a href="#">T-SHIRT</a>
@@ -36,7 +36,7 @@ export function TotalMenu() {
             </dl>
             <dl>
               <dt>
-                <a href="#" onClick={()=>gopage('women')}>WOMEN</a>
+                <a href="#" onClick={(e)=>{e.preventDefault();gopage('women')}}>WOMEN</a>
               </dt>
               <dd>
                 <a href="#">T-SHIRT</a>
@@ -53,7 +53,7 @@ export function TotalMenu() {
             </dl>
             <dl>
               <dt>
-                <a href="#" onClick={()=>gopage('style')}>STYLE</a>
+                <a href="#" onClick={(e)=>{e.preventDefault();gopage('style')}}>STYLE</a>
               </dt>
               <dd>
                 <a href="#">COLLECTION</a>

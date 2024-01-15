@@ -13,7 +13,10 @@ export function FashionIntro(props) {
   // props.cat - 카테고리 분류명
 
   // 선택데이터
-  const selData = fsData[props.cat];
+  let selData = fsData[props.cat];
+  if (props.subcat!=='etc') {
+    selData=fsData[props.cat][props.subcat[0]][props.subcat[1]]
+  }
 
   // 새로적용할 스타일객체
   const newStyle = {};
@@ -28,6 +31,8 @@ export function FashionIntro(props) {
         style={newStyle}
         //   style={props.cat=='women'?{flexDirection:'row-reverse'}:{}}
       >
+        {
+          props.subcat==='etc'&&
         <li className="imgc">
           <img
             src={
@@ -40,6 +45,9 @@ export function FashionIntro(props) {
             }
           />
         </li>
+        }
+        {
+          props.subcat==='etc'&&
         <li className="txtc">
           {props.cat != "style" && (
             <h2>
@@ -66,6 +74,7 @@ export function FashionIntro(props) {
             </>
           )}
         </li>
+        }
         {/* 스타일 패션에서만 나오는 이미지 */}
         {props.cat == "style" && (
           <li className="imgc">
@@ -73,14 +82,16 @@ export function FashionIntro(props) {
           </li>
         )}
         {
-          props.cat==='submen1'&&
+          props.cat==='sub'&&props.subcat[1]===0&&
           <>
+          <li className="txtc">
             <h2>
               <a href="#">
                 {selData.tit[0]} <br />
                 {selData.tit[1]}
               </a>
             </h2>
+          </li>
             <li className="imgc">
           <img
             src={
@@ -88,6 +99,45 @@ export function FashionIntro(props) {
             }
             alt={
               selData.ialt
+            }
+          />
+        </li>
+          </>
+        }
+        {
+          props.cat==='sub'&&props.subcat[1]===1&&
+          <>
+          <li className="imgc">
+          <img
+            src={
+              selData.isrc[0]
+            }
+            alt={
+              selData.ialt[0]
+            }
+          />
+        </li>
+          <li className="txtc">
+            <h2 className="tm">
+              <a href="#">
+                {selData.tit[0][0]} <br />
+                {selData.tit[0][1]}
+              </a>
+            </h2>
+            <h2 className="tw">
+              <a href="#">
+                {selData.tit[1][0]} <br />
+                {selData.tit[1][1]}
+              </a>
+            </h2>
+          </li>
+            <li className="imgc">
+          <img
+            src={
+              selData.isrc[1]
+            }
+            alt={
+              selData.ialt[1]
             }
           />
         </li>

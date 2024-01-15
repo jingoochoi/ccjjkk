@@ -33,6 +33,8 @@ export function Fashion(p){
                 passive: false
             })
             setpos(0)
+            window.removeEventListener('scroll',posi)
+            $('.gnb a').off('click')
         })
     },[])
     const acat=useRef(null)
@@ -42,8 +44,27 @@ export function Fashion(p){
         setpos(0)
         window.scrollTo(0,0)
         $('#bgbx').hide()
+        $('.gnb a').on('click',e=>{
+            e.preventDefault()
+            const aa=$(e.currentTarget).attr('href')
+            $('html,body').animate({scrollTop:$(aa).offset().top+'px'})
+        })
+        sett()
+        window.addEventListener('scroll',posi)
     },[p.cat])
-    
+    const posi=()=>{
+        $('.sc-ani').each((a,b)=>{
+            if (wich(a)<window.innerHeight/2) {
+                $(b).css({opacity:1,transform:'translateY(0%)'})
+            }
+        })
+    }
+    const wich=a=>{
+        return document.querySelectorAll('.sc-ani')[a].getBoundingClientRect().top
+    }
+    const sett=()=>{
+        $('.sc-ani').css({opacity:0,transform:'translateY(20%)',transition:'1s linear'})
+    }
     // 이전카테고리 업데이트
     acat.current = p.cat;
     const [prdt,setPrdt]=useState('m1')
@@ -63,14 +84,14 @@ export function Fashion(p){
             <div id="bgbx"><Item cat={p.cat} good={prdt}></Item></div>
             <section id="c2" className="cont">
             <Parallax className="c2" bgImage={"./images/sub/"+p.cat+"/02.special.png"} bgImageAlt="the cat" strength={200}>
-            <h2 className="c2tit">2024 {gnbData[p.cat][1]}</h2>
+            <h2 className="c2tit sc-ani">2024 {gnbData[p.cat][1]}</h2>
             </Parallax>
             </section>
-            <section id="c3" className="cont c3">
-                <FashionIntro cat="women" />
+            <section id="c3" className="cont c3 sc-ani">
+                <FashionIntro cat="sub" subcat={[p.cat,0]}/>
             </section>
-            <section id="c4" className="cont c4">
-                <FashionIntro cat="style" />
+            <section id="c4" className="cont c4 sc-ani">
+                <FashionIntro cat="sub" subcat={[p.cat,1]}/>
             </section>
         </>
     )

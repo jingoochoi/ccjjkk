@@ -22,7 +22,7 @@ export function TopArea(props) {
     return(
       gnbData[data].map((v,i)=>
         <li key={i} className={props.cat==='glist'&&i===0?'on':''} onClick={chan}>
-          <a href="#">{v}</a>
+          <a href={"#c"+(i+1)}>{v}</a>
         </li>
       )
     )
