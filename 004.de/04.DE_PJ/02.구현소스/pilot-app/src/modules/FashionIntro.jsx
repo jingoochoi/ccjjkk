@@ -50,7 +50,7 @@ export function FashionIntro(props) {
             </h2>
           )}
           {props.cat == "style" && (
-            <>
+            <div>
               <h2 className="tm">
                 <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
                   {selData.tit[0][0]} <br />
@@ -63,16 +63,18 @@ export function FashionIntro(props) {
                   {selData.tit[1][1]}
                 </a>
               </h2>
-            </>
-          )}
-        </li>
-        {props.cat == "style" && (
-          <li className="imgc">
-            <img
-              src={selData.isrc[1]}
-              alt={selData.ialt[1]}
-            />
-          </li>
+              <p> div. p, h1~h6, ul/li, figure/figcation </p> 
+              <ul>
+                <li>
+                  div - 박스형태로 block, incline 태그들을 그룹
+                  p - incline요소(문자,링크,이미지..) 그룹
+                  문자단락으로 사용,
+                  block 속성은 자손으로 사용할 수 없음  
+                  </li> 
+              </ul>
+</div>
+
+<
         )}
         {
           props.cat==='submen1'&&
