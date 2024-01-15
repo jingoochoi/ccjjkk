@@ -43,38 +43,34 @@ export function FashionIntro(props) {
         <li className="txtc">
           {props.cat != "style" && (
             <h2>
-              <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
+              <a href="#" onClick={() => mymy.chgPgName(props.cat)}>
                 {selData.tit[0]} <br />
                 {selData.tit[1]}
               </a>
             </h2>
           )}
           {props.cat == "style" && (
-            <div>
+            <>
               <h2 className="tm">
-                <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
+                <a href="#" onClick={() => mymy.chgPgName(props.cat)}>
                   {selData.tit[0][0]} <br />
                   {selData.tit[0][1]}
                 </a>
               </h2>
               <h2 className="tw">
-                <a href="#" onClick={()=>mymy.chgPgName(props.cat)}>
+                <a href="#" onClick={() => mymy.chgPgName(props.cat)}>
                   {selData.tit[1][0]} <br />
                   {selData.tit[1][1]}
                 </a>
               </h2>
-              <p> div. p, h1~h6, ul/li, figure/figcation </p> 
-              <ul>
-                <li>
-                  div - 박스형태로 block, incline 태그들을 그룹
-                  p - incline요소(문자,링크,이미지..) 그룹
-                  문자단락으로 사용,
-                  block 속성은 자손으로 사용할 수 없음  
-                  </li> 
-              </ul>
-</div>
-
-<
+            </>
+          )}
+        </li>
+        {/* 스타일 패션에서만 나오는 이미지 */}
+        {props.cat == "style" && (
+          <li className="imgc">
+            <img src={selData.isrc[1]} alt={selData.ialt[1]} />
+          </li>
         )}
         {
           props.cat==='submen1'&&
