@@ -29,11 +29,11 @@ function App(){
   }; ///////// chgPgName 함수 //////
   const flag=useRef(true)//true=update  
   // false=cart component function operating
-  let cval=0
+  let cval=false
   let tval=null
   if(localStorage.getItem('cute')){
     tval=JSON.parse(localStorage.getItem('cute'))
-    if(tval.length!==0)cval=1
+    if(tval.length!==0)cval=true
     // $('#bgbx').show()
     // $('#mycart').show()
   }
