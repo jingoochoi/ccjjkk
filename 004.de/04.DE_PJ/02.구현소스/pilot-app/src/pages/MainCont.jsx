@@ -15,9 +15,11 @@ export function MainCont() {
   useEffect(() => {
     // 랜더링 후 한번만 적용!
     // console.log("랜더링OK!");
+    if ($(window).width()>800)
     $('html,body').css({overflow:'hidden'})
     //자동스크롤 호출
     // autoScroll();
+    if ($(window).width()>800)
     window.addEventListener('wheel',wheelFn)
     evt()
     if ($(window).width()>800) {
