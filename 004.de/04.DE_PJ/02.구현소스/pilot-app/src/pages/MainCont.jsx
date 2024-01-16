@@ -20,7 +20,9 @@ export function MainCont() {
     // autoScroll();
     window.addEventListener('wheel',wheelFn)
     evt()
-    initSet()
+    if ($(window).width()>800) {
+      initSet()
+    }
     zero()
     pos()
 
