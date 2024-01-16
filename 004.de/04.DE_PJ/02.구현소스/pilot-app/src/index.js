@@ -14,6 +14,7 @@ import 'jquery-ui-dist/jquery-ui';
 
 // 페이지 공통 CSS
 import './css/common.css';
+import './css/media.css';
 import { Cartlist } from './modules/Cartlist';
 
 // 최상위 Root 컴포넌트 ///////
