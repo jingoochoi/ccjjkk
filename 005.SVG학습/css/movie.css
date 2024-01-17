@@ -1,0 +1,29 @@
+@charset "utf-8";
+html,body{margin: 0;padding: 0;overflow: hidden;}
+body{background-color: black;}
+.ir{display: block;width: 0;height: 0;overflow: hidden;}
+#stc{position: relative;width: 100vw;height: 100vh;}
+#stc>div{position: absolute;width: 100%;height: 100%;background-repeat: no-repeat;background-size: cover;opacity: 0;transition: 1s linear;}
+/* #stc.on{display: block;} */
+#stc.on>div{opacity: 1;}
+#stc.on>div:nth-child(1){top: 0;}
+#stc.on>div:nth-child(2){right: 0;transition-delay: 1s;}
+#stc.on>div:nth-child(3){bottom: 0;transition-delay: 2s;}
+#stc.on>div:nth-child(4){left: 0;transition-delay: 3s;}
+#stc>div:nth-child(1){height: 50%;clip-path: polygon(0 0,100% 0,50% 100%);top: -15%;background-image: url(../images/sc1.jpg);}
+#stc>div:nth-child(2){width: 50%;clip-path: polygon(100% 0,100% 100%,0 50%);right: -15%;background-image: url(../images/sc4.jpg);}
+#stc>div:nth-child(3){height: 50%;clip-path: polygon(0 100%,100% 100%,50% 0%);bottom: -15%;background-image: url(../images/sc3.jpg);}
+#stc>div:nth-child(4){width: 50%;clip-path: polygon(0 0,0 100%,100% 50%);left: -15%;background-image: url(../images/sc2.jpg);}
+#mlogo{position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);max-width: 1100px;}
+#mlogo img{width: 100%;opacity: 0;}
+#mlogo.on img{opacity: 1;transition: opacity 1s linear 1s;}
+.tribox{position: absolute;display: block;margin: 0 auto;width: 25%;top: -10%;left: 50%;transform: translateX(-46%);}
+.tribox polygon{fill: none;stroke: white;stroke-width: 3;stroke-dasharray: 300%;stroke-dashoffset: 300%;}
+#mlogo.on polygon{animation: line2 1s linear  forwards;}
+.stage{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.line1{stroke: cyan;stroke-width: 3;stroke-dasharray: 150%;stroke-dashoffset: 150%;}
+.stage.on .line1{animation: line2 1s linear  forwards;}
+@keyframes line2 {
+    to{stroke-dashoffset: 0;}
+}
+.play{position: fixed;top: 100px;right: 30px;cursor: pointer;}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>movie intro</title>
+    <link rel="stylesheet" href="./css/movie.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  </head>
+  <body>
+    <section id="stc">
+      <div><span class="ir">공각스틸</span></div>
+      <div><span class="ir">공각스틸</span></div>
+      <div><span class="ir">공각스틸</span></div>
+      <div><span class="ir">공각스틸</span></div>
+    </section>
+    <div id="mlogo">
+      <img src="images/GoastInTheShell_logo.png" alt="logo" />
+      <svg class="tribox" viewbox="0 0 200 200">
+        <polygon points="100,30 0,200 200,200"></polygon>
+      </svg>
+    </div>
+    <svg class="stage">
+      <line class="line1" x1="0%" y1="0%" x2="100%" y2="100%"></line>
+      <line class="line1" x1="100%" y1="0%" x2="0%" y2="100%"></line>
+    </svg>
+    <div class="play">
+      <img src="./images/vbt2.png" alt="controls" />
+      <audio src="./images/goast.mp3" class="do"></audio>
+    </div>
+    <script>
+      setTimeout(() => {
+        $(".stage").addClass("on");
+      }, 1000);
+      setTimeout(() => {
+        $("#stc").addClass("on");
+      }, 2000);
+      setTimeout(() => {
+        $("#mlogo").addClass("on");
+      }, 3000 * 2);
+      $(".play")
+        .hover(
+          function () {
+            $(this).find("img").attr("src", "./images/vbt2-1.png");
+          },
+          function () {
+            $(this).find("img").attr("src", "./images/vbt2.png");
+          }
+        )
+        .click(function () {
+          if ($("audio").get(0).paused) {
+            $('audio').get(0).currentTime=30//second
+            $('audio').get(0).volume=1//0~1
+            $("audio").get(0).play();
+            $(this).hover(
+              function () {
+                $(this).find("img").attr("src", "./images/vbt1-1.png");
+              },
+              function () {
+                $(this).find("img").attr("src", "./images/vbt1.png");
+              }
+            );
+          } else {
+            $("audio").get(0).pause();
+            $(this).hover(
+              function () {
+                $(this).find("img").attr("src", "./images/vbt2-1.png");
+              },
+              function () {
+                $(this).find("img").attr("src", "./images/vbt2.png");
+              }
+            );
+          }
+        });
+    </script>
+  </body>
+</html>
