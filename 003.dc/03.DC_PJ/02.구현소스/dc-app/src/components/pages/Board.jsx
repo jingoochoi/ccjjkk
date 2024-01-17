@@ -1,6 +1,7 @@
 import { Fragment, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import $ from 'jquery'
 import '../../css/board.css'
+import '../../css/boardfile.css'
 import { dcCon } from '../modules/dcContext'
 import christmas from '../data/tbdata.json'
 import { initData } from '../function/localft'
@@ -442,6 +443,12 @@ export function Board() {
                                 <textarea className="content" cols="60" rows="10"></textarea>
                             </td>
                         </tr>
+                        <tr>
+                            <td>attachment</td>
+                            <td>
+                                <Atta></Atta>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 )
@@ -571,3 +578,60 @@ export function Board() {
         </>
     )
 }
+const Atta=()=>{
+    const [ontt,setOntt]=useState(false)
+    const [load,setLoad]=useState(null)
+    const drge=()=>{setOntt(true)}
+    const drgl=()=>{setOntt(false)}
+    const drgo=(e)=>{e.preventDefault()}
+    const drip=(e)=>{
+        e.preventDefault()
+        setOntt(false)
+        const info=e.dataTransfer.files[0]
+        sett(info)
+    }
+    const sett=(a)=>{
+        const {name,size:byteSize,type}=a//객체값을 한꺼번에 할당하는 법
+        const size=(byteSize/(1024*1024)).toFixed(2)+'mb'
+        setLoad({name,size,type})
+    }
+    return(
+        <label className='info-view' onDragEnter={drge} onDragLeave={drgl} onDragOver={drgo} onDrop={drip}>
+            <input type="file" className='file'/>
+            {
+                load&&
+                <File o={load}></File>
+            }
+            {
+                !load&&
+                <>
+                    <Icom></Icom>
+                    <p className="info-view-msg">Click or drop the file here.</p>
+                    <p className="info-view-desc">Up to 3MB per file</p>
+                </>
+            }
+        </label>
+    )
+}
+const File=({o})=>(
+    <ul className='info-view-info'>
+        {
+            Object.entries(o).map(([a,b])=>
+                <li key={a}>
+                    <span className='info-key'>{a}-</span>
+                    <span className='info-value'>{b}</span>
+                </li>
+            )
+        }
+    </ul>
+)
+/* 
+Object.keys(obj) – 객체의 키만 담은 배열을 반환합니다.
+Object.values(obj) – 객체의 값만 담은 배열을 반환합니다.
+Object.entries(obj) – [키, 값] 쌍을 담은 배열을 반환합니다.
+*/
+const Icom=()=>(
+    <svg className="icon" x="0px" y="0px" viewBox="0 0 99.09 122.88">
+    <path fill="#000" d="M64.64,13,86.77,36.21H64.64V13ZM42.58,71.67a3.25,3.25,0,0,1-4.92-4.25l9.42-10.91a3.26,3.26,0,0,1,4.59-.33,5.14,5.14,0,0,1,.4.41l9.3,10.28a3.24,3.24,0,0,1-4.81,4.35L52.8,67.07V82.52a3.26,3.26,0,1,1-6.52,0V67.38l-3.7,4.29ZM24.22,85.42a3.26,3.26,0,1,1,6.52,0v7.46H68.36V85.42a3.26,3.26,0,1,1,6.51,0V96.14a3.26,3.26,0,0,1-3.26,3.26H27.48a3.26,3.26,0,0,1-3.26-3.26V85.42ZM99.08,39.19c.15-.57-1.18-2.07-2.68-3.56L63.8,1.36A3.63,3.63,0,0,0,61,0H6.62A6.62,6.62,0,0,0,0,6.62V116.26a6.62,6.62,0,0,0,6.62,6.62H92.46a6.62,6.62,0,0,0,6.62-6.62V39.19Zm-7.4,4.42v71.87H7.4V7.37H57.25V39.9A3.71,3.71,0,0,0,61,43.61Z"/>
+    </svg>
+)
