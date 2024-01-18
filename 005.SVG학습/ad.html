@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car ad</title>
+    <style>
+        html,body{margin: 0;padding: 0;}
+        body{overflow: hidden;height: 100vh;}
+        #mycar{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);max-width: 1359px;width: 100%;}
+        #mycar.on{animation: brrr .1s linear 2s infinite alternate,gogo 3s linear 3s forwards;}
+        @keyframes brrr {
+            to{transform: translate(-50%,-51%);}
+        }
+        @keyframes gogo {
+            to{left: -50%;}
+        }
+        #mycar img{width: 100%;opacity: 0;}
+        #mycar.on img{opacity: 1;transition: 3s;}
+        .spath{position: absolute;width: 100%;top: 0;left: 0;height: 100%;}
+        .spath path{fill: none;stroke: black;stroke-width: 3;stroke-dasharray: 250%;stroke-linecap: round;stroke-dashoffset: 250%;}
+        .spath.on path{animation: pass 10s linear forwards,linx 3s linear 10s forwards;}
+        @keyframes pass {
+            to{stroke-dashoffset: 0;}
+        }
+        @keyframes linx {
+            to{opacity: 0;}
+        }
+        .ba{position: absolute;width: 9.8%;aspect-ratio: 1/1;background: url(./images/car.jpg)no-repeat;background-position: 20.2% 64.3%;border-radius: 50%;background-size: 1000%;opacity: 0;}
+        .fw{bottom: 30%;left: 18.2%;}
+        .bw{bottom: 30.5%;right: 20%;}
+        #mycar.on .ba{animation: heel 2s linear 3s infinite;opacity: 1;transition: opacity 3s;}
+        @keyframes heel {
+            to{transform: rotate(-360deg);}
+        }
+        #logo{position: absolute;top: 50%;left: 150%;transform: translate(-50%,-50%);width: 60%;}
+        #logo.on{left: 50%;transition: left 3s linear;}
+        /* 시작버튼 */
+        .sbtn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Verdana;
+            color: blue;
+            cursor: pointer;
+            /* display: none; */
+        }
+        .sbtn:hover{
+            color: lime;
+            background-color: #000;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="mycar">
+        <img src="./images/car.jpg" alt="car" id="car">
+        <svg viewBox="0 0 1359 791" class="spath">
+            <path d="M113,515c0,0-10-53,0-78c0,0,20-12,25-13c0,0,21-69,114-85c0,0,158-32,176-29c0,0,132-98,164-100c0,0,120-34.333,317.333-2.667c0,0,5.667-10.333,16.667-9.333c0,0-4.334,6-4.667,13c0,0,238.667,75,275.667,180c0,0,33,14,34,35c0,0,3,59-13,71c0,0-11,19-46,18l-65,0.038c0,0-15,51.962-76,59.962c0,0-70,12-98-55l-529,10.667c0,0-18.667,51.333-93.833,46c0,0-48.167,0-79.167-46.667l-91-1L113,515z"></path>
+        </svg>
+        <div class="grp">
+            <div class="ba fw"></div>
+            <div class="ba bw"></div>
+        </div>
+    </div>
+    <img src="./images/volkswagen.jpg" alt="das auto" id="logo">
+    <!-- 시작버튼 -->
+    <button class="sbtn">
+        AD<br>START!
+    </button>
+    <script>
+        $('.sbtn').click(function () {
+            $(this).hide()
+            call()
+        })
+        const call=()=>{
+            $('.spath').addClass('on')
+            setTimeout(() => {
+                $('#mycar').addClass('on')
+            }, 11000);
+            setTimeout(() => {
+                $('#logo').addClass('on')
+            }, 14000);
+        }
+    </script>
+</body>
+</html>
