@@ -1,7 +1,150 @@
 @charset "utf-8";
+:root{
+    /* 태양크기 */
+    --sunsz: 250px;
+    /* 지구크기 */
+    --esz: 80px;
+    /* 달크기 */
+    --msz: 40px;
+    /* 목성크기 */
+    --jsz: 150px;
+    /* 토성크기 */
+    --ssz: 160px;
+    /* 명왕성크기 */
+    --psz: 50px;
+}
 
-/* 태양계 3D 애니 - solar3d.css */
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
 
-/* 웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@900&display=swap');
+body{
+    background: url(../images/space.jpg) no-repeat center/cover;
+    overflow: hidden;
+    /* 스크롤바없앰 */
+}
+/* 공통클래스 */
 
+/* 배경이미지설명숨기기 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 공사중 표시 */
+/* body *{
+    outline: 1px dashed lightblue;
+} */
+
+/* 타이틀 */
+.tit {
+    position: relative;
+    z-index: 1;
+    /* 행성들보다 위 */
+
+    margin: 0;
+    padding: 0;
+    /* h1의 기본마진,패딩 없앰 */
+    font-family: 'Big Shoulders Stencil Text', cursive;
+    color: #fff;
+    font-size: 80px;
+    text-align: center;
+    padding-top: 20px;
+}
+/* 축소확대 버튼 */
+.tit2 {
+    font-size: 20px;
+}
+
+.tit2 a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 20px;
+}
+
+/* 마우스 오버시 또는 class="on"인 경우 */
+.tit2 a:hover,
+.tit2 a.on {
+    color: aqua;
+}
+/* 태양계박스 축소확대용 부모박스 */
+.sc{
+    position: relative;
+    top: 34%;
+    /* 트랜지션: 속시이지 */
+    transition: transform 2s ease-in-out;
+
+}
+#solar{position: absolute;top: 0;left: 0;bottom: 0;right: 0;transform-style: preserve-3d;transform: rotateX(60deg);}
+/* 태양박스 */
+#sun{
+    position: absolute;
+    top: 50%;left: 50%;transform: translate(-50%,-50%) rotateX(-60deg);
+    width: var(--sun-size);height: var(--sun-size);
+    border-radius: 50%;
+    box-shadow: 0 0 60px 10px orange;
+    overflow: hidden;
+}
+/* 태양이미지 */
+#sun img{
+    width: 100%;height: 100%;
+    animation: flame 30s linear  infinite alternate ;
+}
+/* 태양이 이글거리는 애니메이션 키프레임 */
+@keyframes flame {
+    to{
+        transform: scale(1.3);
+    }
+} /* 키프레임 */
+.orbit{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);border: 3px solid #ffffff77;border-radius: 50%;}
+.planet{position: absolute;top: 0;left: 0;width: 100%;height: 100%;border-radius: 50%;background-repeat: no-repeat;background-size: 100% 100%;transform: rotateY(-60deg) scale(2);}
+#earth.orbit{width: 600px;height: 600px;}
+#earth .pos{position: absolute;top: calc(50% - var(--esz)/2);left: calc(50% - var(--esz)/2);width: var(--esz);height: var(--esz);animation: eath 6s linear infinite;}
+#earth .planet{background-image: url(../images/earth.png);animation: shadowAni 6s linear infinite;}
+@keyframes eath {
+    from{transform: rotate(0) translateX(calc(-1*600px/2)) rotate(0);}
+    to{transform: rotate(360deg) translateX(calc(-1*600px/2)) rotate(-360deg);}
+}
+#jupiter.orbit{width: 1000px;height: 1000px;}
+#jupiter .pos{position: absolute;top: calc(50% - var(--jsz)/2);left: calc(50% - var(--jsz)/2);width: var(--jsz);height: var(--jsz);animation: joop 10s linear infinite;}
+#jupiter .planet{background-image: url(../images/jupiter.png);animation: shadowAni 10s linear infinite;}
+@keyframes joop {
+    from{transform: rotate(0) translateX(calc(-1*1000px/2)) rotate(0);}
+    to{transform: rotate(360deg) translateX(calc(-1*1000px/2)) rotate(-360deg);}
+}
+#saturn.orbit{width: 1400px;height: 1400px;}
+#saturn .pos{position: absolute;top: calc(50% - var(--ssz)/2);left: calc(50% - var(--ssz)/2);width: calc(var(--ssz)*1.3);height: calc(var(--ssz)/1.3);animation: turn 14s linear infinite;}
+#saturn .planet{background-image: url(../images/saturn.png);}
+@keyframes turn {
+    from{transform: rotate(0) translateX(calc(-1*1400px/2)) rotate(0);}
+    to{transform: rotate(360deg) translateX(calc(-1*1400px/2)) rotate(-360deg);}
+}
+#pluto.orbit{width: 1600px;height: 1600px;}
+#pluto .pos{position: absolute;top: calc(50% - var(--psz)/2);left: calc(50% - var(--psz)/2);width: var(--psz);height: var(--psz);animation: luto 16s linear infinite;}
+#pluto .planet{background-image: url(../images/pluto.png);}
+@keyframes luto {
+    from{transform: rotate(0) translateX(calc(-1*1600px/2)) rotate(0);}
+    to{transform: rotate(360deg) translateX(calc(-1*1600px/2)) rotate(-360deg);}
+}
+@keyframes shadowAni {
+    0% {
+        box-shadow: inset 18px 2px 15px rgba(0, 0, 0, 0.748);
+      }
+      25% {
+        box-shadow: inset 3px 19px 15px rgba(0, 0, 0, 0.748);
+      }
+      50% {
+        box-shadow: inset -20px 4px 15px rgba(0, 0, 0, 0.748);
+      }
+      75% {
+        box-shadow: inset -7px -58px 20px rgba(0, 0, 0, 0.748);
+      }
+      100% {
+        box-shadow: inset 18px 2px 15px rgba(0, 0, 0, 0.748);
+      }
+} /* 키프레임 */

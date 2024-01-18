@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System 2D Animation</title>
+    <link rel="stylesheet" href="./css/solar3d.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./js/solar3d.js" defer></script>
+</head>
+<body>
+    <!-- 타이틀 -->
+    <h1 class="tit">Solar System 3D</h1>
+     <!-- 배율버튼 -->
+     <h2 class="tit tit2">
+        <a href="#" data-num="0.3">X 0.3</a> |
+        <a href="#" data-num="0.5">X 0.5</a> |
+        <a href="#" data-num="0.7">X 0.7</a> |
+        <a href="#" data-num="1" class="on">X 1</a> |
+        <a href="#" data-num="1.5">X 1.5</a>
+    </h2>
+    <!-- 태양계박스 -->
+    <div class="sc">
+        <div id="solar">
+            <!-- 태양 -->
+            <div id="sun">
+                <img src="./images/sun.png" alt="태양">
+            </div>
+            <!-- 지구 -->
+            <div id="earth" class="orbit">
+                <div class="pos">
+                    <div class="planet">
+                        <span class="ir">지구</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 목성 -->
+            <div id="jupiter" class="orbit">
+                <div class="pos">
+                    <div class="planet">
+                        <span class="ir">목성</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 토성 -->
+            <div id="saturn" class="orbit">
+                <div class="pos">
+                    <div class="planet">
+                        <span class="ir">토성</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 명왕성 -->
+            <div id="pluto" class="orbit">
+                <div class="pos">
+                    <div class="planet">
+                        <span class="ir">명왕성</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

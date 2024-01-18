@@ -7,3 +7,7 @@
     - 이때 클릭된 메뉴는 오버시 변경색을
     유지한다!
 ****************************************/
+$('.tit2 a').on('click',function () {
+    $('.sc').css({transform:'scale('+$(this).attr('data-num')+')'})
+    $(this).addClass('on').siblings().removeClass('on')
+})
