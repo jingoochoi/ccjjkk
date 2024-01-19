@@ -589,6 +589,11 @@ const Atta=()=>{
         setOntt(false)
         const info=e.dataTransfer.files[0]
         sett(info)
+        const fomm=new FormData()//폼태그 없이도 서버에 전송
+        fomm.append('file',info)
+        for (const key of fomm) {
+            // 
+        }
     }
     const sett=(a)=>{
         const {name,size:byteSize,type}=a//객체값을 한꺼번에 할당하는 법
