@@ -119,7 +119,7 @@ export function Board() {
                     "idx" : Math.max(...aryi)+1,//Math.max.apply(null,aryi)-... 이전에 쓴 방법
                     "tit" : $('.writeone .subject').val().trim(),
                     "cont" : $('.writeone .content').val().trim(),
-                    "att" : lodf.current.name,
+                    "att" : lodf.current?lodf.current.name:'',
                     "date" : `${yy}-${zero(mm)}-${zero(dd)}`,
                     "uid" : lata.current.uid,
                     "unm" : lata.current.unm,
@@ -127,13 +127,14 @@ export function Board() {
                 }
                 if (lodf.current) {
                     const fomm=new FormData()//폼태그 없이도 서버에 전송
-                    fomm.append('file',info)
+                    fomm.append('file',lodf.current)
                     for (const key of fomm) {
                         // 
                     }
                     axios.post('http://localhost:3030/upload',fomm).then(a=>{
                         const {fileName}=a.data
                     }).catch(e=>alert('error'))
+                    lodf.current=null
                 }
                 tenp.unshift(temq)
                 localStorage.setItem('bdata',JSON.stringify(tenp))
