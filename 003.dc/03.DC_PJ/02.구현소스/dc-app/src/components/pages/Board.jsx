@@ -500,6 +500,12 @@ export function Board() {
                             <td>Attachment</td>
                             <td>
                                 <a href={'/uploaded/'+cdt.current.att} download={true}>{cdt.current.att}</a>
+                                {
+                    (cdt.current.att.split('.')[1] === 'jpeg' ||
+                    cdt.current.att.split('.')[1] === 'png' ||
+                    cdt.current.att.split('.')[1] === 'jpg' )&&
+                    <img src={'/uploaded/'+cdt.current.att} alt='이미지'/>
+                  }
                             </td>
                         </tr>
                     </tbody>
@@ -534,6 +540,12 @@ export function Board() {
                             <td>Attachment</td>
                             <td>
                                 <b>{cdt.current.att}</b>
+                                {
+                    (cdt.current.att.split('.')[1] === 'jpeg' ||
+                    cdt.current.att.split('.')[1] === 'png' ||
+                    cdt.current.att.split('.')[1] === 'jpg' )&&
+                    <img src={'/uploaded/'+cdt.current.att} alt='이미지'/>
+                  }
                             </td>
                         </tr>
                     </tbody>
