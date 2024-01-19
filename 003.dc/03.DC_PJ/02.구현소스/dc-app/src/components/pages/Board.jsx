@@ -30,6 +30,8 @@ export function Board() {
     const[bttn,setBttn]=useState(false)
     const sstt=useRef(false)
     const fist=useRef(true)
+    const lodf=useRef(null)
+    const updt=a=>lodf.current=a
     useEffect(()=>{
         if (mymy.logg===null) {
             setBttn(false)
@@ -117,11 +119,21 @@ export function Board() {
                     "idx" : Math.max(...aryi)+1,//Math.max.apply(null,aryi)-... 이전에 쓴 방법
                     "tit" : $('.writeone .subject').val().trim(),
                     "cont" : $('.writeone .content').val().trim(),
-                    "att" : "",
+                    "att" : lodf.current.name,
                     "date" : `${yy}-${zero(mm)}-${zero(dd)}`,
                     "uid" : lata.current.uid,
                     "unm" : lata.current.unm,
                     "cnt" : "0"
+                }
+                if (lodf.current) {
+                    const fomm=new FormData()//폼태그 없이도 서버에 전송
+                    fomm.append('file',info)
+                    for (const key of fomm) {
+                        // 
+                    }
+                    axios.post('http://localhost:3030/upload',fomm).then(a=>{
+                        const {fileName}=a.data
+                    }).catch(e=>alert('error'))
                 }
                 tenp.unshift(temq)
                 localStorage.setItem('bdata',JSON.stringify(tenp))
@@ -447,7 +459,7 @@ export function Board() {
                         <tr>
                             <td>attachment</td>
                             <td>
-                                <Atta></Atta>
+                                <Atta ft={updt}></Atta>
                             </td>
                         </tr>
                     </tbody>
@@ -579,7 +591,7 @@ export function Board() {
         </>
     )
 }
-const Atta=()=>{
+const Atta=(p)=>{
     const [ontt,setOntt]=useState(false)
     const [load,setLoad]=useState(null)
     const drge=()=>{setOntt(true)}
@@ -590,23 +602,21 @@ const Atta=()=>{
         setOntt(false)
         const info=e.dataTransfer.files[0]
         sett(info)
-        const fomm=new FormData()//폼태그 없이도 서버에 전송
-        fomm.append('file',info)
-        for (const key of fomm) {
-            // 
-        }
-        axios.post('http://localhost:3030/upload',fomm).then(a=>{
-            const {fileName}=a.data
-        }).catch(e=>alert('error'))
+        p.ft(info)
     }
     const sett=(a)=>{
         const {name,size:byteSize,type}=a//객체값을 한꺼번에 할당하는 법
         const size=(byteSize/(1024*1024)).toFixed(2)+'mb'
         setLoad({name,size,type})
     }
+    const chch=(e)=>{
+        const info=e.target.files[0]
+        sett(info)
+        p.ft(info)
+    }
     return(
         <label className='info-view' onDragEnter={drge} onDragLeave={drgl} onDragOver={drgo} onDrop={drip}>
-            <input type="file" className='file'/>
+            <input type="file" className='file' onChange={chch}/>
             {
                 load&&
                 <File o={load}></File>
