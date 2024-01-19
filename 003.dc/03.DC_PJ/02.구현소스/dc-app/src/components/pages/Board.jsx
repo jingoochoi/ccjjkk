@@ -496,6 +496,12 @@ export function Board() {
                                     value={cdt.current.cont}></textarea>
                             </td>
                         </tr>
+                        <tr>
+                            <td>Attachment</td>
+                            <td>
+                                <a href={'/uploaded/'+cdt.current.att} download={true}>{cdt.current.att}</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
                 )
@@ -522,6 +528,12 @@ export function Board() {
                             <td>Content</td>
                             <td>
                                 <textarea className="content" cols="60" rows="10" defaultValue={cdt.current.cont}></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Attachment</td>
+                            <td>
+                                <b>{cdt.current.att}</b>
                             </td>
                         </tr>
                     </tbody>

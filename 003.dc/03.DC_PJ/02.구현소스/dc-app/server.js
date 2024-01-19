@@ -11,6 +11,9 @@ const storage=multer.diskStorage({destination:function (req,file,setPath) {
 }})
 const upload=multer({storage:storage})
 app.post('/upload',upload.single('file'),(req,res)=>{})
+app.use(express.urlencoded({extended:true})); 
+// url : Uniform Resource 
+app.use(express.json());
 app.listen(3030,function () {
     // 
 })
