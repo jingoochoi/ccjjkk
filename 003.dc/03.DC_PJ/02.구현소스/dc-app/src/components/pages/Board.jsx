@@ -5,6 +5,7 @@ import '../../css/boardfile.css'
 import { dcCon } from '../modules/dcContext'
 import christmas from '../data/tbdata.json'
 import { initData } from '../function/localft'
+import axios from 'axios'
 christmas.sort((a,b)=>b.idx-a.idx)
 let merry
 if (localStorage.getItem('bdata')) {
@@ -594,6 +595,9 @@ const Atta=()=>{
         for (const key of fomm) {
             // 
         }
+        axios.post('http://localhost:3030/upload',fomm).then(a=>{
+            const {fileName}=a.data
+        }).catch(e=>alert('error'))
     }
     const sett=(a)=>{
         const {name,size:byteSize,type}=a//객체값을 한꺼번에 할당하는 법

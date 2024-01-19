@@ -3,7 +3,13 @@ const express=require('express')
 const path=require('path')
 const app=express()
 const multer=require('multer')
-const upload=multer({dest:'build/uploaded/'})
+// const upload=multer({dest:'build/uploaded/'})
+const storage=multer.diskStorage({destination:function (req,file,setPath) {
+    setPath(null,'build/uploaded/')
+},filename:function (req,file,setName) {
+    setName(null,file.originalname)
+}})
+const upload=multer({storage:storage})
 app.post('/upload',upload.single('file'),(req,res)=>{})
 app.listen(3030,function () {
     // 
